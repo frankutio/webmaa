@@ -79,6 +79,12 @@ public class ProcessoDAO {
         return 0;
     }
 
+    /**
+     * Fornece a lista de todos os processos de pessoas querendo adotar os
+     * animais que você está doando.
+     * @param colaborador O colaborador que tem animais sendo doados
+     * @return A lista de processos de adoção ou <a>null</a>
+     */
     public List<Processo> recuperaDoacoes(Colaborador colaborador) {
         Connection conn = Conexao.getInstance().criaConexao();
         if (conn == null) return null;
@@ -86,7 +92,7 @@ public class ProcessoDAO {
         PreparedStatement pstmt = null;
         try {
             pstmt = conn.prepareStatement(
-                    "SELECT *" +
+                    "SELECT processo.*" +
                     "FROM processo, animais" +
                     "WHERE processo.animais_codigo = animais.codigo" +
                     "   AND animais.Colaborador_codigo = ?" +
@@ -106,12 +112,52 @@ public class ProcessoDAO {
                 processo.setNotaAvaliacao(rs.getString(9));
                 processos.add(processo);
             }
+            rs.close();
             pstmt.close();
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return processos;
+    }
+
+    /**
+     * Retorna o processo do animal que você está adotando.
+     * @param colaborador O colaborador que está adotando um animal
+     * @return O processo referente a essa adoção ou <a>null</a>
+     */
+    public Processo recuperaAdocao(Colaborador colaborador) {
+        Connection conn = Conexao.getInstance().criaConexao();
+        if (conn == null) return null;
+        Processo processo = null;
+        PreparedStatement pstmt = null;
+        try {
+            pstmt = conn.prepareStatement("" +
+                    "SELECT *" +
+                    "FROM processo" +
+                    "WHERE Colaborador_codigo = ?" +
+                    "   AND codigostatus = 'Sim'");
+            pstmt.setInt(1, colaborador.getCodigo());
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.last()) {
+                processo = new Processo();
+                processo.setCodigo(rs.getInt(1));
+                processo.setFaseProcesso(rs.getInt(2));
+                processo.setCodigoColaborador(rs.getInt(3));
+                processo.setDataProcesso(new Date(rs.getDate(4).getTime()));
+                processo.setDataCadastro(new Date(rs.getDate(5).getTime()));
+                processo.setStatus(rs.getString(6));
+                processo.setAvaliacao(rs.getString(7));
+                processo.setDescricaoAvaliacao(rs.getString(8));
+                processo.setNotaAvaliacao(rs.getString(9));
+            }
+            rs.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return processo;
     }
 
 }
