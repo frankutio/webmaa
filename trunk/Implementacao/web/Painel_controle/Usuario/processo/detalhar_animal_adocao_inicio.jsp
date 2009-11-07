@@ -121,7 +121,6 @@ function bt(id){
 
                     	<input type="hidden" name="operacao" value="adotar" />
                         <input type="hidden" name="colaborador" value="${Colaborador.codigo}" />
-                        <input type="hidden" name="codigoProprietario" value="${DetalharAnimal.codigoUsuario}" />
                         <input type="hidden" name="codigoAnimal" value="${DetalharAnimal.codigo}" />
                     
                 	<div class="nota_informa" style=" width:95%;">

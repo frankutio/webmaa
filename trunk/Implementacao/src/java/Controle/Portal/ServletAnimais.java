@@ -4,6 +4,7 @@ import Entidade.Portal.Cor;
 import Entidade.Portal.Animais;
 import Entidade.Portal.Porte;
 import Entidade.Portal.Pelagem;
+import Entidade.Portal.Processo;
 import Entidade.Portal.Raca;
 import Entidade.Portal.TipoEnvio;
 import Persistencia.Portal.AnimalDAO;
@@ -71,7 +72,7 @@ public class ServletAnimais extends HttpServlet {
         else if(operacao.equals("Listar_Cad")){
 
             //COVNERTE DATA
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
             // ISNTANCIA A CLASSE - Obtem dados do formulario
 
@@ -371,6 +372,26 @@ public class ServletAnimais extends HttpServlet {
                request.setAttribute("DetalharAnimal", animal);
 
                proximaPagina="Painel_controle/Usuario/processo/detalhar_animal_adocao_inicio.jsp";
+        }
+
+        else if(operacao.equals("adotar")){
+
+            // Recebe os parametros para preparar a tabela de processos
+
+            //COVNERTE DATA
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            Processo processo = new Processo();
+
+            String status = "Sim";
+
+            processo.setCodigoAnimal(Integer.parseInt(request.getParameter("codigoAnimal")));
+            processo.setCodigoColaborador(Integer.parseInt(request.getParameter("colaborador")));
+            processo.setStatus(status);
+            
+
+
+
         }
 
 
