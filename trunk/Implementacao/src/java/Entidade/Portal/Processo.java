@@ -1,7 +1,6 @@
 package Entidade.Portal;
 
 import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public class Processo {
 
