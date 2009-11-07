@@ -427,6 +427,7 @@ public class ServletAnimais extends HttpServlet {
 
                 NotificacaoDAO.getInstance().gravaMsg(notificacao2);
 
+                proximaPagina="Painel_controle/Usuario/processo/confirm_processo.jsp";
 
 
             }

@@ -117,18 +117,30 @@ function bt(id){
 
           <!-- FINALIZAR -->
             	<div id="confirmacao">
-                	<div class="nota_informa">
-                   		<span>Transação realizada com Sucesso!</span>
-                    </div>
-                  	<br />
 
-                    <div style="width:80%; color:#F60; border:#CCC solid 2px; line-height:20px; padding:10px 5px 5px 30px;">
-                    	Enviaremos uma solicitação ao dono do animal informando o seu interesse na adoção.<br />
+                    <c:if test="${MsgErro == null}">
 
-                        Assim que o pedido for aprovado, você receberá uma notificação por email, somente após isso será
-                         possivel dar continuaidade ao processo de adoção.<br /><br />
-                         Você tambem pode acompanhar o processo atravez do seu "Painel de Controle".
-                    </div>
+                        <div class="nota_informa">
+                            <span>Transação realizada com Sucesso!</span>
+                        </div>
+                        <br />
+
+                        <div style="width:80%; color:#F60; border:#CCC solid 2px; line-height:20px; padding:10px 5px 5px 30px;">
+                            Enviaremos uma solicitação ao dono do animal informando o seu interesse na adoção.<br />
+
+                            Assim que o pedido for aprovado, você receberá uma notificação por email, somente após isso será
+                             possivel dar continuaidade ao processo de adoção.<br /><br />
+                             Você tambem pode acompanhar o processo atravez do seu "Painel de Controle".
+                        </div>
+                    </c:if>
+
+                    <c:if test="${MsgErro != null}">
+
+                        <span style="color:red; font-size:15px;">
+                            ${MsgErro}
+                        </span>
+                    </c:if>
+                	
                 </div>
             <!-- fINALIZAR -->
 
