@@ -97,8 +97,8 @@ function bt(id){
 	<div class="menuDrop">
 		<ul>
 			<li><a href="/WebMAATeste/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Notícias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Denúncias</span></a></li>
+    		<li><a href="#" onfocus="limpaMenu();"><span>Not&iacute;cias</span></a></li>
+            <li><a href="#" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
         			<li id="gato" class=""><a href="/WebMAATeste/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
@@ -138,18 +138,18 @@ function bt(id){
                 <br />
                 
                 <div style="width:45%; float:left;">
-                	<div class="bordaFaixaLeft"><span>Minhas Adoções</span></div>
+                	<div class="bordaFaixaLeft"><span>Minhas Ado&ccedil;&otilde;es</span></div>
                     <br />
                     
-                    Aqui você pode acompanhar os pedidos de Adoção feitos por você.
+                    Aqui voc&ecirc; pode acompanhar os pedidos de Ado&ccedil;&atilde;o feitos por voc&ecirc;.
                     <br />
                     <br />
                     <table class="grid" width="100%">
                     	<tr>
                         	<td class="td_escura">
-                            	<span style="color:#F00;">Existe um Processo de Adoção em aberto.</span> &nbsp; <br />
+                            	<span style="color:#F00;">Existe um Processo de Ado&ccedil;&atilde;o em aberto.</span> &nbsp; <br />
                             	<div align="center">
-                                	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir" onmouseover="focoBt('exibir');" onmouseout="bt('exibir');" onclick="window.location='acompanhar_adocao_usuario.html';" />
+                                	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir" onmouseover="focoBt('exibir');" onmouseout="bt('exibir');" onclick="window.location='acompanhar_adocao_usuario.jsp';" />
                                 </div>
                             </td>
                         </tr>
@@ -158,20 +158,20 @@ function bt(id){
                 </div>
                 
                 <div style="width:45%; float:right;">
-                	<div class="bordaFaixaLeft"><span>Minhas Doações</span></div>
+                	<div class="bordaFaixaLeft"><span>Minhas Doa&ccedil;&otilde;es</span></div>
                     
                     <br />
                     
-                    Aqui você gerencia os seus animais que estão em processo de adoção.
+                    Aqui voc&ecirc; gerencia os seus animais que est&atilde;o em processo de ado&ccedil;&atilde;o.
                     <br />
                     <br />
                     
                     <table class="grid" width="100%">
                     	<tr>
                         	<td class="td_escura">
-                            	<span style="color:#F00;">Existe uma solicitação de Adoção em aberto.</span> &nbsp; <br />
+                            	<span style="color:#F00;">Existe uma solicita&ccedil;&atilde;o de Ado&ccedil;&atilde; em aberto.</span> &nbsp; <br />
                             	<div align="center">
-                                	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir2" onmouseover="focoBt('exibir2');" onmouseout="bt('exibir2');" onclick="window.location='acompanhar_doacao_usuario.html';" />
+                                	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir2" onmouseover="focoBt('exibir2');" onmouseout="bt('exibir2');" onclick="window.location='acompanhar_doacao_usuario.jsp';" />
                                 </div>
                             </td>
                         </tr>
