@@ -12,6 +12,7 @@ public class Notificacao {
    private String remetenteNotificacao;
    private Date dataCadastro;
    private String mensagem;
+   private String mensagemPessoal;
 
     public int getCodigo() {
         return codigo;
@@ -79,6 +80,30 @@ public class Notificacao {
      */
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
+    }
+
+    /**
+     * @return the mensagemPessoal
+     */
+    public String getMensagemPessoal() {
+        return mensagemPessoal;
+    }
+
+    /**
+     * @param mensagemPessoal the mensagemPessoal to set
+     */
+    public void setMensagemPessoal(String mensagemPessoal) {
+        if(mensagemPessoal == ""){
+            this.mensagemPessoal = "Sem Mensagem Pessoal Enviada!";
+        }
+        else if(mensagemPessoal == null){
+            this.mensagemPessoal = "Sem Mensagem Pessoal Enviada!";
+        }
+
+        else {
+            this.mensagemPessoal = mensagemPessoal;
+        }
+        
     }
 
 }
