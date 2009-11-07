@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ong Amigos Fieis</title>
+
+<link type="text/css" rel="stylesheet" href="css/geral.css" />
+<link type="text/css" rel="stylesheet" href="css/jquery-ui-datepicker.css" />
+<link type="text/css" rel="stylesheet" href="css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="css/abas.css" />
+<link type="text/css" rel="stylesheet" href="css/drop_vertical.css" />
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/utilidades.js"></script>
+<script type="text/javascript" src="js/maskedinput.js"></script>
+<script type="text/javascript" src="js/jquery-ui-datepicker.js"></script>
+<script type="text/javascript" src="js/menuVertical.js"></script>
+
+<script>
+function focoBt(id){
+	if(id ==="logoff"){
+		$("#"+id).attr("src","images/botao/bt_logoff_light.png");
+	}
+	
+	else if(id ==="exibir"){
+		$("#"+id).attr("src","images/botao/bt_exibir_light.png");
+	}
+	
+	else if(id ==="exibir2"){
+		$("#"+id).attr("src","images/botao/bt_exibir_light.png");
+	}
+	
+	else if(id ==="exibir3"){
+		$("#"+id).attr("src","images/botao/bt_exibir_light.png");
+	}
+}
+
+function bt(id){
+	if(id ==="logoff"){
+		$("#"+id).attr("src","images/botao/bt_logoff.png");
+	}
+	
+	else if(id ==="exibir"){
+		$("#"+id).attr("src","images/botao/bt_exibir.png");
+	}
+	
+	else if(id ==="exibir2"){
+		$("#"+id).attr("src","images/botao/bt_exibir.png");
+	}
+	
+	else if(id ==="exibir3"){
+		$("#"+id).attr("src","images/botao/bt_exibir.png");
+	}
+	
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- Corpo da pagina -->
+<div id="corpo">
+
+<!-- div com o banner -->
+
+<div id="faixaBanner">
+	<div class="imgBannerInfLeft"><img src="images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+    <div class="imgBannerInfRight"></div>
+</div>
+
+<!-- CONTEUDO -->
+
+<div id="conteudo">
+
+	<div id="topo_painel">
+    <!-- BARRA DE CESSAO DO USUARIO -->
+    	<div id="topo_painel_left">
+        
+        	<div id="ferramenta_esquerda">
+            	<table class="grid" style="width:100%; font-size:14px;">
+                	<tr>
+                    	<td height="28" colspan="2">Fulana Maria</td>
+                    </tr>
+                    <tr>
+                    	<td colspan="2"></td>
+                    </tr>
+                    <tr>
+                    	<td width="53%">&nbsp;</td>
+                        <td width="47%"><img src="images/botao/bt_logoff.png" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" alt="Sair" title="Sair" class="seta_link" onclick="window.location='index.html';" /></td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    <!-- BARRA DE CESSAO DO USUARIO -->
+    
+    <!-- BARRA DE FERRAMENTAS -->
+        <div id="topo_painel_cont">
+        
+        	<div id="ferramenta_direita">
+            	<table width="90%" class="grid" style="width:70%; font-size:11px; color: #000;">
+                	<tr>
+                    	<td width="24%" height="49"><div align="center">
+                        		<img src="images/botao/senha.png" /><br />
+                                <a href="alterar_senha.html">Alterar Senha</a>
+                        </div>
+                       </td>
+&nbsp
+                       <td width="19%"><div align="center">
+                        		<img src="images/botao/relatorio.png" /><br />
+                                <a href="relatorio_animal.html">Relatório</a>
+                        </div>
+                       </td>
+                       <td width="28%"><div align="center">
+                        		<img src="images/botao/user_add.png" /><br />
+                                <a href="cad_animal.html">Cadastrar Animal</a>
+                        </div>
+                       </td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    <!-- BARRA DE FERRAMENTAS -->
+    
+        <div class="clear"></div>
+    </div>
+	<div class="imgBase_sem_coluna">
+	
+	<!-- CONTEUDO AQUI -->
+		<div id="cont">
+			<div class="menuLeft">
+            	<br />
+                <br />
+                
+               <!-- menu --> 
+                <div id="menu3">
+					<ul>
+						<li onmouseover="setaClass('func');" onmouseout="retiraClass('func');"><a href="#" id="func" class="">Funcionarios</a>
+                        	<ul>
+                            	<li><a href="cad_funcionario.html">Novo Funcionario</a></li>
+                                <li><a href="pesquisar_funcionario.html">Pesquisar Funcionario</a></li>
+                            </ul>
+                        </li>
+						<li onmouseover="setaClass('animais');" onmouseout="retiraClass('animais');"><a href="#" id="animais" class="">Animais</a>
+                        	<ul>
+                            	<li><a href="cad_animal.html">Novo Animal</a></li>
+                                <li><a href="pesquisar_animal.html">Pesquisar Animais</a></li>
+                                <li><a href="relatorio_animal.html">Relatório</a></li>
+                            </ul>
+                        </li>
+						<li onmouseover="setaClass('colaborador');" onmouseout="retiraClass('colaborador');"><a href="#" id="colaborador" class="">Colaboradores</a>
+                        	<ul>
+                           	  	<li><a href="cad_colaborador.html">Novo Colaborador</a></li>
+                                <li><a href="pesquisar_colaborador.html">Pesquisar Colaborador</a></li>
+                      		</ul>
+                         </li>
+                        <li onmouseover="setaClass('gerenciar');" onmouseout="retiraClass('gerenciar');"><a href="#" id="gerenciar" class="">Gerenciar</a>
+                        	<ul>
+                            	<li><a href="gerencia_adocao.html">Adoções</a></li>
+                                <li><a href="gerencia_doacao.html">Doações</a></li>
+                                <li><a href="gerencia_raças.html">Raças</a></li>
+                                <li><a href="gerencia_forma_envio.html">Forma de Envio</a></li>
+                                <li><a href="gerencia_pelagem.html">Pelagem</a></li>
+                                <li><a href="gerencia_portes.html">Portes</a></li>
+                            </ul>
+                        </li>
+  </ul>
+
+            </div>
+            
+          </div>
+
+            <div class="conteudo_painel">
+            
+            <div class="lista"> 
+                <div class="bordaFaixaLeft">
+                	<span>Resumo das Atividades</span>
+                </div>   			
+                <br />
+                
+                <!-- colocar aqui as alterações -->
+                
+                <div style="float:left; width:250px; min-height:80px;">
+                
+                <fieldset>
+                	<legend>Cadastros Pendentes</legend>
+                    <br />
+                    
+                <table style="width:100%;">
+                    	<tr>
+                        	<td valign="top"><img src="images/botao/alert.png" /></td>
+                        	<td>Existem <font style="color:#F00;">02</font> Animais Pendentes.</td>
+                        </tr>
+                        <tr>
+                        	<td align="right" colspan="2"><img src="images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir" onmouseover="focoBt('exibir');" onmouseout="bt('exibir');" onclick="window.location='relatorio_animal_pendente.html';" /></td>
+                        </tr>
+                    </table>
+                </fieldset>
+               </div>
+               
+               <div style="float:left; width:250px; min-height:80px; margin-left:10px;">
+                
+                <fieldset>
+                	<legend>Adoções Ativas</legend>
+                    <br />
+                    
+                <table style="width:100%;">
+                    	<tr>
+                        	<td valign="top"><img src="images/botao/alert.png" /></td>
+                        	<td>Existem <font style="color:#F00;">03</font> Animais em fase de Adoção.</td>
+                        </tr>
+                        <tr>
+                        	<td align="right" colspan="2"><a href="gerencia_adocao.html"><img src="images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir2" onmouseover="focoBt('exibir2');" onmouseout="bt('exibir2');" /></a></td>
+                        </tr>
+                    </table>
+                </fieldset>
+               </div>
+               
+               
+               <div class="clear"></div>
+               
+               <br />
+                 <div style="float:left; width:250px; margin-top:10px;">
+                 	<fieldset>
+                    	<legend>Solicitação de Adoções</legend>
+                        <br />
+                        
+                        <table style="width:100%;">
+                        	<tr>
+                            	<td width="11%"><img src="images/botao/atencao.png" /></td>
+                                <td width="89%" valign="bottom"><span class="obrigatorio">33</span> Solicitação(s) em Aberto</td>
+                            </tr>
+                            <tr>
+                            	<td align="right" colspan="2"><a href="gerencia_doacao.html"><img src="images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir3" onmouseover="focoBt('exibir3');" onmouseout="bt('exibir3');" /></a></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                 </div>
+                 
+                                 
+            </div>
+               
+         </div>          
+           
+           <div class="clear">
+           </div>
+           
+		</div>
+	 <!-- FIM DO CONTEUDO -->	
+		
+	</div>
+	<span class="imgFim_sem_coluna"></span>
+</div>
+
+</div>
+<!-- Fim do corpo -->
+
+<!-- Rodapé -->
+
+<div id="rodape">
+	Versão do Sistema &nbsp;&nbsp; 1.0
+</div>
+
+</body>
+
+</html>
