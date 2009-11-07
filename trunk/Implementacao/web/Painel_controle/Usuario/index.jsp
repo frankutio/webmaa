@@ -229,17 +229,9 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                <table class="grid">
                		<tr>
                     	<td><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link"  /></td>
-                        <td><a href="#" onclick="mostrar('perfil');">Acompanhar Ado&ccedil;&atilde;o</a></td>
+                        <td><a href="/WebMAATeste/Painel_controle/Usuario/filtro_processo.jsp">Acompanhar Ado&ccedil;&atilde;o</a></td>
                     </tr>
-				</table>
-				<table class="grid esconde" id="perfil">
-					<tr>
-						<td colspan="2" align="center"><a href="/WebMAATeste/Painel_controle/Usuario/acompanhar_adocao_usuario.html">Adotando</a></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center"><a href="/WebMAATeste/Painel_controle/Usuario/acompanhar_doacao_usuario.html">Doando</a></td>
-					</tr>
-               </table> 
+				</table>				
                <br />
              <div class="bordaFaixaLeft"><span>Doação</span></div>
               	<br />
