@@ -72,43 +72,7 @@ public class NotificacaoDAO {
         return lstMsg;
     }
 
-    /* public Notificacao carregaMsg(int codigoColaborador) {
-
-        Statement stmt = null;
-        Notificacao msg = null;
-        Connection conn = Conexao.getInstance().criaConexao();
-        if (conn != null) {
-            try {
-                stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(
-                        "SELECT * FROM notificacao " +
-                        "WHERE Colaborador_codigo =" +
-                        codigoColaborador + " ");
-                if (rs.next()) {
-                    msg = carregaDadosNoObjeto(rs);
-                } else {
-                    msg = null;
-                }
-                conn.close();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            } finally {
-                try {
-                    if (stmt != null) {
-                        stmt.close();
-                    }
-                    if (conn != null) {
-                        conn.close();
-                    }
-                } catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-            }
-    }
-         return msg;
-
-    } */
-
+    
     public Notificacao leMsg(int codigo) {
 
         Statement stmt = null;
@@ -191,5 +155,45 @@ public class NotificacaoDAO {
         return n;
 
     }
+
+    public int gravaMsg(Notificacao notificacao) {
+
+        int n = 0;
+        Connection conn = Conexao.getInstance().criaConexao();
+
+        if (conn != null) {
+            PreparedStatement pstmt = null;
+            try {
+                pstmt = conn.prepareStatement(
+                        "insert into notificacao " +
+                        "(colaborador_codigo,descricao,datacadstro,remetentenotificacao,mensagem)" +
+                        " VALUES (?, ?, ?, ?, ?)");
+                pstmt.setInt(1, notificacao.getCodigoColaborador());
+                pstmt.setString(2, notificacao.getAssunto());
+                pstmt.setDate(3, new java.sql.Date(notificacao.getDataCadastro().getTime()));
+                pstmt.setString(4, notificacao.getRemetenteNotificacao());
+                pstmt.setString(5, notificacao.getMensagem());
+
+                n = pstmt.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println("Inclusao Falhou!!!\n" + e.getMessage());
+            } finally {
+                try {
+                    if (pstmt != null) {
+                        pstmt.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+
+        return n;
+
+    }
+
 
 }

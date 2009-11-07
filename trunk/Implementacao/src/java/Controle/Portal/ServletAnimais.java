@@ -2,6 +2,7 @@ package Controle.Portal;
 
 import Entidade.Portal.Cor;
 import Entidade.Portal.Animais;
+import Entidade.Portal.Notificacao;
 import Entidade.Portal.Porte;
 import Entidade.Portal.Pelagem;
 import Entidade.Portal.Processo;
@@ -10,8 +11,10 @@ import Entidade.Portal.TipoEnvio;
 import Persistencia.Portal.AnimalDAO;
 import Persistencia.Portal.CorDAO;
 import Persistencia.Portal.EnvioDAO;
+import Persistencia.Portal.NotificacaoDAO;
 import Persistencia.Portal.PelagemDAO;
 import Persistencia.Portal.PorteDAO;
+import Persistencia.Portal.ProcessoDAO;
 import Persistencia.Portal.RacaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -384,6 +387,7 @@ public class ServletAnimais extends HttpServlet {
             Processo processo = new Processo();
 
             String status = "Sim";
+            int codigoProprietario = Integer.parseInt(request.getParameter("proprietario"));
 
             processo.setCodigoAnimal(Integer.parseInt(request.getParameter("codigoAnimal")));
             processo.setCodigoColaborador(Integer.parseInt(request.getParameter("colaborador")));
@@ -391,11 +395,48 @@ public class ServletAnimais extends HttpServlet {
             processo.setDataCadastro(new Date(System.currentTimeMillis()));
             processo.setDataProcesso(new Date(System.currentTimeMillis()));
 
-            //EFETUA A GRAVACAO DOS DADOS
+            try{
+                //EFETUA A GRAVACAO DOS DADOS
+                ProcessoDAO.getInstance().grava(processo);
+
+                // Prepara uma notificação para ser lançada.
+
+                Notificacao notificacao = new Notificacao();
+
+                notificacao.setCodigoColaborador(Integer.parseInt(request.getParameter("colaborador")));
+                notificacao.setDataCadastro(new Date(System.currentTimeMillis()));
+                notificacao.setAssunto("Processo de Adoção");
+                notificacao.setRemetenteNotificacao("Sim");
+                notificacao.setMensagem("<h2>Parabéns, Você acaba de ser incluido em um processo de adoção.</h2><br>"+
+                        "<br>" +
+                        "Você pode acompanhar este processo em seu \"Painel de Controle\" na coluna \"Adoções\". ");
+
+                NotificacaoDAO.getInstance().gravaMsg(notificacao);
+
+                // Prepara Mensagem para o prorpietario
+
+                Notificacao notificacao2 = new Notificacao();
+
+                notificacao2.setCodigoColaborador(codigoProprietario);
+                notificacao2.setDataCadastro(new Date(System.currentTimeMillis()));
+                notificacao2.setAssunto("Processo de Adoção");
+                notificacao2.setRemetenteNotificacao("Sim");
+                notificacao2.setMensagem("<h2>Você possui uma solicitação de Adoção.</h2><br>"+
+                        "<br>" +
+                        "Você pode acompanhar este processo em seu \"Painel de Controle\" na coluna \"Adoções\". ");
+
+                NotificacaoDAO.getInstance().gravaMsg(notificacao2);
+
+
+
+            }
+            catch(Exception e){
+
+                request.setAttribute("MsgErro", "Erro ao Finalizar o processo");
+
+                proximaPagina="Painel_controle/Usuario/processo/confirm_processo.jsp";
+            }
             
-
-
-
         }
 
 

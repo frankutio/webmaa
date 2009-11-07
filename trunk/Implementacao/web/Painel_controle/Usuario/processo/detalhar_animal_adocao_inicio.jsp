@@ -122,6 +122,8 @@ function bt(id){
                     	<input type="hidden" name="operacao" value="adotar" />
                         <input type="hidden" name="colaborador" value="${Colaborador.codigo}" />
                         <input type="hidden" name="codigoAnimal" value="${DetalharAnimal.codigo}" />
+                        <input type="hidden" name="proprietario" value="${DetalharAnimal.codigoUsuario}" />
+
                     
                 	<div class="nota_informa" style=" width:95%;">
                     	<span>Atenção: Confira abaixo os dados do Animal que está prestes a ser adotado por Você. </span>
