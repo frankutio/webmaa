@@ -388,6 +388,10 @@ public class ServletAnimais extends HttpServlet {
             processo.setCodigoAnimal(Integer.parseInt(request.getParameter("codigoAnimal")));
             processo.setCodigoColaborador(Integer.parseInt(request.getParameter("colaborador")));
             processo.setStatus(status);
+            processo.setDataCadastro(new Date(System.currentTimeMillis()));
+            processo.setDataProcesso(new Date(System.currentTimeMillis()));
+
+            //EFETUA A GRAVACAO DOS DADOS
             
 
 
