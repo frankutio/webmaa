@@ -287,7 +287,7 @@ function preenche(){
               <table class="grid">
                         <tr>
                         	<td width="29%" align="right"><a href="/WebMAATeste/Painel_controle/Usuario/cad_edit.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
-                            <td width="71%"><a href="/WebMAATeste/Painel_controle/Usuario/cad_edit.html">Alterar Cadastro</a></td>
+                            <td width="71%"><a href="/WebMAATeste/NavUsr?operacao=alterar_cad">Alterar Cadastro</a></td>
                         </tr>
                         <tr>
                         	<td align="right"><a href="index.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
