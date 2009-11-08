@@ -125,16 +125,22 @@ function bt(id){
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar AdoÃ§Ã£o &nbsp;&nbsp; - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Doa&ccedil;&otilde;es &nbsp;&nbsp; - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br />          
             
-                
+            <c:if test="${Animais == null}">
+                <div class="nota_informa">
+                    <span>Você não possui processos de doações em aberto no momento.</span>
+                </div>
+            </c:if>
+            <c:if test="${Animais != null}">
                 <p>
                 	Para detalhar um processo, clique no botão correspondente ao animal que você gostaria de "Acompanhar".
 
                 </p>
                 
                 <br />
+                <div class="nota_destaque">Lista de Animais com Processo em aberto.</div>
                 <br />
                 
                 <table class="grid" style="width:80%;">
@@ -148,7 +154,7 @@ function bt(id){
                     </tr>
                     <c:forEach items="${Animais}" var="Animal">
                         <tr class="td_escura">
-                            <td align="center"><img src="/WebMAATeste/${Animal.especie}/images/miniaturas/${Animal.endFoto}" alt="gato" title="" width="69" height="59" /></td>
+                            <td align="center"><img src="/WebMAATeste/${Animal.especie}/images/miniaturas/${Animal.endFoto}" alt="${Animal.nome}" title="${Animal.nome}" width="69" height="59" /></td>
                             <td align="center">${Animal.nome}</td>
                             <td align="center">${Animal.especie}</td>
                             <c:forEach items="${lstRaca}" var="lstRaca">
@@ -157,10 +163,12 @@ function bt(id){
                                 </c:if>
                             </c:forEach>
                             <td align="center">${Animal.sexo}</td>
-                            <td align="center"><a href="/WebMAATeste/Painel_controle/Usuario/acompanhar_doacao_usuario.jsp"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" align="Exibir" title="Exibir" class="seta_link botaoExibir" /></a></td>
+                            <td align="center"><a href="/WebMAATeste/gerProcesso?operacao=listar_processos&cod_animal=${Animal.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" align="Exibir" title="Exibir" class="seta_link botaoExibir" /></a></td>
                         </tr>
                    </c:forEach>
                 </table>
+
+                </c:if>
             
             <!-- CONTEUDO DO PAINEL -->
             <div id="cont_painel">
