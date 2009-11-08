@@ -157,7 +157,7 @@ function bt(id){
                     <form action="/WebMAATeste/NavUsr" name="logar" method="post" class="link">
 
                     	<input type="hidden" name="operacao" value="login" />
-                        <input type="hidden" name="dispara" value="listaAnimal?operacao=detalhar_gato&codigo=${DetalharAnimal.codigo}" />
+                        <input type="hidden" name="dispara" value="listaAnimal?operacao=lista_gato" />
 
                     	<table class="grid" width="100%">
                         	<tr>
@@ -182,7 +182,7 @@ function bt(id){
                             %>
                         </span>
                         <br />
-                        <a href="recuperar_senha.html" >Esqueceu a Senha?</a>
+
                     </form>
                 </div>
              <!-- LOGIN -->
@@ -201,14 +201,22 @@ function bt(id){
 
                             <td align="center" colspan="2">&nbsp;</td>
                         </tr>
-                        <tr>
-                        	<td width="29%" align="right"><img src="/WebMAATeste/images/botao/ico_email.png" alt="Mensagem" title="Mensagem" class="seta_link" /> &nbsp;</td>
-                            <td width="71%"><a href="/WebMAATeste/Painel_controle/Usuario/centro_msg.jsp"><span class="obrigatorio">0</span> Mensagem(s) Nova(s)</a></td>
-                        </tr>
+                         <c:if test="${empty Msg}">
+                            <tr>
+                                <td width="29%" align="right"><img src="/WebMAATeste/images/botao/ico_email.png" alt="Mensagem" title="Mensagem" /> &nbsp;</td>
+                                <td width="71%"> Nenhuma Mesagem</td>
+                            </tr>
+                        </c:if>
+                        <c:if test="${!empty Msg}">
+                            <tr>
+                                <td width="29%" align="right"><img src="/WebMAATeste/images/botao/ico_email.png" alt="Mensagem" title="Mensagem" class="seta_link" /> &nbsp;</td>
+                                <td width="71%"><a href="/WebMAATeste/Mensagem?operacao=abrirCentro&colaborador=${Colaborador.codigo}"><span class="obrigatorio">${qtd}</span> Mensagen(s) Nova(s)</a></td>
+                            </tr>
+                        </c:if>
                         <tr>
 
                         	<td align="right"><img src="/WebMAATeste/images/botao/ico_painel.png" alt="Painel" title="Ir para o Painel de Controle" class="seta_link" /> &nbsp;</td>
-                            <td><a href="PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Meu Painel de Controle</a></td>
+                            <td><a href="/WebMAATeste/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Meu Painel de Controle</a></td>
                         </tr>
                     </table>
 
