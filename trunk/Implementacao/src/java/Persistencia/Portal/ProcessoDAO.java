@@ -2,7 +2,6 @@
 package Persistencia.Portal;
 
 import Entidade.Portal.Animais;
-import Entidade.Portal.Colaborador;
 import Entidade.Portal.Processo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -158,8 +157,8 @@ public class ProcessoDAO {
                 processo.setCodigo(rs.getInt(1));
                 processo.setFaseProcesso(rs.getInt(2));
                 processo.setCodigoColaborador(rs.getInt(3));
-                processo.setDataProcesso(new Date(rs.getDate(4).getTime()));
-                processo.setDataCadastro(new Date(rs.getDate(5).getTime()));
+                processo.setDataProcesso(rs.getDate(4));
+                processo.setDataCadastro(rs.getDate(5));
                 processo.setStatus(rs.getString(6));
                 processo.setAvaliacao(rs.getString(7));
                 processo.setDescricaoAvaliacao(rs.getString(8));
