@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
@@ -62,7 +61,7 @@ public class ProcessoDAO {
                     "SET FaseProcesso_codigo = ?, Animais_codigo = ?, " +
                     "   Colaborador_codigo = ?, dataprocesso = ?, datacadastro = ?, " +
                     "   codigostatus = ?, avaliacao = ?, descricaoavaliacao = ?, " +
-                    "   notaavaliacao = ? " +
+                    "   notaavaliacao = ?, mensagem = ? " +
                     "WHERE Codigo = ? ");
             pstmt.setInt(1, processo.getFaseProcesso());
             pstmt.setInt(2, processo.getCodigoAnimal());
@@ -73,7 +72,8 @@ public class ProcessoDAO {
             pstmt.setString(7, processo.getAvaliacao());
             pstmt.setString(8, processo.getDescricaoAvaliacao());
             pstmt.setString(9, processo.getNotaAvaliacao());
-            pstmt.setInt(10, processo.getCodigo());
+            pstmt.setString(10, processo.getMensagem());
+            pstmt.setInt(11, processo.getCodigo());
             pstmt.executeUpdate();
             pstmt.close();
             conn.close();
@@ -156,13 +156,15 @@ public class ProcessoDAO {
                 Processo processo = new Processo();
                 processo.setCodigo(rs.getInt(1));
                 processo.setFaseProcesso(rs.getInt(2));
-                processo.setCodigoColaborador(rs.getInt(3));
-                processo.setDataProcesso(rs.getDate(4));
-                processo.setDataCadastro(rs.getDate(5));
-                processo.setStatus(rs.getString(6));
-                processo.setAvaliacao(rs.getString(7));
-                processo.setDescricaoAvaliacao(rs.getString(8));
-                processo.setNotaAvaliacao(rs.getString(9));
+                processo.setCodigoAnimal(rs.getInt(3));
+                processo.setCodigoColaborador(rs.getInt(4));
+                processo.setDataProcesso(rs.getDate(5));
+                processo.setDataCadastro(rs.getDate(6));
+                processo.setStatus(rs.getString(7));
+                processo.setAvaliacao(rs.getString(8));
+                processo.setDescricaoAvaliacao(rs.getString(9));
+                processo.setNotaAvaliacao(rs.getString(10));
+                processo.setMensagem(rs.getString(11));
                 processos.add(processo);
             }
             rs.close();
@@ -197,13 +199,15 @@ public class ProcessoDAO {
                 processo = new Processo();
                 processo.setCodigo(rs.getInt(1));
                 processo.setFaseProcesso(rs.getInt(2));
-                processo.setCodigoColaborador(rs.getInt(3));
-                processo.setDataProcesso(new Date(rs.getDate(4).getTime()));
-                processo.setDataCadastro(new Date(rs.getDate(5).getTime()));
-                processo.setStatus(rs.getString(6));
-                processo.setAvaliacao(rs.getString(7));
-                processo.setDescricaoAvaliacao(rs.getString(8));
-                processo.setNotaAvaliacao(rs.getString(9));
+                processo.setCodigoAnimal(rs.getInt(3));
+                processo.setCodigoColaborador(rs.getInt(4));
+                processo.setDataProcesso(rs.getDate(5));
+                processo.setDataCadastro(rs.getDate(6));
+                processo.setStatus(rs.getString(7));
+                processo.setAvaliacao(rs.getString(8));
+                processo.setDescricaoAvaliacao(rs.getString(9));
+                processo.setNotaAvaliacao(rs.getString(10));
+                processo.setMensagem(rs.getString(11));
             }
             rs.close();
             pstmt.close();
