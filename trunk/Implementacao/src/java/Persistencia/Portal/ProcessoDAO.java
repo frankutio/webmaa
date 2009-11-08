@@ -89,7 +89,7 @@ public class ProcessoDAO {
      * @param colaborador O colaborador que tem animais sendo doados
      * @return A lista de animais que têm alguém querendo adotar ou <a>null</a>
      */
-    public List<Animais> recuperaAnimais(Colaborador colaborador) {
+    public List<Animais> recuperaAnimais(int codigoColaborador) {
         Connection conn = Conexao.getInstance().criaConexao();
         if (conn == null) return null;
         List<Animais> animais = new ArrayList<Animais>();
@@ -101,7 +101,7 @@ public class ProcessoDAO {
                     "WHERE processo.animais_codigo = animais.codigo" +
                     "   AND animais.Colaborador_codigo = ?" +
                     "   AND processo.codigostatus = 'Sim'");
-            pstmt.setInt(1, colaborador.getCodigo());
+            pstmt.setInt(1, codigoColaborador);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 Animais animal = new Animais();
