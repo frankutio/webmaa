@@ -389,6 +389,7 @@ public class ServletAnimais extends HttpServlet {
             String status = "Sim";
             int codigoProprietario = Integer.parseInt(request.getParameter("proprietario"));
 
+            processo.setFaseProcesso(1);
             processo.setCodigoAnimal(Integer.parseInt(request.getParameter("codigoAnimal")));
             processo.setCodigoColaborador(Integer.parseInt(request.getParameter("colaborador")));
             processo.setStatus(status);
