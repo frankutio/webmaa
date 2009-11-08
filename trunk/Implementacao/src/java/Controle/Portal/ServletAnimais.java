@@ -393,6 +393,7 @@ public class ServletAnimais extends HttpServlet {
             processo.setCodigoAnimal(Integer.parseInt(request.getParameter("codigoAnimal")));
             processo.setCodigoColaborador(Integer.parseInt(request.getParameter("colaborador")));
             processo.setStatus(status);
+            processo.setMensagem(request.getParameter("mensagemPessoal"));
             processo.setDataCadastro(new Date(System.currentTimeMillis()));
             processo.setDataProcesso(new Date(System.currentTimeMillis()));
 
@@ -422,15 +423,9 @@ public class ServletAnimais extends HttpServlet {
                 notificacao2.setDataCadastro(new Date(System.currentTimeMillis()));
                 notificacao2.setAssunto("Processo de Adoção");
                 notificacao2.setRemetenteNotificacao("Sim");
-
-                notificacao.setMensagemPessoal(request.getParameter("mensagemPessoal"));
-                String msgPessoal = "Mensagem Pessoal deixada pelo usuario:<br>" +
-                        "<br>"+notificacao.getMensagemPessoal();
-
                 notificacao2.setMensagem("<h2>Você possui uma solicitação de Adoção.</h2><br>"+
                         "<br>" +
-                        "Você pode acompanhar este processo em seu \"Painel de Controle\" na coluna \"Adoções\".<br>" +
-                        "<br> "+msgPessoal);
+                        "Você pode acompanhar este processo em seu \"Painel de Controle\" na coluna \"Adoções\".<br>");
 
                 NotificacaoDAO.getInstance().gravaMsg(notificacao2);
 

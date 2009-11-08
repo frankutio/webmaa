@@ -14,6 +14,7 @@ public class Processo {
     private String avaliacao;
     private String descricaoAvaliacao;
     private String notaAvaliacao;
+    private String mensagem;
 
     /**
      * @return the codigo
@@ -153,6 +154,20 @@ public class Processo {
      */
     public void setNotaAvaliacao(String notaAvaliacao) {
         this.notaAvaliacao = notaAvaliacao;
+    }
+
+    /**
+     * @return the mensagem
+     */
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    /**
+     * @param mensagem the mensagem to set
+     */
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
     }
 
 

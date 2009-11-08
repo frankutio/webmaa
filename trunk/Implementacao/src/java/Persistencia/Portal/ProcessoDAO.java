@@ -34,14 +34,16 @@ public class ProcessoDAO {
         try {
             pstmt = conn.prepareStatement(
                     "INSERT INTO processo (FaseProcesso_codigo, Animais_codigo," +
-                    "   Colaborador_codigo, dataprocesso, datacadastro, codigostatus)" +
-                    "VALUES (?, ?, ?, ?, ?, ?)");
+                    "   Colaborador_codigo, dataprocesso, datacadastro, codigostatus, mensagem)" +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?)");
             pstmt.setInt(1, processo.getFaseProcesso());
             pstmt.setInt(2, processo.getCodigoAnimal());
             pstmt.setInt(3, processo.getCodigoColaborador());
             pstmt.setDate(4, new java.sql.Date(processo.getDataProcesso().getTime()));
             pstmt.setDate(5, new java.sql.Date(processo.getDataCadastro().getTime()));
             pstmt.setString(6, processo.getStatus());
+            pstmt.setString(7, processo.getMensagem());
+            
             pstmt.execute();
             pstmt.close();
             conn.close();
