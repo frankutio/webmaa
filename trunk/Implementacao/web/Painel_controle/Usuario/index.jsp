@@ -233,7 +233,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                     </tr>
                     <tr>
                     	<td><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link"  /></td>
-                        <td><a href="/WebMAATeste/gerProcesso?operacao=listar_animais">Acompanhar Doa&ccedil;&otilde;es</a></td>
+                        <td><a href="/WebMAATeste/gerProcesso?operacao=listar_animais&cod_colaborador=${Colaborador.codigo}">Acompanhar Doa&ccedil;&otilde;es</a></td>
                     </tr>
 				</table>				
                <br />
