@@ -1,81 +1,83 @@
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
-<link type="text/css" rel="stylesheet" href="css/geral.css" />
-<link type="text/css" rel="stylesheet" href="css/estilos.css" />
-<link type="text/css" rel="stylesheet" href="css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/WebMAATeste/Painel_controle/Usuario/css/geral.css" />
+<link type="text/css" rel="stylesheet" href="/WebMAATeste/Painel_controle/Usuario/css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="/WebMAATeste/Painel_controle/Usuario/css/menu_drop.css" />
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/jquery.min.js"></script>
 
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/utilidades.js"></script>
-<script type="text/javascript" src="js/maskedinput.js"></script>
-<script type="text/javascript" src="js/menuSuper.js"></script>
+<script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/jquery.js"></script>
+<script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/utilidades.js"></script>
+<script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/maskedinput.js"></script>
+<script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/menuSuper.js"></script>
 
-<script type="text/javascript" src="js/modal.js"></script>
+<script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/modal.js"></script>
 <link type="text/css" rel="stylesheet" href="css/estilo_modal.css" />
 
 
 <script>
 function focoBt(id){
 	if(id ==="doar"){
-		$("#"+id).attr("src","images/botao/bt_doar_light.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_doar_light.png");
 	}
 	
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","images/botao/bt_logoff_light.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
 	}
 	
 	else if(id ==="aprovar"){
-		$("#"+id).attr("src","images/botao/bt_aprovar_light.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar_light.png");
 	}
 	
 	else if(id ==="ok"){
-		$("#"+id).attr("src","images/botao/bt_ok_light.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok_light.png");
 	}
 	
 	else if(id ==="ok1"){
-		$("#"+id).attr("src","images/botao/bt_ok_light.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok_light.png");
 	}
 	
 	else if(id ==="ok2"){
-		$("#"+id).attr("src","images/botao/bt_ok_light.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok_light.png");
 	}
 	
 	else if(id ==="cancelar"){
-		$("#"+id).attr("src","images/botao/bt_cancelar_light.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_light.png");
 	}
 }
 
 function bt(id){
 	if(id ==="doar"){
-		$("#"+id).attr("src","images/botao/bt_doar.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_doar.png");
 	}
 	
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","images/botao/bt_logoff.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff.png");
 	}
 	else if(id ==="aprovar"){
-		$("#"+id).attr("src","images/botao/bt_aprovar.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png");
 	}
 	
 	else if(id ==="ok"){
-		$("#"+id).attr("src","images/botao/bt_ok.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png");
 	}
 	
 	else if(id ==="ok1"){
-		$("#"+id).attr("src","images/botao/bt_ok.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png");
 	}
 	
 	else if(id ==="ok2"){
-		$("#"+id).attr("src","images/botao/bt_ok.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png");
 	}
 	
 	else if(id ==="cancelar"){
-		$("#"+id).attr("src","images/botao/bt_cancelar_vermelho.png");
+		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho.png");
 	}
 }
 </script>
@@ -89,14 +91,14 @@ function bt(id){
 <!-- div com o topo do site -->
 
 <div id="faixaTopo">
-		<div class="imgBannerLeft"><img src="images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
+		<div class="imgBannerLeft"><img src="/WebMAATeste/Painel_controle/Usuario/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
         <div class="imgBannerRight"></div>   	
 </div>
 
 <!-- div com o banner -->
 
 <div id="faixaBanner">
-	<div class="imgBannerInfLeft"><img src="images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+	<div class="imgBannerInfLeft"><img src="/WebMAATeste/Painel_controle/Usuario/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
     <div class="imgBannerInfRight"></div>
 </div>
 
@@ -105,7 +107,7 @@ function bt(id){
 <div id="faixaStatus">
 <table class="grid" style=" margin-top:-6px;">
 	<tr>
-    	<td align="right"><img src="images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='../../index.html';" /></td>
+    	<td align="right"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='../../index.html';" /></td>
     </tr>
 </table>
 </div>
@@ -144,7 +146,7 @@ function bt(id){
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Adoção - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Adoção - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br />          
             
                 <div class="nota_informa">
@@ -161,7 +163,7 @@ function bt(id){
             <table width="80%">
 				<tr>
 				  <td width="28%"><h2>Fase 1/3</h2></td>
-					<td width="72%"><span id="fase1_completa" class="escondeFase"><img src="images/botao/aprova.png" /> &nbsp;Concluida!</span></td>
+					<td width="72%"><span id="fase1_completa" class="escondeFase"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span></td>
 				</tr>
 			</table>
             
@@ -198,7 +200,7 @@ function bt(id){
                             <td align="center">23</td>
                             <td align="center">Feminino</td>
                             <td align="center">0</td>
-                            <td align="center"><a href="#detalhar" name="modal"><img src="images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
+                            <td align="center"><a href="#detalhar" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
                             <td align="center"><input type="radio" name="usr" id="usr" /></td>
                         </tr>
                         <tr class="td_escura">
@@ -207,12 +209,12 @@ function bt(id){
                             <td align="center">44</td>
                             <td align="center">Masculino</td>
                             <td align="center"><span class="obrigatorio">1</span></td>
-                            <td align="center"><a href="#detalharMsg" name="modal"><img src="images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
+                            <td align="center"><a href="#detalharMsg" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
                             <td align="center"><input type="radio" name="usr" id="usrMsg" /></td>
                         </tr>
                     </table>
                     <div align="center" style="width:95%;">
-                    	<a href="#confirm_Aprovacao" name="modal"><img src="images/botao/bt_aprovar.png" id="aprovar" onmouseover="focoBt('aprovar');" onmouseout="bt('aprovar');" class="seta_link" alt="Aprovar" title="Aprovar" /></a>
+                    	<a href="#confirm_Aprovacao" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png" id="aprovar" onmouseover="focoBt('aprovar');" onmouseout="bt('aprovar');" class="seta_link" alt="Aprovar" title="Aprovar" /></a>
                     </div>
                     <br />
                     
@@ -226,7 +228,7 @@ function bt(id){
                     	<table width="80%">
 							<tr>
 				  				<td width="28%"><h2>Fase 2/3</h2></td>
-								<td width="72%"><span id="fase2_completa" class="escondeFase"><img src="images/botao/aprova.png" /> &nbsp;Concluida!</span></td>
+								<td width="72%"><span id="fase2_completa" class="escondeFase"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span></td>
 							</tr>
 						</table>
                         
@@ -269,13 +271,13 @@ function bt(id){
 						</tr>
 					</table>
                     <div align="right" style="width:95%;">
-                    	<img src="images/botao/bt_cancelar_vermelho.png" id="cancelar" onmouseover="focoBt('cancelar');" onmouseout="bt('cancelar');" class="seta_link" alt="Cancelar" title="Cancelar esta Adoção" onclick="cancel_adocao();" />
+                    	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho.png" id="cancelar" onmouseover="focoBt('cancelar');" onmouseout="bt('cancelar');" class="seta_link" alt="Cancelar" title="Cancelar esta Adoção" onclick="cancel_adocao();" />
                     </div>
                     <br />
                     
                     <div id="aprovado" class="escondeFase">
                     
-                    	<span style="color:#060; font-size:14px;"><img src="images/botao/aprova.png" /> &nbsp; Parabéns Fulano, O processo de adoçaõ foi aceito pelo usuario.</span>
+                    	<span style="color:#060; font-size:14px;"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp; Parabéns Fulano, O processo de adoçaõ foi aceito pelo usuario.</span>
                         <br />
                         <br />
                         
@@ -292,12 +294,12 @@ function bt(id){
                         
                         <table class="grid">
                         	<tr>
-                            	<td width="72%"><img src="images/botao/alert.png" /> &nbsp; Afirmo que ja entreguei o animal ao Enteressado:</td>
+                            	<td width="72%"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/alert.png" /> &nbsp; Afirmo que ja entreguei o animal ao Enteressado:</td>
                               <td width="28%" valign="bottom"><input type="checkbox" onclick="finaliarCheck();" /></td>
                           </tr>
                         </table>
                          <div align="center" style="width:95%;">
-                    		<input type="image" src="images/botao/bt_finalizar.png" alt="Finalizar" title="Finalizar Adoção" onclick="mostrar('fase03'); mostrar('fase2_completa');" disabled="disabled" id="btFinalizar" />
+                    		<input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_finalizar.png" alt="Finalizar" title="Finalizar Adoção" onclick="mostrar('fase03'); mostrar('fase2_completa');" disabled="disabled" id="btFinalizar" />
                     	</div>
                         
                     </div>
@@ -354,8 +356,8 @@ function bt(id){
                                		<p> Escolha o tipo de Avaliação</p>
                                     <br />
                                <div align="center" style="width:90%;">
-                					<input type="image" src="images/botao/bt_positiva.png" alt="Positiva" title="Positiva" onclick="mostra('avaliacao','positiva');"  /> &nbsp;&nbsp;
-                                    <input type="image" src="images/botao/bt_negativa.png" alt="Negativa" title="Negativa" onclick="mostra('avaliacao','negativa'); " />
+                					<input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_positiva.png" alt="Positiva" title="Positiva" onclick="mostra('avaliacao','positiva');"  /> &nbsp;&nbsp;
+                                    <input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_negativa.png" alt="Negativa" title="Negativa" onclick="mostra('avaliacao','negativa'); " />
                 				</div>
                                 </div>
                                 
@@ -365,11 +367,11 @@ function bt(id){
                                 	<span class="obrigatorio">Pontuação de 1 a 5</span>
                                     <br />
                                     
-                                    <img src="images/botao/avaliação.png" />
+                                    <img src="/WebMAATeste/Painel_controle/Usuario/images/botao/avaliação.png" />
                                     <br />
                                     
                                      <div align="center" style="width:90%;">
-                                     	<img src="images/botao/bt_ok.png" alt="Ok" title="Ok" class="seta_link" id="ok1" onmouseover="focoBt('ok1');" onmouseout="bt('ok1');" onclick="window.alert('Processo Realizado com Sucesso'); window.location='index.html';" />
+                                     	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png" alt="Ok" title="Ok" class="seta_link" id="ok1" onmouseover="focoBt('ok1');" onmouseout="bt('ok1');" onclick="window.alert('Processo Realizado com Sucesso'); window.location='index.html';" />
                 					</div> 
                                     
                                 </div>
@@ -389,7 +391,7 @@ function bt(id){
                                     <br />
                                     
                                      <div align="center" style="width:90%;">
-                                     	<img src="images/botao/bt_ok.png" alt="Ok" title="Ok" class="seta_link" id="ok2" onmouseover="focoBt('ok2');" onmouseout="bt('ok2');" onclick="window.alert('Processo Realizado com Sucesso'); window.location='index.html';" />
+                                     	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png" alt="Ok" title="Ok" class="seta_link" id="ok2" onmouseover="focoBt('ok2');" onmouseout="bt('ok2');" onclick="window.alert('Processo Realizado com Sucesso'); window.location='index.html';" />
                 					</div> 
                                 </div>                
                                <!-- AVALIAÇÃO NEGATIVA -->
@@ -415,15 +417,15 @@ function bt(id){
                 	<br />
               <table class="grid">
                         <tr>
-                        	<td width="29%" align="right"><a href="cad_edit.html"><img src="images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
+                        	<td width="29%" align="right"><a href="cad_edit.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
                             <td width="71%"><a href="cad_edit.html">Alterar Cadastro</a></td>
                         </tr>
                         <tr>
-                        	<td align="right"><a href="senha_edit.html"><img src="images/botao/senha.png" alt="Alterar Aenha" title="Alterar Senha" class="seta_link" /></a> &nbsp;</td>
+                        	<td align="right"><a href="senha_edit.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/senha.png" alt="Alterar Aenha" title="Alterar Senha" class="seta_link" /></a> &nbsp;</td>
                             <td><a href="senha_edit.html">Alterar Senha</a></td>
                         </tr>
                         <tr>
-                        	<td align="right"><a href="index.html"><img src="images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
+                        	<td align="right"><a href="index.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
                             <td><a href="index.html">Painel de Controle</a></td>
                         </tr>
                     </table>
@@ -436,7 +438,7 @@ function bt(id){
                
                <table class="grid">
                		<tr>
-                    	<td><img src="images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link" /></td>
+                    	<td><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link" /></td>
                         <td><a href="#">Acompanhar Adoção</a></td>
                     </tr>
                </table> 
@@ -487,7 +489,7 @@ function bt(id){
                             
                         	<!-- FOTO DO USUARIO -->            
             					<div id="foto">
-           	  						<img src="foto/fotoUsr.png" />            
+           	  						<img src="/WebMAATeste/Painel_controle/Usuario/foto/fotoUsr.png" />
             					</div>
             				<!-- FOTO -->
                             
@@ -535,13 +537,13 @@ function bt(id){
                                     
                                     <br />
                                     <br />
-                                   <span class="escondeFase obrigatorio" id="usrReprovado"><img src="images/botao/alert.png" alt="alerta" title="alerta" /> &nbsp; Usuario Negado. </span>
+                                   <span class="escondeFase obrigatorio" id="usrReprovado"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/alert.png" alt="alerta" title="alerta" /> &nbsp; Usuario Negado. </span>
                                    
                                    <br />
                                     <br />
                                     
                                     <div align="right">
-                                    	<img src="images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
+                                    	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
                                     </div>
                                 </div>
                             <!-- DETALHES DA PETIÇÃO -->
@@ -562,7 +564,7 @@ function bt(id){
                             
                         	<!-- FOTO DO USUARIO -->            
             					<div id="foto">
-           	  						<img src="foto/fotoUsr.png" />            
+           	  						<img src="/WebMAATeste/Painel_controle/Usuario/foto/fotoUsr.png" />
             					</div>
             				<!-- FOTO -->
                             
@@ -616,7 +618,7 @@ function bt(id){
                                     <br />
                                     
                                     <div align="right">
-                                    	<img src="images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
+                                    	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
                                     </div>
                                 </div>
                             <!-- DETALHES DA PETIÇÃO -->
@@ -673,7 +675,7 @@ function bt(id){
                                     <br />
                                     
                                     <div align="center">
-                                    	<img src="images/botao/bt_ok.png" alt="Ok" title="OK" class="seta_link close" onclick="aprovaUsr();" id="ok" onmouseover="focoBt('ok');" onmouseout="bt('ok');" />
+                                    	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png" alt="Ok" title="OK" class="seta_link close" onclick="aprovaUsr();" id="ok" onmouseover="focoBt('ok');" onmouseout="bt('ok');" />
                                     </div>
                                     <br />
                                     
