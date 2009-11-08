@@ -59,12 +59,12 @@ public class ProcessoDAO {
         PreparedStatement pstmt = null;
         try {
             pstmt = conn.prepareStatement(
-                    "UPDATE processo" +
-                    "SET FaseProcesso_codigo = ?, Animais_codigo = ?," +
-                    "   Colaborador_codigo = ?, dataprocesso = ?, datacadastro = ?," +
-                    "   codigostatus = ?, avaliacao = ?, descricaoavaliacao = ?," +
-                    "   notaavaliacao = ?" +
-                    "WHERE Codigo = ?");
+                    "UPDATE processo " +
+                    "SET FaseProcesso_codigo = ?, Animais_codigo = ?, " +
+                    "   Colaborador_codigo = ?, dataprocesso = ?, datacadastro = ?, " +
+                    "   codigostatus = ?, avaliacao = ?, descricaoavaliacao = ?, " +
+                    "   notaavaliacao = ? " +
+                    "WHERE Codigo = ? ");
             pstmt.setInt(1, processo.getFaseProcesso());
             pstmt.setInt(2, processo.getCodigoAnimal());
             pstmt.setInt(3, processo.getCodigoColaborador());
@@ -86,7 +86,7 @@ public class ProcessoDAO {
 
     /**
      * Fornece a lista dos seus animais que têm processos de adoção abertos.
-     * @param colaborador O colaborador que tem animais sendo doados
+     * @param codigoColaborador O código do colaborador que tem animais sendo doados
      * @return A lista de animais que têm alguém querendo adotar ou <a>null</a>
      */
     public List<Animais> recuperaAnimais(int codigoColaborador) {
@@ -138,7 +138,7 @@ public class ProcessoDAO {
 
     /**
      * Fornece a lista de processos de adoção de um animal.
-     * @param animal O animal em questão
+     * @param codigoAnimal O código do animal em questão
      * @return A lista dos processos de pessoas querendo adotar esse animal
      */
     public List<Processo> recuperaProcessos(int codigoAnimal) {
@@ -178,10 +178,10 @@ public class ProcessoDAO {
 
     /**
      * Retorna o processo do animal que você está adotando.
-     * @param colaborador O colaborador que está adotando um animal
+     * @param codigoColaborador O código do colaborador que está adotando um animal
      * @return O processo referente a essa adoção ou <a>null</a>
      */
-    public Processo recuperaAdocao(Colaborador colaborador) {
+    public Processo recuperaAdocao(int codigoColaborador) {
         Connection conn = Conexao.getInstance().criaConexao();
         if (conn == null) return null;
         Processo processo = null;
@@ -192,7 +192,7 @@ public class ProcessoDAO {
                     "FROM processo" +
                     "WHERE Colaborador_codigo = ?" +
                     "   AND codigostatus = 'Sim'");
-            pstmt.setInt(1, colaborador.getCodigo());
+            pstmt.setInt(1, codigoColaborador);
             ResultSet rs = pstmt.executeQuery();
             if (rs.last()) {
                 processo = new Processo();
