@@ -154,21 +154,22 @@ function bt(id){
           </div>
             <!-- FOTO DO USUARIO -->            
             <div id="foto">
-           	  <img src="../../gato/images/miniaturas/loky.png" />            
+           	  <img src="/WebMAATeste/${Animal.especie}/images/miniaturas/${Animal.endFoto}" />
             </div>
             <!-- FOTO -->
             
             <!-- DADOS DO USUARIO -->            
-            <div id="dadosUsuario">
+            <div id="dadosUsuario">           
+            
+            <!-- fase 01 -->
+            <div id="fase01">
+
             <table width="80%">
 				<tr>
 				  <td width="28%"><h2>Fase 1/3</h2></td>
 					<td width="72%"><span id="fase1_completa" class="escondeFase"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span></td>
 				</tr>
 			</table>
-            
-            <!-- fase 01 -->
-            <div id="fase01">
             
             <br />       
             <div class="nota_destaque">Dado(s) do(s) Enteressado(s)</div> 
@@ -194,6 +195,31 @@ function bt(id){
                             <td width="14%" align="center" class="grid_titulo">Detalhar</td>
                             <td width="14%" align="center" class="grid_titulo">Selecionar</td>
                         </tr>
+                        <c:forEach items="${Processos}" var="sp">
+                            <tr>
+                              <td align="center">${sp.colaborador.codigo}</td>
+                                <td align="center">${sp.colaborador.nome}</td>
+                                <td align="center">${sp.colaborador.dataNascimento}</td>
+                                <td align="center">
+                                    <c:if test="${sp.colaborador.sexo == 'M'}">
+                                        Masculino
+                                    </c:if>
+                                    <c:if test="${sp.colaborador.sexo == 'F'}">
+                                        Feminino
+                                    </c:if>
+                                </td>
+                                <td align="center">
+                                    <c:if test="${sp.processo.mensagem == null}">
+                                        0
+                                    </c:if>
+                                    <c:if test="${sp.processo.mensagem != null}">
+                                        <span class="obrigatorio">1</span>
+                                    </c:if>
+                                </td>
+                                <td align="center"><a href="#detalhar" name="modal" onclick="mostra('${sp.colaborador.codigo}')"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
+                                <td align="center"><input type="radio" name="usr" id="usr" value="${sp.processo.codigo}" /></td>
+                            </tr>
+                        </c:forEach>
                         <tr>
                           <td align="center">001</td>
                             <td align="center">Maria Fulana Aparecida</td>
@@ -481,6 +507,8 @@ function bt(id){
                     
 					<div id="detalhar" class="window" >
   						<div class="cont_modal">
+
+                            <div id="${sp.colaborador.codigo}" class="esconde">
                         	
                             <div class="bordaFaixaLeft" style="width:95%; margin-left:2%;">
                             	<span>Detalhes do Usuário</span>
@@ -495,23 +523,23 @@ function bt(id){
                             
                             <!-- DADOS DO USUARIO -->            
             					<div id="dadosUsuario" style="width:370px;">
-                                		<h3 class="titulo3">Maria Fulana Apareceida</h3>
+                                		<h3 class="titulo3">${sp.colaborador.nome}</h3>
                                         <table class="grid dadosModal" width="100%">
                                         	<tr>
                                             	<td width="24%" align="right">Cod: &nbsp;</td>
-                                                <td width="76%"><strong>001</strong></td>
+                                                <td width="76%"><strong>${sp.colaborador.codigo}</strong></td>
                                             </tr>
                                             <tr>
                                             	<td align="right">Idade: &nbsp;</td>
-                                                <td><strong>23</strong></td>
+                                                <td><strong>${sp.colaborador.dataNascimento}</strong></td>
                                           </tr>
                                             <tr>
                                             	<td align="right">Sexo: &nbsp;</td>
-                                                <td><strong>Feminino</strong></td>
+                                                <td><strong>${sp.colaborador.sexo}</strong></td>
                                           </tr>
                                           <tr>
                                             	<td align="right">Estado: &nbsp;</td>
-                                                <td><strong>DF</strong></td>
+                                                <td><strong>${sp.colaborador.uf}</strong></td>
                                           </tr>
                                         </table>
                                 </div>
@@ -525,21 +553,22 @@ function bt(id){
                                     <br />
                                     
                                     <p>
-                                    	Fulana Maria Aparecida, demonstrou enteresse em seu animal. <br />
+                                    	${sp.colaborador.nome}, demonstrou enteresse em seu animal. <br />
                                         
                                     </p>
-                                    <span class="obrigatorio" style="font-size:14px">Mensagem Pessoal enviada por Fulana.</span>
+                                    <span class="obrigatorio" style="font-size:14px">Mensagem Pessoal enviada por ${sp.colaborador.nome}.</span>
                                     
                                     <br />
                                     <br />
                                     
-                                    <textarea rows="5" cols="60" readonly="readonly"></textarea>
+                                    <textarea rows="5" cols="60" readonly="readonly">${sp.processo.mensagem}</textarea>
                                     
                                     <br />
                                     <br />
                                    <span class="escondeFase obrigatorio" id="usrReprovado"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/alert.png" alt="alerta" title="alerta" /> &nbsp; Usuario Negado. </span>
                                    
                                    <br />
+
                                     <br />
                                     
                                     <div align="right">
@@ -547,6 +576,8 @@ function bt(id){
                                     </div>
                                 </div>
                             <!-- DETALHES DA PETIÇÃO -->
+                        </div>
+
                         </div>
 
 					</div>
