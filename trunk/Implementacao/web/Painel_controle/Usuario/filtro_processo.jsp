@@ -16,6 +16,18 @@
 <script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/menuSuper.js"></script>
 
 <script>
+
+$(function() {
+	$(".botaoExibir").mouseover(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir_light.png");
+	});
+
+	$(".botaoExibir").mouseout(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png");
+	});
+
+});
+
 function focoBt(id){
 	if(id ==="doar"){
 		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_doar_light.png");
@@ -29,13 +41,7 @@ function focoBt(id){
 		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir_light.png");
 	}
 	
-	else if(id ==="exibir"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir_light.png");
-	}
 	
-	else if(id ==="exibir2"){
-		$("#"+id).attr("src","images/botao/bt_exibir_light.png");
-	}
 }
 
 function bt(id){
@@ -50,13 +56,7 @@ function bt(id){
 		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir.png");
 	}
 	
-	else if(id ==="exibir"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png");
-	}
 	
-	else if(id ==="exibir2"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png");
-	}
 }
 </script>
 
@@ -130,56 +130,31 @@ function bt(id){
             
                 
                 <p>
-                	Escolha em um dos blocos abaixo o processo que voc&ecirc; gostaria de acompanhar. 
-                   
+                	Para detalhar um processo, clique no botão correspondente ao animal que você gostaria de "Acompanhar".
+
                 </p>
                 
                 <br />
                 <br />
                 
-                <div style="width:45%; float:left;">
-                	<div class="bordaFaixaLeft"><span>Minhas Ado&ccedil;&otilde;es</span></div>
-                    <br />
-                    
-                    Aqui voc&ecirc; pode acompanhar os pedidos de Ado&ccedil;&atilde;o feitos por voc&ecirc;.
-                    <br />
-                    <br />
-                    <table class="grid" width="100%">
-                    	<tr>
-                        	<td class="td_escura">
-                            	<span style="color:#F00;">Existe um Processo de Ado&ccedil;&atilde;o em aberto.</span> &nbsp; <br />
-                            	<div align="center">
-                                	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir" onmouseover="focoBt('exibir');" onmouseout="bt('exibir');" onclick="window.location='acompanhar_adocao_usuario.jsp';" />
-                                </div>
-                            </td>
-                        </tr>
-                    </table>                   
-                    
-                </div>
-                
-                <div style="width:45%; float:right;">
-                	<div class="bordaFaixaLeft"><span>Minhas Doa&ccedil;&otilde;es</span></div>
-                    
-                    <br />
-                    
-                    Aqui voc&ecirc; gerencia os seus animais que est&atilde;o em processo de ado&ccedil;&atilde;o.
-                    <br />
-                    <br />
-                    
-                    <table class="grid" width="100%">
-                    	<tr>
-                        	<td class="td_escura">
-                            	<span style="color:#F00;">Existe uma solicita&ccedil;&atilde;o de Ado&ccedil;&atilde; em aberto.</span> &nbsp; <br />
-                            	<div align="center">
-                                	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir2" onmouseover="focoBt('exibir2');" onmouseout="bt('exibir2');" onclick="window.location='acompanhar_doacao_usuario.jsp';" />
-                                </div>
-                            </td>
-                        </tr>
-                    </table> 
-                    
-                </div>
-                
-                <div class="clear"></div>
+                <table class="grid" style="width:80%;">
+                	<tr>
+                    	<td width="13%" align="center" class="grid_titulo">Foto</td>
+                    	<td width="32%" align="center" class="grid_titulo">Nome</td>
+                        <td width="10%" align="center" class="grid_titulo">Tipo</td>
+                        <td width="17%" align="center" class="grid_titulo">Raça</td>
+                        <td width="12%" align="center" class="grid_titulo">Sexo</td>
+                        <td width="16%" align="center" class="grid_titulo">Detalhar</td>
+                    </tr>
+                    <tr class="td_escura">
+                    	<td align="center"><img src="/WebMAATeste/${Animal.especie}/images/miniaturas/${Animal.endFoto}" alt="gato" title="" width="69" height="59" /></td>
+                    	<td align="center">Lucky</td>
+                        <td align="center">Gato</td>
+                        <td align="center">Comum</td>
+                        <td align="center">Macho</td>
+                        <td align="center"><a href="/WebMAATeste/Painel_controle/Usuario/acompanhar_doacao_usuario.jsp"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" align="Exibir" title="Exibir" class="seta_link botaoExibir" /></a></td>
+                    </tr>
+                </table>
             
             <!-- CONTEUDO DO PAINEL -->
             <div id="cont_painel">
