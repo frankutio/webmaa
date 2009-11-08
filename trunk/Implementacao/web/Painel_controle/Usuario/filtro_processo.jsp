@@ -146,14 +146,20 @@ function bt(id){
                         <td width="12%" align="center" class="grid_titulo">Sexo</td>
                         <td width="16%" align="center" class="grid_titulo">Detalhar</td>
                     </tr>
-                    <tr class="td_escura">
-                    	<td align="center"><img src="/WebMAATeste/${Animal.especie}/images/miniaturas/${Animal.endFoto}" alt="gato" title="" width="69" height="59" /></td>
-                    	<td align="center">Lucky</td>
-                        <td align="center">Gato</td>
-                        <td align="center">Comum</td>
-                        <td align="center">Macho</td>
-                        <td align="center"><a href="/WebMAATeste/Painel_controle/Usuario/acompanhar_doacao_usuario.jsp"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" align="Exibir" title="Exibir" class="seta_link botaoExibir" /></a></td>
-                    </tr>
+                    <c:forEach items="${Animais}" var="Animal">
+                        <tr class="td_escura">
+                            <td align="center"><img src="/WebMAATeste/${Animal.especie}/images/miniaturas/${Animal.endFoto}" alt="gato" title="" width="69" height="59" /></td>
+                            <td align="center">${Animal.nome}</td>
+                            <td align="center">${Animal.especie}</td>
+                            <c:forEach items="${lstRaca}" var="lstRaca">
+                                <c:if test="${Animal.codigoRaca == lstRaca.codigo}">
+                                    <td align="center">${lstRaca.descricao}</td>
+                                </c:if>
+                            </c:forEach>
+                            <td align="center">${Animal.sexo}</td>
+                            <td align="center"><a href="/WebMAATeste/Painel_controle/Usuario/acompanhar_doacao_usuario.jsp"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_exibir.png" align="Exibir" title="Exibir" class="seta_link botaoExibir" /></a></td>
+                        </tr>
+                   </c:forEach>
                 </table>
             
             <!-- CONTEUDO DO PAINEL -->
