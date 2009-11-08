@@ -179,7 +179,7 @@ function bt(id){
              <br />
 			 
 			 <div align="right">
-			 	<a href="index.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_voltar.png" alt="Voltar" title="Voltar" class="seta_link" /></a>
+			 	<a href="/WebMAATeste/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_voltar.png" alt="Voltar" title="Voltar" class="seta_link" /></a>
 			 </div>
           </div>
             <!-- CONTEUDO DO PAINEL -->
