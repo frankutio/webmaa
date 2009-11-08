@@ -42,6 +42,10 @@
         <servlet-name>ServletAtivacao</servlet-name>
         <servlet-class>Controle.Portal.ServletAtivacao</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletProcesso</servlet-name>
+        <servlet-class>Controle.Portal.ServletProcesso</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletColaborador</servlet-name>
         <url-pattern>/NavUsr</url-pattern>
@@ -154,6 +158,10 @@
     <servlet-mapping>
         <servlet-name>ServletAtivacao</servlet-name>
         <url-pattern>/Ativacao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletProcesso</servlet-name>
+        <url-pattern>/gerProcesso</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

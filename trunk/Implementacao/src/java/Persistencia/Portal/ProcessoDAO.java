@@ -1,6 +1,7 @@
 
 package Persistencia.Portal;
 
+import Entidade.Portal.Animais;
 import Entidade.Portal.Colaborador;
 import Entidade.Portal.Processo;
 import java.sql.Connection;
@@ -82,24 +83,73 @@ public class ProcessoDAO {
     }
 
     /**
-     * Fornece a lista de todos os processos de pessoas querendo adotar os
-     * animais que você está doando.
+     * Fornece a lista dos seus animais que têm processos de adoção abertos.
      * @param colaborador O colaborador que tem animais sendo doados
-     * @return A lista de processos de adoção ou <a>null</a>
+     * @return A lista de animais que têm alguém querendo adotar ou <a>null</a>
      */
-    public List<Processo> recuperaDoacoes(Colaborador colaborador) {
+    public List<Animais> recuperaAnimais(Colaborador colaborador) {
+        Connection conn = Conexao.getInstance().criaConexao();
+        if (conn == null) return null;
+        List<Animais> animais = new ArrayList<Animais>();
+        PreparedStatement pstmt = null;
+        try {
+            pstmt = conn.prepareStatement(
+                    "SELECT animais.*" +
+                    "FROM processo, animais" +
+                    "WHERE processo.animais_codigo = animais.codigo" +
+                    "   AND animais.Colaborador_codigo = ?" +
+                    "   AND processo.codigostatus = 'Sim'");
+            pstmt.setInt(1, colaborador.getCodigo());
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Animais animal = new Animais();
+                animal.setCodigo(rs.getInt("codigo"));
+                animal.setCor2(rs.getInt("Cor_SegCor"));
+                animal.setCor1(rs.getInt("Cor_codigo"));
+                animal.setCodigoPelagem(rs.getInt("TipoPelo_codigo"));
+                animal.setPorte(rs.getInt("PorteAnimal_codigo"));
+                animal.setCodigoRaca(rs.getInt("TipoRaca_codigo"));
+                animal.setSexo(rs.getString("sexo"));
+                animal.setdescricao(rs.getString("descricao"));
+                animal.setEndFoto(rs.getString("foto"));
+                animal.setDataCadastro(rs.getDate("datacadastro"));
+                animal.setIdade(rs.getInt("idade"));
+                animal.setNome(rs.getString("nome"));
+                animal.setVacinado(rs.getString("vacinado"));
+                animal.setdescricaoVacina(rs.getString("descricaovacinas"));
+                animal.setLaudoVeterinario(rs.getString("laudoveterinario"));
+                animal.setLocalAnimal(rs.getString("localanimal"));
+                animal.setEspecie(rs.getString("tipoespecie"));
+                animal.setCodigoFormaEnvio(rs.getInt("TipoFormaEnvio_codigo"));
+                animal.setCodigoUsuario(rs.getInt("Colaborador_codigo"));
+                animais.add(animal);
+            }
+            rs.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (animais.size() > 0) return animais;
+        else return null;
+    }
+
+    /**
+     * Fornece a lista de processos de adoção de um animal.
+     * @param animal O animal em questão
+     * @return A lista dos processos de pessoas querendo adotar esse animal
+     */
+    public List<Processo> recuperaProcessos(Animais animal) {
         Connection conn = Conexao.getInstance().criaConexao();
         if (conn == null) return null;
         List<Processo> processos = new ArrayList<Processo>();
         PreparedStatement pstmt = null;
         try {
             pstmt = conn.prepareStatement(
-                    "SELECT processo.*" +
-                    "FROM processo, animais" +
-                    "WHERE processo.animais_codigo = animais.codigo" +
-                    "   AND animais.Colaborador_codigo = ?" +
-                    "   AND processo.codigostatus = 'Sim'");
-            pstmt.setInt(1, colaborador.getCodigo());
+                    "SELECT *" +
+                    "FROM processo" +
+                    "WHERE animais_codigo = ?");
+            pstmt.setInt(1, animal.getCodigo());
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 Processo processo = new Processo();
@@ -120,7 +170,8 @@ public class ProcessoDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return processos;
+        if (processos.size() > 0) return processos;
+        else return null;
     }
 
     /**
