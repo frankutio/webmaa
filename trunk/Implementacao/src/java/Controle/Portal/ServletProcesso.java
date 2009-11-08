@@ -68,8 +68,8 @@ public class ServletProcesso extends HttpServlet {
             List<SuperProcesso> superProcessos = new ArrayList<SuperProcesso>();
             for (Processo p : ProcessoDAO.getInstance().recuperaProcessos(codigoAnimal)) {
                 SuperProcesso superProc = new SuperProcesso();
-                superProc.processo = p;
-                superProc.colaborador = PortalColabDAO.getInstance().le(p.getCodigoColaborador());
+                superProc.setProcesso(p);
+                superProc.setColaborador(PortalColabDAO.getInstance().le(p.getCodigoColaborador()));
                 superProcessos.add(superProc);
             }
             request.setAttribute("Processos", superProcessos);
@@ -83,9 +83,9 @@ public class ServletProcesso extends HttpServlet {
         else if (operacao.equals("ver_adocao")) {
             int codigoColaborador = Integer.parseInt(request.getParameter("cod_colaborador"));
             SuperProcesso superProc = new SuperProcesso();
-            superProc.processo = ProcessoDAO.getInstance().recuperaAdocao(codigoColaborador);
-            superProc.colaborador = PortalColabDAO.getInstance().le(superProc.processo.getCodigoColaborador());
-            superProc.animal = AnimalDAO.getInstance().preparaAnimal(superProc.processo.getCodigoAnimal());
+            superProc.setProcesso(ProcessoDAO.getInstance().recuperaAdocao(codigoColaborador));
+            superProc.setColaborador(PortalColabDAO.getInstance().le(superProc.getProcesso().getCodigoColaborador()));
+            superProc.setAnimal(AnimalDAO.getInstance().preparaAnimal(superProc.getProcesso().getCodigoAnimal()));
         }
 
 
