@@ -26,6 +26,7 @@ public class ProcessoDAO {
     public void grava(Processo processo) throws Exception {
         Connection conn = Conexao.getInstance().criaConexao();
         if (conn == null) {
+            System.out.println("Não conectou.");
             throw new Exception("Não foi possível abrir conexão com o banco");
         }
         PreparedStatement pstmt = null;
@@ -44,6 +45,7 @@ public class ProcessoDAO {
             pstmt.close();
             conn.close();
         } catch (SQLException e) {
+            System.out.println("Não executou a query.");
             throw new Exception(e);
         }
     }
