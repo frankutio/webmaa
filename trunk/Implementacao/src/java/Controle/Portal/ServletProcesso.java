@@ -1,14 +1,8 @@
 package Controle.Portal;
 
 import Entidade.Portal.Animais;
-import Entidade.Portal.Cor;
-import Entidade.Portal.Pelagem;
-import Entidade.Portal.Porte;
 import Entidade.Portal.Processo;
 import Entidade.Portal.SuperProcesso;
-import Entidade.Portal.Raca;
-import Entidade.Portal.TipoEnvio;
-import Persistencia.Portal.ColaboradorDAO;
 import Persistencia.Portal.AnimalDAO;
 import Persistencia.Portal.CorDAO;
 import Persistencia.Portal.EnvioDAO;
