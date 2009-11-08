@@ -96,11 +96,11 @@ public class ProcessoDAO {
         PreparedStatement pstmt = null;
         try {
             pstmt = conn.prepareStatement(
-                    "SELECT animais.*" +
-                    "FROM processo, animais" +
-                    "WHERE processo.animais_codigo = animais.codigo" +
-                    "   AND animais.Colaborador_codigo = ?" +
-                    "   AND processo.codigostatus = 'Sim'");
+                    "SELECT animais.* " +
+                    "FROM processo, animais " +
+                    "WHERE processo.animais_codigo = animais.codigo " +
+                    "   AND animais.Colaborador_codigo = ? " +
+                    "   AND processo.codigostatus = 'Sim' ");
             pstmt.setInt(1, codigoColaborador);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -148,9 +148,9 @@ public class ProcessoDAO {
         PreparedStatement pstmt = null;
         try {
             pstmt = conn.prepareStatement(
-                    "SELECT *" +
-                    "FROM processo" +
-                    "WHERE animais_codigo = ?");
+                    "SELECT * " +
+                    "FROM processo " +
+                    "WHERE animais_codigo = ? ");
             pstmt.setInt(1, codigoAnimal);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
