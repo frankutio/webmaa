@@ -8,7 +8,7 @@ import Entidade.Portal.Processo;
 import Entidade.Portal.SuperProcesso;
 import Entidade.Portal.Raca;
 import Entidade.Portal.TipoEnvio;
-import Entidade.Portal.UF;
+import Persistencia.Portal.ColaboradorDAO;
 import Persistencia.Portal.AnimalDAO;
 import Persistencia.Portal.CorDAO;
 import Persistencia.Portal.EnvioDAO;
@@ -29,11 +29,13 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ServletProcesso extends HttpServlet {
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
@@ -57,16 +59,11 @@ public class ServletProcesso extends HttpServlet {
             int codigoDono = Integer.parseInt(request.getParameter("cod_colaborador"));
             List<Animais> animais = ProcessoDAO.getInstance().recuperaAnimais(codigoDono);
             request.setAttribute("Animais", animais);
-            List<Cor> lstCor = CorDAO.getInstance().leTodos();
-            request.setAttribute("lstCor", lstCor);
-            List<Porte> lstPorte = PorteDAO.getInstance().leTodos();
-            request.setAttribute("lstPorte", lstPorte);
-            List<TipoEnvio> lstEnvio = EnvioDAO.getInstance().leTodos();
-            request.setAttribute("lstEnvio", lstEnvio);
-            List<Pelagem> lstPelagem = PelagemDAO.getInstance().leTodos();
-            request.setAttribute("lstPelagem", lstPelagem);
-            List<Raca> lstRaca = RacaDAO.getInstance().leTodos();
-            request.setAttribute("lstRaca", lstRaca);
+            request.setAttribute("lstCor", CorDAO.getInstance().leTodos());
+            request.setAttribute("lstPorte", PorteDAO.getInstance().leTodos());
+            request.setAttribute("lstEnvio", EnvioDAO.getInstance().leTodos());
+            request.setAttribute("lstPelagem", PelagemDAO.getInstance().leTodos());
+            request.setAttribute("lstRaca", RacaDAO.getInstance().leTodos());
             proximaPagina = "Painel_controle/Usuario/filtro_processo.jsp";
         }
 
@@ -79,17 +76,23 @@ public class ServletProcesso extends HttpServlet {
                 SuperProcesso superProc = new SuperProcesso();
                 superProc.processo = p;
                 superProc.colaborador = PortalColabDAO.getInstance().le(p.getCodigoColaborador());
-                superProc.animal = AnimalDAO.getInstance().preparaAnimal(p.getCodigoAnimal());
                 superProcessos.add(superProc);
             }
             request.setAttribute("Processos", superProcessos);
-            List<UF> lstUF = UFDAO.getInstance().leTodos();
-            request.setAttribute("lstUF", lstUF);
+            request.setAttribute("lstUF", UFDAO.getInstance().leTodos());
+            request.setAttribute("Animal", AnimalDAO.getInstance().preparaAnimal(codigoAnimal));
             proximaPagina = "Painel_controle/Usuario/detalhar_processo.jsp";
         }
 
     // -------------------------- ADOÇÃO ------------------------------------ //
 
+        else if (operacao.equals("ver_adocao")) {
+            int codigoColaborador = Integer.parseInt(request.getParameter("cod_colaborador"));
+            SuperProcesso superProc = new SuperProcesso();
+            superProc.processo = ProcessoDAO.getInstance().recuperaAdocao(codigoColaborador);
+            superProc.colaborador = PortalColabDAO.getInstance().le(superProc.processo.getCodigoColaborador());
+            superProc.animal = AnimalDAO.getInstance().preparaAnimal(superProc.processo.getCodigoAnimal());
+        }
 
 
         //PARA DIRECIONAR AS PAGINAS PARA O LOCAL CERTO.
