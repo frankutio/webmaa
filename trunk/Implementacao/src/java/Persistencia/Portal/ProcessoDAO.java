@@ -177,6 +177,43 @@ public class ProcessoDAO {
         else return null;
     }
 
+    public Processo leProcesso(int codigoProcesso) {
+        Connection conn = Conexao.getInstance().criaConexao();
+        if (conn == null) return null;
+        Processo processo = null;
+        PreparedStatement pstmt = null;
+        try {
+            pstmt = conn.prepareStatement("" +
+                    "SELECT * " +
+                    "FROM processo " +
+                    "WHERE codigo = ? ");
+
+            pstmt.setInt(1, codigoProcesso);
+            
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.last()) {
+                processo = new Processo();
+                processo.setCodigo(rs.getInt(1));
+                processo.setFaseProcesso(rs.getInt(2));
+                processo.setCodigoAnimal(rs.getInt(3));
+                processo.setCodigoColaborador(rs.getInt(4));
+                processo.setDataProcesso(rs.getDate(5));
+                processo.setDataCadastro(rs.getDate(6));
+                processo.setStatus(rs.getString(7));
+                processo.setAvaliacao(rs.getString(8));
+                processo.setDescricaoAvaliacao(rs.getString(9));
+                processo.setNotaAvaliacao(rs.getString(10));
+                processo.setMensagem(rs.getString(11));
+            }
+            rs.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return processo;
+    }
+
     /**
      * Retorna o processo do animal que você está adotando.
      * @param codigoColaborador O código do colaborador que está adotando um animal

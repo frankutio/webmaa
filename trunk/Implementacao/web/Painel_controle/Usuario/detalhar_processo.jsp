@@ -18,7 +18,7 @@
 <script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/menuSuper.js"></script>
 
 <script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/modal.js"></script>
-<link type="text/css" rel="stylesheet" href="css/estilo_modal.css" />
+<link type="text/css" rel="stylesheet" href="/WebMAATeste/Painel_controle/Usuario/css/estilo_modal.css" />
 
 
 <script>
@@ -82,6 +82,50 @@ function bt(id){
 }
 </script>
 
+
+<script>
+function exibeModal1(e) {
+    e.preventDefault();
+
+    var id = "#divModal";
+
+    var maskHeight = $(document).height();
+    var maskWidth = $(document).width();
+
+    $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+    $('#mask').fadeIn(1000);
+    $('#mask').fadeTo("slow",0.8);
+
+    //Get the window height and width
+    var winH = $(window).height();
+    var winW = $(window).width();
+
+    $(id).css('top',  '285px');
+    $(id).css('left', winW/2-$(id).width()/2);
+
+    $(id).fadeIn(2000);
+
+}
+
+$(function() {
+    $(".linkDetalhar").click(function(e) {
+        $.get('/WebMAATeste/gerProcesso', {
+            operacao: "recupera_modal",
+            codigoProcesso: $(this).attr("id")}, function(resposta) {
+                console.log(resposta);
+                $("#dinamico").html(resposta);
+            }, "html");
+        exibeModal1(e);
+    });
+
+    $('.window .close').click(function (e) {
+		e.preventDefault();
+    });
+    
+});
+
+</script>
 </head>
 
 <body>
@@ -162,7 +206,7 @@ function bt(id){
             <div id="dadosUsuario">           
             
             <!-- fase 01 -->
-            <div id="fase01">
+            <div id="fase01" class="usrInput">
 
             <table width="80%">
 				<tr>
@@ -191,7 +235,6 @@ function bt(id){
                     	<tr>
                             <td width="8%" align="center" class="grid_titulo">Cod</td>
                             <td width="38%" align="center" class="grid_titulo">Nome</td>
-                            <td width="10%" align="center" class="grid_titulo">Idade</td>
                             <td width="13%" align="center" class="grid_titulo">Sexo</td>
                             <td width="17%" align="center" class="grid_titulo">Mensagem</td>
                             <td width="14%" align="center" class="grid_titulo">Detalhar</td>
@@ -201,7 +244,6 @@ function bt(id){
                             <tr>
                               <td align="center">${sp.colaborador.codigo}</td>
                                 <td align="center">${sp.colaborador.nome}</td>
-                                <td align="center">${sp.colaborador.dataNascimento}</td>
                                 <td align="center">
                                     <c:if test="${sp.colaborador.sexo == 'M'}">
                                         Masculino
@@ -211,35 +253,17 @@ function bt(id){
                                     </c:if>
                                 </td>
                                 <td align="center">
-                                    <c:if test="${sp.processo.mensagem == null}">
+                                    <c:if test="${empty sp.processo.mensagem}">
                                         0
                                     </c:if>
-                                    <c:if test="${sp.processo.mensagem != null}">
+                                    <c:if test="${!empty sp.processo.mensagem}">
                                         <span class="obrigatorio">1</span>
                                     </c:if>
                                 </td>
-                                <td align="center"><a href="#detalhar" name="modal" onclick="mostra('${sp.colaborador.codigo}')"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
-                                <td align="center"><input type="radio" name="usr" id="usr" value="${sp.processo.codigo}" /></td>
+                                <td align="center"><a href="#divModal" class="linkDetalhar" id="${sp.processo.codigo}" ><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
+                                <td align="center"><input type="radio" name="usr" value="${sp.processo.codigo}" /></td>
                             </tr>
                         </c:forEach>
-                        <tr>
-                          <td align="center">001</td>
-                            <td align="center">Maria Fulana Aparecida</td>
-                            <td align="center">23</td>
-                            <td align="center">Feminino</td>
-                            <td align="center">0</td>
-                            <td align="center"><a href="#detalhar" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
-                            <td align="center"><input type="radio" name="usr" id="usr" /></td>
-                        </tr>
-                        <tr class="td_escura">
-                          <td align="center">001</td>
-                            <td align="center">Jos√© Sicrano Aparecido</td>
-                            <td align="center">44</td>
-                            <td align="center">Masculino</td>
-                            <td align="center"><span class="obrigatorio">1</span></td>
-                            <td align="center"><a href="#detalharMsg" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
-                            <td align="center"><input type="radio" name="usr" id="usrMsg" /></td>
-                        </tr>
                     </table>
                     <div align="center" style="width:95%;">
                     	<a href="#confirm_Aprovacao" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png" id="aprovar" onmouseover="focoBt('aprovar');" onmouseout="bt('aprovar');" class="seta_link" alt="Aprovar" title="Aprovar" /></a>
@@ -449,10 +473,6 @@ function bt(id){
                             <td width="71%"><a href="cad_edit.html">Alterar Cadastro</a></td>
                         </tr>
                         <tr>
-                        	<td align="right"><a href="senha_edit.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/senha.png" alt="Alterar Aenha" title="Alterar Senha" class="seta_link" /></a> &nbsp;</td>
-                            <td><a href="senha_edit.html">Alterar Senha</a></td>
-                        </tr>
-                        <tr>
                         	<td align="right"><a href="index.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
                             <td><a href="index.html">Painel de Controle</a></td>
                         </tr>
@@ -460,29 +480,7 @@ function bt(id){
                     
               </div>
              <!-- LOGIN -->
-             <br />
-             <div class="bordaFaixaLeft"><span>Acompanhar</span></div>
-              	<br />
-               
-               <table class="grid">
-               		<tr>
-                    	<td><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver Ado√ß√£o" title="Acompanhar Ado√ß√£o" class="seta_link" /></td>
-                        <td><a href="#">Acompanhar Ado√ß√£o</a></td>
-                    </tr>
-               </table> 
-               <br />
-             <div class="bordaFaixaLeft"><span>Doa√ß√£o</span></div>
-              	<br />
-               
-               <table class="grid">
-               		<tr>
-                    	<td valign="top" align="center" style="background:#EEE;"><span class="obrigatorio">1</span></td>
-                        <td><a href="#listaCad_animal" name="modal">Animal Cadastrado</a></td>
-                 </tr>
-                 <tr>
-                 	<td colspan="2" align="center">&nbsp;</td>
-                 </tr>
-               </table> 
+            
                        
 			</div>
 		<!-- Fim das colunas -->
@@ -505,109 +503,59 @@ function bt(id){
 </div>
 
 <div id="boxes">
-                    <!-- Janela Modal com caixa de di√°logo -->  
-                    
-					<div id="detalhar" class="window" >
-  						<div class="cont_modal">
+                    <!-- Janela Modal com caixa de di·logo -->
 
-                            <div id="${sp.colaborador.codigo}" class="esconde">
-                        	
+					<div id="divModal" class="window" >
+  						
+                        <div class="cont_modal">
+
                             <div class="bordaFaixaLeft" style="width:95%; margin-left:2%;">
-                            	<span>Detalhes do Usu√°rio</span>
+                            	<span>Detalhes do Usu·rio</span>
                             </div>
-                            <br />
-                            
-                        	<!-- FOTO DO USUARIO -->            
-            					<div id="foto">
-           	  						<img src="/WebMAATeste/Painel_controle/Usuario/foto/fotoUsr.png" />
-            					</div>
-            				<!-- FOTO -->
-                            
-                            <!-- DADOS DO USUARIO -->            
-            					<div id="dadosUsuario" style="width:370px;">
-                                		<h3 class="titulo3">${sp.colaborador.nome}</h3>
-                                        <table class="grid dadosModal" width="100%">
-                                        	<tr>
-                                            	<td width="24%" align="right">Cod: &nbsp;</td>
-                                                <td width="76%"><strong>${sp.colaborador.codigo}</strong></td>
-                                            </tr>
-                                            <tr>
-                                            	<td align="right">Idade: &nbsp;</td>
-                                                <td><strong>${sp.colaborador.dataNascimento}</strong></td>
-                                          </tr>
-                                            <tr>
-                                            	<td align="right">Sexo: &nbsp;</td>
-                                                <td><strong>${sp.colaborador.sexo}</strong></td>
-                                          </tr>
-                                          <tr>
-                                            	<td align="right">Estado: &nbsp;</td>
-                                                <td><strong>${sp.colaborador.uf}</strong></td>
-                                          </tr>
-                                        </table>
-                                </div>
-                            <!-- DADOS DO USUARIO -->
-                             
-                                <div class="clear"></div>
-                                
-                            <!-- DETALHES DA PETI√á√ÉO -->
-                                <div id="conteudoDetalhe">
-                                	<br />
-                                    <br />
-                                    
-                                    <p>
-                                    	${sp.colaborador.nome}, demonstrou enteresse em seu animal. <br />
-                                        
-                                    </p>
-                                    <span class="obrigatorio" style="font-size:14px">Mensagem Pessoal enviada por ${sp.colaborador.nome}.</span>
-                                    
-                                    <br />
-                                    <br />
-                                    
-                                    <textarea rows="5" cols="60" readonly="readonly">${sp.processo.mensagem}</textarea>
-                                    
-                                    <br />
-                                    <br />
-                                   <span class="escondeFase obrigatorio" id="usrReprovado"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/alert.png" alt="alerta" title="alerta" /> &nbsp; Usuario Negado. </span>
-                                   
-                                   <br />
 
-                                    <br />
-                                    
-                                    <div align="right">
+                            <br />
+
+                            <div id="dinamico">
+
+
+                            </div>
+
+
+
+                               <div align="right">
+
                                     	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
-                                    </div>
                                 </div>
-                            <!-- DETALHES DA PETI√á√ÉO -->
                         </div>
-
-                        </div>
-
 					</div>
-					<!-- Fim Janela Modal com caixa de di√°logo -->
-                    
-                    <!-- Janela Modal com caixa de di√°logo (Usuario com MSG)-->  
-                    
+					<!-- Fim Janela Modal com caixa de di·logo -->
+
+                    <!-- Janela Modal com caixa de di·logo (Usuario com MSG)-->
+
 					<div id="detalharMsg" class="window" >
+
   						<div class="cont_modal">
-                        	
+
                             <div class="bordaFaixaLeft" style="width:95%; margin-left:2%;">
-                            	<span>Detalhes do Usu√°rio</span>
+                            	<span>Detalhes do Usu·rio</span>
                             </div>
                             <br />
-                            
-                        	<!-- FOTO DO USUARIO -->            
+
+                        	<!-- FOTO DO USUARIO -->
             					<div id="foto">
-           	  						<img src="/WebMAATeste/Painel_controle/Usuario/foto/fotoUsr.png" />
+           	  						<img src="foto/fotoUsr.png" />
             					</div>
+
             				<!-- FOTO -->
-                            
-                            <!-- DADOS DO USUARIO -->            
+
+                            <!-- DADOS DO USUARIO -->
             					<div id="dadosUsuario" style="width:370px;">
-                                		<h3 class="titulo3">Jos√© Sicrano Aparecido</h3>
+                                		<h3 class="titulo3">JosÈ Sicrano Aparecido</h3>
                                         <table class="grid dadosModal" width="100%">
                                         	<tr>
                                             	<td width="24%" align="right">Cod: &nbsp;</td>
                                                 <td width="76%"><strong>002</strong></td>
+
                                             </tr>
                                             <tr>
                                             	<td align="right">Idade: &nbsp;</td>
@@ -615,6 +563,7 @@ function bt(id){
                                           </tr>
                                             <tr>
                                             	<td align="right">Sexo: &nbsp;</td>
+
                                                 <td><strong>Masculino</strong></td>
                                           </tr>
                                           <tr>
@@ -622,76 +571,82 @@ function bt(id){
                                                 <td><strong>DF</strong></td>
                                           </tr>
                                         </table>
+
                                 </div>
                             <!-- DADOS DO USUARIO -->
-                             
+
                                 <div class="clear"></div>
-                                
-                            <!-- DETALHES DA PETI√á√ÉO -->
+
+                            <!-- DETALHES DA PETI«√O -->
                                 <div id="conteudoDetalhe">
                                 	<br />
                                     <br />
-                                    
+
                                     <p>
-                                    	Jos√© Sicrano Aparecido, demonstrou enteresse em seu animal. <br />
-                                        
+                                    	JosÈ Sicrano Aparecido, demonstrou enteresse em seu animal. <br />
+
+
                                     </p>
-                                    <span class="obrigatorio" style="font-size:14px">Mensagem Pessoal enviada por Jos√©.</span>
-                                    
+                                    <span class="obrigatorio" style="font-size:14px">Mensagem Pessoal enviada por JosÈ.</span>
+
                                     <br />
                                     <br />
-                                    
+
                                     <textarea rows="5" cols="60" readonly="readonly" >Gosto muito de gatos e a minha filha quando viu o seu ficou apaixonada por ele. Moramos numa casa bem protegida e queremos muito esse gato.</textarea>
-                                    
+
                                     <br />
                                     <br />
-                                    <span class="escondeFase" id="usrAprovado" style="color:#060;"><img src="images/botao/aprova.png" alt="alerta" title="alerta" /> &nbsp; Usuario Escolhido por Voc√™. </span>
-                                    
+                                    <span class="escondeFase" id="usrAprovado" style="color:#060;"><img src="images/botao/aprova.png" alt="alerta" title="alerta" /> &nbsp; Usuario Escolhido por VocÍ. </span>
+
+
                                     <br />
                                     <br />
-                                    
+
                                     <div align="right">
-                                    	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
+                                    	<img src="images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
                                     </div>
                                 </div>
-                            <!-- DETALHES DA PETI√á√ÉO -->
+                            <!-- DETALHES DA PETI«√O -->
                         </div>
 
 					</div>
-					<!-- Fim Janela Modal com caixa de di√°logo (Usuario com MSG) -->
-                    
-                    
-                    <!-- Janela Modal com caixa de di√°logo (CONFRM DE APROVA√á√ÉO)-->  
-                    
+					<!-- Fim Janela Modal com caixa de di·logo (Usuario com MSG) -->
+
+
+                    <!-- Janela Modal com caixa de di·logo (CONFRM DE APROVA«√O)-->
+
 					<div id="confirm_Aprovacao" class="window"  >
   						<div class="cont_modal">
-                        	
+
                             <div class="bordaFaixaLeft" style="width:95%; margin-left:2%;">
-                            	<span>Mensagem de Reprova√ß√£o</span>
+                            	<span>Mensagem de ReprovaÁ„o</span>
                             </div>
-                            <br /> 
-                                
+                            <br />
+
                             <!-- DETALHES DA MENSAGEM -->
+
                                 <div id="conteudoDetalhe">
                            	  <div class="nota_informa" style="width:98%;">
-                                    	<span>Ser√° enviada uma mensagem com a sua decis√£o aos demais usuarios.</span>
+                                    	<span>Ser· enviada uma mensagem com a sua decis„o aos demais usuarios.</span>
                                     </div>
-                                    
+
                                     <p>
-                                    	<span class="obrigatorio">Os usuarios que n√£o foram escolhidos por voc√™, receber√£o um email informando a sua escolha.</span>
+                                    	<span class="obrigatorio">Os usuarios que n„o foram escolhidos por vocÍ, receber„o um email informando a sua escolha.</span>
                                         <br />
-                                        
+
                                        <br />
-                                       
+
+
                                        Enviaremos a seguinte Mensagem:<br /><br />
                                     </p>
-                                    
-                                    <font style="color:#003;">Infelizmente o seu pedido de Ado√ß√£o para o gato <span style="text-decoration:underline">Lucky</span> foi negado pelo Portador/Propriet√°rio.<br />
+
+                                    <font style="color:#003;">Infelizmente o seu pedido de AdoÁ„o para o gato <span style="text-decoration:underline">Lucky</span> foi negado pelo Portador/Propriet·rio.<br />
                                     Caso tenha duvidas desse processo entre em contato com a nossa Ong para esclarecimentos.</font>
-                                    
+
                                     <br />
                                     <br />
-                                    Gostaria de explicar a sua decisao? ent√£o a descreva abaixo:
+
+                                    Gostaria de explicar a sua decisao? ent„o a descreva abaixo:
                                     <br />
                                     <br />
                                     <table class="grid" width="100%">
@@ -699,69 +654,75 @@ function bt(id){
                                         	<td width="19%" align="right" valign="top">Justificativa: &nbsp;</td>
                                           <td width="81%"><textarea name="textarea" cols="50" rows="3"></textarea></td>
                                       </tr>
+
                                         <tr>
                                         	<td>&nbsp;</td>
-                                            <td>A justificativa n√£o √© Obrigat√≥ria.</td>
+                                            <td>A justificativa n„o È ObrigatÛria.</td>
                                         </tr>
                                     </table>
                                     <br />
                                     <br />
-                                    
+
                                     <div align="center">
-                                    	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png" alt="Ok" title="OK" class="seta_link close" onclick="aprovaUsr();" id="ok" onmouseover="focoBt('ok');" onmouseout="bt('ok');" />
+
+                                    	<img src="images/botao/bt_ok.png" alt="Ok" title="OK" class="seta_link close" onclick="aprovaUsr();" id="ok" onmouseover="focoBt('ok');" onmouseout="bt('ok');" />
                                     </div>
                                     <br />
-                                    
+
                                 </div>
                             <!-- DETALHES DA MENSAGEM -->
                         </div>
 
 					</div>
-					<!-- Fim Janela Modal com caixa de di√°logo (CONFRM DE APROVA√á√ÉO ) -->
-                    
-                     <!-- Janela Modal com caixa de di√°logo (CADASTRO DE ANIMAIS)-->  
-                    
+					<!-- Fim Janela Modal com caixa de di·logo (CONFRM DE APROVA«√O ) -->
+
+
+                     <!-- Janela Modal com caixa de di·logo (CADASTRO DE ANIMAIS)-->
+
 					<div id="listaCad_animal" class="window" >
-                    
+
                     <script type="text/javascript">
 						<!--
 							function confirmDel(){
-								if(confirm("Ao Excluir este animal o mesmo tambem ser√° deletado da nossa base de dados. Deseja Realmente Excluir?")){
+								if(confirm("Ao Excluir este animal o mesmo tambem ser· deletado da nossa base de dados. Deseja Realmente Excluir?")){
 									alert("Animal Excluido com Sucesso");
 									window.location="index.html";
 								}
 							}
-						
+
 						-->
 					</script>
-                    
+
   						<div class="cont_modal">
-                        	
+
                             <div class="bordaFaixaLeft" style="width:95%; margin-left:2%;">
                             	<span>Cadastro de Animais</span>
                             </div>
-                            <br /> 
-                                
+                            <br />
+
                             <!-- DETALHES DA MENSAGEM -->
+
                                 <div id="conteudoDetalhe">
-                           	                                      
+
                                     <p>
-                                    	Nesta tela √© possivel a altera√ß√£o dos dados ou ate mesmo a exclus√£o de animais cadastrados por Voc√™.
+                                    	Nesta tela È possivel a alteraÁ„o dos dados ou ate mesmo a exclus„o de animais cadastrados por VocÍ.
                                     </p>
-                                   
+
                                     <br />
-                                    
+
                                      <table class="grid" style="width:90%;" align="center">
                                         <tr>
                                             <td width="14%" align="center" class="grid_titulo">Foto</td>
                                             <td width="8%" align="center" class="grid_titulo">Cod</td>
+
                                             <td width="21%" align="center" class="grid_titulo">Nome</td>
-                                            <td width="17%" align="center" class="grid_titulo">Ra√ßa</td>
+                                            <td width="17%" align="center" class="grid_titulo">RaÁa</td>
                                             <td width="10%" align="center" class="grid_titulo">Tipo</td>
                                             <td width="9%" align="center" class="grid_titulo">Sexo</td>
                                             <td width="10%" align="center" class="grid_titulo">Editar</td>
                                             <td width="11%" align="center" class="grid_titulo">Excluir</td>
-                                            
+
+
                                         </tr>
                                         <tr class="td_escura">
                                             <td align="center"><img src="../../gato/images/miniaturas/loky.png" alt="locky" width="69" height="59" title="lucky" /></td>
@@ -769,29 +730,33 @@ function bt(id){
                                             <td align="center">Lukcy</td>
                                             <td align="center">Comum</td>
                                             <td align="center">Gato</td>
+
                                             <td align="center">Macho</td>
                                             <td align="center"><img src="images/botao/editar.png" alt="Editar" title="Editar" class="seta_link" onclick="window.location='alt_animal.html';" /></td>
                                             <td align="center"><img src="images/botao/close.png" alt="Excluir" title="Excluir" class="seta_link" onclick="confirmDel();" /></td>
                                         </tr>
                     				</table>
-                    
+
                                     <br />
                                     <br />
-                                    
+
                                     <div align="right">
+
                                     	<img src="images/botao/fechar.png" alt="Fechar" title="Fechar Janela" class="seta_link close" />
                                     </div>
                                     <br />
-                                    
+
                                 </div>
                             <!-- DETALHES DA MENSAGEM -->
                         </div>
 
 					</div>
-					<!-- Fim Janela Modal com caixa de di√°logo (CADASTRO DE ANIMAIS) -->
-                    
-                    <div id="mask"></div> 
+					<!-- Fim Janela Modal com caixa de di·logo (CADASTRO DE ANIMAIS) -->
+
+
+                    <div id="mask"></div>
  </div>
+
 </body>
 
 </html>

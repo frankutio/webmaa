@@ -78,6 +78,21 @@ public class ServletProcesso extends HttpServlet {
             proximaPagina = "Painel_controle/Usuario/detalhar_processo.jsp";
         }
 
+        /* Recupera os dados de um processo para que o mesmo possa ser exibidos em uma Jsp*/
+
+        else if (operacao.equals("recupera_modal")) {
+
+            int codigoProcesso = Integer.parseInt(request.getParameter("codigoProcesso"));
+            SuperProcesso superProc = new SuperProcesso();
+            superProc.processo = ProcessoDAO.getInstance().leProcesso(codigoProcesso);
+            superProc.colaborador = PortalColabDAO.getInstance().le(superProc.processo.getCodigoColaborador());
+
+
+            request.setAttribute("Processo", superProc);
+            request.setAttribute("lstUF", UFDAO.getInstance().leTodos());
+            proximaPagina = "Painel_controle/Usuario/processo/modalDetalharProcesso.jsp";
+        }
+
     // -------------------------- ADOÇÃO ------------------------------------ //
 
         else if (operacao.equals("ver_adocao")) {

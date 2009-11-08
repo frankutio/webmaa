@@ -68,8 +68,7 @@ function valida(){
 }
 
 function aprovaUsr(){
-	$("#usr").attr("disabled",true);
-	$("#usrMsg").attr("disabled",true);
+	$("#fase01 :radio").attr("disabled",true);
 	$("#aprovar").hide();
 	
 	$("#fase1_completa").show();
