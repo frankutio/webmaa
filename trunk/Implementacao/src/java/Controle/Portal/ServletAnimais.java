@@ -435,7 +435,6 @@ public class ServletAnimais extends HttpServlet {
 
                 proximaPagina="Painel_controle/Usuario/processo/confirm_processo.jsp";
 
-
             }
             catch(Exception e){
 
@@ -443,6 +442,7 @@ public class ServletAnimais extends HttpServlet {
 
                 proximaPagina="Painel_controle/Usuario/processo/confirm_processo.jsp";
             }
+
             
         }
 
