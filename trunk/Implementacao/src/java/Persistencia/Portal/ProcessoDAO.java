@@ -141,7 +141,7 @@ public class ProcessoDAO {
      * @param animal O animal em questão
      * @return A lista dos processos de pessoas querendo adotar esse animal
      */
-    public List<Processo> recuperaProcessos(Animais animal) {
+    public List<Processo> recuperaProcessos(int codigoAnimal) {
         Connection conn = Conexao.getInstance().criaConexao();
         if (conn == null) return null;
         List<Processo> processos = new ArrayList<Processo>();
@@ -151,7 +151,7 @@ public class ProcessoDAO {
                     "SELECT *" +
                     "FROM processo" +
                     "WHERE animais_codigo = ?");
-            pstmt.setInt(1, animal.getCodigo());
+            pstmt.setInt(1, codigoAnimal);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 Processo processo = new Processo();
