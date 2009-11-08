@@ -176,7 +176,7 @@ function bt(id){
             <br />
             
             <p>
-            	Oi Fulano, abaixo segue a lista de enteressados na adoção.<br />
+            	${Colaborador.nome}, abaixo segue a lista de enteressados na adoção.<br />
                 <br />
                 Somente 1 pessoa poderá adotar o seu animal, por isso pense bem e analise todos os casos com cuidado.<br />
                 Apos a escolha da pessoa, selecione a coluna corespendente a mesma e clique em "Aprovar".<br /><br />
@@ -195,7 +195,7 @@ function bt(id){
                             <td width="14%" align="center" class="grid_titulo">Detalhar</td>
                             <td width="14%" align="center" class="grid_titulo">Selecionar</td>
                         </tr>
-                        <c:forEach items="${Processos}" var="sp">
+                        <c:forEach items="${Processos}" var="sup">
                             <tr>
                               <td align="center">${sp.colaborador.codigo}</td>
                                 <td align="center">${sp.colaborador.nome}</td>
