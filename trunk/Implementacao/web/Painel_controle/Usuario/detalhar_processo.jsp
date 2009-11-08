@@ -197,7 +197,7 @@ function bt(id){
                             <td width="14%" align="center" class="grid_titulo">Detalhar</td>
                             <td width="14%" align="center" class="grid_titulo">Selecionar</td>
                         </tr>
-                        <c:forEach items="${Processos}" var="sup">
+                        <c:forEach items="${Processos}" var="sp">
                             <tr>
                               <td align="center">${sp.colaborador.codigo}</td>
                                 <td align="center">${sp.colaborador.nome}</td>
