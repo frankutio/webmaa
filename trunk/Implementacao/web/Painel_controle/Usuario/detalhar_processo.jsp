@@ -183,6 +183,8 @@ function bt(id){
                 
                 <span class="obrigatorio">Os demais usuarios, caso haja mais de 1, recebera um email informando a sua decisão.<br />
                 Você tambem podera mandar uma Mensagem personalizada caso assim desseje.</span>
+                <br>
+                    
             </p>    
             <br />
    	    <table class="grid" style="width:100%;">
