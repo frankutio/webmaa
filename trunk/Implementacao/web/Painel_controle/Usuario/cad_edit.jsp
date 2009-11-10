@@ -1,9 +1,6 @@
 <%@page import="Entidade.Portal.Colaborador"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%
-Colaborador usr = (Colaborador) session.getAttribute("Colaborador");
-%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -64,7 +61,7 @@ $(document).ready(function(){
 
 function preenche(){
 
-    var sexo = "<%= usr.getSexo() %>";
+    var sexo = "${Colaborador.sexo}";
 
     if(sexo == "M"){
 
@@ -145,7 +142,7 @@ function preenche(){
 			<div class="bordaFaixaPainel_left"><span><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Bem Vindo fulano@gmail.com - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br /><!-- FOTO DO USUARIO -->            
             <div id="foto">
-                <img src="/WebMAATeste/Painel_controle/Usuario/foto/<%= usr.getEndFoto() %>" />
+                <img src="/WebMAATeste/Painel_controle/Usuario/foto/${Colaborador.endFoto}" />
             </div>
             <!-- FOTO -->
             
@@ -155,7 +152,7 @@ function preenche(){
             <br />
             <form name="editaDados" action="/WebMAATeste/NavUsr" method="post">
             
-            	<input type="hidden" name="cod" value="<%= usr.getCodigo() %>" />
+            	<input type="hidden" name="cod" value="${Colaborador.codigo}" />
                 <input type="hidden" name="operacao" value="ColaboradorEditaProcessa" />
                 
             	<fieldset>
@@ -165,17 +162,17 @@ function preenche(){
                 		<table class="grid">
                 			<tr>
                     			<td width="22%" align="right"><span class="obrigatorio">*</span> Nome: &nbsp;</td>
-                              	<td colspan="3"><input type="text" name="nome" value="<%= usr.getNome() %>" size="30" /></td>
+                              	<td colspan="3"><input type="text" name="nome" value="${Colaborador.nome}" size="30" /></td>
                    		  </tr>
                           <tr>
                     			<td width="22%" align="right"><span class="obrigatorio">*</span> RG: &nbsp;</td>
-                              	<td width="22%"><input type="text" name="rg" value="<%= usr.getRg() %>" size="10" /></td>
+                              	<td width="22%"><input type="text" name="rg" value="${Colaborador.rg}" size="10" /></td>
                                 <td width="14%" align="right">CPF: &nbsp;</td>
-                            <td width="42%"><input type="text" name="cpf" value="<%= usr.getCpf() %>" readonly="yes" size="20" /></td>
+                            <td width="42%"><input type="text" name="cpf" value="${Colaborador.cpf}" readonly="yes" size="20" /></td>
                    		  </tr>
                           <tr>
                     			<td width="22%" align="right"><span class="obrigatorio">*</span> Email: &nbsp;</td>
-                              	<td colspan="3"><input type="text" name="email" value="<%= usr.getEmail() %>" size="40" /></td>
+                              	<td colspan="3"><input type="text" name="email" value="${Colaborador.email}" size="40" /></td>
                    		  </tr>
                           <tr>
                     			<td width="22%" align="right"><span class="obrigatorio">*</span> Sexo: &nbsp;</td>
@@ -184,13 +181,13 @@ function preenche(){
                    		  </tr>
                           <tr>
                     			<td width="22%" align="right"><span class="obrigatorio">*</span> Data de Nascimento: &nbsp;</td>
-                              	<td colspan="3"><input type="text" name="idade" value="<%= usr.getDataNascimentoString() %>" size="15" /></td>
+                              	<td colspan="3"><input type="text" name="idade" value="${Colaborador.dataNascimentoString}" size="15" /></td>
                    		  </tr>
                           <tr>
                     			<td width="22%" align="right">Telefone: &nbsp;</td>
-                              	<td><input type="text" name="fone" value="<%= usr.getTelefone() %>" size="15" /></td>
+                              	<td><input type="text" name="fone" value="${Colaborador.telefone}" size="15" /></td>
                                 <td width="14%" align="right">Celular: &nbsp;</td>
-                              	<td colspan="3"><input type="text" name="cel" value="<%= usr.getCelular() %>" size="15" /></td>
+                              	<td colspan="3"><input type="text" name="cel" value="${Colaborador.celular}" size="15" /></td>
                    		  </tr>
                			</table>
                	</fieldset>
@@ -202,23 +199,23 @@ function preenche(){
                     <table class="grid">
                 			<tr>
                     			<td width="22%" align="right"><span class="obrigatorio">*</span> CEP: &nbsp;</td>
-                              	<td colspan="3"><input type="text" name="cep" value="<%= usr.getCep() %>" size="15" /></td>
+                              	<td colspan="3"><input type="text" name="cep" value="${Colaborador.cep}" size="15" /></td>
                    		  </tr>
                           <tr>
                     			<td width="22%" align="right"><span class="obrigatorio">*</span> Endereço: &nbsp;</td>
-                              	<td colspan="3"><input type="text" name="end" value="<%= usr.getEndereco() %>" size="50" /></td>
+                              	<td colspan="3"><input type="text" name="end" value="${Colaborador.endereco}" size="50" /></td>
                           </tr>
                           <tr>
                                 <td width="22%" align="right">Complemento: &nbsp;</td>
-                            	<td width="36%"><input type="text" name="complemento" value="<%= usr.getComplemento() %>" size="20" /></td>
+                            	<td width="36%"><input type="text" name="complemento" value="${Colaborador.complemento}" size="20" /></td>
                                 <td width="15%" align="right">Numero: &nbsp;</td>
-                            	<td width="27%"><input type="text" name="numero" value="<%= usr.getNumero() %>" size="5"  /></td>
+                            	<td width="27%"><input type="text" name="numero" value="${Colaborador.numero}" size="5"  /></td>
                    		  </tr>
                           <tr>
                     			<td width="22%" align="right"><span class="obrigatorio">*</span> Cidade: &nbsp;</td>
-                              	<td><input type="text" name="cidade" value="<%= usr.getCidade() %>" size="20" /></td>
+                              	<td><input type="text" name="cidade" value="${Colaborador.cidade}" size="20" /></td>
                                 <td align="right">Bairro: &nbsp;</td>
-                            	<td><input type="text" name="bairro" value="<%= usr.getBairro() %>" size="15" /></td>
+                            	<td><input type="text" name="bairro" value="${Colaborador.bairro}" size="15" /></td>
                    		  </tr>
                           <tr>
                     			<td width="22%" align="right"><span class="obrigatorio">*</span> UF: &nbsp;</td>
@@ -227,7 +224,7 @@ function preenche(){
                                          <option></option>
                                              <c:forEach items="${lstUF}" var="lstUF">
                                          <option value="${lstUF.codigo}"
-                                              <c:if  test="${'usr.getUf()'==lstUF.codigo}">
+                                              <c:if  test="${Colaborador.uf == lstUF.codigo}">
                                                   selected ="${lstUF.UF}"
                                                </c:if>   > ${lstUF.UF}</option>
                                               </c:forEach>
