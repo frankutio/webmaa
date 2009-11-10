@@ -135,7 +135,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                                                     </c:if>
                                                 </td>
                                                 <td align="center"><a href="#" name="popUp" onclick="MM_openBrWindow('Mensagem?operacao=lerMsg&codigoMsg=${Not.codigo}','','status=yes,scrollbars=yes,width=600,height=400')">${Not.assunto}</a></td>
-                                                <td align="center">${Not.assunto}</td>
+                                                <td align="center">${Not.dataCadastroString}</td>
                                                 <td align="center"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ler_email.png" alt="Ler Email" title="Ler Email" class="seta_link" onclick="MM_openBrWindow('Mensagem?operacao=lerMsg&codigoMsg=${Not.codigo}','','status=yes,scrollbars=yes,width=600,height=400')" /></td>
                                                 <td align="center"><a href="Mensagem?operacao=apagaMsg&codigoMsg=${Not.codigo}&colaborador=${Not.codigoColaborador}&dispara=centro"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_delete.png" alt="Excluir" title="Excluir" class="seta_link" /></a></td>
                                              </tr>

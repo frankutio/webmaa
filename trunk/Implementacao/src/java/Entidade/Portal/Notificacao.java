@@ -1,6 +1,7 @@
 package Entidade.Portal;
 
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 
 public class Notificacao {
@@ -11,6 +12,7 @@ public class Notificacao {
    private String assunto;
    private String remetenteNotificacao;
    private Date dataCadastro;
+   private String dataCadastroString;
    private String mensagem;
    private String mensagemPessoal;
 
@@ -59,6 +61,10 @@ public class Notificacao {
      */
     public Date getDataCadastro() {
         return dataCadastro;
+    }
+
+     public String getDataCadastroString() {
+        return new SimpleDateFormat("dd/MM/yyyy").format(dataCadastro);
     }
 
     /**

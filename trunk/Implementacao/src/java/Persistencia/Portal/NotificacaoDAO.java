@@ -48,6 +48,7 @@ public class NotificacaoDAO {
                     msg.setAssunto(rs.getString("descricao"));
                     msg.setRemetenteNotificacao(rs.getString("remetentenotificacao"));
                     msg.setMensagem(rs.getString("mensagem"));
+                    msg.setDataCadastro(rs.getDate("datacadstro"));
                     
 
                     lstMsg.add(msg);
@@ -118,6 +119,7 @@ public class NotificacaoDAO {
         msg.setAssunto(rs.getString("descricao"));
         msg.setRemetenteNotificacao(rs.getString("remetentenotificacao"));
         msg.setMensagem(rs.getString("mensagem"));
+        msg.setDataCadastro(rs.getDate("datacadstro"));
 
         return msg;
 

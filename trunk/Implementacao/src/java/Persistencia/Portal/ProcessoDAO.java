@@ -95,7 +95,7 @@ public class ProcessoDAO {
         PreparedStatement pstmt = null;
         try {
             pstmt = conn.prepareStatement(
-                    "SELECT animais.* " +
+                    "SELECT distinct animais.* " +
                     "FROM processo, animais " +
                     "WHERE processo.animais_codigo = animais.codigo " +
                     "   AND animais.Colaborador_codigo = ? " +

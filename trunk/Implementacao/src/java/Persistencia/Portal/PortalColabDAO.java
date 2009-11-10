@@ -187,7 +187,7 @@ public class PortalColabDAO {
         colaborador.setBairro(rs.getString("bairro"));
         colaborador.setCidade(rs.getString("cidade"));
         colaborador.setNumero(rs.getInt("numero"));
-        colaborador.setDataNascimento(new Date(rs.getDate("datanascimento").getTime()));
+        colaborador.setDataNascimento(rs.getDate("datanascimento"));
         colaborador.setCep(rs.getString("cep"));
         colaborador.setCpf(rs.getString("cpf"));
         colaborador.setRg(rs.getString("rg"));

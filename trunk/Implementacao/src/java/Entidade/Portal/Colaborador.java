@@ -31,6 +31,7 @@ public class Colaborador {
     private String validacao;
     private int login;
     private int valLog;
+    private String dataNascimentoString;
 
     /**
      * @return the cod
