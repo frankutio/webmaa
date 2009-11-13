@@ -206,6 +206,7 @@ $(function() {
             <div id="dadosUsuario">           
             
             <!-- fase 01 -->
+            
             <div id="fase01" class="usrInput">
 
             <table width="80%">

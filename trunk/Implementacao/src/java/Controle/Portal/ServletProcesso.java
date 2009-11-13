@@ -64,17 +64,25 @@ public class ServletProcesso extends HttpServlet {
         /* O dono do animal pede para ver as pessoas que estão interessadas em
         adotar um de seus animais específico. */
         else if (operacao.equals("listar_processos")) {
+
             int codigoAnimal = Integer.parseInt(request.getParameter("cod_animal"));
+
             List<SuperProcesso> superProcessos = new ArrayList<SuperProcesso>();
+
             for (Processo p : ProcessoDAO.getInstance().recuperaProcessos(codigoAnimal)) {
+
                 SuperProcesso superProc = new SuperProcesso();
                 superProc.setProcesso(p);
                 superProc.setColaborador(PortalColabDAO.getInstance().le(p.getCodigoColaborador()));
                 superProcessos.add(superProc);
-            }
+            }          
+            
+
             request.setAttribute("Processos", superProcessos);
             request.setAttribute("lstUF", UFDAO.getInstance().leTodos());
             request.setAttribute("Animal", AnimalDAO.getInstance().preparaAnimal(codigoAnimal));
+            
+
             proximaPagina = "Painel_controle/Usuario/detalhar_processo.jsp";
         }
 

@@ -3,6 +3,7 @@ package Persistencia.Portal;
 
 import Entidade.Portal.Animais;
 import Entidade.Portal.Processo;
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -254,5 +255,7 @@ public class ProcessoDAO {
         }
         return processo;
     }
+
+    
 
 }
