@@ -240,31 +240,29 @@ $(function() {
                             <td width="17%" align="center" class="grid_titulo">Mensagem</td>
                             <td width="14%" align="center" class="grid_titulo">Detalhar</td>
                             <td width="14%" align="center" class="grid_titulo">Selecionar</td>
-                        </tr>
-                        <c:forEach items="${Processos}" var="sp">
+                        </tr>                        
                             <tr>
-                              <td align="center">${sp.colaborador.codigo}</td>
-                                <td align="center">${sp.colaborador.nome}</td>
+                              <td align="center">${ColabProcesso.codigo}</td>
+                                <td align="center">${ColabProcesso.nome}</td>
                                 <td align="center">
-                                    <c:if test="${sp.colaborador.sexo == 'M'}">
+                                    <c:if test="${ColabProcesso.sexo == 'M'}">
                                         Masculino
                                     </c:if>
-                                    <c:if test="${sp.colaborador.sexo == 'F'}">
+                                    <c:if test="${ColabProcesso.sexo == 'F'}">
                                         Feminino
                                     </c:if>
                                 </td>
                                 <td align="center">
-                                    <c:if test="${empty sp.processo.mensagem}">
+                                    <c:if test="${empty Processos.mensagem}">
                                         0
                                     </c:if>
-                                    <c:if test="${!empty sp.processo.mensagem}">
+                                    <c:if test="${!empty Processos.mensagem}">
                                         <span class="obrigatorio">1</span>
                                     </c:if>
                                 </td>
-                                <td align="center"><a href="#divModal" class="linkDetalhar" id="${sp.processo.codigo}" ><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
-                                <td align="center"><input type="radio" name="usr" value="${sp.processo.codigo}" /></td>
+                                <td align="center"><a href="#divModal" class="linkDetalhar" id="${Processos.codigo}" ><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
+                                <td align="center"><input type="radio" name="usr" value="${Processos.codigo}" /></td>
                             </tr>
-                        </c:forEach>
                     </table>
                     <div align="center" style="width:95%;">
                     	<a href="#confirm_Aprovacao" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png" id="aprovar" onmouseover="focoBt('aprovar');" onmouseout="bt('aprovar');" class="seta_link" alt="Aprovar" title="Aprovar" /></a>

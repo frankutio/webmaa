@@ -1,6 +1,7 @@
 package Controle.Portal;
 
 import Entidade.Portal.Animais;
+import Entidade.Portal.Colaborador;
 import Entidade.Portal.Processo;
 import Entidade.Portal.SuperProcesso;
 import Persistencia.Portal.AnimalDAO;
@@ -67,18 +68,12 @@ public class ServletProcesso extends HttpServlet {
 
             int codigoAnimal = Integer.parseInt(request.getParameter("cod_animal"));
 
-            List<SuperProcesso> superProcessos = new ArrayList<SuperProcesso>();
+            Processo processo = ProcessoDAO.getInstance().recuperaProcessos(codigoAnimal);
 
-            for (Processo p : ProcessoDAO.getInstance().recuperaProcessos(codigoAnimal)) {
+            Colaborador colaborador = PortalColabDAO.getInstance().le(processo.getCodigoColaborador());
 
-                SuperProcesso superProc = new SuperProcesso();
-                superProc.setProcesso(p);
-                superProc.setColaborador(PortalColabDAO.getInstance().le(p.getCodigoColaborador()));
-                superProcessos.add(superProc);
-            }          
-            
-
-            request.setAttribute("Processos", superProcessos);
+            request.setAttribute("Processos", processo);
+            request.setAttribute("ColabProcesso", colaborador);
             request.setAttribute("lstUF", UFDAO.getInstance().leTodos());
             request.setAttribute("Animal", AnimalDAO.getInstance().preparaAnimal(codigoAnimal));
             

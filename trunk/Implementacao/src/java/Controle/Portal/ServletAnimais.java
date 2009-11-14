@@ -401,6 +401,10 @@ public class ServletAnimais extends HttpServlet {
                 //EFETUA A GRAVACAO DOS DADOS
                 ProcessoDAO.getInstance().grava(processo);
 
+                // Retira o animal da lista de adoção
+
+                AnimalDAO.getInstance().retiraAnimal(processo.getCodigoAnimal());
+
                 // Prepara uma notificação para ser lançada.
 
                 Notificacao notificacao = new Notificacao();

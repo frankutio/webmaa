@@ -53,9 +53,9 @@ public class ServletPainelControle extends HttpServlet {
         if(operacao.equals("exibirPainel")){
             
             int codUsr = Integer.parseInt(request.getParameter("colaborador"));
-               String disp = "Sim";
+               String bloq = "Nao";
 
-               List<Animais> listaAnimal = AnimalDAO.getInstance().carregaDadosAnimal(codUsr,disp);
+               List<Animais> listaAnimal = AnimalDAO.getInstance().carregaDadosAnimal(codUsr,bloq);
 
                 request.getSession().setAttribute("QtdAnimal", listaAnimal.size());
                 request.getSession().setAttribute("listaAnimal", listaAnimal);

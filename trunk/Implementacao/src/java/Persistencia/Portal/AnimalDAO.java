@@ -223,7 +223,7 @@ public class AnimalDAO {
                 ResultSet rs = stmt.executeQuery(
                         "SELECT * FROM animais " +
                         "WHERE Colaborador_codigo =" +
-                        codUsr + " and disponibilidade ='" + disp + "'");
+                        codUsr + " and bloqueio ='" + disp + "'");
 
                 while (rs.next()) {
                     Animais animal = new Animais();
@@ -396,6 +396,42 @@ public class AnimalDAO {
             }
     }
          return animal;
+
+    }
+
+    // Retira um animal da lista de adoção
+
+    public int retiraAnimal(int codigoAnimal) {
+
+        int n = 0;
+        Connection conn = Conexao.getInstance().criaConexao();
+
+        if (conn != null) {
+            PreparedStatement pstmt = null;
+            try {
+                pstmt = conn.prepareStatement(
+                        "UPDATE animais SET " +
+                        "disponibilidade ='Nao'" +
+                        " WHERE codigo ="+codigoAnimal);
+
+                n = pstmt.executeUpdate();
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if (pstmt != null) {
+                        pstmt.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        return n;
 
     }
 
