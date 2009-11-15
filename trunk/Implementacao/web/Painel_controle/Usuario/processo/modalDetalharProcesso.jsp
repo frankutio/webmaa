@@ -69,8 +69,7 @@
                                     <textarea rows="5" cols="60" readonly="readonly">${Processo.processo.mensagem}</textarea>
 
                                     <br />
-                                    <br />
-                                   <span class="escondeFase obrigatorio" id="usrReprovado"><img src="images/botao/alert.png" alt="alerta" title="alerta" /> &nbsp; Usuario Negado. </span>
+                                    
 
                                    <br />
                                     <br />

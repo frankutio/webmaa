@@ -96,14 +96,89 @@ public class ServletProcesso extends HttpServlet {
             proximaPagina = "Painel_controle/Usuario/processo/modalDetalharProcesso.jsp";
         }
 
+        // ---------------------- CONFIRMACAO ------------------------------- //
+
+        else if(operacao.equals("confirma_processo")){
+
+            int codigoProcesso = Integer.parseInt(request.getParameter("codigo"));
+            int fase = Integer.parseInt(request.getParameter("fase"));
+            int codigoAnimal = Integer.parseInt(request.getParameter("codAnimal"));
+            String direciona = request.getParameter("dispara");
+
+            
+                Processo processo = new Processo();
+
+                processo.setFaseProcesso(fase);
+                processo.setCodigo(codigoProcesso);
+
+                ProcessoDAO.getInstance().alteraFase(processo);
+
+                proximaPagina = "gerProcesso?operacao=listar_processos&cod_animal="+codigoAnimal;
+
+        }
+
+         else if(operacao.equals("confirma_processo_adocao")){
+
+            int codigoProcesso = Integer.parseInt(request.getParameter("codigo"));
+            int fase = Integer.parseInt(request.getParameter("fase"));
+            int codigoAnimal = Integer.parseInt(request.getParameter("codAnimal"));
+
+                Processo processo = new Processo();
+
+                processo.setFaseProcesso(fase);
+                processo.setCodigo(codigoProcesso);
+
+                ProcessoDAO.getInstance().alteraFase(processo);
+
+                proximaPagina = "gerProcesso?operacao=detalhar_processo&cod_animal="+codigoAnimal;
+
+        }
+
+
+
     // -------------------------- ADOÇÃO ------------------------------------ //
 
         else if (operacao.equals("ver_adocao")) {
+
             int codigoColaborador = Integer.parseInt(request.getParameter("cod_colaborador"));
-            SuperProcesso superProc = new SuperProcesso();
-            superProc.setProcesso(ProcessoDAO.getInstance().recuperaAdocao(codigoColaborador));
-            superProc.setColaborador(PortalColabDAO.getInstance().le(superProc.getProcesso().getCodigoColaborador()));
-            superProc.setAnimal(AnimalDAO.getInstance().preparaAnimal(superProc.getProcesso().getCodigoAnimal()));
+
+            List<Animais> animais = ProcessoDAO.getInstance().recuperaAdocao(codigoColaborador);
+
+            request.setAttribute("Animais", animais);
+            request.setAttribute("lstCor", CorDAO.getInstance().leTodos());
+            request.setAttribute("lstPorte", PorteDAO.getInstance().leTodos());
+            request.setAttribute("lstEnvio", EnvioDAO.getInstance().leTodos());
+            request.setAttribute("lstPelagem", PelagemDAO.getInstance().leTodos());
+            request.setAttribute("lstRaca", RacaDAO.getInstance().leTodos());
+
+            proximaPagina = "Painel_controle/Usuario/processo/filtro_processo.jsp";
+        }
+
+        else if(operacao.equals("detalhar_processo")){
+
+            int codigoAnimal = Integer.parseInt(request.getParameter("cod_animal"));
+
+            Processo processo = ProcessoDAO.getInstance().recuperaProcessos(codigoAnimal);
+
+            // recupera os dados do animal que esta em processo.
+            Animais animal = AnimalDAO.getInstance().preparaAnimal(codigoAnimal);
+            // Recupera os dados do dono do animal.
+            Colaborador dono = PortalColabDAO.getInstance().le(animal.getCodigoUsuario());
+            // Faz o carregamento dos outros componentes
+
+            request.setAttribute("Processo", processo);
+            request.setAttribute("Dono", dono);
+            request.setAttribute("Animal", animal);
+            request.setAttribute("lstCor", CorDAO.getInstance().leTodos());
+            request.setAttribute("lstPorte", PorteDAO.getInstance().leTodos());
+            request.setAttribute("lstEnvio", EnvioDAO.getInstance().leTodos());
+            request.setAttribute("lstPelagem", PelagemDAO.getInstance().leTodos());
+            request.setAttribute("lstRaca", RacaDAO.getInstance().leTodos());
+            request.setAttribute("lstUF", UFDAO.getInstance().leTodos());
+            request.setAttribute("FormaEnvio", EnvioDAO.getInstance().leTodos());
+
+            proximaPagina ="Painel_controle/Usuario/processo/detalhar_processo_adocao.jsp";
+
         }
 
 

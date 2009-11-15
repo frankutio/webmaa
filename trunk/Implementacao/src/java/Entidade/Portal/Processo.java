@@ -15,6 +15,8 @@ public class Processo {
     private String descricaoAvaliacao;
     private String notaAvaliacao;
     private String mensagem;
+    private String entregaAnimal;
+    private String statusAvaliacao;
 
     /**
      * @return the codigo
@@ -168,6 +170,34 @@ public class Processo {
      */
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
+    }
+
+    /**
+     * @return the entregaAnimal
+     */
+    public String getEntregaAnimal() {
+        return entregaAnimal;
+    }
+
+    /**
+     * @param entregaAnimal the entregaAnimal to set
+     */
+    public void setEntregaAnimal(String entregaAnimal) {
+        this.entregaAnimal = entregaAnimal;
+    }
+
+    /**
+     * @return the statusAvaliacao
+     */
+    public String getStatusAvaliacao() {
+        return statusAvaliacao;
+    }
+
+    /**
+     * @param statusAvaliacao the statusAvaliacao to set
+     */
+    public void setStatusAvaliacao(String statusAvaliacao) {
+        this.statusAvaliacao = statusAvaliacao;
     }
 
 

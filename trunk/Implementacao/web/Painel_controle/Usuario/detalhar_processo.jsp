@@ -22,64 +22,52 @@
 
 
 <script>
-function focoBt(id){
-	if(id ==="doar"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_doar_light.png");
-	}
-	
-	else if(id ==="logoff"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
-	}
-	
-	else if(id ==="aprovar"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar_light.png");
-	}
-	
-	else if(id ==="ok"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok_light.png");
-	}
-	
-	else if(id ==="ok1"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok_light.png");
-	}
-	
-	else if(id ==="ok2"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok_light.png");
-	}
-	
-	else if(id ==="cancelar"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_light.png");
-	}
-}
 
-function bt(id){
-	if(id ==="doar"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_doar.png");
-	}
+$(function() {
+	$(".logoff").mouseover(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
+	});
+
+	$(".logoff").mouseout(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff.png");
+	});
 	
-	else if(id ==="logoff"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff.png");
-	}
-	else if(id ==="aprovar"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png");
-	}
+	$(".aprovar").mouseover(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar_light.png");
+	});
+
+	$(".aprovar").mouseout(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png");
+	});
 	
-	else if(id ==="ok"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png");
-	}
+	$(".ok").mouseover(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok_light.png");
+	});
+
+	$(".ok").mouseout(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png");
+	});
 	
-	else if(id ==="ok1"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png");
-	}
+	$(".cancelar").mouseover(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_light.png");
+	});
+
+	$(".cancelar").mouseout(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar.png");
+	});
 	
-	else if(id ==="ok2"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png");
-	}
-	
-	else if(id ==="cancelar"){
-		$("#"+id).attr("src","/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho.png");
-	}
-}
+	$(".reprovar").mouseover(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_reprovar_light.png");
+	});
+
+	$(".reprovar").mouseout(function() {
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_reprovar.png");
+	});
+
+});
+
+
+
 </script>
 
 
@@ -113,7 +101,6 @@ $(function() {
         $.get('/WebMAATeste/gerProcesso', {
             operacao: "recupera_modal",
             codigoProcesso: $(this).attr("id")}, function(resposta) {
-                console.log(resposta);
                 $("#dinamico").html(resposta);
             }, "html");
         exibeModal1(e);
@@ -151,7 +138,11 @@ $(function() {
 <div id="faixaStatus">
 <table class="grid" style=" margin-top:-6px;">
 	<tr>
-    	<td align="right"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='../../index.html';" /></td>
+    	<td align="right">
+            <c:if test="${Log.login != null}">
+                <img src="/WebMAATeste/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link logoff" onclick="window.location='logoff?operacao=sair';" />
+            </c:if>
+       </td>
     </tr>
 </table>
 </div>
@@ -162,19 +153,19 @@ $(function() {
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="../../index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>            
-    		<li><a href="#" onfocus="limpaMenu();"><span>Not√≠cias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Den√∫ncias</span></a></li>
+			<li><a href="/WebMAATeste/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="#" onfocus="limpaMenu();"><span>Not&iacute;cias</span></a></li>
+            <li><a href="#" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="../../gato/listaGato.jsp" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="#" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/WebMAATeste/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/WebMAATeste/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
     		</li>
     		<li><a href="#" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
-    		<li><a href="../../cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="cad_animal.jsp" onfocus="limpaMenu();"><span>Doar</span></a></li>
-            <li><a href="../../final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+    		<li><a href="/WebMAATeste/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
+            <li><a href="/WebMAATeste/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/WebMAATeste/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -190,11 +181,11 @@ $(function() {
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Ado√ß√£o - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Ado&ccedil;&atilde;o - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br />          
             
                 <div class="nota_informa">
-                    	<span>Bem Vindo √† p√°gina de acompanhamento de ado√ß√£o.</span><br />                        
+                    	<span>Bem Vindo a† p&aacute;gina de acompanhamento de ado&ccedil;&atilde;o.</span><br />
           </div>
             <!-- FOTO DO USUARIO -->            
             <div id="foto">
@@ -211,23 +202,31 @@ $(function() {
 
             <table width="80%">
 				<tr>
-				  <td width="28%"><h2>Fase 1/3</h2></td>
-					<td width="72%"><span id="fase1_completa" class="escondeFase"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span></td>
+				  <td width="28%"><h2 class="fase">Fase 1/3</h2></td>
+					<td width="72%">
+                        <c:if test="${Processos.faseProcesso != 1}">
+                            <span id="fase1_completa"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span>
+                        </c:if>
+                   </td>
+
 				</tr>
 			</table>
             
             <br />       
-            <div class="nota_destaque">Dado(s) do(s) Enteressado(s)</div> 
+            <div class="nota_destaque">Dados do Enteressado</div>
             <br />
             
             <p>
-            	${Colaborador.nome}, abaixo segue a lista de enteressados na ado√ß√£o.<br />
+            	${Colaborador.nome}, abaixo segue os dados do enteressado na ado&ccedil;&atilde;o.<br />
                 <br />
-                Somente 1 pessoa poder√° adotar o seu animal, por isso pense bem e analise todos os casos com cuidado.<br />
-                Apos a escolha da pessoa, selecione a coluna corespendente a mesma e clique em "Aprovar".<br /><br />
-                
-                <span class="obrigatorio">Os demais usuarios, caso haja mais de 1, recebera um email informando a sua decis√£o.<br />
-                Voc√™ tambem podera mandar uma Mensagem personalizada caso assim desseje.</span>
+                <br />
+                Analise bem o pedido e caso seja de sua vontade, aprove ou regeite este peocesso.
+
+                <br />
+                <br />
+                <span class="obrigatorio">
+                    Caso voc&ecirc; recuse este processo, o usuario receber&aacute; uma notifica&ccedil;&atilde;o informando a sua decis&atilde;o.<br />
+                Voc&ecirc; tamb&eacute;m poder&aacute; mandar uma Mensagem personalizada caso assim desseje.</span>
                 <br>
                     
             </p>    
@@ -239,7 +238,6 @@ $(function() {
                             <td width="13%" align="center" class="grid_titulo">Sexo</td>
                             <td width="17%" align="center" class="grid_titulo">Mensagem</td>
                             <td width="14%" align="center" class="grid_titulo">Detalhar</td>
-                            <td width="14%" align="center" class="grid_titulo">Selecionar</td>
                         </tr>                        
                             <tr>
                               <td align="center">${ColabProcesso.codigo}</td>
@@ -261,12 +259,16 @@ $(function() {
                                     </c:if>
                                 </td>
                                 <td align="center"><a href="#divModal" class="linkDetalhar" id="${Processos.codigo}" ><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
-                                <td align="center"><input type="radio" name="usr" value="${Processos.codigo}" /></td>
                             </tr>
                     </table>
+
+                    <c:if test="${Processos.faseProcesso == 1}">
                     <div align="center" style="width:95%;">
-                    	<a href="#confirm_Aprovacao" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png" id="aprovar" onmouseover="focoBt('aprovar');" onmouseout="bt('aprovar');" class="seta_link" alt="Aprovar" title="Aprovar" /></a>
+                    	<a href="/WebMAATeste/gerProcesso?operacao=confirma_processo&codigo=${Processos.codigo}&fase=2&codAnimal=${Animal.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png" class="seta_link aprovar" alt="Aprovar" title="Aprovar" /></a> &nbsp;&nbsp;
+                        <a href="#confirm_Reprovacao" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_reprovar.png" alt="Reprovar" title="Reprovar" class="seta_link reprovar" /></a>
                     </div>
+                    </c:if>
+
                     <br />
                     
                     
@@ -274,27 +276,32 @@ $(function() {
                     <!-- fase 01 -->
                     
                     <!-- FASE 02 -->
-                    <div id="fase02" class="escondeFase">
+                    <c:if test="${(Processos.faseProcesso == 2)||(Processos.faseProcesso == 3)}">
+                    <div id="fase02">
                     	<table width="80%">
 							<tr>
-				  				<td width="28%"><h2>Fase 2/3</h2></td>
-								<td width="72%"><span id="fase2_completa" class="escondeFase"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span></td>
+				  				<td width="28%"><h2 class="fase">Fase 2/3</h2></td>
+								<td width="72%">
+                                    <c:if test="${Processos.faseProcesso == 4}">
+                                        <span id="fase2_completa" class="escondeFase"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span>
+                                    </c:if>
+                               </td>
 							</tr>
 						</table>
                         
                         <br />
                         
-                        Informamos ao usuario Jos√© Sicrano a sua aprova√ß√£o em rela√ß√£o a essa ado√ß√£o.<br />
-                        Assim que o usuario der continuidade ao processo, voc√™ ser√° notificado e poder√° finalizar a sua doa√ß√£o.
+                        Informamos ao usuario ${ColabProcesso.nome} a sua aprova&ccedil;&atilde;o em rela&ccedil;&atilde;o a essa ado&ccedil;&atilde;o.<br />
+                        Assim que o usuario der continuidade ao processo, voc&ecirc; ser&aacute; notificado e poder&aacute; finalizar a sua ado&ccedil;&atilde;o.
                         <br />
                         <br />
-                        
-                        prazo Previsto para que o usuario possa dar uma resposta: <span class="obrigatorio" onclick="aprova();">48 Horas</span> .
                         <br />
-                        
-                        <div class="nota_informa" style="width:98%;">
-                        	<span>Aguarde at√© que o usuario d√™ uma resposta. </span>
-                        </div>
+
+                        <c:if test="${Processos.faseProcesso == 2}">
+                            <div class="nota_informa" style="width:98%;">
+                                <span>Aguarde at&eacute; que o usuario de uma resposta. </span>
+                            </div>
+                        </c:if>
                         
                         <div class="nota_destaque" style="width:98%;">Dados do Usuario</div>
                         <br />
@@ -304,30 +311,40 @@ $(function() {
 						<tr>
 							<td class="grid_titulo" align="center">Cod</td>
 							<td class="grid_titulo" align="center">Nome</td>
-							<td class="grid_titulo" align="center">Endere√ßo</td>
+							<td class="grid_titulo" align="center">Endere&ccedil;o</td>
 							<td class="grid_titulo" align="center">CEP</td>
 							<td class="grid_titulo" align="center">UF</td>
 							<td class="grid_titulo" align="center">Email</td>
 							<td class="grid_titulo" align="center">Fone</td>
 						</tr>
 						<tr class="td_escura">
-							<td align="center">002</td>
-							<td align="center">Jos√© Sicrano Aparecido</td>
-							<td align="center">QND 45 Casa 03</td>
-							<td align="center">7200000</td>
-							<td align="center">DF</td>
-							<td align="center">sicano@email.com</td>
-							<td align="center">61 3397-2895</td>
+							<td align="center">${ColabProcesso.codigo}</td>
+							<td align="center">${ColabProcesso.nome}</td>
+							<td align="center">${ColabProcesso.endereco}</td>
+							<td align="center">${ColabProcesso.cep}</td>
+							<td align="center">
+                                <c:forEach items="${lstUF}" var="uf">
+                                      <c:if test="${uf.codigo == ColabProcesso.uf}">
+                                           ${uf.UF}
+                                      </c:if>
+                                </c:forEach>
+                            </td>
+							<td align="center">${ColabProcesso.email}</td>
+							<td align="center">${ColabProcesso.telefone}</td>
 						</tr>
 					</table>
-                    <div align="right" style="width:95%;">
-                    	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho.png" id="cancelar" onmouseover="focoBt('cancelar');" onmouseout="bt('cancelar');" class="seta_link" alt="Cancelar" title="Cancelar esta Ado√ß√£o" onclick="cancel_adocao();" />
-                    </div>
+                    
+                    <c:if test="${Processos.faseProcesso == 2}">
+                        <div align="right" style="width:95%;">
+                            <img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho.png" class="seta_link cancelar" alt="Cancelar" title="Cancelar esta Ado√ß√£o" onclick="cancel_adocao();" />
+                        </div>
+                    </c:if>
                     <br />
+
+                    <c:if test="${Processos.faseProcesso == 3}">
+                    <div id="aprovado">
                     
-                    <div id="aprovado" class="escondeFase">
-                    
-                    	<span style="color:#060; font-size:14px;"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp; Parab√©ns Fulano, O processo de ado√ßa√µ foi aceito pelo usuario.</span>
+                    	<span style="color:#060; font-size:14px;"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp; ParabÈns ${Colaborador.nome}, O processo de adoÁ„o foi aceito pelo usuario.</span>
                         <br />
                         <br />
                         
@@ -335,119 +352,34 @@ $(function() {
                         <br />
                         
                         <div class="nota_informa" style="width:98%;">
-                        	<span class="obrigatorio">Aten√ß√£o: Entre em contato com o interessado atravez de um dos dados fornecidos acima e negocie a entrega do seu animal.</span>
+                        	<span class="obrigatorio">AtenÁ„o: Entre em contato com o interessado atravez de um dos dados fornecidos acima e negocie a entrega do seu animal.</span>
                         </div>
                         
-                        Ap√≥s a entrega do animal voc√™ deve retornar a esta pagina e finalizar este procedimento.
+                        ApÛs a entrega do animal vocÍ deve retornar a esta pagina e finalizar este procedimento.
                         <br />
                         <br />
-                        
+
+                        <form method="post" action="">
+                            <input type="hidden" name="oprecao" value="finalizarProcesso" />
+                            <input type="hidden" name="codigoProcesso" value="${Processos.codigo}" />
+
                         <table class="grid">
                         	<tr>
                             	<td width="72%"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/alert.png" /> &nbsp; Afirmo que ja entreguei o animal ao Enteressado:</td>
-                              <td width="28%" valign="bottom"><input type="checkbox" onclick="finaliarCheck();" /></td>
+                                <td width="28%" valign="bottom"><input type="checkbox" onclick="finaliarCheck();" name="confirmacao" /></td>
                           </tr>
                         </table>
                          <div align="center" style="width:95%;">
-                    		<input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_finalizar.png" alt="Finalizar" title="Finalizar Ado√ß√£o" onclick="mostrar('fase03'); mostrar('fase2_completa');" disabled="disabled" id="btFinalizar" />
+                    		<input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_finalizar.png" alt="Finalizar" title="Finalizar AdoÁ„o" disabled="disabled" name="final" value="ok" class="btFinalizar" />
                     	</div>
-                        
+                       </form>
                     </div>
-                    
+                    </c:if>
+
                     </div>
-                    <!-- FASE 02 -->
-                    
-                    <!-- Fase 03 -->
-                    	<div id="fase03" class="escondeFase">
-                        	<table width="80%">
-							<tr>
-				  				<td width="28%"><h2>Fase 3/3</h2></td>
-								<td width="72%"><span id="fase3_completa" class="escondeFase"><img src="images/botao/aprova.png" /> &nbsp;Concluida!</span></td>
-							</tr>
-						</table>
-                               
-                               <div class="nota_informa">
-                               		<span>Avalie o Processo com o Usuario.</span>
-                               </div>
-                               
-                               <form name="fase03">
-<table class="grid">
-                               		<tr>
-                                    	<td colspan="2"><span class="obrigatorio">Essa avalia√ß√£o √© muito importante para que nos posssamos saber se o processo foi como voc√™ esperava.</span></td>
-                                    </tr>
-                                    <tr>
-                                    	<td colspan="2">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td width="54%" align="right">O usuario atendeu as suas expectativas? &nbsp;</td>
-                                        <td width="46%" align="left">
-                                        	<select name="entrega">
-                                            	<option value="0" selected="selected">:: Selecione ::</option>
-                                                <option value="1">Sim</option>
-                                                <option value="2">N√£o</option>
-                                            </select>
-                                        </td>
-                                    </tr>                                    
-                                    <tr>
-                                    	<td colspan="2">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td colspan="2">Conte para agante como foi a sau experiencia com a Ado√ß√£o:</td>
-                                    </tr>
-                                    <tr>
-                                    	<td colspan="2"><textarea rows="5" cols="60" id="coment"></textarea></td>
-                                    </tr>
-                               </table>
-                               </form>  
-                               
-                                   <br /><br />
-                          
-                               <div id="avaliacao">
-                               		<p> Escolha o tipo de Avalia√ß√£o</p>
-                                    <br />
-                               <div align="center" style="width:90%;">
-                					<input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_positiva.png" alt="Positiva" title="Positiva" onclick="mostra('avaliacao','positiva');"  /> &nbsp;&nbsp;
-                                    <input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_negativa.png" alt="Negativa" title="Negativa" onclick="mostra('avaliacao','negativa'); " />
-                				</div>
-                                </div>
-                                
-                                <br />
-                                <!-- AVALIA√á√ÉO POSITIVA -->
-                                <div id="positiva" class="esconde">
-                                	<span class="obrigatorio">Pontua√ß√£o de 1 a 5</span>
-                                    <br />
-                                    
-                                    <img src="/WebMAATeste/Painel_controle/Usuario/images/botao/avalia√ß√£o.png" />
-                                    <br />
-                                    
-                                     <div align="center" style="width:90%;">
-                                     	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png" alt="Ok" title="Ok" class="seta_link" id="ok1" onmouseover="focoBt('ok1');" onmouseout="bt('ok1');" onclick="window.alert('Processo Realizado com Sucesso'); window.location='index.html';" />
-                					</div> 
-                                    
-                                </div>
-                                <!-- AVALIA√á√ÉO POSITIVA -->
-                                
-                                <!-- AVALIA√á√ÉO NEGATIVA -->
-                                <div id="negativa" class="esconde">
-                                	<span class="obrigatorio">Informe o motivo da Negativa√ß√£o</span>
-                                    <br />
-                                    
-                                    <table class="grid">
-                                    	<tr>
-                                        	<td width="26%" align="right" valign="top"><span class="obrigatorio">*</span> Justificativa: &nbsp;</td>
-                                          <td width="74%"><textarea rows="5" cols="40"></textarea></td>
-                                      </tr>
-                                    </table>
-                                    <br />
-                                    
-                                     <div align="center" style="width:90%;">
-                                     	<img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png" alt="Ok" title="Ok" class="seta_link" id="ok2" onmouseover="focoBt('ok2');" onmouseout="bt('ok2');" onclick="window.alert('Processo Realizado com Sucesso'); window.location='index.html';" />
-                					</div> 
-                                </div>                
-                               <!-- AVALIA√á√ÉO NEGATIVA -->
-                        </div>
-                    <!-- Fase 03 -->
-                    
+                    </c:if>
+                    <!-- FASE 02 -->                    
+                                       
           </div>            
             <!-- DADOS DO USUARIO -->
             
@@ -467,12 +399,12 @@ $(function() {
                 	<br />
               <table class="grid">
                         <tr>
-                        	<td width="29%" align="right"><a href="cad_edit.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
-                            <td width="71%"><a href="cad_edit.html">Alterar Cadastro</a></td>
+                        	<td width="29%" align="right"><a href="/WebMAATeste/Painel_controle/Usuario/cad_edit.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
+                            <td width="71%"><a href="/WebMAATeste/NavUsr?operacao=alterar_cad">Alterar Cadastro</a></td>
                         </tr>
                         <tr>
                         	<td align="right"><a href="index.html"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
-                            <td><a href="index.html">Painel de Controle</a></td>
+                            <td><a href="/WebMAATeste/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Painel de Controle</a></td>
                         </tr>
                     </table>
                     
@@ -527,97 +459,14 @@ $(function() {
                         </div>
 					</div>
 					<!-- Fim Janela Modal com caixa de di·logo -->
+                                        
+                     <!-- Janela Modal com caixa de di·logo (CONFRM DE REPROVA«√O)-->
 
-                    <!-- Janela Modal com caixa de di·logo (Usuario com MSG)-->
-
-					<div id="detalharMsg" class="window" >
-
+					<div id="confirm_Reprovacao" class="window"  >
   						<div class="cont_modal">
 
                             <div class="bordaFaixaLeft" style="width:95%; margin-left:2%;">
-                            	<span>Detalhes do Usu·rio</span>
-                            </div>
-                            <br />
-
-                        	<!-- FOTO DO USUARIO -->
-            					<div id="foto">
-           	  						<img src="foto/fotoUsr.png" />
-            					</div>
-
-            				<!-- FOTO -->
-
-                            <!-- DADOS DO USUARIO -->
-            					<div id="dadosUsuario" style="width:370px;">
-                                		<h3 class="titulo3">JosÈ Sicrano Aparecido</h3>
-                                        <table class="grid dadosModal" width="100%">
-                                        	<tr>
-                                            	<td width="24%" align="right">Cod: &nbsp;</td>
-                                                <td width="76%"><strong>002</strong></td>
-
-                                            </tr>
-                                            <tr>
-                                            	<td align="right">Idade: &nbsp;</td>
-                                                <td><strong>44</strong></td>
-                                          </tr>
-                                            <tr>
-                                            	<td align="right">Sexo: &nbsp;</td>
-
-                                                <td><strong>Masculino</strong></td>
-                                          </tr>
-                                          <tr>
-                                            	<td align="right">Estado: &nbsp;</td>
-                                                <td><strong>DF</strong></td>
-                                          </tr>
-                                        </table>
-
-                                </div>
-                            <!-- DADOS DO USUARIO -->
-
-                                <div class="clear"></div>
-
-                            <!-- DETALHES DA PETI«√O -->
-                                <div id="conteudoDetalhe">
-                                	<br />
-                                    <br />
-
-                                    <p>
-                                    	JosÈ Sicrano Aparecido, demonstrou enteresse em seu animal. <br />
-
-
-                                    </p>
-                                    <span class="obrigatorio" style="font-size:14px">Mensagem Pessoal enviada por JosÈ.</span>
-
-                                    <br />
-                                    <br />
-
-                                    <textarea rows="5" cols="60" readonly="readonly" >Gosto muito de gatos e a minha filha quando viu o seu ficou apaixonada por ele. Moramos numa casa bem protegida e queremos muito esse gato.</textarea>
-
-                                    <br />
-                                    <br />
-                                    <span class="escondeFase" id="usrAprovado" style="color:#060;"><img src="images/botao/aprova.png" alt="alerta" title="alerta" /> &nbsp; Usuario Escolhido por VocÍ. </span>
-
-
-                                    <br />
-                                    <br />
-
-                                    <div align="right">
-                                    	<img src="images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
-                                    </div>
-                                </div>
-                            <!-- DETALHES DA PETI«√O -->
-                        </div>
-
-					</div>
-					<!-- Fim Janela Modal com caixa de di·logo (Usuario com MSG) -->
-
-
-                    <!-- Janela Modal com caixa de di·logo (CONFRM DE APROVA«√O)-->
-
-					<div id="confirm_Aprovacao" class="window"  >
-  						<div class="cont_modal">
-
-                            <div class="bordaFaixaLeft" style="width:95%; margin-left:2%;">
-                            	<span>Mensagem de ReprovaÁ„o</span>
+                            	<span>ReprovaÁ„o</span>
                             </div>
                             <br />
 
@@ -625,32 +474,27 @@ $(function() {
 
                                 <div id="conteudoDetalhe">
                            	  <div class="nota_informa" style="width:98%;">
-                                    	<span>Ser· enviada uma mensagem com a sua decis„o aos demais usuarios.</span>
+                                    	<span>Ser· enviada uma mensagem com a sua decis„o ao usuario ${ColabProcesso.nome}.</span>
                                     </div>
 
                                     <p>
-                                    	<span class="obrigatorio">Os usuarios que n„o foram escolhidos por vocÍ, receber„o um email informando a sua escolha.</span>
+                                    	<span class="obrigatorio">ApÛs a exclus„o desse processo, n„o ser· mais possivel voltar atras.</span>
                                         <br />
 
                                        <br />
-
-
-                                       Enviaremos a seguinte Mensagem:<br /><br />
                                     </p>
 
-                                    <font style="color:#003;">Infelizmente o seu pedido de AdoÁ„o para o gato <span style="text-decoration:underline">Lucky</span> foi negado pelo Portador/Propriet·rio.<br />
-                                    Caso tenha duvidas desse processo entre em contato com a nossa Ong para esclarecimentos.</font>
+                                   Gostaria de explicar a sua decisao? ent„o a descreva abaixo:
+                                    <br />
+                                    <br />
+                                    <form method="post" action="">
+                                        <input type="hidden" name="operacao" value="cancelar_processo">
+                                        <input type="hidden" name="codigo_processo" value="${Processos.codigo}">
 
-                                    <br />
-                                    <br />
-
-                                    Gostaria de explicar a sua decisao? ent„o a descreva abaixo:
-                                    <br />
-                                    <br />
                                     <table class="grid" width="100%">
                                     	<tr>
                                         	<td width="19%" align="right" valign="top">Justificativa: &nbsp;</td>
-                                          <td width="81%"><textarea name="textarea" cols="50" rows="3"></textarea></td>
+                                            <td width="81%"><textarea name="justificativa" cols="50" rows="3"></textarea></td>
                                       </tr>
 
                                         <tr>
@@ -663,8 +507,10 @@ $(function() {
 
                                     <div align="center">
 
-                                    	<img src="images/botao/bt_ok.png" alt="Ok" title="OK" class="seta_link close" onclick="aprovaUsr();" id="ok" onmouseover="focoBt('ok');" onmouseout="bt('ok');" />
+                                    	<input type="image" src="images/botao/bt_ok.png" alt="Ok" title="OK" class="seta_link ok"  /> &nbsp;&nbsp;
+                                        <img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar.png" alt="Cancelar" title="Cancelar" class="seta_link close" />
                                     </div>
+                                    </form>
                                     <br />
 
                                 </div>
@@ -673,83 +519,6 @@ $(function() {
 
 					</div>
 					<!-- Fim Janela Modal com caixa de di·logo (CONFRM DE APROVA«√O ) -->
-
-
-                     <!-- Janela Modal com caixa de di·logo (CADASTRO DE ANIMAIS)-->
-
-					<div id="listaCad_animal" class="window" >
-
-                    <script type="text/javascript">
-						<!--
-							function confirmDel(){
-								if(confirm("Ao Excluir este animal o mesmo tambem ser· deletado da nossa base de dados. Deseja Realmente Excluir?")){
-									alert("Animal Excluido com Sucesso");
-									window.location="index.html";
-								}
-							}
-
-						-->
-					</script>
-
-  						<div class="cont_modal">
-
-                            <div class="bordaFaixaLeft" style="width:95%; margin-left:2%;">
-                            	<span>Cadastro de Animais</span>
-                            </div>
-                            <br />
-
-                            <!-- DETALHES DA MENSAGEM -->
-
-                                <div id="conteudoDetalhe">
-
-                                    <p>
-                                    	Nesta tela È possivel a alteraÁ„o dos dados ou ate mesmo a exclus„o de animais cadastrados por VocÍ.
-                                    </p>
-
-                                    <br />
-
-                                     <table class="grid" style="width:90%;" align="center">
-                                        <tr>
-                                            <td width="14%" align="center" class="grid_titulo">Foto</td>
-                                            <td width="8%" align="center" class="grid_titulo">Cod</td>
-
-                                            <td width="21%" align="center" class="grid_titulo">Nome</td>
-                                            <td width="17%" align="center" class="grid_titulo">RaÁa</td>
-                                            <td width="10%" align="center" class="grid_titulo">Tipo</td>
-                                            <td width="9%" align="center" class="grid_titulo">Sexo</td>
-                                            <td width="10%" align="center" class="grid_titulo">Editar</td>
-                                            <td width="11%" align="center" class="grid_titulo">Excluir</td>
-
-
-                                        </tr>
-                                        <tr class="td_escura">
-                                            <td align="center"><img src="../../gato/images/miniaturas/loky.png" alt="locky" width="69" height="59" title="lucky" /></td>
-                                          <td align="center">001</td>
-                                            <td align="center">Lukcy</td>
-                                            <td align="center">Comum</td>
-                                            <td align="center">Gato</td>
-
-                                            <td align="center">Macho</td>
-                                            <td align="center"><img src="images/botao/editar.png" alt="Editar" title="Editar" class="seta_link" onclick="window.location='alt_animal.html';" /></td>
-                                            <td align="center"><img src="images/botao/close.png" alt="Excluir" title="Excluir" class="seta_link" onclick="confirmDel();" /></td>
-                                        </tr>
-                    				</table>
-
-                                    <br />
-                                    <br />
-
-                                    <div align="right">
-
-                                    	<img src="images/botao/fechar.png" alt="Fechar" title="Fechar Janela" class="seta_link close" />
-                                    </div>
-                                    <br />
-
-                                </div>
-                            <!-- DETALHES DA MENSAGEM -->
-                        </div>
-
-					</div>
-					<!-- Fim Janela Modal com caixa de di·logo (CADASTRO DE ANIMAIS) -->
 
 
                     <div id="mask"></div>

@@ -149,15 +149,26 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
    	    <table class="grid">
                     	<tr>
                         	<td width="24%" align="right">Cod. de Usu&aacute;rio: &nbsp;</td>
-                            <td width="76%"><strong>${Colaborador.codigo}</strong></td>
+                            <td width="76%" colspan="2"><strong>${Colaborador.codigo}</strong></td>
                         </tr>
                         <tr>
                         	<td width="24%" align="right">Nome: &nbsp;</td>
-                            <td width="76%"><strong>${Colaborador.nome}</strong></td>
+                            <td width="76%" colspan="2"><strong>${Colaborador.nome}</strong></td>
                         </tr>
                         <tr>
-                        	<td width="24%" align="right">Avalia&ccedil;&atilde;o: &nbsp;</td>
-                            <td width="76%"><span class="obrigatorio">&nbsp;</span></td>
+                        	<td width="24%" align="right">Avalia&ccedil;&atilde;o: &nbsp >>>>${Ao}<<<<;</td>
+                            <c:if test="${empty Ao}">
+                            <td valign="top" align="center">&nbsp;</td>
+                            <td width="76%">                  
+                                    N�o existem processos para avaliar
+                            </td>
+                            </c:if>
+                            <c:if test="${!empty Ao}">
+                            <td valign="top" align="center" style="background:#EEE;"><span class="obrigatorio">${T1}</span></td>
+                            <td width="76%">
+                                    <a href="#">Processos para Avalia��o</a>
+                             </td>
+                             </c:if>
                         </tr>
                     </table>
                 </p>
@@ -239,7 +250,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                <table class="grid">
                		<tr>
                     	<td><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link"  /></td>
-                        <td><a href="/WebMAATeste/gerProcesso?operacao=">Acompanhar Ado&ccedil;&atilde;o</a></td>
+                        <td><a href="/WebMAATeste/gerProcesso?operacao=ver_adocao&cod_colaborador=${Colaborador.codigo}">Acompanhar Ado&ccedil;&atilde;o</a></td>
                     </tr>
                     <tr>
                     	<td><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link"  /></td>

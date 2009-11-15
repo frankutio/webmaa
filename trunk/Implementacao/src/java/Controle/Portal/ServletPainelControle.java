@@ -6,6 +6,7 @@ import Entidade.Portal.Cor;
 import Entidade.Portal.Notificacao;
 import Entidade.Portal.Pelagem;
 import Entidade.Portal.Porte;
+import Entidade.Portal.Processo;
 import Entidade.Portal.Raca;
 import Entidade.Portal.TipoEnvio;
 import Persistencia.Portal.AnimalDAO;
@@ -15,6 +16,7 @@ import Persistencia.Portal.NotificacaoDAO;
 import Persistencia.Portal.PelagemDAO;
 import Persistencia.Portal.PortalColabDAO;
 import Persistencia.Portal.PorteDAO;
+import Persistencia.Portal.ProcessoDAO;
 import Persistencia.Portal.RacaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -89,7 +91,14 @@ public class ServletPainelControle extends HttpServlet {
             Colaborador colaborador = PortalColabDAO.getInstance().le(codUsr);
 
             request.getSession().setAttribute("Colaborador", colaborador);
-            
+
+            // verifica se o usuario tem processos de adoção concluidos
+
+            List<Processo> lstProcesso = ProcessoDAO.getInstance().avaliacaoAcompanha(colaborador.getCodigo());
+           
+            request.setAttribute("T1", lstProcesso.size());
+            request.setAttribute("Ao", lstProcesso);
+                        
             proximaPagina="Painel_controle/Usuario/index.jsp";
         
         }
