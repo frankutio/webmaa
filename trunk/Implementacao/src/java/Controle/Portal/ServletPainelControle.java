@@ -96,8 +96,8 @@ public class ServletPainelControle extends HttpServlet {
 
             List<Processo> lstProcesso = ProcessoDAO.getInstance().avaliacaoAcompanha(colaborador.getCodigo());
            
-            request.setAttribute("T1", lstProcesso.size());
-            request.setAttribute("Ao", lstProcesso);
+            request.setAttribute("Tamanho", lstProcesso.size());
+            request.setAttribute("Avaliacao", lstProcesso);
                         
             proximaPagina="Painel_controle/Usuario/index.jsp";
         

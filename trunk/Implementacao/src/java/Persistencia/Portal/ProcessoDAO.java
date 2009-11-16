@@ -160,7 +160,7 @@ public class ProcessoDAO {
         processo.setDescricaoAvaliacao(rs.getString("descricaoavaliacao"));
         processo.setNotaAvaliacao(rs.getString("notaavaliacao"));
         processo.setMensagem(rs.getString("mensagem"));
-        processo.setEntregaAnimal(rs.getString("entregaAnimal"));
+        processo.setEntregaAnimal(rs.getString("entrega_animal"));
         processo.setStatusAvaliacao(rs.getString("status_avaliacao"));
         
         return processo;
@@ -370,7 +370,7 @@ public class ProcessoDAO {
                     proc.setDescricaoAvaliacao(rs.getString("descricaoavaliacao"));
                     proc.setNotaAvaliacao(rs.getString("notaavaliacao"));
                     proc.setMensagem(rs.getString("mensagem"));
-                    proc.setEntregaAnimal(rs.getString("entregaAnimal"));
+                    proc.setEntregaAnimal(rs.getString("entrega_animal"));
                     proc.setStatusAvaliacao(rs.getString("status_avaliacao"));
                     
 
@@ -410,8 +410,9 @@ public class ProcessoDAO {
                     "SELECT distinct animais.* " +
                     "FROM processo, animais " +
                     "WHERE processo.animais_codigo = animais.codigo " +
-                    "   AND processo.Colaborador_codigo = ? " +
-                    "   AND processo.codigostatus = 'Nao' ");
+                    " AND processo.Colaborador_codigo = ? " +
+                    " AND processo.codigostatus = 'Nao'" +
+                    " AND status_avaliacao='Pendente'");
             pstmt.setInt(1, codigoColaborador);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -446,7 +447,44 @@ public class ProcessoDAO {
         if (animais.size() > 0) return animais;
         else return null;
     }
+    
+    
+    /*****      EXLUIR PROCESSO  *****/
+    
+    public int apagaProcesso(int codigo) {
 
+        int n = 0;
+        Connection conn = Conexao.getInstance().criaConexao();
+
+        if (conn != null) {
+            PreparedStatement pstmt = null;
+            try {
+                pstmt = conn.prepareStatement(
+                        "DELETE from processo " +
+                        "where codigo= ?");
+
+                    pstmt.setInt(1, codigo);
+
+                n = pstmt.executeUpdate();
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if (pstmt != null) {
+                        pstmt.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        return n;
+
+    }
 
     
 

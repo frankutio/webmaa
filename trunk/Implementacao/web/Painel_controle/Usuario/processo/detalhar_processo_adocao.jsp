@@ -49,11 +49,11 @@ $(function() {
 	});
 
 	$(".cancelar").mouseover(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_light.png");
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir_light.png");
 	});
 
 	$(".cancelar").mouseout(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar.png");
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir.png");
 	});
 
 	$(".reprovar").mouseover(function() {
@@ -205,7 +205,7 @@ $(function() {
                     </table>
                     <c:if test="${Processo.faseProcesso == 1}">
                         <div align="right" style="width:95%;">
-                            <img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir.png" class="seta_link cancelar" />
+                            <a href="/WebMAATeste/gerProcesso?operacao=cancela_processo_usuario&codigo=${Processo.codigo}&codAnimal=${Animal.codigo}&codigoColab=${Colaborador.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir.png" class="seta_link cancelar" /></a>
                         </div>
                     </c:if>
 
@@ -260,7 +260,7 @@ $(function() {
                                 O que Pretendes Fazer?
                                      <div align="right" style="width:95%;">
                                          <a href="/WebMAATeste/gerProcesso?operacao=confirma_processo_adocao&codigo=${Processo.codigo}&fase=3&codAnimal=${Animal.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_continuar.png" alt="Continuar" title="Continuar" class="seta_link continua" /></a>&nbsp;&nbsp;
-                                         <img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir_desabilitado.png" alt="cancelar adoção" title="Cancelar Adoção" class="seta_link desistir" />
+                                         <a href="/WebMAATeste/gerProcesso?operacao=cancela_processo_usuario&codigo=${Processo.codigo}&codAnimal=${Animal.codigo}&codigoColab=${Colaborador.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir_desabilitado.png" alt="cancelar adoção" title="Cancelar Adoção" class="seta_link desistir" /></a>
                                      </div>
                          </c:if>
                        <br />

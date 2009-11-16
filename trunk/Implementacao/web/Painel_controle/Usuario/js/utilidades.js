@@ -77,11 +77,7 @@ function aprovaUsr(){
 	$("#fase02").show();
 }
 
-function cancel_adocao(){
-	if(confirm("Deseja Realmente Cancelar a adoção para esta pessoa?")){
-			window.location="confrm_desistencia_doacao.html";
-		}
-}
+
 
 function aprova(){
 	$("#cancelar").hide();

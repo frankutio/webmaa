@@ -2,6 +2,7 @@ package Controle.Portal;
 
 import Entidade.Portal.Animais;
 import Entidade.Portal.Colaborador;
+import Entidade.Portal.Notificacao;
 import Entidade.Portal.Processo;
 import Entidade.Portal.SuperProcesso;
 import Persistencia.Portal.AnimalDAO;
@@ -103,7 +104,11 @@ public class ServletProcesso extends HttpServlet {
             int codigoProcesso = Integer.parseInt(request.getParameter("codigo"));
             int fase = Integer.parseInt(request.getParameter("fase"));
             int codigoAnimal = Integer.parseInt(request.getParameter("codAnimal"));
-            String direciona = request.getParameter("dispara");
+            int codigoColaborador = Integer.parseInt(request.getParameter("codigoColab"));
+            
+            // Prepara o direcionamento para a Servlet de Notifição
+            String dispara = "gerProcesso?operacao=listar_processos&cod_animal="+codigoAnimal;
+
 
             
                 Processo processo = new Processo();
@@ -113,7 +118,8 @@ public class ServletProcesso extends HttpServlet {
 
                 ProcessoDAO.getInstance().alteraFase(processo);
 
-                proximaPagina = "gerProcesso?operacao=listar_processos&cod_animal="+codigoAnimal;
+                proximaPagina = "NotificarProcesso?operacao=alteraFase&fase="+fase+"&codigoColab="+codigoColaborador+"&dispara="+dispara+
+                        "&codAnimal="+codigoAnimal;
 
         }
 
@@ -181,6 +187,72 @@ public class ServletProcesso extends HttpServlet {
 
         }
 
+        // EXIBE O PROCESSO QUE AINDA NAO FOI AVALIADO POR VC
+
+         else if (operacao.equals("ver_avaliacao")) {
+
+            int codigoColaborador = Integer.parseInt(request.getParameter("cod_colaborador"));
+
+            List<Animais> animais = ProcessoDAO.getInstance().recuperaProcessosAvaliacao(codigoColaborador);
+
+            request.setAttribute("Animais", animais);
+            request.setAttribute("lstCor", CorDAO.getInstance().leTodos());
+            request.setAttribute("lstPorte", PorteDAO.getInstance().leTodos());
+            request.setAttribute("lstEnvio", EnvioDAO.getInstance().leTodos());
+            request.setAttribute("lstPelagem", PelagemDAO.getInstance().leTodos());
+            request.setAttribute("lstRaca", RacaDAO.getInstance().leTodos());
+
+            proximaPagina = "Painel_controle/Usuario/processo/filtro_avaliacao.jsp";
+        }
+
+        // CANCELA UM PROCESSO
+
+         else if(operacao.equals("cancela_processo_usuario")){
+
+            int codigoProcesso = Integer.parseInt(request.getParameter("codigo"));
+            int codigoAnimal = Integer.parseInt(request.getParameter("codAnimal"));
+            int codigoColaborador = Integer.parseInt(request.getParameter("codigoColab"));
+
+            // Exclui o Processo
+            ProcessoDAO.getInstance().apagaProcesso(codigoProcesso);
+
+            // Retorna o animal para a lista de adoção
+
+            AnimalDAO.getInstance().retornaAnimal(codigoAnimal);
+
+            // Recupera informação do animal
+            Animais animal = AnimalDAO.getInstance().preparaAnimal(codigoAnimal);
+            // Recupera informação do dono do animal.
+            int codigoDono = animal.getCodigoUsuario();
+
+            // Redireciona para a servlet poder mandar uma notificação.
+
+            proximaPagina="NotificarProcesso?operacao=cancelarProcesso_usuario&codigoColaborador="+codigoColaborador+
+                    "&codigoAnimal="+codigoAnimal+"&codigoDono="+codigoDono;
+
+         }
+
+        else if(operacao.equals("cancela_processo_dono")){
+
+            int codigoProcesso = Integer.parseInt(request.getParameter("codigo"));
+            int codigoAnimal = Integer.parseInt(request.getParameter("codAnimal"));
+            int codigoDono = Integer.parseInt(request.getParameter("codigoDono"));
+            int codigoColaborador = Integer.parseInt(request.getParameter("codigoColab"));
+            String msgPessoal = request.getParameter("justificativa");
+
+            // Exclui o Processo
+            ProcessoDAO.getInstance().apagaProcesso(codigoProcesso);
+
+            // Retorna o animal para a lista de adoção
+
+            AnimalDAO.getInstance().retornaAnimal(codigoAnimal);
+
+            // Redireciona para a servlet poder mandar uma notificação.
+
+            proximaPagina="NotificarProcesso?operacao=cancelarProcesso_dono&codigoColaborador="+codigoColaborador+
+                    "&codigoAnimal="+codigoAnimal+"&codigoDono="+codigoDono+"&msgPessoal="+msgPessoal;
+
+         }
 
         //PARA DIRECIONAR AS PAGINAS PARA O LOCAL CERTO.
         RequestDispatcher rd = request.getRequestDispatcher(proximaPagina);

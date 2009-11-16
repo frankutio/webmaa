@@ -264,7 +264,7 @@ $(function() {
 
                     <c:if test="${Processos.faseProcesso == 1}">
                     <div align="center" style="width:95%;">
-                    	<a href="/WebMAATeste/gerProcesso?operacao=confirma_processo&codigo=${Processos.codigo}&fase=2&codAnimal=${Animal.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png" class="seta_link aprovar" alt="Aprovar" title="Aprovar" /></a> &nbsp;&nbsp;
+                    	<a href="/WebMAATeste/gerProcesso?operacao=confirma_processo&codigo=${Processos.codigo}&fase=2&codAnimal=${Animal.codigo}&codigoColab=${ColabProcesso.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png" class="seta_link aprovar" alt="Aprovar" title="Aprovar" /></a> &nbsp;&nbsp;
                         <a href="#confirm_Reprovacao" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_reprovar.png" alt="Reprovar" title="Reprovar" class="seta_link reprovar" /></a>
                     </div>
                     </c:if>
@@ -336,7 +336,7 @@ $(function() {
                     
                     <c:if test="${Processos.faseProcesso == 2}">
                         <div align="right" style="width:95%;">
-                            <img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho.png" class="seta_link cancelar" alt="Cancelar" title="Cancelar esta AdoÃ§Ã£o" onclick="cancel_adocao();" />
+                            <a href="#confirm_Reprovacao" name="modal"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho.png" class="seta_link cancelar" alt="Cancelar" title="Cancelar esta Adoção" /></a>
                         </div>
                     </c:if>
                     <br />
@@ -487,9 +487,12 @@ $(function() {
                                    Gostaria de explicar a sua decisao? então a descreva abaixo:
                                     <br />
                                     <br />
-                                    <form method="post" action="">
-                                        <input type="hidden" name="operacao" value="cancelar_processo">
-                                        <input type="hidden" name="codigo_processo" value="${Processos.codigo}">
+                                    <form method="post" action="/WebMAATeste/gerProcesso">
+                                        <input type="hidden" name="operacao" value="cancela_processo_dono">
+                                        <input type="hidden" name="codigo" value="${Processos.codigo}">
+                                        <input type="hidden" name="codAnimal" value="${Animal.codigo}">
+                                        <input type="hidden" name="codigoColab" value="${ColabProcesso.codigo}">
+                                        <input type="hidden" name="codigoDono" value="${Colaborador.codigo}">
 
                                     <table class="grid" width="100%">
                                     	<tr>

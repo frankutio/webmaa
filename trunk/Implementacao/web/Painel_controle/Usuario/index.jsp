@@ -81,8 +81,11 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 <div id="faixaStatus">
 <table class="grid" style=" margin-top:-6px;">
 	<tr>
-    	<td><span style="color:#000;"></span></td>
-    	<td align="right"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location=/WebMAATeste/index.html';" /></td>
+    	<td align="right">
+            <c:if test="${Log.login != null}">
+                <img src="/WebMAATeste/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link logoff" onclick="window.location='logoff?operacao=sair';" />
+            </c:if>
+       </td>
     </tr>
 </table>
 </div>
@@ -156,17 +159,17 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                             <td width="76%" colspan="2"><strong>${Colaborador.nome}</strong></td>
                         </tr>
                         <tr>
-                        	<td width="24%" align="right">Avalia&ccedil;&atilde;o: &nbsp >>>>${Ao}<<<<;</td>
-                            <c:if test="${empty Ao}">
+                        	<td width="24%" align="right">Avalia&ccedil;&atilde;o: &nbsp;</td>
+                            <c:if test="${empty Avaliacao}">
                             <td valign="top" align="center">&nbsp;</td>
                             <td width="76%">                  
                                     Não existem processos para avaliar
                             </td>
                             </c:if>
-                            <c:if test="${!empty Ao}">
-                            <td valign="top" align="center" style="background:#EEE;"><span class="obrigatorio">${T1}</span></td>
+                            <c:if test="${!empty Avaliacao}">
+                            <td valign="top" align="center" style="background:#EEE;"><span class="obrigatorio">${Tamanho}</span></td>
                             <td width="76%">
-                                    <a href="#">Processos para Avaliação</a>
+                                    &nbsp; <a href="/WebMAATeste/gerProcesso?operacao=ver_avaliacao&cod_colaborador=${Colaborador.codigo}">Processo(s) para Avaliação</a>
                              </td>
                              </c:if>
                         </tr>

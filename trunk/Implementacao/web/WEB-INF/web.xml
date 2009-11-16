@@ -46,6 +46,10 @@
         <servlet-name>ServletProcesso</servlet-name>
         <servlet-class>Controle.Portal.ServletProcesso</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletNotificacaoProcesso</servlet-name>
+        <servlet-class>Controle.Portal.ServletNotificacaoProcesso</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletColaborador</servlet-name>
         <url-pattern>/NavUsr</url-pattern>
@@ -162,6 +166,10 @@
     <servlet-mapping>
         <servlet-name>ServletProcesso</servlet-name>
         <url-pattern>/gerProcesso</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletNotificacaoProcesso</servlet-name>
+        <url-pattern>/NotificarProcesso</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
