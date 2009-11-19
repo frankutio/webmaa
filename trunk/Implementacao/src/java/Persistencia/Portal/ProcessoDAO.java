@@ -33,7 +33,7 @@ public class ProcessoDAO {
         try {
             pstmt = conn.prepareStatement(
                     "INSERT INTO processo (FaseProcesso_codigo, Animais_codigo," +
-                    "   Colaborador_codigo, dataprocesso, datacadastro, codigostatus, mensagem, status_avaliacao)" +
+                    "   Colaborador_codigo, dataprocesso, datacadastro, codigostatus, mensagem, avaliacao)" +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             pstmt.setInt(1, processo.getFaseProcesso());
             pstmt.setInt(2, processo.getCodigoAnimal());
@@ -42,7 +42,7 @@ public class ProcessoDAO {
             pstmt.setDate(5, new java.sql.Date(processo.getDataCadastro().getTime()));
             pstmt.setString(6, processo.getStatus());
             pstmt.setString(7, processo.getMensagem());
-            pstmt.setString(8, "Pendente");
+            pstmt.setString(8, "Nao");
             
             pstmt.execute();
             pstmt.close();
@@ -161,7 +161,7 @@ public class ProcessoDAO {
         processo.setNotaAvaliacao(rs.getString("notaavaliacao"));
         processo.setMensagem(rs.getString("mensagem"));
         processo.setEntregaAnimal(rs.getString("entrega_animal"));
-        processo.setStatusAvaliacao(rs.getString("status_avaliacao"));
+        processo.setStatusAvaliacao(rs.getString("avaliacao"));
         
         return processo;
 
@@ -354,7 +354,7 @@ public class ProcessoDAO {
                         "SELECT * FROM processo WHERE" +
                         " Colaborador_codigo="+codigo+ 
                        " and codigostatus='Nao' "+
-                       "and status_avaliacao='Pendente'");
+                       "and avaliacao='Nao'");
 
                 while (rs.next()) {
                     Processo proc = new Processo();
@@ -371,7 +371,7 @@ public class ProcessoDAO {
                     proc.setNotaAvaliacao(rs.getString("notaavaliacao"));
                     proc.setMensagem(rs.getString("mensagem"));
                     proc.setEntregaAnimal(rs.getString("entrega_animal"));
-                    proc.setStatusAvaliacao(rs.getString("status_avaliacao"));
+                    proc.setStatusAvaliacao(rs.getString("avaliacao"));
                     
 
                     lstProcesso.add(proc);
@@ -412,7 +412,7 @@ public class ProcessoDAO {
                     "WHERE processo.animais_codigo = animais.codigo " +
                     " AND processo.Colaborador_codigo = ? " +
                     " AND processo.codigostatus = 'Nao'" +
-                    " AND status_avaliacao='Pendente'");
+                    " AND avaliacao='Nao'");
             pstmt.setInt(1, codigoColaborador);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -464,6 +464,94 @@ public class ProcessoDAO {
                         "where codigo= ?");
 
                     pstmt.setInt(1, codigo);
+
+                n = pstmt.executeUpdate();
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if (pstmt != null) {
+                        pstmt.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        return n;
+
+    }
+
+    // Finaliza um processo de adoção
+
+    public int finalizarProcesso(Processo processo) {
+
+        int n = 0;
+        Connection conn = Conexao.getInstance().criaConexao();
+
+        if (conn != null) {
+            PreparedStatement pstmt = null;
+            try {
+                pstmt = conn.prepareStatement(
+                        "UPDATE processo SET " +
+                        "FaseProcesso_codigo = ?, " +
+                        "entrega_animal= ?, "+
+                        "codigostatus= ? "+
+                        "WHERE codigo = ?");
+
+                    pstmt.setInt(1, processo.getFaseProcesso());
+                    pstmt.setString(2, processo.getEntregaAnimal());
+                    pstmt.setString(3, processo.getStatus());
+                    pstmt.setInt(4, processo.getCodigo());
+
+                n = pstmt.executeUpdate();
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if (pstmt != null) {
+                        pstmt.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        return n;
+
+    }
+
+     // Avaliação do Processo
+
+    public int avaliarProcesso(Processo processo) {
+
+        int n = 0;
+        Connection conn = Conexao.getInstance().criaConexao();
+
+        if (conn != null) {
+            PreparedStatement pstmt = null;
+            try {
+                pstmt = conn.prepareStatement(
+                        "UPDATE processo SET " +
+                        "recebe_animal = ?, " +
+                        "descricaoavaliacao= ?, "+
+                        "notaavaliacao= ?, "+
+                        "avaliacao = ? "+
+                        "WHERE codigo = ?");
+
+                    pstmt.setString(1, processo.getRecebeAnimal());
+                    pstmt.setString(2, processo.getDescricaoAvaliacao());
+                    pstmt.setString(3, processo.getNotaAvaliacao());
+                    pstmt.setString(4, processo.getAvaliacao());
+                    pstmt.setInt(5, processo.getCodigo());
 
                 n = pstmt.executeUpdate();
                 conn.close();

@@ -97,6 +97,8 @@ public class ServletProcesso extends HttpServlet {
             proximaPagina = "Painel_controle/Usuario/processo/modalDetalharProcesso.jsp";
         }
 
+
+
         // ---------------------- CONFIRMACAO ------------------------------- //
 
         else if(operacao.equals("confirma_processo")){
@@ -128,6 +130,9 @@ public class ServletProcesso extends HttpServlet {
             int codigoProcesso = Integer.parseInt(request.getParameter("codigo"));
             int fase = Integer.parseInt(request.getParameter("fase"));
             int codigoAnimal = Integer.parseInt(request.getParameter("codAnimal"));
+            String dispara = "gerProcesso?operacao=detalhar_processo&cod_animal="+codigoAnimal;
+            int codigoColaborador = Integer.parseInt(request.getParameter("codigoColab"));
+            int codigoUsr = Integer.parseInt(request.getParameter("codigoUsr"));
 
                 Processo processo = new Processo();
 
@@ -136,7 +141,8 @@ public class ServletProcesso extends HttpServlet {
 
                 ProcessoDAO.getInstance().alteraFase(processo);
 
-                proximaPagina = "gerProcesso?operacao=detalhar_processo&cod_animal="+codigoAnimal;
+                proximaPagina = "NotificarProcesso?operacao=alteraFase&fase="+fase+"&codigoColab="+codigoColaborador+"&dispara="+dispara+
+                        "&codAnimal="+codigoAnimal+"&codigoUsr="+codigoUsr;
 
         }
 
@@ -205,6 +211,76 @@ public class ServletProcesso extends HttpServlet {
             proximaPagina = "Painel_controle/Usuario/processo/filtro_avaliacao.jsp";
         }
 
+        // Detalhar a avalição.
+
+        else if(operacao.equals("detalhar_avaliacao")){
+
+            int codigoAnimal = Integer.parseInt(request.getParameter("cod_animal"));
+
+            Processo processo = ProcessoDAO.getInstance().recuperaProcessos(codigoAnimal);
+
+            // recupera os dados do animal que esta em processo.
+            Animais animal = AnimalDAO.getInstance().preparaAnimal(codigoAnimal);
+            // Recupera os dados do dono do animal.
+            Colaborador dono = PortalColabDAO.getInstance().le(animal.getCodigoUsuario());
+            // Faz o carregamento dos outros componentes
+
+            request.setAttribute("Processo", processo);
+            request.setAttribute("Dono", dono);
+            request.setAttribute("Animal", animal);
+            request.setAttribute("lstCor", CorDAO.getInstance().leTodos());
+            request.setAttribute("lstPorte", PorteDAO.getInstance().leTodos());
+            request.setAttribute("lstEnvio", EnvioDAO.getInstance().leTodos());
+            request.setAttribute("lstPelagem", PelagemDAO.getInstance().leTodos());
+            request.setAttribute("lstRaca", RacaDAO.getInstance().leTodos());
+            request.setAttribute("lstUF", UFDAO.getInstance().leTodos());
+            request.setAttribute("FormaEnvio", EnvioDAO.getInstance().leTodos());
+
+            proximaPagina ="Painel_controle/Usuario/processo/avaliar_processo.jsp";
+
+        }
+
+        // Realiza a avaliação do Processo
+
+        else if(operacao.equals("avaliar")){
+
+            int codigo = Integer.parseInt(request.getParameter("codigo"));
+            int codigoUsuario = Integer.parseInt(request.getParameter("codigoUsuario"));
+            String nome = request.getParameter("nome");
+            String entrega = request.getParameter("recebe_animal");
+            String descricaoavaliacao = request.getParameter("descricaoavaliacao");
+
+            String avaliacao = request.getParameter("avaliacao");
+
+                if(descricaoavaliacao == ""){
+                    descricaoavaliacao = null;
+                }
+                if(avaliacao.equals("positiva")){
+                    avaliacao ="Sim";
+                }
+                if(avaliacao.equals("negativa")){
+                    avaliacao ="Nao";
+                }
+
+               Processo avalia = new Processo();
+
+               avalia.setCodigo(codigo);
+               avalia.setRecebeAnimal(entrega);
+               avalia.setDescricaoAvaliacao(descricaoavaliacao);
+               avalia.setNotaAvaliacao(avaliacao);
+               avalia.setAvaliacao("Sim");
+
+               ProcessoDAO.getInstance().avaliarProcesso(avalia);
+
+               // Prepara para mandar uma mensagem
+
+               request.setAttribute("Altera", "Processo Avaliado com Sucesso, Obrigado.");
+
+               proximaPagina="PainelControle?operacao=exibirPainel&colaborador="+codigoUsuario;
+
+
+        }
+
         // CANCELA UM PROCESSO
 
          else if(operacao.equals("cancela_processo_usuario")){
@@ -253,6 +329,44 @@ public class ServletProcesso extends HttpServlet {
                     "&codigoAnimal="+codigoAnimal+"&codigoDono="+codigoDono+"&msgPessoal="+msgPessoal;
 
          }
+
+        // Encerra um processo de adoção (Fase 4 do processo)
+
+        else if(operacao.equals("declarar_entrega")){
+
+            int codigoProcesso = Integer.parseInt(request.getParameter("codigoProcesso"));
+            String entrega = request.getParameter("confirma");
+            int fase = Integer.parseInt(request.getParameter("fasePeocesso"));
+
+            if(entrega.equals("Sim")){
+
+                // realiza o fechamento do processo
+                Processo processo = new Processo();
+
+                processo.setCodigo(codigoProcesso);
+                processo.setEntregaAnimal(entrega);
+                processo.setFaseProcesso(fase);
+                
+                processo.setStatus("Nao");
+
+                ProcessoDAO.getInstance().finalizarProcesso(processo);
+
+                // Prepara para mandar uma mensagem para a pessoa que adotou o animal.
+
+                proximaPagina="NotificarProcesso?operacao=finalizar&codigoProcesso="+codigoProcesso;
+            }
+
+            else{
+
+                int codigoAnimal = Integer.parseInt(request.getParameter("codigoAnimal"));
+
+                request.setAttribute("MsgErro", "Você não nos deu certeza que de ja entregou o animal.");
+
+                proximaPagina="gerProcesso?operacao=listar_processos&cod_animal="+codigoAnimal;
+            }
+
+
+        }
 
         //PARA DIRECIONAR AS PAGINAS PARA O LOCAL CERTO.
         RequestDispatcher rd = request.getRequestDispatcher(proximaPagina);

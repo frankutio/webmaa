@@ -53,7 +53,7 @@ $(function() {
 	});
 
 	$(".cancelar").mouseout(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar.png");
+		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho");
 	});
 	
 	$(".reprovar").mouseover(function() {
@@ -223,10 +223,13 @@ $(function() {
                 Analise bem o pedido e caso seja de sua vontade, aprove ou regeite este peocesso.
 
                 <br />
-                <br />
-                <span class="obrigatorio">
-                    Caso voc&ecirc; recuse este processo, o usuario receber&aacute; uma notifica&ccedil;&atilde;o informando a sua decis&atilde;o.<br />
-                Voc&ecirc; tamb&eacute;m poder&aacute; mandar uma Mensagem personalizada caso assim desseje.</span>
+                <br
+                <c:if test="${Processos.faseProcesso == 1}">
+                    <span class="obrigatorio">
+                        Caso voc&ecirc; recuse este processo, o usuario receber&aacute; uma notifica&ccedil;&atilde;o informando a sua decis&atilde;o.<br />
+                    Voc&ecirc; tamb&eacute;m poder&aacute; mandar uma Mensagem personalizada caso assim desseje.
+                    </span>
+                </c:if>
                 <br>
                     
             </p>    
@@ -359,18 +362,26 @@ $(function() {
                         <br />
                         <br />
 
-                        <form method="post" action="">
-                            <input type="hidden" name="oprecao" value="finalizarProcesso" />
+                        <form method="post" action="/WebMAATeste/gerProcesso">
+                            <input type="hidden" name="operacao" value="declarar_entrega" />
                             <input type="hidden" name="codigoProcesso" value="${Processos.codigo}" />
+                            <input type="hidden" name="codigoAnimal" value="${Processos.codigoAnimal}" />
+                            <input type="hidden" name="fasePeocesso" value="4" />
 
                         <table class="grid">
                         	<tr>
                             	<td width="72%"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/alert.png" /> &nbsp; Afirmo que ja entreguei o animal ao Enteressado:</td>
-                                <td width="28%" valign="bottom"><input type="checkbox" onclick="finaliarCheck();" name="confirmacao" /></td>
+                                <td width="28%" valign="bottom"><input type="radio" name="confirma" value="Sim" /></td>
                           </tr>
                         </table>
                          <div align="center" style="width:95%;">
-                    		<input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_finalizar.png" alt="Finalizar" title="Finalizar Adoção" disabled="disabled" name="final" value="ok" class="btFinalizar" />
+                    		<input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_finalizar.png" alt="Finalizar" title="Finalizar Adoção" name="final" value="ok" class="btFinalizar" /><br /><br />
+                             <%
+                                if(request.getAttribute("MsgErro") != null){
+                                    out.print("<span class='obrigatorio'>"+request.getAttribute("MsgErro") +
+                                     "</span>");
+                                }
+                             %>
                     	</div>
                        </form>
                     </div>

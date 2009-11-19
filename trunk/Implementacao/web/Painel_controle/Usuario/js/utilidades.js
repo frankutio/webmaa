@@ -38,15 +38,14 @@ function esconde(div){
 /* VALIDAÇÃO DE FORMULARIOS */
 
 function valida_avaliacao(){
-	var valor = document.fase03.entrega.value;
+	var valor = document.faseForm.entrega.value;
 	
-	if(valor =="2"){
-		$("#motivo_entrega").show();
+	if(valor =="Nao"){
+		$(".avaliar").attr("disabled",false);
 	}
 	
-	else if(valor =="1"){
-		$("#motivo_insatisfacao").attr("value","");
-		$("#motivo_entrega").hide();
+	else if(valor =="Sim"){
+		$(".avaliar").attr("disabled",false);
 	}
 }
 

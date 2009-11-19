@@ -17,6 +17,7 @@ public class Processo {
     private String mensagem;
     private String entregaAnimal;
     private String statusAvaliacao;
+    private String recebeAnimal;
 
     /**
      * @return the codigo
@@ -198,6 +199,20 @@ public class Processo {
      */
     public void setStatusAvaliacao(String statusAvaliacao) {
         this.statusAvaliacao = statusAvaliacao;
+    }
+
+    /**
+     * @return the recebeAnimal
+     */
+    public String getRecebeAnimal() {
+        return recebeAnimal;
+    }
+
+    /**
+     * @param recebeAnimal the recebeAnimal to set
+     */
+    public void setRecebeAnimal(String recebeAnimal) {
+        this.recebeAnimal = recebeAnimal;
     }
 
 

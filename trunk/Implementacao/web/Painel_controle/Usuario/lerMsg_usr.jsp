@@ -60,6 +60,56 @@ body {
 	cursor:pointer;
 	border:none;
 }
+
+.grid{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#646464;
+	font-weight:bold;
+	width:95%;
+}
+
+.grid strong{
+	color:#000000;
+}
+
+.grid a:link{
+	color:#333333;
+	text-decoration: underline;
+}
+.grid a:visited{
+	color:#333333;
+	text-decoration: underline;
+}
+
+.grid input{
+color:#2D6AA2;
+font-weight:bold;
+font-size:12px;
+}
+
+.grid select{
+font-size:12px;
+color:#2D6AA2;
+font-weight:bold;
+}
+
+.grid textarea{
+color:#2D6AA2;
+font-size:12px;
+font-weight:bold;
+border:solid 1px #009900;
+}
+
+.grid_titulo {
+border:#999999 solid 1px;
+background:url("/WebMAATeste/Painel_controle/Usuario/images/grid_titulo_azul.png");
+padding: 5px 5px 5px 5px;
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#FFFFFF;
+font-weight:bold;
+}
 </style>
 
 

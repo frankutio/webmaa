@@ -20,63 +20,19 @@
 <script type="text/javascript" src="/WebMAATeste/Painel_controle/Usuario/js/modal.js"></script>
 <link type="text/css" rel="stylesheet" href="/WebMAATeste/Painel_controle/Usuario/css/estilo_modal.css" />
 
-
 <script>
 
-$(function() {
-	$(".logoff").mouseover(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
-	});
+ $(function(){
 
-	$(".logoff").mouseout(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_logoff.png");
-	});
+        $(".avaliar").click(function(e){
+            valor = $(this).attr("value");
 
-	$(".aprovar").mouseover(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar_light.png");
-	});
+            $("#avaliacao").attr("value",valor);
 
-	$(".aprovar").mouseout(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_aprovar.png");
-	});
-
-	$(".ok").mouseover(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok_light.png");
-	});
-
-	$(".ok").mouseout(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_ok.png");
-	});
-
-	$(".cancelar").mouseover(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir_light.png");
-	});
-
-	$(".cancelar").mouseout(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir.png");
-	});
-    $(".desistir").mouseover(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir_light.png");
-	});
-
-	$(".desistir").mouseout(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir_desabilitado.png");
-	});
-	$(".reprovar").mouseover(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_reprovar_light.png");
-	});
-
-	$(".reprovar").mouseout(function() {
-		$(this).attr("src", "/WebMAATeste/Painel_controle/Usuario/images/botao/bt_reprovar.png");
-	});
-
-});
-
-
-
+            document.faseForm.submit();
+        })
+ });
 </script>
-
-
 
 </head>
 
@@ -136,7 +92,6 @@ $(function() {
 </div>
 
 <!-- CONTEUDO -->
-
 <div id="conteudo">
 
 	<span class="imgTopo_geral"></span>
@@ -146,12 +101,17 @@ $(function() {
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Ado&ccedil;&atilde;o - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Avaliar Ado&ccedil;&atilde;o - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br />
 
                 <div class="nota_informa">
-                    	<span>Bem Vindo a  p&aacute;gina de acompanhamento de ado&ccedil;&atilde;o.</span><br />
+                    	<span>Avalie este processo logo abaixo na Fase 03.</span><br />
           </div>
+          <span class="obrigatorio">(*) Campos de Preenchimento Obrigatório</span>
+          <br />
+
+          <br />
+
             <!-- FOTO DO USUARIO -->
             <div id="foto">
            	  <img src="/WebMAATeste/${Animal.especie}/images/miniaturas/${Animal.endFoto}" />
@@ -209,33 +169,24 @@ $(function() {
                             </td>
                         </tr>
                     </table>
-                    <c:if test="${Processo.faseProcesso == 1}">
-                        <div align="right" style="width:95%;">
-                            <a href="/WebMAATeste/gerProcesso?operacao=cancela_processo_usuario&codigo=${Processo.codigo}&codAnimal=${Animal.codigo}&codigoColab=${Colaborador.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir.png" class="seta_link cancelar" /></a>
-                        </div>
-                    </c:if>
 
                     <br />
-                    <c:if test="${Processo.faseProcesso == 1}">
-                        <div class="nota_informa" style="width:90%;">
-                            <span>Animal aguardando aprovação por parte do proprietario. Você ainda pode desistir da adoção clicando no botao acima.</span>
-                        </div>
-                    </c:if>
-
 
                     </div>
                     <!-- fase 01 -->
 
                     <!-- FASE 02 -->
-                    <c:if test="${(Processo.faseProcesso == 2)||(Processo.faseProcesso == 3)}">
+
                     <div id="fase02">
+                      
+                      
                     	<table width="80%">
 							<tr>
 				  				<td width="28%"><h2 class="fase">Fase 2/3</h2></td>
 								<td width="72%">
-                                    <c:if test="${Processos.faseProcesso == 4}">
+
                                         <span id="fase2_completa"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span>
-                                    </c:if>
+
                                </td>
 							</tr>
 						</table>
@@ -261,17 +212,7 @@ $(function() {
                             purus ipsum egestas nisl, et tincidunt turpis ipsum ut elit. Vivamus auctor nulla lorem.
                         </span>
                         <br />
-
-                        <c:if test="${Processo.faseProcesso == 2}">
-                                O que Pretendes Fazer?
-                                     <div align="right" style="width:95%;">
-                                         <a href="/WebMAATeste/gerProcesso?operacao=confirma_processo_adocao&codigo=${Processo.codigo}&fase=3&codAnimal=${Animal.codigo}&codigoColab=${Animal.codigoUsuario}&codigoUsr=${Colaborador.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_continuar.png" alt="Continuar" title="Continuar" class="seta_link continua" /></a>&nbsp;&nbsp;
-                                         <a href="/WebMAATeste/gerProcesso?operacao=cancela_processo_usuario&codigo=${Processo.codigo}&codAnimal=${Animal.codigo}&codigoColab=${Colaborador.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_desistir_desabilitado.png" alt="cancelar adoção" title="Cancelar Adoção" class="seta_link desistir" /></a>
-                                     </div>
-                         </c:if>
                        <br />
-
-                       <c:if test="${Processo.faseProcesso == 3}">
                             <div id="comunicacao">
                                 Dados para Negociação<br />
                                 <table class="grid" style="width:100%;">
@@ -327,18 +268,89 @@ $(function() {
                                         </td>
                                     </tr>
                                 </table>
-                                <div class="nota_informa">
-                                    <span>Entre em contato com o Proprietario e negocie a adoção. Após  a entrega do animal será necessario que você o avalie na Fase 03.<br />
-                                    Qualquer problema durante a negociação entre com contato com a nossa Ong informando o codigo do usuario.</span>
-                                </div>
 
                                 </div>
-                    </c:if>
 </div>
-                    </c:if>
+
                     <!-- FASE 02 -->
 
-                    
+                     <!-- Fase 03 -->
+                     <br />
+                      <br />
+                       <div id="fase03">
+                    	<table width="80%">
+							<tr>
+				  				<td width="28%"><h2 class="fase">Fase 3/3</h2></td>
+							</tr>
+						</table>
+
+                        <div class="nota_informa">
+                               		<span>Avalie o Recebimento do Animal e seu proprietario.</span>
+                        </div>
+
+                        <form name="faseForm" method="post" action="/WebMAATeste/gerProcesso" onsubmit="return false">
+
+                            <input type="hidden" name="operacao" value="avaliar" />
+                            <input type="hidden" name="codigo" value="${Processo.codigo}" />
+                            <input type="hidden" name="codigoUsuario" value="${Colaborador.codigo}" />
+                            <input type="hidden" name="nome" value="${Colaborador.nome}" />
+                            <input type="hidden" name="avaliacao" value="" id="avaliacao" />
+
+
+
+                            <table class="grid">
+                               		<tr>
+                                    	<td colspan="2"><span class="obrigatorio">Essa avaliação é muito importante para que nos posssamos saber se o processo foi como você esperava.</span></td>
+                                    </tr>
+                                    <tr>
+                                    	<td colspan="2">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                    	<td width="38%" align="right"><span class="obrigatorio">*</span> Você Recebeu o seu animal? &nbsp;</td>
+                                        <td width="62%" align="left">
+                                        	<select name="recebe_animal" id="entrega" onchange="valida_avaliacao();">
+                                            	<option value="0" selected="selected">:: Selecione ::</option>
+                                                <option value="Sim">Sim</option>
+                                                <option value="Nao">Não</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    	<td colspan="2">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                    	<td colspan="2">Conte para agante como foi a sua experiencia com o Ex-proprietario:</td>
+                                    </tr>
+                                    <tr>
+                                    	<td colspan="2"><textarea rows="5" cols="60" name="descricaoavaliacao"></textarea></td>
+                                    </tr>
+                               </table>
+
+
+                                <br />
+                               <table class="grid">
+                               		<tr>
+                                    	<td width="8%"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/alert.png" alt="Atenção" /></td>
+                                        <td width="92%"><span class="obrigatorio">Faça a avaliação do Usuario</span></td>
+                                    </tr>
+                               </table>
+
+                               <br />
+
+                               <div id="avaliacao">
+                               		<p> Escolha o tipo de Avaliação</p>
+                                    <br />
+                               <div align="center" style="width:90%;">
+                					<input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_positiva.png" alt="Positiva" title="Positiva" disabled="disabled" value="positiva" class="avaliar" /> &nbsp;&nbsp;
+                                    <input type="image" src="/WebMAATeste/Painel_controle/Usuario/images/botao/bt_negativa.png" alt="Negativa" title="Negativa" disabled="disabled" value="negativa" class="avaliar" />
+                				</div>
+                                </div>
+
+                               </form>
+
+                       </div>
+
           </div>
             <!-- DADOS DO USUARIO -->
 
