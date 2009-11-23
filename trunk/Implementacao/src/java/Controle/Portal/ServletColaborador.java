@@ -54,7 +54,7 @@ public class ServletColaborador extends HttpServlet {
 
             Colaborador usr = new Colaborador();
 
-            String termo = request.getParameter("descricaoTermoAceito");
+            String termo = request.getParameter("termoAceito");
 
             //RECUPERA LISTA DE FORMA DE ENVIOS - METODO LETODOS()
             List<UF> lstUF = UFDAO.getInstance().leTodos();
@@ -73,7 +73,7 @@ public class ServletColaborador extends HttpServlet {
             //COVNERTE DATA
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             // ISNTANCIA A CLASSE - Obtem dados do formulario
-            Colaborador colaborador = new Colaborador();
+            Colaborador formColaborador = new Colaborador();
 
             String valida = "Nao";
             String foto = "fotoUsr2.png";
@@ -81,39 +81,38 @@ public class ServletColaborador extends HttpServlet {
             //RECUPERA PARAMENTRO DESCRICAO
             try{
 
-                colaborador.setNome(request.getParameter("nome"));
-                colaborador.setRg(request.getParameter("rg"));
-                colaborador.setCpf(request.getParameter("cpf"));
-                colaborador.setEmail(request.getParameter("email"));
-                colaborador.setSexo(request.getParameter("sexo"));
+                formColaborador.setNome(request.getParameter("nome"));
+                formColaborador.setRg(request.getParameter("rg"));
+                formColaborador.setCpf(request.getParameter("cpf"));
+                formColaborador.setEmail(request.getParameter("email"));
+                formColaborador.setSexo(request.getParameter("sexo"));
                 Date dtnascimento = dateFormat.parse(request.getParameter("idade"));
-                colaborador.setDataNascimento(dtnascimento);
-                colaborador.setTelefone(request.getParameter("fone"));
-                colaborador.setCelular(request.getParameter("cel"));
+                formColaborador.setDataNascimento(dtnascimento);
+                formColaborador.setTelefone(request.getParameter("fone"));
+                formColaborador.setCelular(request.getParameter("cel"));
 
-                colaborador.setCep(request.getParameter("cep"));
-                colaborador.setEndereco(request.getParameter("end"));
-                colaborador.setComplemento(request.getParameter("complemento"));
-                colaborador.setNumero(Integer.parseInt(request.getParameter("numero")));
-                colaborador.setCidade(request.getParameter("cidade"));
-                colaborador.setBairro(request.getParameter("bairro"));
-                colaborador.setUf(Integer.parseInt(request.getParameter("uf")));
-                colaborador.setProtocolo(request.getParameter("protocolo"));                
+                formColaborador.setCep(request.getParameter("cep"));
+                formColaborador.setEndereco(request.getParameter("end"));
+                formColaborador.setComplemento(request.getParameter("complemento"));
+                formColaborador.setNumero(Integer.parseInt(request.getParameter("numero")));
+                formColaborador.setCidade(request.getParameter("cidade"));
+                formColaborador.setBairro(request.getParameter("bairro"));
+                formColaborador.setUf(Integer.parseInt(request.getParameter("uf")));
+                formColaborador.setProtocolo(request.getParameter("protocolo"));
                 Date dtCadastro = dateFormat.parse(request.getParameter("dataCad"));
-                colaborador.setDatacadastro(dtCadastro);               
+                formColaborador.setDatacadastro(dtCadastro);
                 
-                colaborador.setTermoAceito(request.getParameter("termo"));
-                colaborador.setValidacao(valida);
-                colaborador.setEndFoto(foto);
+                formColaborador.setTermoAceito(request.getParameter("termo"));
+                formColaborador.setValidacao(valida);
+                formColaborador.setEndFoto(foto);
 
                 // Mensagem de erro e proxima pagina
-                String msgErro = colaborador.validaDados(colaborador.INCLUSAO);
+                String msgErro = formColaborador.validaDados(formColaborador.INCLUSAO);
 
                 // Monta Colaborador com dados validos ou monta mensagens de erro
 
                 if (msgErro.equals("")) {
-
-                    //colaborador.setCodigo(colaborador.getCodigo());
+                    Colaborador colaborador = new Colaborador();
 
                     colaborador.setNome(colaborador.getNome());
                     colaborador.setUf(colaborador.getUf());
@@ -153,10 +152,16 @@ public class ServletColaborador extends HttpServlet {
                 }else {
                     request.setAttribute("msgErro", msgErro);
 
-                    //CRIA UM ATRIBUTO PARA MANDAR PARA A JSP
-                    request.setAttribute("Colaborador", colaborador);
+                    //RECUPERA LISTA DE FORMA DE ENVIOS - METODO LETODOS()
+                     List<UF> lstUF = UFDAO.getInstance().leTodos();
 
-                    proximaPagina = "cadastro/inicioCad.jsp";
+                     //CRIA UM ATRIBUTO PARA MANDAR PARA A JSP
+                     request.setAttribute("lstUF", lstUF);
+
+                    //CRIA UM ATRIBUTO PARA MANDAR PARA A JSP
+                    request.setAttribute("Colaborador", formColaborador);
+
+                    proximaPagina = "NavUsr?operacao=termoValido&termoAceito=Sim";
                 }
             }catch(ParseException e){
 

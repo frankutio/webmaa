@@ -33,6 +33,22 @@ public class Colaborador {
     private int valLog;
     private String dataNascimentoString;
 
+
+
+    public String validaDados(int tipoDeValidacao) {
+
+        String msgErro = "";
+
+        if(tipoDeValidacao == INCLUSAO){
+
+            if(getNome() == null || getNome().equals("")){
+                msgErro +="Informe o nome.";
+            }
+        }
+
+        return msgErro;
+    }
+
     /**
      * @return the cod
      */
@@ -307,16 +323,7 @@ public class Colaborador {
      */
     public void setUf(int uf) {
         this.uf = uf;
-    }
-
-    public String validaDados(int tipoDeValidacao) {
-
-        String msgErro = "";
-
-
-        return msgErro;
-
-    }
+    }    
 
     /**
      * @return the descricaoTermoAceito

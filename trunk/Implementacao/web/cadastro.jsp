@@ -15,6 +15,7 @@
 <script type="text/javascript" src="/WebMAATeste/js/maskedinput.js"></script>
 <script type="text/javascript" src="/WebMAATeste/js/jquery-ui-datepicker.js"></script>
 <script type="text/javascript" src="/WebMAATeste/js/menuSuper.js"></script>
+<script type="text/javascript" src="/WebMAATeste/js/jquery.validate.js"></script>
 
 <script>
 function focoBt(id){
@@ -118,16 +119,13 @@ sadsdsfd
             </span>   
             <br />
             <br />
-			<form name="termoAceite" action="NavUsr" method="post">
-            
-            <input type="hidden" name="termoAceito" value="1" />
-            <input type="hidden" name="descricaoTermoAceito" value="Li e Concordo com os Termos de Uso" />
+			<form id="termoAceite" action="NavUsr" method="post">
             <input type="hidden" name="operacao" value="termoValido" />
             
 			<table class="grid">
 				<tr>
 				  <td width="29%" align="right"><label for="aceitar">Li e concordo com os termos de uso &nbsp;</label></td>
-				  <td width="71%"><input type="checkbox" id="aceitar" name="termoContrato" value="sim" onclick="verificaTermo();" /></td>
+				  <td width="71%"><input type="checkbox" id="aceitar" name="termoAceito" value="Sim" onclick="verificaTermo();" /></td>
 				</tr>
 			</table>
 			            

@@ -79,9 +79,9 @@ function esconde(div){
 
 function verificaTermo(){
 	
-var campo = $("input[@name='termoContrato']:checked").val();
+var campo = $("input[@name='termoAceito']:checked").val();
 
-	if(campo =="sim"){
+	if(campo =="Sim"){
 		$("#continuar").attr("disabled",false);
 	}
 	else {

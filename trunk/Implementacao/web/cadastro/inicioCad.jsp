@@ -18,6 +18,7 @@
 <script type="text/javascript" src="/WebMAATeste/js/maskedinput.js"></script>
 <script type="text/javascript" src="/WebMAATeste/js/jquery-ui-datepicker.js"></script>
 <script type="text/javascript" src="/WebMAATeste/js/menuSuper.js"></script>
+<script type="text/javascript" src="/WebMAATeste/js/valida_campos.js"></script>
 
 <script>
 
@@ -28,7 +29,6 @@ function focoBt(id){
 function bt(id){
 		$("#"+id).attr("src","/WebMAATeste/images/botao/bt_cadastrar.png");
 }
-
 
 </script>
 
@@ -105,19 +105,19 @@ function bt(id){
 			<br />
 			<br />
             
-        <form action="NavUsr" method="post" name="cadastrar">
+        <form action="NavUsr" method="post" name="cadastrar" id="cadastroColab" onsubmit="return validaCampoColab(this);">
         
 			<div id="inicio" class="abaEsconde">	
 			
-			<input type="hidden" name="termo" value="Sim" />
+			<input type="hidden" name="termo" value="${descricaoTermo}" />
             <input type="hidden" name="operacao" value="cadastro" />
             <input type="hidden" value="" class="dataCad" name="dataCad" />
             <input type="hidden" value="" class="pt" name="protocolo" />
             
 				<table class="grid">
 					<tr>
-						<td width="13%" align="right"><span class="obrigatorio">*</span> Nome: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="nome" size="50" value="" /></td>
+                        <td width="13%" align="right"><span class="obrigatorio">*</span> <label for="nome">Nome:</label> &nbsp;</td>
+                      <td colspan="3"><label><input type="text" name="nome" size="50" value="" id="nome" /> </label></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> RG: &nbsp;</td>
@@ -133,7 +133,7 @@ function bt(id){
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Data de&nbsp; Nascimento: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="idade" size="10" class="data" /></td>
+                      <td colspan="3"><input type="text" name="idade" size="10" class="data" /> &nbsp;<span id="idadeErro"></span></td>
 					</tr>
                     <tr>
 						<td width="13%" align="right">Telefone: &nbsp;</td>
@@ -149,7 +149,8 @@ function bt(id){
                 <div align="center">
                 	<img src="/WebMAATeste/images/botao/bt_proximo.png" alt="Proximo" title="Proximo" class="seta_link" onclick="contAba('cadLogradouro','cadL');" />
                 </div>
-			
+			<br>
+                ${msgErro}
 			</div>
             
             <!-- DADOS DE SEGURANÃA -->
@@ -188,14 +189,14 @@ function bt(id){
 				      <td colspan="3"><input type="text" name="cep" size="10" class="cep" /></td>
 					</tr>
 					<tr>
-						<td width="13%" align="right"><span class="obrigatorio">*</span> EndereÃ§o: &nbsp;</td>
+						<td width="13%" align="right"><span class="obrigatorio">*</span> Endereço: &nbsp;</td>
 				      <td colspan="3"><input type="text" name="end" size="50" /></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right">Complemento: &nbsp;</td>
 				        <td><input type="text" name="complemento" size="10" /></td>
-						<td width="13%" align="right">NÃºmero: &nbsp;</td>
-				        <td><input type="text" name="numero" size="5" /></td>
+						<td width="13%" align="right">Número: &nbsp;</td>
+				        <td><input type="text" name="numero" size="5" /> &nbsp;</td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Cidade: &nbsp;</td>
@@ -207,11 +208,11 @@ function bt(id){
 						<td width="13%" align="right"><span class="obrigatorio">*</span> UF: &nbsp;</td>
 				      <td width="17%" colspan="3">
 					  	<select name="uf">
-                                  <option></option>
+                                  <option value=""></option>
                                       <c:forEach items="${lstUF}" var="lstUF">
                                       <option value="${lstUF.codigo}"> ${lstUF.UF}</option>
                                    </c:forEach>
-                          </select>
+                          </select> &nbsp; <span id="ufErro"></span>
 					  </td>
 					</tr>
 				</table>
