@@ -1,9 +1,9 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
 <link type="text/css" rel="stylesheet" href="/WebMAATeste/css/geral.css" />
@@ -101,7 +101,7 @@ function bt(id){
 		<!-- CONTEUDO DAS ABAS -->
 		<div id="cont_aba">
         	<br />
-			<span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+			<span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
 			<br />
 			<br />
             
@@ -117,31 +117,31 @@ function bt(id){
 				<table class="grid">
 					<tr>
                         <td width="13%" align="right"><span class="obrigatorio">*</span> <label for="nome">Nome:</label> &nbsp;</td>
-                      <td colspan="3"><label><input type="text" name="nome" size="50" value="" id="nome" /> </label></td>
+                      <td colspan="3"><label><input type="text" name="nome" size="50" value="${Colaborador.nome}" id="nome" /> </label></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> RG: &nbsp;</td>
-				      <td width="17%"><input type="text" name="rg" size="10" maxlength="9" /></td>
+				      <td width="17%"><input type="text" name="rg" size="10" maxlength="9" value="${Colaborador.rg}" /></td>
 						<td width="9%" align="right"><span class="obrigatorio">*</span> CPF: &nbsp;</td>
-					  <td width="61%"><input type="text" name="cpf" class="cpf" size="15" /></td>
+					  <td width="61%"><input type="text" name="cpf" class="cpf" size="15" value="${Colaborador.cpf}" /></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Email (Login): &nbsp;</td>
-				      <td width="17%"><input type="text" name="email" size="20" onkeyup="insertLogin();"/></td>
+				      <td width="17%"><input type="text" name="email" size="20" onkeyup="insertLogin();" value="${Colaborador.email}"/></td>
 						<td width="9%" align="right"><span class="obrigatorio">*</span> Sexo: &nbsp;</td>
 					  <td width="61%"><label>Masculino &nbsp; <input type="radio" name="sexo" value="M" id="masc" /></label> &nbsp;&nbsp; <label>Feminino &nbsp; <input type="radio" name="sexo" value="F" id="femi" /></label></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Data de&nbsp; Nascimento: &nbsp;</td>
-                      <td colspan="3"><input type="text" name="idade" size="10" class="data" /> &nbsp;<span id="idadeErro"></span></td>
+                      <td colspan="3"><input type="text" name="idade" size="10" class="data" value="${Colaborador.dataNascimentoString}" /> &nbsp;<span id="idadeErro"></span></td>
 					</tr>
                     <tr>
 						<td width="13%" align="right">Telefone: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="fone" size="15" class="foneDD" /></td>
+				      <td colspan="3"><input type="text" name="fone" size="15" class="foneDD" value="${Colaborador.telefone}" /></td>
 					</tr>
                     <tr>
 						<td width="13%" align="right">Celular: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="cel" size="15" class="foneDD" /></td>
+				      <td colspan="3"><input type="text" name="cel" size="15" class="foneDD" value="${Colaborador.celular}" /></td>
 					</tr>
 				</table>
                 <br />
@@ -150,10 +150,12 @@ function bt(id){
                 	<img src="/WebMAATeste/images/botao/bt_proximo.png" alt="Proximo" title="Proximo" class="seta_link" onclick="contAba('cadLogradouro','cadL');" />
                 </div>
 			<br>
-                ${msgErro}
+                <span style="color:red;">
+                    ${msgErro}
+                </span>
 			</div>
             
-            <!-- DADOS DE SEGURANÃA -->
+            <!-- DADOS DE SEGURANÇA -->
             <div id="cadSeguro" class="abaEsconde">
             
             <table class="grid">
@@ -178,31 +180,31 @@ function bt(id){
                 </div>
                 
               </div>              
-              <!-- DADOS DE SEGURANÃA -->
+              <!-- DADOS DE SEGURANÇA -->
               
-              <!-- DADOS DE ENDEREÃO -->
+              <!-- DADOS DE ENDEREÇO -->
             <div id="cadLogradouro" class="abaEsconde">
             
             <table class="grid">
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> CEP: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="cep" size="10" class="cep" /></td>
+				      <td colspan="3"><input type="text" name="cep" size="10" class="cep" value="${Colaborador.cep}" /></td>
 					</tr>
 					<tr>
-						<td width="13%" align="right"><span class="obrigatorio">*</span> Endereço: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="end" size="50" /></td>
+						<td width="13%" align="right"><span class="obrigatorio">*</span> Endere�o: &nbsp;</td>
+				      <td colspan="3"><input type="text" name="end" size="50" value="${Colaborador.endereco}" /></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right">Complemento: &nbsp;</td>
-				        <td><input type="text" name="complemento" size="10" /></td>
-						<td width="13%" align="right">Número: &nbsp;</td>
-				        <td><input type="text" name="numero" size="5" /> &nbsp;</td>
+				        <td><input type="text" name="complemento" size="10" value="${Colaborador.complemento}" /></td>
+						<td width="13%" align="right">N�mero: &nbsp;</td>
+				        <td><input type="text" name="numero" size="5" id="numero" value="${Colaborador.numero}" /> &nbsp;</td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Cidade: &nbsp;</td>
-				      <td width="17%"><input type="text" name="cidade" size="20" /></td>
+				      <td width="17%"><input type="text" name="cidade" size="20" value="${Colaborador.cidade}" /></td>
 						<td width="9%" align="right"><span class="obrigatorio">*</span> Bairro: &nbsp;</td>
-					  <td width="61%"><input type="text" name="bairro" size="10" /></td>
+					  <td width="61%"><input type="text" name="bairro" size="10" value="${Colaborador.bairro}" /></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> UF: &nbsp;</td>
@@ -225,7 +227,7 @@ function bt(id){
 				</div>
                 
               </div>              
-              <!-- DADOS DE ENDEREÃO -->
+              <!-- DADOS DE ENDEREÇO -->
               
              </form>
             
@@ -242,7 +244,7 @@ function bt(id){
 </div>
 <!-- Fim do corpo -->
 
-<!-- RodapÃ© -->
+<!-- Rodapé -->
 
 <div id="rodape">
 	sdjlarpq

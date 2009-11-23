@@ -18,10 +18,10 @@ function validaIdade(idade){
 
 function validaNumero(numero){
  if(numero == ""){	
-   numero.value="0";
-   return true; 
+   $("#numero").attr("value","0");
+    return true;
    }
-   return false; 
+    return true;
 }
 
 function validaUf(uf){

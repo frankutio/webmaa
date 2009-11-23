@@ -42,8 +42,34 @@ public class Colaborador {
         if(tipoDeValidacao == INCLUSAO){
 
             if(getNome() == null || getNome().equals("")){
-                msgErro +="Informe o nome.";
+                msgErro +="Informe o nome.<br />";
             }
+
+            if(getRg() == null || getRg().equals("")){
+                msgErro +="Preencha o RG<br />";
+            }
+             if(getCpf() == null || getCpf().equals("")){
+                msgErro +="Preencha o CPF <br />";
+            }
+            if(getEmail() == null || getEmail().equals("")){
+                msgErro +="Preencha o E-mail <br />";
+            }
+            if(getSexo() == null || getSexo().equals("")){
+                msgErro +="Informe o Sexo <br />";
+            }
+            if(getCep() == null || getCep().equals("")){
+                msgErro +="Informe o CEP <br />";
+            }
+            if(getEndereco() == null || getEndereco().equals("")){
+                msgErro +="Preencha o Endereço <br />";
+            }
+            if(getCidade() == null || getCidade().equals("")){
+                msgErro +="Preencha a Cidade <br />";
+            }
+            if(getBairro() == null || getBairro().equals("")){
+                msgErro +="Preencha o Bairro <br />";
+            }
+            
         }
 
         return msgErro;
@@ -294,14 +320,27 @@ public class Colaborador {
      * @param telefone the telefone to set
      */
     public void setTelefone(String telefone) {
+
+        if(telefone == null || telefone == ""){
+            this.telefone = "--";
+        }
+        else{
         this.telefone = telefone;
+        }
     }
 
     /**
      * @param celular the celular to set
      */
     public void setCelular(String celular) {
+
+        if(celular == null || celular == ""){
+            this.celular = "--";
+        }
+        else{
         this.celular = celular;
+        }
+        
     }
 
     /**

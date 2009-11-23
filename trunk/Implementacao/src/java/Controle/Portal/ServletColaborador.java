@@ -114,25 +114,25 @@ public class ServletColaborador extends HttpServlet {
                 if (msgErro.equals("")) {
                     Colaborador colaborador = new Colaborador();
 
-                    colaborador.setNome(colaborador.getNome());
-                    colaborador.setUf(colaborador.getUf());
-                    colaborador.setEmail(colaborador.getEmail());
-                    colaborador.setTelefone(colaborador.getTelefone());
-                    colaborador.setBairro(colaborador.getBairro());
-                    colaborador.setCidade(colaborador.getCidade());
-                    colaborador.setNumero(colaborador.getNumero());
-                    colaborador.setDataNascimento(colaborador.getDataNascimento());
-                    colaborador.setCep(colaborador.getCep());
-                    colaborador.setCpf(colaborador.getCpf());
-                    colaborador.setRg(colaborador.getRg());
-                    colaborador.setEndereco(colaborador.getEndereco());
-                    colaborador.setSexo(colaborador.getSexo());
-                    colaborador.setDatacadastro(colaborador.getDataCadastro());
-                    colaborador.setComplemento(colaborador.getComplemento());
+                    colaborador.setNome(formColaborador.getNome());
+                    colaborador.setUf(formColaborador.getUf());
+                    colaborador.setEmail(formColaborador.getEmail());
+                    colaborador.setTelefone(formColaborador.getTelefone());
+                    colaborador.setBairro(formColaborador.getBairro());
+                    colaborador.setCidade(formColaborador.getCidade());
+                    colaborador.setNumero(formColaborador.getNumero());
+                    colaborador.setDataNascimento(formColaborador.getDataNascimento());
+                    colaborador.setCep(formColaborador.getCep());
+                    colaborador.setCpf(formColaborador.getCpf());
+                    colaborador.setRg(formColaborador.getRg());
+                    colaborador.setEndereco(formColaborador.getEndereco());
+                    colaborador.setSexo(formColaborador.getSexo());
+                    colaborador.setDatacadastro(formColaborador.getDataCadastro());
+                    colaborador.setComplemento(formColaborador.getComplemento());
                    // colaborador.setEndFoto(colaborador.getEndFoto());
-                    colaborador.setCelular(colaborador.getCelular());
-                    colaborador.setTermoAceito(colaborador.getTermoAceito());
-                    colaborador.setProtocolo(colaborador.getProtocolo());
+                    colaborador.setCelular(formColaborador.getCelular());
+                    colaborador.setTermoAceito(formColaborador.getTermoAceito());
+                    colaborador.setProtocolo(formColaborador.getProtocolo());
                     colaborador.setValidacao(valida);
                     colaborador.setEndFoto(foto);
                     
