@@ -50,11 +50,11 @@ public class Animais {
             }
             if(getLaudoVeterinario() == null || getLaudoVeterinario().equals("")){
 
-                this.laudoVeterinario = null;
+                this.laudoVeterinario = "Nao";
             }
             if(getVacinado() == null || getVacinado().equals("")){
 
-                this.vacinado = null;
+                this.vacinado = "Nao";
             }
 
             if(getDescricao() == null || getDescricao().equals("")){

@@ -47,9 +47,10 @@ public class ServletListaAnimal extends HttpServlet {
             
             String esp = "Gato";
             String disp = "Sim";
+            String bloqueio ="Nao";
 
                         
-             List<Animais> lstAnimal = AnimalDAO.getInstance().listaAni(esp,disp);
+             List<Animais> lstAnimal = AnimalDAO.getInstance().listaAni(esp,disp,bloqueio);
 
 
             if(lstAnimal == null){
@@ -68,8 +69,9 @@ public class ServletListaAnimal extends HttpServlet {
 
             String esp = "Cao";
             String disp = "Sim";
+            String bloqueio ="Nao";
 
-             List<Animais> lstAnimal = AnimalDAO.getInstance().listaAni(esp,disp);
+             List<Animais> lstAnimal = AnimalDAO.getInstance().listaAni(esp,disp,bloqueio);
 
              if(lstAnimal == null){
 

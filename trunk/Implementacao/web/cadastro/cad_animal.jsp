@@ -204,7 +204,7 @@ sadsdsfd
                         </c:forEach>
                     </select>
                   </td>
-                    <td width="9%" align="right">2Âª Cor: &nbsp;</td>
+                    <td width="9%" align="right">2ª Cor: &nbsp;</td>
                   <td width="57%">
                   	<select name="cor2">
                     	<option value="0"></option>
@@ -254,7 +254,7 @@ sadsdsfd
             <br />
 <table class="grid">
                 	<tr>
-                    	<td align="right">Animal com certificado/Laudo VeterianÃ¡rio? &nbsp;</td>
+                    	<td align="right">Animal com certificado/Laudo Veterinário? &nbsp;</td>
                         <td colspan="3">
                        	  <select name="laudo">
                             	<option value="">&nbsp;</optgroup>
@@ -290,13 +290,17 @@ sadsdsfd
                     </tr>
                 </table>
             <br />
-            <h3>DescriÃ§Ã£o/ComentÃ¡rio</h3>
+            <h3>Descrição/Comentário</h3>
             <br />
-            Descreva o seu bichinho mais detalhadamente ou deixe um comentario sobre ele, isso ajuda na hora na adoÃ§Ã£o.<br />
+            Descreva o seu bichinho mais detalhadamente ou deixe um comentario sobre ele, isso ajuda na hora na adoção.<br />
             <textarea rows="5" cols="75" name="descricao"></textarea>            
           
             <br />
              <br />
+             <br>
+                <span style="color:red;">
+                    ${msgErro}
+                </span>
                    
             <div style="width:70%; text-align:right;">
               <input type="image" src="/WebMAATeste/images/botao/bt_continuar_verde.png" alt="ok" title="Continuar" class="seta_link" id="continuar" onmouseover="focoBt('continuar');" onmouseout="bt('continuar');" />

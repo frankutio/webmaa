@@ -87,3 +87,8 @@ function finaliarCheck(){
 	$("#btFinalizar").attr("disabled",false);
 }
 
+function confirmaExclusao(codigo){
+   if(confirm("Deseja Realmente excluir esse animal?")){
+       window.location="/WebMAATeste/GerAnimal?operacao=apagarAnimal&codigo="+codigo;
+   }
+}

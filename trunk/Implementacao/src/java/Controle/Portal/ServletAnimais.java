@@ -171,6 +171,21 @@ public class ServletAnimais extends HttpServlet {
                 }else {
                     request.setAttribute("msgErro", msgErro);
                     //CRIA UM ATRIBUTO PARA MANDAR PARA A JSP
+
+                    List<Cor> lstCor = CorDAO.getInstance().leTodos();
+                    request.setAttribute("lstCor", lstCor);
+
+                    List<Porte> lstPorte = PorteDAO.getInstance().leTodos();
+                    request.setAttribute("lstPorte", lstPorte);
+
+                    List<TipoEnvio> lstEnvio = EnvioDAO.getInstance().leTodos();
+                    request.setAttribute("lstEnvio", lstEnvio);
+
+                    List<Pelagem> lstPelagem = PelagemDAO.getInstance().leTodos();
+                    request.setAttribute("lstPelagem", lstPelagem);
+
+                    List<Raca> lstRaca = RacaDAO.getInstance().leTodos();
+                    request.setAttribute("lstRaca", lstRaca);
                     request.setAttribute("Erro", "Ocorreu um Erro ao Tentar Processar a Requisição, " +
                             "Por Favor Refaça o Cadastro.");
 
@@ -239,7 +254,7 @@ public class ServletAnimais extends HttpServlet {
             // ISNTANCIA A CLASSE - Obtem dados do formulario
 
             Animais animal = new Animais();
-                String disponibilidade ="Nao";
+                String disponibilidade ="Sim";
                 String local = "Sim";
 
              try{
@@ -443,6 +458,24 @@ public class ServletAnimais extends HttpServlet {
             }
 
             
+        }
+
+        else if(operacao.equals("apagarAnimal")){
+
+            int codigoAnimal = Integer.parseInt(request.getParameter("codigo"));
+            // Recupera o codigo do proprietario antes de apagar o animal.
+            Animais animal = AnimalDAO.getInstance().preparaAnimal(codigoAnimal);
+            int codigoColaborador = animal.getCodigoUsuario();
+
+            // apaga o animal selecionado
+
+            int ret = AnimalDAO.getInstance().apaga(codigoAnimal);
+
+            // prepara uma mensagem de confirmação para mandar pra JSP
+            request.setAttribute("Altera", "Animal Excluido com Sucesso!");
+
+            proximaPagina="PainelControle?operacao=exibirPainel&colaborador="+codigoColaborador;
+
         }
 
 

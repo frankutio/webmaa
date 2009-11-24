@@ -104,6 +104,15 @@ public class ServletPainelControle extends HttpServlet {
         }
 
         else if(operacao.equals("alterar_foto")){
+
+            // seta a foto padrão
+
+            String foto="fotoUsr.png";
+
+            Colaborador colaborador = new Colaborador();
+
+            colaborador.setCodigo(Integer.parseInt(request.getParameter("codigo")));
+
              // Verifica se a requisicao e do tipo multipart
         if (ServletFileUpload.isMultipartContent(request)) {
 
@@ -128,9 +137,7 @@ public class ServletPainelControle extends HttpServlet {
 
                         // Grava o nome do arquivo no perfil do usuario
 
-                        Colaborador colaborador = new Colaborador();
-
-                        colaborador.setCodigo(Integer.parseInt(request.getParameter("codigo")));
+                        
                         colaborador.setEndFoto(fi.getName());
 
                         PortalColabDAO.getInstance().alteraFoto(colaborador);
@@ -140,6 +147,12 @@ public class ServletPainelControle extends HttpServlet {
 
                 }
             } catch (Exception ex) {
+
+                colaborador.setEndFoto(foto);
+
+                PortalColabDAO.getInstance().alteraFoto(colaborador);
+                proximaPagina = "PainelControle?operacao=exibirPainel&colaborador=" + colaborador.getCodigo();
+                
                 System.out.println(new Date() + " - Exception: " + ex.getMessage());
             }
         }

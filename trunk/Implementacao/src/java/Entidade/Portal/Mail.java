@@ -55,7 +55,7 @@ public class Mail {
 
 		//Cria um autenticador que sera usado a seguir
 		SimpleAuth auth = null;
-		auth = new SimpleAuth ("frankutio@gmail.com","fb007032");
+		auth = new SimpleAuth ("webmaatcc@gmail.com","webmaa2009");
 
 		//Session - objeto que ira realizar a conexão com o servidor
 		/*Como há necessidade de autenticação é criada uma autenticacao que
@@ -91,7 +91,7 @@ public class Mail {
 			 *  2 - seu nome de usuario do gmail
 			 *  3 - sua senha do gmail
 			 */
-			tr.connect(mailSMTPServer, "frankutio", "fb007032");
+			tr.connect(mailSMTPServer, "webmaatcc", "webmaa2009");
 			msg.saveChanges(); // don't forget this
 			//envio da mensagem
 			tr.sendMessage(msg, msg.getAllRecipients());

@@ -53,7 +53,7 @@ public class ServletEmail extends HttpServlet {
             Mail mail = new Mail();
 
             try {
-                mail.sendMail("amigosfieis@ongamf.com", email , "Validação da Conta",msg);
+                mail.sendMail("Amigos Fieis<webmaatcc@gmail.com>", email , "Validação da Conta",msg);
             } catch (Exception e) {
                e.printStackTrace();
             }

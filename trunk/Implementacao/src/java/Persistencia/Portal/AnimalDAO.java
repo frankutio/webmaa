@@ -34,9 +34,9 @@ public class AnimalDAO {
                         "(Cor_SegCor,Cor_codigo,TipoPelo_codigo,PorteAnimal_codigo" +
                         ",TipoRaca_codigo,sexo,descricao,foto,disponibilidade,datacadastro" +
                         ",idade,nome,vacinado,descricaovacinas,laudoveterinario,localanimal" +
-                        ",tipoespecie,TipoFormaEnvio_codigo,Colaborador_codigo"+
+                        ",tipoespecie,TipoFormaEnvio_codigo,Colaborador_codigo,bloqueio"+
                         ")" +
-                        " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                        " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
                 pstmt.setInt(1, animal.getCor2());
                 pstmt.setInt(2, animal.getCor1());
                 pstmt.setInt(3, animal.getCodigoPelagem());
@@ -56,6 +56,7 @@ public class AnimalDAO {
                 pstmt.setString(17, animal.getEspecie());
                 pstmt.setInt(18, animal.getCodigoFormaEnvio());
                 pstmt.setInt(19, animal.getCodigoUsuario());
+                pstmt.setString(20, "Sim");
 
                 pstmt.execute();
             } catch (SQLException e) {
@@ -119,7 +120,7 @@ public class AnimalDAO {
     }
 
     //RECUPERA UMA  LISTA DE TODOS OS REGISTRO DO BANCO
-    public List<Animais> listaAni(String esp, String disp) {
+    public List<Animais> listaAni(String esp, String disp, String bloqueio) {
 
         Statement stmt = null;
         List<Animais> lstAnimal = new ArrayList<Animais>();
@@ -133,7 +134,8 @@ public class AnimalDAO {
                 ResultSet rs = stmt.executeQuery(
                         "SELECT * FROM animais " +
                         "WHERE disponibilidade ='" +
-                        disp + "' and tipoespecie ='" + esp + "'");
+                        disp + "' and tipoespecie ='" + esp + "' " +
+                        "and bloqueio='"+bloqueio+"'");
                 while (rs.next()) {
                     Animais animal = new Animais();
                     animal.setCodigo(rs.getInt("codigo"));
@@ -456,6 +458,39 @@ public class AnimalDAO {
                 try {
                     if (pstmt != null) {
                         pstmt.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        return n;
+
+    }
+
+    //APAGA UM ANIMAL DA BASE DE DADOS
+    public int apaga(int codigo) {
+
+        int n = 0;
+        Statement stmt = null;
+        Connection conn = Conexao.getInstance().criaConexao();
+
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+                n = stmt.executeUpdate(
+                        "DELETE FROM animais WHERE codigo = " +
+                        codigo);
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if (stmt != null) {
+                        stmt.close();
                     }
                     if (conn != null) {
                         conn.close();

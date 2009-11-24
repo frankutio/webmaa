@@ -121,7 +121,7 @@ function insertLogin(){
 
 function validaVacina_usr(){
 	
-	var valor = document.cadastro.vacina.value;
+	var valor = document.cadastroAnimal.vacina.value;
 	
 	if(valor == "Sim"){
 		$("#doses_usr").show();

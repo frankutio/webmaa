@@ -1,9 +1,10 @@
 <%@page import="Entidade.Painel.Animais"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
 <link type="text/css" rel="stylesheet" href="/WebMAATeste/css/geral.css" />
@@ -105,11 +106,11 @@ sadsdsfd
                   <table class="grid" style="width:70%;">
             	<tr>
                 	<td class="grid_titulo" align="center">Especie</td>
-                    <td class="grid_titulo" align="center">RaÃ§a</td>
+                    <td class="grid_titulo" align="center">Raça</td>
                     <td class="grid_titulo" align="center">Nome</td>
                     <td class="grid_titulo" align="center">Idade</td>
                     <td class="grid_titulo" align="center">Cor</td>
-                    <td class="grid_titulo" align="center">2Âª Cor</td>
+                    <td class="grid_titulo" align="center">2ª Cor</td>
                     <td class="grid_titulo" align="center">Pelagem</td>
                     <td class="grid_titulo" align="center">Sexo</td>
                 </tr>
@@ -141,7 +142,7 @@ sadsdsfd
                 </tr>
             </table>
                 <br />
-                Comentario/DescriÃ§Ã£o<br />
+                Comentario/Descrição<br />
                 <textarea name="comentario" rows="5" cols="40" readonly="readonly">${Animal.descricao}</textarea>
                 <br />       
                 
@@ -162,7 +163,7 @@ sadsdsfd
             
             <br />          
              <div class="nota_informa">
-             	<span>VocÃª serÃ¡ notificado assim que o cadastro do seu animal for aprovado!</span>
+             	<span>Você será notificado assim que o cadastro do seu animal for aprovado!</span>
                 
              </div> 
              <br />

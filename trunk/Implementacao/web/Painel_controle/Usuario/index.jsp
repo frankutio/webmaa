@@ -476,7 +476,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                                             <td align="center">${Animal.especie}</td>
                                             <td align="center">${Animal.sexo}</td>
                                             <td align="center"><a href="/WebMAATeste/GerAnimal?operacao=exibir_dados_animal&codigo=${Animal.codigo}"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/editar.png" alt="Editar" title="Editar" class="seta_link" /></a></td>
-                                            <td align="center"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/close.png" alt="Excluir" title="Excluir" class="seta_link" /></td>
+                                            <td align="center"><img src="/WebMAATeste/Painel_controle/Usuario/images/botao/close.png" alt="Excluir" title="Excluir" class="seta_link" onclick="confirmaExclusao('${Animal.codigo}');" /></td>
                                         </tr>
                                        </c:forEach>
                     				</table>

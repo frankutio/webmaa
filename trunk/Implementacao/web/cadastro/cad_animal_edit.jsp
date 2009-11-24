@@ -3,10 +3,11 @@
 Colaborador usr = (Colaborador) session.getAttribute("Colaborador");
 %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
 <link type="text/css" rel="stylesheet" href="/WebMAATeste/css/geral.css" />
@@ -175,7 +176,7 @@ sadsdsfd
             
             <br />
             <span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
-          <form name="cadastro" method="post" action="GerAnimal">
+          <form name="cadastroAnimal" method="post" action="GerAnimal">
           
           <input type="hidden" name="codUsr" value="<%= usr.getCodigo() %>" />
           <input type="hidden" name="operacao" value="Listar_Cad" />
@@ -188,7 +189,7 @@ sadsdsfd
                     <td colspan="3"><input type="radio" name="especie" value="Gato" id="esp_gato" /> Gato &nbsp; &nbsp; <input type="radio" name="especie" value="Cao" id="esp_cao" /> Cachorro</td>
                 </tr>
                 <tr>
-                	<td align="right"><span class="obrigatorio">*</span> RaÃ§a: &nbsp;</td>
+                	<td align="right"><span class="obrigatorio">*</span> Raça: &nbsp;</td>
                     <td colspan="3">
                    	  <select name="raca">
                         	<option></option>
@@ -223,7 +224,7 @@ sadsdsfd
                          </c:forEach>
                     </select>
                   </td>
-                    <td width="9%" align="right">2Âª Cor: &nbsp;</td>
+                    <td width="9%" align="right">2ª Cor: &nbsp;</td>
                   <td width="57%">
                   	<select name="cor2">
                     	<option></option>
@@ -312,7 +313,7 @@ sadsdsfd
                             	<option></option>
                                     <c:forEach items="${lstEnvio}" var="lstEnvio">
                                       <option value="${lstEnvio.codigo}"
-                                      <c:if  test="${Animal.codEnvio == lstEnvio.codigo}">
+                                      <c:if  test="${Animal.codigoFormaEnvio == lstEnvio.codigo}">
                                            selected ="${lstEnvio.envio}"
                                       </c:if>   > ${lstEnvio.envio}</option>
                                  </c:forEach>
