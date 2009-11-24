@@ -31,7 +31,46 @@ public class Animais {
     private int codigoFormaEnvio;
     private int codigoUsuario;
     private int codigoFuncionario;
-    
+
+
+     public String validaDados(int tipoDeValidacao) {
+
+        String msgErro = "";
+
+        if(tipoDeValidacao == INCLUSAO){
+
+            if(getEspecie() == null || getEspecie().equals("")){
+                msgErro +="Informe a especie.<br />";
+            }
+            if(getNome() == null || getNome().equals("")){
+                msgErro +="Informe o nome.<br />";
+            }
+            if(getSexo() == null || getSexo().equals("")){
+                msgErro +="Informe o Sexo <br />";
+            }
+            if(getLaudoVeterinario() == null || getLaudoVeterinario().equals("")){
+
+                this.laudoVeterinario = null;
+            }
+            if(getVacinado() == null || getVacinado().equals("")){
+
+                this.vacinado = null;
+            }
+
+            if(getDescricao() == null || getDescricao().equals("")){
+
+                this.descricao = "Sem Descrição do Animal.";
+            }
+            if(getDescricaoVacina() == null || getDescricaoVacina().equals("")){
+
+                this.descricaoVacina = "N/A";
+            }
+
+        }
+
+        return msgErro;
+     }
+
     public int getCodigoUsuario() {
         return codigoUsuario;
     }
@@ -224,15 +263,7 @@ public class Animais {
     public void setVlrTaxa(Double  vlrTaxa) {
         this.vlrTaxa = vlrTaxa;
     }
-    public String validaDados(int tipoDeValidacao) {
-
-        String msgErro = "";
-
-
-        return msgErro;
-
-    }
-
+    
     /**
      * @return the codigoFuncionario
      */

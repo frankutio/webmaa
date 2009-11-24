@@ -9,8 +9,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-
-public class FilterPainelControle implements Filter {
+public class FilterCadastroAnimal implements Filter {
 
     private FilterConfig filterConfig = null;
 
@@ -26,7 +25,7 @@ public class FilterPainelControle implements Filter {
 
         try {
             if (httpRequest.getSession().getAttribute("Log") == null) {
-                httpRequest.setAttribute("MsgErro", "Login Necessario.");
+                httpRequest.setAttribute("MsgErro", "Para cadastrar um animal é preciso estar \"logado\" no sistema.");
                 httpRequest.getRequestDispatcher("/index.jsp").forward(request, response);
             }
             else {

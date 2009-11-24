@@ -4,6 +4,13 @@
         <filter-name>FilterPainelControle</filter-name>
         <filter-class>Controle.Portal.FilterPainelControle</filter-class>
     </filter>
+    <filter><filter-name>FilterCadastroAnimal</filter-name><filter-class>Controle.Portal.FilterCadastroAnimal</filter-class></filter>
+    <filter-mapping>
+        <filter-name>FilterCadastroAnimal</filter-name>
+        <url-pattern>/cadastro/cad_animal.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <filter-mapping>
         <filter-name>FilterPainelControle</filter-name>
         <url-pattern>/Painel_controle/Usuario/*</url-pattern>

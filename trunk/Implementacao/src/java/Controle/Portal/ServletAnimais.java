@@ -170,7 +170,6 @@ public class ServletAnimais extends HttpServlet {
 
                 }else {
                     request.setAttribute("msgErro", msgErro);
-
                     //CRIA UM ATRIBUTO PARA MANDAR PARA A JSP
                     request.setAttribute("Erro", "Ocorreu um Erro ao Tentar Processar a Requisição, " +
                             "Por Favor Refaça o Cadastro.");

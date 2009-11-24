@@ -1,12 +1,10 @@
 <%@page import="Entidade.Portal.Colaborador"%>
-<%
-Colaborador usr = (Colaborador) session.getAttribute("Colaborador");
-%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
 <link type="text/css" rel="stylesheet" href="/WebMAATeste/css/geral.css" />
@@ -20,6 +18,7 @@ Colaborador usr = (Colaborador) session.getAttribute("Colaborador");
 <script type="text/javascript" src="/WebMAATeste/js/maskedinput.js"></script>
 <script type="text/javascript" src="/WebMAATeste/js/jquery-ui-datepicker.js"></script>
 <script type="text/javascript" src="/WebMAATeste/js/menuSuper.js"></script>
+<script type="text/javascript" src="/WebMAATeste/js/valida_campos.js"></script>
 
 <script>
 function focoBt(id){
@@ -40,6 +39,62 @@ function bt(id){
 	else if(id ==="limpar"){
 		$("#"+id).attr("src","/WebMAATeste/images/botao/bt_limpar.png");
 	}
+}
+
+function validaCampoAnimal(cadastroAnimal){
+
+if(!validaRaca(cadastroAnimal.raca.value)) return false;
+if(!validaIdadeA(cadastroAnimal.idade.value)) return false;
+if(!validaCor1(cadastroAnimal.cor1.value)) return false;
+if(!validaPelo(cadastroAnimal.pelagem.value)) return false;
+if(!validaPorte(cadastroAnimal.porte.value)) return false;
+if(!validaEnvio(cadastroAnimal.formaEnvio.value)) return false;
+}
+
+function validaRaca(raca){
+  if(raca == ""){
+      $("#racaErro").html("<font style='color:red;'>Informe a Ra�a</font>");
+      return false;
+  }
+  return true;
+}
+function validaIdadeA(idade){
+ if(idade == ""){
+   $("#idade").attr("value","0");
+    return true;
+   }
+    return true;
+}
+
+function validaCor1(cor1){
+ if(cor1 == ""){
+  $("#corErro").html("<font style='color:red;'>Informe a Cor</font>");
+    return false;
+   }
+    return true;
+}
+
+function validaPelo(pelagem){
+ if(pelagem == ""){
+  $("#peloErro").html("<font style='color:red;'>Informe a Pelagem</font>");
+    return false;
+   }
+    return true;
+}
+function validaPorte(porte){
+ if(porte == ""){
+  $("#porteErro").html("<font style='color:red;'>Informe o Porte</font>");
+    return false;
+   }
+    return true;
+}
+
+function validaEnvio(formaEnvio){
+ if(formaEnvio == ""){
+  $("#envioErro").html("<font style='color:red;'>Escolha a forma de Envio</font>");
+    return false;
+   }
+    return true;
 }
 </script>
 
@@ -108,9 +163,9 @@ sadsdsfd
             
             <br />
             <span class="obrigatorio">* Campos de Preenchimento Obrigat&oacute;rio</span>
-          <form name="cadastro" method="post" action="GerAnimal">
+          <form name="cadastroAnimal" id="cadastroColabAnl" method="post" action="GerAnimal" onsubmit="return validaCampoAnimal(this);">
           
-          <input type="hidden" name="codUsr" value="<%= usr.getCodigo() %>" />
+          <input type="hidden" name="codUsr" value="${Colaborador.codigo}" />
           <input type="hidden" name="operacao" value="Listar_Cad" />
           <input type="hidden" name="dataCad" value="" id="data" />
           
@@ -124,11 +179,11 @@ sadsdsfd
                 	<td align="right"><span class="obrigatorio">*</span> Ra&ccedil;a: &nbsp;</td>
                     <td colspan="3">
                    	  <select name="raca">
-                        	<option></option>
+                        	<option value=""></option>
                                     <c:forEach items="${lstRaca}" var="lstRaca">
                                     <option value="${lstRaca.codigo}"> ${lstRaca.descricao}</option>
                                     </c:forEach>
-                        </select>
+                        </select> &nbsp; <span id="racaErro"></span>
                     </td>
                 </tr>
                 <tr>
@@ -137,13 +192,13 @@ sadsdsfd
             </tr>
                 <tr>
                 	<td align="right">Idade Aproximada: &nbsp;</td>
-				  <td colspan="3"><input type="text" name="idade" size="5" /></td>
+				  <td colspan="3"><input type="text" name="idade" size="5" id="idade" /></td>
                 </tr>
                 <tr>
                 	<td align="right"><span class="obrigatorio">*</span> Cor Predominante: &nbsp;</td>
 				  <td width="16%">
                   	<select name="cor1">
-                    	<option></option>
+                    	<option value=""></option>
                          <c:forEach items="${lstCor}" var="lstCor">
                            <option value="${lstCor.codigo}"> ${lstCor.cor}</option>
                         </c:forEach>
@@ -152,33 +207,33 @@ sadsdsfd
                     <td width="9%" align="right">2ª Cor: &nbsp;</td>
                   <td width="57%">
                   	<select name="cor2">
-                    	<option></option>
+                    	<option value="0"></option>
                          <c:forEach items="${lstCor}" var="lstCor">
                            <option value="${lstCor.codigo}"> ${lstCor.cor}</option>
                         </c:forEach>
-                    </select>
+                    </select> &nbsp; <span id="corErro"></span>
                   </td>
                 </tr>
                 <tr>
                 	<td align="right"><span class="obrigatorio">*</span> Pelagem: &nbsp;</td>
 					<td colspan="3">
                    	  <select name="pelagem">
-                        	<option></option>
+                        	<option value=""></option>
                                     <c:forEach items="${lstPelagem}" var="lstPelagem">
                                     <option value="${lstPelagem.codigo}"> ${lstPelagem.pelagem}</option>
                                     </c:forEach>
-                        </select>
+                        </select> &nbsp; <span id="peloErro"></span>
                     </td>
                 </tr>
                 <tr>
                         	<td align="right"><span class="obrigatorio">*</span> Porte: &nbsp;</td>
                             <td colspan="3">
                             <select name="porte">
-                            	<option></option>
+                            	<option value=""></option>
                                     <c:forEach items="${lstPorte}" var="lstPorte">
                                     <option value="${lstPorte.codigo}"> ${lstPorte.porte}</option>
                                     </c:forEach>
-                                </select>
+                                </select> &nbsp; <span id="porteErro"></span>
                           </td>
                       </tr>
                 <tr>
@@ -202,7 +257,7 @@ sadsdsfd
                     	<td align="right">Animal com certificado/Laudo Veterianário? &nbsp;</td>
                         <td colspan="3">
                        	  <select name="laudo">
-                            	<option value="0">&nbsp;</optgroup>
+                            	<option value="">&nbsp;</optgroup>
                                 <option value="Sim">SIM</optgroup>
                                 <option value="Nao">N&Atilde;O</optgroup>
                             </select>
@@ -212,7 +267,7 @@ sadsdsfd
                     	<td align="right">Animal Vacinado? &nbsp;</td>
                         <td width="65%">
                        	  <select name="vacina" onchange="validaVacina_usr();">
-                            	<option value="0">&nbsp;</option>
+                            	<option value="">&nbsp;</option>
                                 <option value="Sim">SIM</option>
                                 <option value="Nao">N&Atilde;O</option>
                             </select>
@@ -226,11 +281,11 @@ sadsdsfd
                     	<td align="right"><span class="obrigatorio">*</span> Forma de Envio: &nbsp;</td>
                         <td colspan="3">
                        	  <select name="formaEnvio">
-                            	<option></option>
+                            	<option value=""></option>
                                     <c:forEach items="${lstEnvio}" var="lstEnvio">
                                     <option value="${lstEnvio.codigo}"> ${lstEnvio.envio}</option>
                                     </c:forEach>
-                            </select>
+                            </select> &nbsp; <span id="envioErro"></span>
                         </td>
                     </tr>
                 </table>
