@@ -1,9 +1,12 @@
 package Controle.Portal;
 
 import Entidade.Portal.Colaborador;
+import Entidade.Portal.Notificacao;
+import Persistencia.Portal.NotificacaoDAO;
 import Persistencia.Portal.PortalColabDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -57,6 +60,23 @@ public class ServletAtivacao extends HttpServlet {
 
                 request.setAttribute("Ativado", true);
 
+                // Prepara uma mensagem de boas vindas.
+
+                Notificacao notificacao = new Notificacao();
+
+                notificacao.setCodigoColaborador(colaborador.getCodigo());
+                notificacao.setDataCadastro(new Date(System.currentTimeMillis()));
+                notificacao.setAssunto("Bem-Vindo");
+                notificacao.setRemetenteNotificacao("Sim");
+
+                 notificacao.setMensagem("<h2>Bem-Vindo!</h2><br><br />" +
+                         "Seja bem-vindo ao nosso portal, é um orgulho ter você como nosso Colaborador...<br />" +
+                         "<br />" +
+                         "Atravéz do seu \"Painel de Controle\" é possivel gerenciar os seus dados e muito mais.");
+
+                 NotificacaoDAO.getInstance().gravaMsg(notificacao);
+
+                 // Realiza o redirecionamento...
                 proximaPagina = "cadastro/ativar_cadastro.jsp";
 
             }

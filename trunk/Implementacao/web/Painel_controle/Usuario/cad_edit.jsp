@@ -1,11 +1,12 @@
 <%@page import="Entidade.Portal.Colaborador"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
 <link type="text/css" rel="stylesheet" href="/WebMAATeste/Painel_controle/Usuario/css/geral.css" />
@@ -185,9 +186,9 @@ function preenche(){
                    		  </tr>
                           <tr>
                     			<td width="22%" align="right">Telefone: &nbsp;</td>
-                              	<td><input type="text" name="fone" value="${Colaborador.telefone}" size="15" /></td>
+                              	<td><input type="text" name="fone" value="${Colaborador.telefone}" size="15" class="foneDD" /></td>
                                 <td width="14%" align="right">Celular: &nbsp;</td>
-                              	<td colspan="3"><input type="text" name="cel" value="${Colaborador.celular}" size="15" /></td>
+                              	<td colspan="3"><input type="text" name="cel" value="${Colaborador.celular}" size="15" class="foneDD" /></td>
                    		  </tr>
                			</table>
                	</fieldset>

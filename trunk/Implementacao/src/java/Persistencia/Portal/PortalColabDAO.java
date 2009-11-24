@@ -434,6 +434,82 @@ public class PortalColabDAO {
 
     }
 
+    // Verifica se existe email ja cadastrado anteriormente
+    public Colaborador validaEmail(String email) {
+
+        Statement stmt = null;
+        Colaborador colaborador = null;
+        Connection conn = Conexao.getInstance().criaConexao();
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(
+                        "SELECT * FROM colaborador WHERE email ='" +
+                        email+"'");
+                if (rs.next()) {
+                    colaborador = carregaDadosNoObjeto(rs);
+                } else {
+                    colaborador = null;
+                }
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if (stmt != null) {
+                        stmt.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+
+        }
+        return colaborador;
+
+    }
+
+    // Verifica se existe cpf ja cadastrado anteriormente
+    public Colaborador validaCpf(String cpf) {
+
+        Statement stmt = null;
+        Colaborador colaborador = null;
+        Connection conn = Conexao.getInstance().criaConexao();
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(
+                        "SELECT * FROM colaborador WHERE cpf ='" +
+                        cpf+"'");
+                if (rs.next()) {
+                    colaborador = carregaDadosNoObjeto(rs);
+                } else {
+                    colaborador = null;
+                }
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if (stmt != null) {
+                        stmt.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+
+        }
+        return colaborador;
+
+    }
+
    /* public int desbloqueaColab(Colaborador colaborador) {
 
         int n = 0;

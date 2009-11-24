@@ -1,5 +1,6 @@
 package Entidade.Portal;
 
+import Persistencia.Portal.PortalColabDAO;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -7,6 +8,7 @@ public class Colaborador {
 
     public static final int INCLUSAO = 1;
     public static final int ALTERACAO = 2;
+    public static final int VERIFICACAO = 3;
     private int codigo;
     private String nome;
     private String rg;
@@ -74,6 +76,7 @@ public class Colaborador {
 
         return msgErro;
     }
+
 
     /**
      * @return the cod

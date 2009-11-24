@@ -54,10 +54,20 @@ function Tempo() {
 
         //setTimeout("Tempo()", "1000");
  }
+
+ function aleatorio(){
+
+superior=0;
+inferior=999999999999;
+    numPossibilidades = superior - inferior
+    aleat = Math.random() * numPossibilidades
+    aleat = Math.floor(aleat)
+    return parseInt(inferior) + aleat
+}
  
 function pt(){
-
-$(".pt").attr("value","526615265363tx");
+resposta = aleatorio();
+$(".pt").attr("value",resposta);
 
 }
 	  

@@ -78,6 +78,23 @@ public class ServletColaborador extends HttpServlet {
             String valida = "Nao";
             String foto = "fotoUsr2.png";
 
+            String msgErroEmail ="";
+            String msgErroCpf ="";
+
+             // Verifica se o email informado ja existe
+                Colaborador email = PortalColabDAO.getInstance().validaEmail(request.getParameter("email"));
+
+                if(email != null){
+                    msgErroEmail = "<span style='color:red;'>O E-mail informado ja está em uso.</span>";
+                }
+
+                // Verifica se o CPF informado ja existe
+                Colaborador cpf = PortalColabDAO.getInstance().validaCpf(request.getParameter("cpf"));
+
+               if(cpf != null){
+                    msgErroCpf = "<span style='color:red;'>O CPF informado já existe.</span>";
+               }
+
             //RECUPERA PARAMENTRO DESCRICAO
             try{
 
@@ -104,14 +121,14 @@ public class ServletColaborador extends HttpServlet {
                 
                 formColaborador.setTermoAceito(request.getParameter("termo"));
                 formColaborador.setValidacao(valida);
-                formColaborador.setEndFoto(foto);
+                formColaborador.setEndFoto(foto);          
 
                 // Mensagem de erro e proxima pagina
                 String msgErro = formColaborador.validaDados(formColaborador.INCLUSAO);
 
                 // Monta Colaborador com dados validos ou monta mensagens de erro
 
-                if (msgErro.equals("")) {
+                if (msgErro.equals("") && msgErroCpf.equals("") && msgErroEmail.equals("")) {
                     Colaborador colaborador = new Colaborador();
 
                     colaborador.setNome(formColaborador.getNome());
@@ -151,6 +168,8 @@ public class ServletColaborador extends HttpServlet {
 
                 }else {
                     request.setAttribute("msgErro", msgErro);
+                    request.setAttribute("msgErroEmail", msgErroEmail);
+                    request.setAttribute("msgErroCpf", msgErroCpf);
 
                     //RECUPERA LISTA DE FORMA DE ENVIOS - METODO LETODOS()
                      List<UF> lstUF = UFDAO.getInstance().leTodos();
@@ -279,23 +298,31 @@ public class ServletColaborador extends HttpServlet {
                proximaPagina = direciona;
            }
 
-           else {               
+           else {
 
-              int logado = 1;
-              
-              usr.setLogin(logado);
+               if(colaborador.getValidacao().equals("Sim")){
+                    int logado = 1;
 
-              request.getSession().setAttribute("Colaborador", colaborador);
-              request.getSession().setAttribute("Log", colaborador);
+                  usr.setLogin(logado);
 
-              // Verifica se existe mensagem para o Colaborador
+                  request.getSession().setAttribute("Colaborador", colaborador);
+                  request.getSession().setAttribute("Log", colaborador);
 
-              List<Notificacao> lstMsg = NotificacaoDAO.getInstance().carregaMsg(colaborador.getCodigo());
+                  // Verifica se existe mensagem para o Colaborador
 
-              request.getSession().setAttribute("qtd", lstMsg.size());
-              request.getSession().setAttribute("Msg", lstMsg);
+                  List<Notificacao> lstMsg = NotificacaoDAO.getInstance().carregaMsg(colaborador.getCodigo());
 
+                  request.getSession().setAttribute("qtd", lstMsg.size());
+                  request.getSession().setAttribute("Msg", lstMsg);
+
+                   proximaPagina = direciona;
+               }
+
+               request.getSession().removeAttribute("colaborador");
+               request.setAttribute("MsgErro", "Ativação de Conta Necessária!");
                proximaPagina = direciona;
+
+              
            }
            
         }

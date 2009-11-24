@@ -123,7 +123,7 @@ function bt(id){
 						<td width="13%" align="right"><span class="obrigatorio">*</span> RG: &nbsp;</td>
 				      <td width="17%"><input type="text" name="rg" size="10" maxlength="9" value="${Colaborador.rg}" /></td>
 						<td width="9%" align="right"><span class="obrigatorio">*</span> CPF: &nbsp;</td>
-					  <td width="61%"><input type="text" name="cpf" class="cpf" size="15" value="${Colaborador.cpf}" /></td>
+					  <td width="61%"><input type="text" name="cpf" class="cpf" size="15" value="${Colaborador.cpf}" /> &nbsp; ${msgErroCpf}</td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Email (Login): &nbsp;</td>
@@ -131,6 +131,11 @@ function bt(id){
 						<td width="9%" align="right"><span class="obrigatorio">*</span> Sexo: &nbsp;</td>
 					  <td width="61%"><label>Masculino &nbsp; <input type="radio" name="sexo" value="M" id="masc" /></label> &nbsp;&nbsp; <label>Feminino &nbsp; <input type="radio" name="sexo" value="F" id="femi" /></label></td>
 					</tr>
+                    <c:if test="${msgErroEmail != null || msgErroEmail != ''}">
+                       <tr>
+                           <td colspan="4">${msgErroEmail}</td>
+                       </tr>
+                    </c:if>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Data de&nbsp; Nascimento: &nbsp;</td>
                       <td colspan="3"><input type="text" name="idade" size="10" class="data" value="${Colaborador.dataNascimentoString}" /> &nbsp;<span id="idadeErro"></span></td>
