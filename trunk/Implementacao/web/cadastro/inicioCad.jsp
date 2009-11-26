@@ -101,7 +101,7 @@ function bt(id){
 		<!-- CONTEUDO DAS ABAS -->
 		<div id="cont_aba">
         	<br />
-			<span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+			<span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
 			<br />
 			<br />
             

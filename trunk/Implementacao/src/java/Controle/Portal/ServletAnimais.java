@@ -17,11 +17,15 @@ import Persistencia.Portal.PorteDAO;
 import Persistencia.Portal.ProcessoDAO;
 import Persistencia.Portal.RacaDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.io.PrintWriter;
 import java.util.List;
+import java.io.File;
+import java.util.Date;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -72,6 +76,7 @@ public class ServletAnimais extends HttpServlet {
             proximaPagina = "cadastro/cad_animal.jsp";
         }
 
+       
         else if(operacao.equals("Listar_Cad")){
 
             //COVNERTE DATA
@@ -87,10 +92,12 @@ public class ServletAnimais extends HttpServlet {
             String especie = request.getParameter("especie");
 
             if(especie.equals("Gato")){
-                foto = "lucky.png";
+                foto ="lucky.png";
+
             }
+
             else if(especie.equals("Cao")){
-                foto = "apolo.png";
+              foto ="apolo.png";
             }
 
              //RECUPERA PARAMENTRO DESCRICAO

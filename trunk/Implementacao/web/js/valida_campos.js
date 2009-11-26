@@ -43,6 +43,8 @@ if(!validaCor1(cadastroAnimal.cor1.value)) return false;
 if(!validaPelo(cadastroAnimal.pelagem.value)) return false;
 if(!validaPorte(cadastroAnimal.porte.value)) return false;
 if(!validaEnvio(cadastroAnimal.formaEnvio.value)) return false;
+
+submeter('cadastroAnimal','upFoto');
 }
 
 function validaRaca(raca){
@@ -89,4 +91,10 @@ function validaEnvio(formaEnvio){
     return false;
    }
     return true;
+}
+
+function submeter(dados,foto){
+
+   document.dados.submit();
+   document.foto.submit();
 }

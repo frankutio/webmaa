@@ -163,6 +163,9 @@ sadsdsfd
             
             <br />
             <span class="obrigatorio">* Campos de Preenchimento Obrigat&oacute;rio</span>
+            <br/>
+            <br />
+
           <form name="cadastroAnimal" id="cadastroColabAnl" method="post" action="GerAnimal" onsubmit="return validaCampoAnimal(this);">
           
           <input type="hidden" name="codUsr" value="${Colaborador.codigo}" />
@@ -242,17 +245,18 @@ sadsdsfd
                   <td colspan="2"><label>Femea <input type="radio" name="sexo" value="Femea" /></label></td>
                 </tr>
                 <tr>
-                	<td colspan="4"><span class="obrigatorio">Aten&ccedil;&atilde;o: Caso queira colocar uma foto do animal a mesma deve ter o formato X e tamanho m&aacute;ximo de XMB</span></td>
+                	<td colspan="4">Caso queira, adicione uma foto do seu animal</td>
                 </tr>
                 <tr>
                 	<td align="right">Foto: &nbsp;</td>
-                  <td colspan="3"><input type="file" name="foto" /></td>
+                    <td colspan="3"><input type="file" name="foto" /></td>
                 </tr>
             </table>
             <br />
             <h3>Dados Complementares</h3>
             <br />
 <table class="grid">
+            
                 	<tr>
                     	<td align="right">Animal com certificado/Laudo Veterinário? &nbsp;</td>
                         <td colspan="3">
