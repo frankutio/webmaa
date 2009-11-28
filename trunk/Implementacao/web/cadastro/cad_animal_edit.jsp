@@ -109,6 +109,76 @@ function preencheVacina(){
         $("#vacina_nao").attr("selected",true);
     }
 }
+
+function validaCampoAnimal(cadastroAnimal){
+
+if(!validaRaca(cadastroAnimal.raca.value)) return false;
+if(!validaIdadeA(cadastroAnimal.idade.value)) return false;
+if(!validaCor1(cadastroAnimal.cor1.value)) return false;
+if(!validaPelo(cadastroAnimal.pelagem.value)) return false;
+if(!validaPorte(cadastroAnimal.porte.value)) return false;
+if(!validaEnvio(cadastroAnimal.formaEnvio.value)) return false;
+
+
+// document.cadastroAnimal.submit();
+
+submeter();
+}
+
+function submeter(){
+  especie = $("input:radio[name=especie]:checked").val();
+  url = "GerAnimal?operacao=Listar_Cad&especie="+especie;
+
+  $("#cadastroColabAnl").attr("action",url);
+  document.cadastroAnimal.submit();
+}
+
+function validaRaca(raca){
+  if(raca == ""){
+      $("#racaErro").html("<font style='color:red;'>Informe a Raça</font>");
+      return false;
+  }
+  return true;
+}
+function validaIdadeA(idade){
+ if(idade == ""){
+   $("#idade").attr("value","0");
+    return true;
+   }
+    return true;
+}
+
+function validaCor1(cor1){
+ if(cor1 == ""){
+  $("#corErro").html("<font style='color:red;'>Informe a Cor</font>");
+    return false;
+   }
+    return true;
+}
+
+function validaPelo(pelagem){
+ if(pelagem == ""){
+  $("#peloErro").html("<font style='color:red;'>Informe a Pelagem</font>");
+    return false;
+   }
+    return true;
+}
+function validaPorte(porte){
+ if(porte == ""){
+  $("#porteErro").html("<font style='color:red;'>Informe o Porte</font>");
+    return false;
+   }
+    return true;
+}
+
+function validaEnvio(formaEnvio){
+ if(formaEnvio == ""){
+  $("#envioErro").html("<font style='color:red;'>Escolha a forma de Envio</font>");
+    return false;
+   }
+    return true;
+}
+
 </script>
 
 </head>
@@ -176,10 +246,9 @@ sadsdsfd
             
             <br />
             <span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
-          <form name="cadastroAnimal" method="post" action="GerAnimal">
+          <form name="cadastroAnimal" id="cadastroColabAnl" method="post" action="" onsubmit="return validaCampoAnimal(this);" enctype="multipart/form-data">
           
-          <input type="hidden" name="codUsr" value="<%= usr.getCodigo() %>" />
-          <input type="hidden" name="operacao" value="Listar_Cad" />
+          <input type="hidden" name="codUsr" value="${Colaborador.codigo}" />
           <input type="hidden" name="dataCad" value="" id="data" />
           
           

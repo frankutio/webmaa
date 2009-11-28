@@ -170,7 +170,7 @@ sadsdsfd
              <form name="cadAnimal" method="post" action="GerAnimal">
              
              	<input type="hidden" name="operacao" value="cadastrar" />
-                <input type="hidden" name="codUsr" value="${Animal.codigoUsuario}" />
+                <input type="hidden" name="codUsr" value="${Colaborador.codigo}" />
                 <input type="hidden" name="dataCad" value="" class="dataCad" />
                 
                 <!-- DADOS DO ANIMAL -->

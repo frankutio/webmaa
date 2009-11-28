@@ -23,6 +23,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.io.File;
 import java.util.Date;
+import java.util.Iterator;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -79,48 +80,220 @@ public class ServletAnimais extends HttpServlet {
        
         else if(operacao.equals("Listar_Cad")){
 
-            //COVNERTE DATA
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                //COVNERTE DATA
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-            // ISNTANCIA A CLASSE - Obtem dados do formulario
+                // ISNTANCIA A CLASSE - Obtem dados do formulario
 
-            Animais animal = new Animais();
+                Animais animal = new Animais();
+                Animais anl = new Animais();
 
-            String foto = "";
-            String disponibilidade ="Nao";
+                String foto = "";
+                String disponibilidade ="Nao";
 
-            String especie = request.getParameter("especie");
+                String especie = request.getParameter("especie");
 
-            if(especie.equals("Gato")){
-                foto ="lucky.png";
+                if(especie.equals("Gato")){
 
+                DiskFileItemFactory factory = new DiskFileItemFactory();
+
+                // Manipulador de upload de arquivos
+                ServletFileUpload upload = new ServletFileUpload(factory);
+                try {
+                    // Recebe lista de campos do formulario
+                    List<FileItem> itens = upload.parseRequest(request);
+
+                    for (FileItem fi : itens) {
+                    
+                        if (fi.isFormField()) {
+
+                            if(fi.getFieldName().equals("codUsr")){
+                                anl.setCodigo(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("dataCad")){
+                                String dataTeste = fi.getString();
+                            }
+                            if(fi.getFieldName().equals("especie")){
+                                anl.setEspecie(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("raca")){
+                                anl.setCodigoRaca(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("nome")){
+                                anl.setNome(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("idade")){
+                                anl.setIdade(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("cor1")){
+                                anl.setCor1(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("cor2")){
+                                anl.setCor2(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("pelagem")){
+                                anl.setCodigoPelagem(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("porte")){
+                                anl.setPorte(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("sexo")){
+                                anl.setSexo(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("laudo")){
+                                anl.setLaudoVeterinario(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("vacina")){
+                                anl.setVacinado(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("descricaoVacina")){
+                                anl.setdescricaoVacina(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("formaEnvio")){
+                                anl.setCodigoFormaEnvio(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("descricao")){
+                                anl.setdescricao(fi.getString());
+                            }
+                           // Recebe os campos q nao sao file 
+                        } else {
+
+                            // Cria um objeto file com nome do arquivo
+                        // A pasta deve oferecer acesso de escrita para Conteiner
+                        File uploadedFile = new File("/Documents and Settings/Frank/Desktop/WebMAA/Implementacao/build/web/Gato/images/miniaturas/" + fi.getName());
+                        // Grava arquivo na pasta especificada
+                        fi.write(uploadedFile);
+                        // Grava o nome do arquivo no perfil do usuario
+                        foto = fi.getName();
+
+                        }if(fi.getName() == ""){
+                                foto ="gato_default.png";
+                            }
+                            else{
+                            // Cria um objeto file com nome do arquivo
+                        // A pasta deve oferecer acesso de escrita para Conteiner
+                        File uploadedFile = new File("/Documents and Settings/Frank/Desktop/WebMAA/Implementacao/build/web/Gato/images/miniaturas/" + fi.getName());
+                        // Grava arquivo na pasta especificada
+                        fi.write(uploadedFile);
+                        // Grava o nome do arquivo no perfil do usuario
+                        foto = fi.getName();
+                      }
+                    }
+
+                } catch (Exception ex) {
+                    foto ="gato_default.png";
+                    System.out.println(new Date() + " - Exception: " + ex.getMessage());
+
+                }
             }
 
             else if(especie.equals("Cao")){
-              foto ="apolo.png";
+             DiskFileItemFactory factory = new DiskFileItemFactory();
+
+                // Manipulador de upload de arquivos
+                ServletFileUpload upload = new ServletFileUpload(factory);
+                try {
+                    // Recebe lista de campos do formulario
+                    List<FileItem> itens = upload.parseRequest(request);
+
+                    for (FileItem fi : itens) {
+
+                        if (fi.isFormField()) {
+                           // Recebe os campos q nao sao file
+
+                          if(fi.getFieldName().equals("codUsr")){
+                                anl.setCodigo(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("dataCad")){
+                                String dataTeste = fi.getString();
+                            }
+                            if(fi.getFieldName().equals("especie")){
+                                anl.setEspecie(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("raca")){
+                                anl.setCodigoRaca(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("nome")){
+                                anl.setNome(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("idade")){
+                                anl.setIdade(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("cor1")){
+                                anl.setCor1(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("cor2")){
+                                anl.setCor2(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("pelagem")){
+                                anl.setCodigoPelagem(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("porte")){
+                                anl.setPorte(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("sexo")){
+                                anl.setSexo(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("laudo")){
+                                anl.setLaudoVeterinario(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("vacina")){
+                                anl.setVacinado(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("descricaoVacina")){
+                                anl.setdescricaoVacina(fi.getString());
+                            }
+                            if(fi.getFieldName().equals("formaEnvio")){
+                                anl.setCodigoFormaEnvio(Integer.parseInt(fi.getString()));
+                            }
+                            if(fi.getFieldName().equals("descricao")){
+                                anl.setdescricao(fi.getString());
+                            }
+
+                        } else {
+                            if(fi.getName() == ""){
+                                foto ="cao_default.png";
+                            }
+                            else{
+                            // Cria um objeto file com nome do arquivo
+                        // A pasta deve oferecer acesso de escrita para Conteiner
+                        File uploadedFile = new File("/Documents and Settings/Frank/Desktop/WebMAA/Implementacao/build/web/Cao/images/miniaturas/" + fi.getName());
+                        // Grava arquivo na pasta especificada
+                        fi.write(uploadedFile);
+                        // Grava o nome do arquivo no perfil do usuario
+                        foto = fi.getName();
+                      }
+
+                        }
+                    }
+
+                } catch (Exception ex) {
+                    foto ="cao_default.png";
+                    System.out.println(new Date() + " - Exception: " + ex.getMessage());
+
+                }
             }
 
              //RECUPERA PARAMENTRO DESCRICAO
             try{
 
-                animal.setCodigoUsuario(Integer.parseInt(request.getParameter("codUsr")));
-                Date dtcadastro = dateFormat.parse(request.getParameter("dataCad"));
-                animal.setDataCadastro(dtcadastro);
-                animal.setEspecie(request.getParameter("especie"));
-                animal.setCodigoRaca(Integer.parseInt(request.getParameter("raca")));
-                animal.setNome(request.getParameter("nome"));
-                animal.setIdade(Integer.parseInt(request.getParameter("idade")));
-                animal.setCor1(Integer.parseInt(request.getParameter("cor1")));
-                animal.setCor2(Integer.parseInt(request.getParameter("cor2")));
-                animal.setCodigoPelagem(Integer.parseInt(request.getParameter("pelagem")));
-                animal.setPorte(Integer.parseInt(request.getParameter("porte")));
-                animal.setSexo(request.getParameter("sexo"));
+                animal.setCodigoUsuario(anl.getCodigoUsuario());
+                animal.setDataCadastro(new Date(System.currentTimeMillis()));
+                animal.setEspecie(anl.getEspecie());
+                animal.setCodigoRaca(anl.getCodigoRaca());
+                animal.setNome(anl.getNome());
+                animal.setIdade(anl.getIdade());
+                animal.setCor1(anl.getCor1());
+                animal.setCor2(anl.getCor2());
+                animal.setCodigoPelagem(anl.getCodigoPelagem());
+                animal.setPorte(anl.getPorte());
+                animal.setSexo(anl.getSexo());
                 animal.setEndFoto(foto);
-                animal.setLaudoVeterinario(request.getParameter("laudo"));
-                animal.setVacinado(request.getParameter("vacina"));
-                animal.setdescricaoVacina(request.getParameter("descricaoVacina"));
-                animal.setCodigoFormaEnvio(Integer.parseInt(request.getParameter("formaEnvio")));
-                animal.setdescricao(request.getParameter("descricao"));
+                animal.setLaudoVeterinario(anl.getLaudoVeterinario());
+                animal.setVacinado(anl.getVacinado());
+                animal.setdescricaoVacina(anl.getDescricaoVacina());
+                animal.setCodigoFormaEnvio(anl.getCodigoFormaEnvio());
+                animal.setdescricao(anl.getDescricao());
                 animal.setDisponibilidade(disponibilidade);
 
 
@@ -200,8 +373,8 @@ public class ServletAnimais extends HttpServlet {
                 }
 
 
-            }catch(ParseException e){
-
+            }catch(Exception e){
+                System.out.println(new Date() + " Erro: " + e.getMessage());
             }
         }
 

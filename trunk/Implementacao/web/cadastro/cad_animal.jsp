@@ -41,6 +41,7 @@ function bt(id){
 	}
 }
 
+
 function validaCampoAnimal(cadastroAnimal){
 
 if(!validaRaca(cadastroAnimal.raca.value)) return false;
@@ -49,6 +50,19 @@ if(!validaCor1(cadastroAnimal.cor1.value)) return false;
 if(!validaPelo(cadastroAnimal.pelagem.value)) return false;
 if(!validaPorte(cadastroAnimal.porte.value)) return false;
 if(!validaEnvio(cadastroAnimal.formaEnvio.value)) return false;
+
+
+// document.cadastroAnimal.submit();
+
+submeter();
+}
+
+function submeter(){
+  especie = $("input:radio[name=especie]:checked").val();
+  url = "GerAnimal?operacao=Listar_Cad&especie="+especie;
+
+  $("#cadastroColabAnl").attr("action",url);
+  document.cadastroAnimal.submit();
 }
 
 function validaRaca(raca){
@@ -96,6 +110,7 @@ function validaEnvio(formaEnvio){
    }
     return true;
 }
+
 </script>
 
 </head>
@@ -166,10 +181,9 @@ sadsdsfd
             <br/>
             <br />
 
-          <form name="cadastroAnimal" id="cadastroColabAnl" method="post" action="GerAnimal" onsubmit="return validaCampoAnimal(this);">
+          <form name="cadastroAnimal" id="cadastroColabAnl" method="post" action="" onsubmit="return validaCampoAnimal(this);" enctype="multipart/form-data">
           
           <input type="hidden" name="codUsr" value="${Colaborador.codigo}" />
-          <input type="hidden" name="operacao" value="Listar_Cad" />
           <input type="hidden" name="dataCad" value="" id="data" />
           
           
