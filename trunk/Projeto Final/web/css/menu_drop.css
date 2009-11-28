@@ -1,0 +1,98 @@
+* {
+	padding:0;
+	margin:0;
+}
+
+
+.menuDrop {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+
+.menuDrop ul {
+	width:100%;
+	margin:0 auto;
+	list-style:none;
+}
+
+.menuDrop ul li {
+	position:relative;
+	float:left;
+	margin-left:1px;
+}
+
+.menuDrop ul li a{
+	float:left;
+	height:24px;
+	background:url("../images/botao/menu_left.png") no-repeat left top;
+	text-decoration:none;
+	padding-left:1px;
+}
+
+.menuDrop ul li a span {
+      float:left;
+      display:block;
+      background:url("../images/botao/menu_bg.png") no-repeat right top;
+      color:#065199;
+	  padding:5px 5px 5px 5px;	  	
+	  min-width:30px;
+	  text-align:center;
+	  cursor:pointer;
+}
+
+.menuDrop ul li a:hover {
+	color:#2776C5;	
+}
+
+.menuDrop ul li a:hover span {
+	color:#2776C5;
+}
+
+.current a{
+	background:url("../images/botao/menu_left_hover.png") no-repeat left top; !important
+	color:#2776C5 !important;
+}
+
+.current a span {
+	background:url("../images/botao/menu_bg_hover.png") no-repeat right top !important;
+	color:#2776C5 !important;
+}
+
+.menuDrop ul li ul {
+	visibility:hidden;
+	position:absolute;
+	left:0px;
+	top:24px;
+}
+
+.menuDrop ul li ul li {
+	width:150px;
+}
+
+.menuDrop ul li ul li a{
+	float:left;
+	background: url("../images/botao/bg_drop.png") repeat-y left top;
+	width:150px;
+	padding-left:17px;
+	padding-top:5px;
+	color: #333;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+}
+
+.menuDrop ul li ul li a:hover {
+	background: url("../images/botao/bg_drop_span.png") repeat-y left top;
+	font-weight:bold;
+	color:#065199;
+}
+
+.dropLight a {
+	background: url("../images/botao/bg_drop_span.png") repeat-y left top !important;
+	font-weight:bold;
+	color:#065199;
+}
+
+
+.menuDrop ul li:hover ul{
+	visibility:visible;
+}
