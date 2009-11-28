@@ -501,25 +501,25 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${libs.MySQLDriver.classpath}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.libs.MySQLDriver.classpath" todir="${dist.ear.dir}"/>
         <copyfiles files="${file.reference.jstl.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.jstl.jar" todir="${dist.ear.dir}"/>
         <copyfiles files="${libs.jstl11.classpath}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.libs.jstl11.classpath" todir="${dist.ear.dir}"/>
-        <copyfiles files="${file.reference.servlet-api.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.servlet-api.jar" todir="${dist.ear.dir}"/>
+        <copyfiles files="${file.reference.smtp.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.smtp.jar" todir="${dist.ear.dir}"/>
+        <copyfiles files="${file.reference.mail.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.mail.jar" todir="${dist.ear.dir}"/>
         <copyfiles files="${file.reference.commons-fileupload-1.2.1.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.commons-fileupload-1.2.1.jar" todir="${dist.ear.dir}"/>
         <copyfiles files="${file.reference.commons-io-1.4.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.commons-io-1.4.jar" todir="${dist.ear.dir}"/>
-        <copyfiles files="${file.reference.mail.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.mail.jar" todir="${dist.ear.dir}"/>
-        <copyfiles files="${file.reference.smtp.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.smtp.jar" todir="${dist.ear.dir}"/>
+        <copyfiles files="${file.reference.servlet-api.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.servlet-api.jar" todir="${dist.ear.dir}"/>
         <mkdir dir="${build.web.dir}/META-INF"/>
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update">
-            <attribute name="Class-Path" value="${manifest.libs.MySQLDriver.classpath} ${manifest.file.reference.jstl.jar} ${manifest.libs.jstl11.classpath} ${manifest.file.reference.servlet-api.jar} ${manifest.file.reference.commons-fileupload-1.2.1.jar} ${manifest.file.reference.commons-io-1.4.jar} ${manifest.file.reference.mail.jar} ${manifest.file.reference.smtp.jar} "/>
+            <attribute name="Class-Path" value="${manifest.libs.MySQLDriver.classpath} ${manifest.file.reference.jstl.jar} ${manifest.libs.jstl11.classpath} ${manifest.file.reference.smtp.jar} ${manifest.file.reference.mail.jar} ${manifest.file.reference.commons-fileupload-1.2.1.jar} ${manifest.file.reference.commons-io-1.4.jar} ${manifest.file.reference.servlet-api.jar} "/>
         </manifest>
     </target>
     <target depends="init" name="library-inclusion-in-archive" unless="dist.ear.dir">
         <copyfiles files="${libs.MySQLDriver.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.jstl.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs.jstl11.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.servlet-api.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${file.reference.smtp.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${file.reference.mail.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.commons-fileupload-1.2.1.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.commons-io-1.4.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.mail.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.smtp.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${file.reference.servlet-api.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
     </target>
     <target depends="init,compile,compile-jsps,-pre-dist,library-inclusion-in-manifest" name="do-ear-dist">
         <dirname file="${dist.ear.war}" property="dist.jar.dir"/>

@@ -366,8 +366,7 @@ public class ServletAnimais extends HttpServlet {
 
                     List<Raca> lstRaca = RacaDAO.getInstance().leTodos();
                     request.setAttribute("lstRaca", lstRaca);
-                    request.setAttribute("Erro", "Ocorreu um Erro ao Tentar Processar a Requisição, " +
-                            "Por Favor Refaça o Cadastro.");
+                    request.setAttribute("AnimalCad", animal);
 
                     proximaPagina = "cadastro/cad_animal.jsp";
                 }

@@ -333,7 +333,7 @@ function validaEnvio(formaEnvio){
                             <td colspan="3">
                             <select name="porte">
                             	<option></option>
-                                    <c:forEach items="${lstPorte}" var="lstPorte">
+                                <c:forEach items="${lstPorte}" var="lstPorte">
                                       <option value="${lstPorte.codigo}"
                                       <c:if  test="${Animal.porte == lstPorte.codigo}">
                                            selected ="${lstPorte.porte}"
@@ -399,7 +399,7 @@ function validaEnvio(formaEnvio){
                     </tr>
                 </table>
             <br />
-            <h3>Descri√ß√£o/Coment√°rio</h3>
+            <h3>DescriÁ„o/Coment·rio</h3>
             <br />
             Descreva o seu bichinho mais detalhadamente ou deixe um comentario sobre ele, isso ajuda na hora na ado√ß√£o.<br />
             <textarea rows="5" cols="75" name="descricao">${Animal.descricao}</textarea>

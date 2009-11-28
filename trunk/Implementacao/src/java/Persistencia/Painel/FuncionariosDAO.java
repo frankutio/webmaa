@@ -6,7 +6,7 @@
 
 package Persistencia.Painel;
 
-import Persistencia.Painel.Conexao;
+import Persistencia.Portal.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

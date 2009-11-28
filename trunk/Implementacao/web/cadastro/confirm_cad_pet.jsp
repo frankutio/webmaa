@@ -203,8 +203,7 @@ function bt(id){
              
             <div style="width:70%; text-align:right;">
                 <input type="image" src="/WebMAATeste/images/botao/bt_cadastrar.png" alt="ok" title="Cadastrar" id="cadastrar" onmouseover="focoBt('cadastrar');" onmouseout="bt('cadastrar');" />
-            	&nbsp;&nbsp;
-                <img src="/WebMAATeste/images/botao/bt_voltar.png" alt="Voltar" title="Voltar" class="seta_link" onclick="window.location='../index.html';"  />
+            	
                 
             </div>   
             

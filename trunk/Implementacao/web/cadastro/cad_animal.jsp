@@ -206,18 +206,21 @@ function validaEnvio(formaEnvio){
                    	  <select name="raca">
                         	<option value=""></option>
                                     <c:forEach items="${lstRaca}" var="lstRaca">
-                                    <option value="${lstRaca.codigo}"> ${lstRaca.descricao}</option>
+                                         <option value="${lstRaca.codigo}"
+                                         <c:if  test="${AnimalCad.codigoRaca == lstRaca.codigo}">
+                                             selected ="${lstRaca.descricao}"
+                                          </c:if>   > ${lstRaca.descricao}</option>
                                     </c:forEach>
                         </select> &nbsp; <span id="racaErro"></span>
                     </td>
                 </tr>
                 <tr>
                 	<td align="right"><span class="obrigatorio">*</span> Nome: &nbsp;</td>
-                  <td colspan="3"><input type="text" name="nome" size="30" value="${Animal.nome}" /></td>
+                  <td colspan="3"><input type="text" name="nome" size="30" value="${AnimalCad.nome}" /></td>
             </tr>
                 <tr>
                 	<td align="right">Idade Aproximada: &nbsp;</td>
-				  <td colspan="3"><input type="text" name="idade" size="5" id="idade" /></td>
+				  <td colspan="3"><input type="text" name="idade" size="5" id="idade" value="${AnimalCad.idade}" /></td>
                 </tr>
                 <tr>
                 	<td align="right"><span class="obrigatorio">*</span> Cor Predominante: &nbsp;</td>
@@ -225,8 +228,11 @@ function validaEnvio(formaEnvio){
                   	<select name="cor1">
                     	<option value=""></option>
                          <c:forEach items="${lstCor}" var="lstCor">
-                           <option value="${lstCor.codigo}"> ${lstCor.cor}</option>
-                        </c:forEach>
+                              <option value="${lstCor.codigo}"
+                              <c:if  test="${AnimalCad.cor1 == lstCor.codigo}">
+                                   selected ="${lstCor.cor}"
+                              </c:if>   > ${lstCor.cor}</option>
+                         </c:forEach>
                     </select>
                   </td>
                     <td width="9%" align="right">2ª Cor: &nbsp;</td>
@@ -234,8 +240,11 @@ function validaEnvio(formaEnvio){
                   	<select name="cor2">
                     	<option value="0"></option>
                          <c:forEach items="${lstCor}" var="lstCor">
-                           <option value="${lstCor.codigo}"> ${lstCor.cor}</option>
-                        </c:forEach>
+                              <option value="${lstCor.codigo}"
+                              <c:if  test="${AnimalCad.cor2 == lstCor.codigo}">
+                                   selected ="${lstCor.cor}"
+                              </c:if>   > ${lstCor.cor}</option>
+                         </c:forEach>
                     </select> &nbsp; <span id="corErro"></span>
                   </td>
                 </tr>
@@ -245,8 +254,11 @@ function validaEnvio(formaEnvio){
                    	  <select name="pelagem">
                         	<option value=""></option>
                                     <c:forEach items="${lstPelagem}" var="lstPelagem">
-                                    <option value="${lstPelagem.codigo}"> ${lstPelagem.pelagem}</option>
-                                    </c:forEach>
+                                      <option value="${lstPelagem.codigo}"
+                                      <c:if  test="${AnimalCad.codigoPelagem == lstPelagem.codigo}">
+                                           selected ="${lstPelagem.pelagem}"
+                                      </c:if>   > ${lstPelagem.pelagem}</option>
+                                 </c:forEach>
                         </select> &nbsp; <span id="peloErro"></span>
                     </td>
                 </tr>
@@ -256,8 +268,11 @@ function validaEnvio(formaEnvio){
                             <select name="porte">
                             	<option value=""></option>
                                     <c:forEach items="${lstPorte}" var="lstPorte">
-                                    <option value="${lstPorte.codigo}"> ${lstPorte.porte}</option>
-                                    </c:forEach>
+                                      <option value="${lstPorte.codigo}"
+                                      <c:if  test="${AnimalCad.porte == lstPorte.codigo}">
+                                           selected ="${lstPorte.porte}"
+                                      </c:if>   > ${lstPorte.porte}</option>
+                                 </c:forEach>
                                 </select> &nbsp; <span id="porteErro"></span>
                           </td>
                       </tr>
@@ -301,7 +316,7 @@ function validaEnvio(formaEnvio){
                     </tr>
                     <tr class="esconde" id="doses_usr">
                         	<td align="right">Especifique as Doses:</td>
-                          	<td><textarea rows="3" cols="30" name="descricaoVacina"></textarea></td>
+                          	<td><textarea rows="3" cols="30" name="descricaoVacina">${AnimalCad.descricaoVacina}</textarea></td>
                     </tr>
                     <tr>
                     	<td align="right"><span class="obrigatorio">*</span> Forma de Envio: &nbsp;</td>
@@ -309,8 +324,11 @@ function validaEnvio(formaEnvio){
                        	  <select name="formaEnvio">
                             	<option value=""></option>
                                     <c:forEach items="${lstEnvio}" var="lstEnvio">
-                                    <option value="${lstEnvio.codigo}"> ${lstEnvio.envio}</option>
-                                    </c:forEach>
+                                      <option value="${lstEnvio.codigo}"
+                                      <c:if  test="${AnimalCad.codigoFormaEnvio == lstEnvio.codigo}">
+                                           selected ="${lstEnvio.envio}"
+                                      </c:if>   > ${lstEnvio.envio}</option>
+                                 </c:forEach>
                             </select> &nbsp; <span id="envioErro"></span>
                         </td>
                     </tr>
@@ -319,7 +337,7 @@ function validaEnvio(formaEnvio){
             <h3>Descrição/Comentário</h3>
             <br />
             Descreva o seu bichinho mais detalhadamente ou deixe um comentario sobre ele, isso ajuda na hora na adoção.<br />
-            <textarea rows="5" cols="75" name="descricao"></textarea>            
+            <textarea rows="5" cols="75" name="descricao">${AnimalCad.descricao}</textarea>
           
             <br />
              <br />
