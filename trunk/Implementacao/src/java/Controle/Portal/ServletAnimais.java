@@ -47,7 +47,7 @@ public class ServletAnimais extends HttpServlet {
  protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
 
-     //RECEBE O TIPOD E OPERACAO A REALIZAR
+     //RECEBE O TIPO DE OPERACAO A REALIZAR
         String operacao = request.getParameter("operacao");
         //LOG PARA TESTE
         System.out.println("Controle Acionado com Operacao: " + operacao);
