@@ -136,7 +136,15 @@ function validaEnvio(formaEnvio){
 <!-- div Status -->
 
 <div id="faixaStatus">
-sadsdsfd
+<table class="grid" style=" margin-top:-6px;">
+	<tr>
+    	<td align="right">
+            <c:if test="${Log.login != null}">
+                <img src="/WebMAATeste/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+            </c:if>
+       </td>
+    </tr>
+</table>
 </div>
 
 
@@ -145,18 +153,18 @@ sadsdsfd
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="/WebMAATeste/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>            
-    		<li><a href="#" onfocus="limpaMenu();"><span>Notícias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Denúncias</span></a></li>
+			<li><a href="/WebMAATeste/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="#" onfocus="limpaMenu();"><span>Not�cias</span></a></li>
+            <li><a href="#" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAATeste/gato/listaGato.jsp" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="#" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/WebMAATeste/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/WebMAATeste/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
     		</li>
     		<li><a href="#" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
     		<li><a href="/WebMAATeste/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAATeste/cad_animal.jsp" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/WebMAATeste/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
             <li><a href="/WebMAATeste/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
 		</ul>
 	</div>

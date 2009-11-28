@@ -97,7 +97,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 	<div class="menuDrop">
 		<ul>
 			<li><a href="/WebMAATeste/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Not&iacute;cias</span></a></li>
+    		<li><a href="#" onfocus="limpaMenu();"><span>Notícias</span></a></li>
             <li><a href="#" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
