@@ -1,11 +1,11 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>Ong Amigos Fieis</title>
         <script type="text/javascript" src="/WebMAA/Painel_controle/ong/js/jquery.min.js"></script>
 
@@ -78,7 +78,7 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>RelatÃ³rio de Animais</span></div>
+                                <div class="bordaFaixaLeft"><span>Relatório de Animais</span></div>
                                 <br />
                                 <!-- FILTRO DE PESQUISA -->
                                 <div id="filtro">
@@ -86,7 +86,7 @@
                                     <div class="nota_destaque">Filtro de Pesquisa</div>
                                     <br />
 
-                                    <span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+                                    <span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
                                     <br />
 
                                     <form name="filtroRelatorio" id="filtroRelatorio" >
@@ -106,12 +106,12 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td width="28%" align="right"><span class="obrigatorio">*</span> Tipo de RelatÃ³rio: &nbsp;</td>
+                                                <td width="28%" align="right"><span class="obrigatorio">*</span> Tipo de Relatório: &nbsp;</td>
                                                 <td><label><input type="radio" name="tipo" value="adotados" id="tipo" /> Animais Adotados</label></td>
                                             </tr>
                                             <tr>
                                                 <td width="28%" align="right">&nbsp;</td>
-                                                <td><label><input type="radio" name="tipo" value="fila" id="tipo" /> Animais na Fila de AdoÃ§Ã£o</label></td>
+                                                <td><label><input type="radio" name="tipo" value="fila" id="tipo" /> Animais na Fila de Adoção</label></td>
                                             </tr>
                                             <tr>
                                                 <td width="28%" align="right">&nbsp;</td>

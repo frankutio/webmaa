@@ -10,6 +10,7 @@
 <link type="text/css" rel="stylesheet" href="/WebMAA/css/jquery-ui-datepicker.css" />
 <link type="text/css" rel="stylesheet" href="/WebMAA/css/estilos.css" />
 <link type="text/css" rel="stylesheet" href="/WebMAA/css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/WebMAA/css/abas.css" />
 
 
 <script type="text/javascript" src="/WebMAA/js/jquery.js"></script>
@@ -17,17 +18,15 @@
 <script type="text/javascript" src="/WebMAA/js/maskedinput.js"></script>
 <script type="text/javascript" src="/WebMAA/js/jquery-ui-datepicker.js"></script>
 <script type="text/javascript" src="/WebMAA/js/menuSuper.js"></script>
-<script type="text/javascript" src="/WebMAA/js/jquery.validate.js"></script>
 
 <script>
 function focoBt(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/bt_continuar_light.png");
+		$("#"+id).attr("src","/WebMAA/images/botao/bt_ok_light.png");
 }
 
 function bt(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/bt_continuar.png");
+		$("#"+id).attr("src","/WebMAA/images/botao/bt_ok.png");
 }
-
 </script>
 
 </head>
@@ -40,7 +39,7 @@ function bt(id){
 
 <div id="faixaTopo">
 		<div class="imgBannerLeft"><img src="/WebMAA/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
-        <div class="imgBannerRight"></div>   	
+        <div class="imgBannerRight"></div>
 </div>
 
 <!-- div com o banner -->
@@ -53,7 +52,7 @@ function bt(id){
 <!-- div Status -->
 
 <div id="faixaStatus">
-<table class="grid" style=" margin-top:-6px;">
+	<table class="grid" style=" margin-top:-6px;">
 	<tr>
     	<td align="right">
             <c:if test="${Log.login != null}">
@@ -83,7 +82,7 @@ function bt(id){
     		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
             <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
             <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
-<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
+            <li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -94,64 +93,36 @@ function bt(id){
 
 	<span class="imgTopo_sem_coluna"></span>
 	<div class="imgBase_sem_coluna">
-	
+
 	<!-- CONTEUDO AQUI -->
 		<div id="cont">
-        	<div style="text-align:center;"><img src="/WebMAA/images/imgTexto/cadastro.png" alt="Cadastro" title="Cadastro"  /></div>
-            <br />
-            
-            <div class="nota_destaque_Alert">
-            	<img src="/WebMAA/images/botao/atencao.png" alt="Atencao" title="AtenÃ§Ã£o"  /> &nbsp;&nbsp;
-            	Para dar continuidade ao cadastramento é necessario ter lido e aceitado o termo de Responsabilidade abaixo.</div>
+				<div style="text-align:center;"><img src="/WebMAA/images/imgTexto/cadastro.png" alt="Cadastro" title="Cadastro"  /></div>
+				<br />
 
-            
+                <span style="color:green;">
+                  <%
+                    if(request.getAttribute("mensagem") != null){
+                        out.print("<b>"+request.getAttribute("mensagem")+"<br>");
+                    }
+                 %></span>
 
-            <br>
-                <span class="obrigatorio">&nbsp;</span>
-            <br>
-          
-            <br />
-            
-            Leia e Aceite o termo abaixo para continurar com o Cadastro            
-            <span style="overflow:auto; width:50%; height:100px; display:block; border-top:#CCC solid 1px; border-bottom:#CCC solid 1px; border-left:#CCC solid 1px;">
-            	<p>1. Aceitação dos Termos</p>
-                <br /><br />
-                 <p>1.1 Para usar os Serviços, o usuário deverá primeiro concordar com os Termos. Não é permitido o uso dos Serviços por parte do usuário se ele não aceitar os Termos.</p>
-                   <br /><br />
-                <p>1.2 O usuário pode aceitar os Termos:</p>
-                <br /><br />
-                <p>(A) clicando para aceitar ou concordar com os Termos, no caso de essa opção ser disponibilizada pela ONG na interface do usuário para qualquer Serviço; ou<br /><br /><br /><br />
+			<div class="nota_informa">
+				<span><font style="font-size:10px;">
+                    Atenção: Este animal que você acabou de cadastrar precisa ainda passar por um processo
+                     de aprovação por parte da ONG, Navegue em nosso Portal a vontade, pois assim que o cadastro
+                      de seu animal for aprovado, você receberá uma notificação informando a aprovação.
+                    </font>
+				</span>
+                <br />
+                <div align="center">
+                    <a href="/WebMAA/index.jsp"><img src="/WebMAA/images/botao/bt_ok.png" id="ok" alt="ok" title="ok" onmouseover="focoBt('ok');" onmouseout="bt('ok');" class="seta_link" /></a>
+                </div>
 
-                    (B) usando efetivamente os Serviços. Nesse caso, o usuário compreende e aceita que a ONG considerará o seu uso dos Serviços uma aceitação dos Termos a partir desse momento.<br />
-                </p>
-                <br /><br />
-                <p>1.3 O usuário não poderá usar os Serviços nem aceitar os Termos se: 
-                <br /><br />(a) não tiver idade legal para celebrar um acordo com efeito jurídico com a ONG; ou
-                <br /><br />(b) for uma pessoa com restrições quanto ao recebimento de serviços impostas pelas leis do Brasil ou de outros países, incluindo o país onde o usuário é residente ou a partir do qual usa os Serviços.</p>
-                <br /><br />
-                <p>1.4 Antes de continuar, o usuário deverá imprimir ou guardar uma cópia local dos Termos Universais em seus registros.</p>
-            </span>   
-            <br />
-            <br />
-			<form id="termoAceite" action="NavUsr" method="post">
-            <input type="hidden" name="operacao" value="termoValido" />
-            
-			<table class="grid">
-				<tr>
-				  <td width="29%" align="right"><label for="aceitar">Li e concordo com os termos de uso &nbsp;</label></td>
-				  <td width="71%"><input type="checkbox" id="aceitar" name="termoAceito" value="Sim" onclick="verificaTermo();" /></td>
-				</tr>
-			</table>
-			            
-            <div style="width:50%; text-align:right;">
-            	<input type="image" src="/WebMAA/images/botao/bt_continuar.png" alt="ok" title="Continuar" id="continuar" onmouseover="focoBt('continuar');" onmouseout="bt('continuar');" disabled="disabled" />
-            </div>  
-              	
-			</form>
-            		
+			</div>
+
 		</div>
-	 <!-- FIM DO TEXTO -->	
-		
+	 <!-- FIM DO TEXTO -->
+
 	</div>
 	<span class="imgFim_sem_coluna"></span>
 </div>

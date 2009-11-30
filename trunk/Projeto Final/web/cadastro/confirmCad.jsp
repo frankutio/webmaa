@@ -1,9 +1,9 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
 <link type="text/css" rel="stylesheet" href="/WebMAA/css/geral.css" />
@@ -52,7 +52,15 @@ function bt(id){
 <!-- div Status -->
 
 <div id="faixaStatus">
-	
+	<table class="grid" style=" margin-top:-6px;">
+	<tr>
+    	<td align="right">
+            <c:if test="${Log.login != null}">
+                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+            </c:if>
+       </td>
+    </tr>
+</table>
 </div>
 
 
@@ -62,18 +70,19 @@ function bt(id){
 	<div class="menuDrop">
 		<ul>
 			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Not&iacute;cias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Not�cias</span></a></li>
+            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/gato/listaGato.jsp" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="/WebMAA/cao/listaCao.jsp" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
-    		</li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		</li>            
+    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
     		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/cad_animal.jsp" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
             <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+            <li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -98,7 +107,7 @@ function bt(id){
                  %></span>
 			
 			<div class="nota_informa">
-				<span><font style="font-size:10px;">Foi enviado um numero de Protocolo para o seu Email, esse protocolo Ã© necessarrio para vailidar-mos o seu cadastro. Acesse o seu email 
+				<span><font style="font-size:10px;">Foi enviado um numero de Protocolo para o seu Email, esse protocolo � necessarrio para vailidar-mos o seu cadastro. Acesse o seu email
 					e siga os passos que lhe passamos para que o seu acesso possa ser desbloqueado!</font>
 				</span>
 			</div>		
@@ -113,7 +122,7 @@ function bt(id){
 </div>
 <!-- Fim do corpo -->
 
-<!-- RodapÃ© -->
+<!-- Rodapé -->
 
 <div id="rodape">
 	sdjlarpq

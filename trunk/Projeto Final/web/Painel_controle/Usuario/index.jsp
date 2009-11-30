@@ -97,18 +97,19 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 	<div class="menuDrop">
 		<ul>
 			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Notícias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
+            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
         			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
     				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
-    		</li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		</li>            
+    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
     		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
             <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
             <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -146,6 +147,9 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                      "</span> <br />");
                 }
                 %>
+                <c:if test="${msgErro != null}">
+                    <span style="color:red;">${msgErro}</span>
+                </c:if>
                
                 <p>
                     <br />
@@ -270,9 +274,12 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                     	<td valign="top"><img src="/WebMAA/Painel_controle/Usuario/images/botao/alert.png" alt="alerta" title="alerta" /></td>
                         <td>Nenhum Animal Cadastrado para Ado&ccedil;&atilde;o</td>
                     </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
                      <tr>
                  	<td colspan="2" align="center">
-                    <a href="/WebMAA/Painel_controle/Usuario/cad_animal.html"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_doar.png" alt="Cadatrar Animal Para DoaÃ§Ã£o" title="Cadatrar Animal Para DoaÃ§Ã£o" class="seta_link" id="doar" onmouseover="focoBt('doar');" onmouseout="bt('doar');" /></a></td>
+                    <a href="/WebMAA/GerAnimal?operacao=iniciar_cad"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_doar.png" alt="Cadatrar Animal Para Doação" title="Cadatrar Animal Para Doação" class="seta_link" id="doar" onmouseover="focoBt('doar');" onmouseout="bt('doar');" /></a></td>
                  </tr>
                    </c:if>
                    <c:if test="${!empty listaAnimal}">

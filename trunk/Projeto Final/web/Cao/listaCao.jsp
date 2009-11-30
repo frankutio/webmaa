@@ -66,18 +66,19 @@ function bt(id){
 	<div class="menuDrop">
 		<ul>
 			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Not&iacute;cias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
+            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
         			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
     				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
-    		</li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		</li>            
+    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
     		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/cadastro/cad_animal.jsp" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
             <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -96,16 +97,16 @@ function bt(id){
 			<div class="bordaFaixaLeft"><span>Lista de C&atilde;es para Ado&ccedil;&atilde;o</span></div>
                 <br />
 
-                <span class="textoTitulo">  O amor aos animais traduzidos em aÃ§Ãµes, na esperanÃ§a que eles tenham novos lares e donos que os amem verdadeiramente...
+                <span class="textoTitulo">  O amor aos animais traduzidos em ações, na esperança que eles tenham novos lares e donos que os amem verdadeiramente...
 </span>
 <br />
-<span class="obrigatorio">
-<%
-    if(request.getAttribute("MsgErro") != null) {
-         out.print(request.getAttribute("MsgErro"));
-    }
- %>
-</span>
+
+<br />
+<br />
+
+<c:if test="${empty lstAnimal}">
+<span class="obrigatorio">Nenhum Cachorro Cadastrado para Adoção!</span>
+</c:if>
 
 <br />
 <br />

@@ -71,18 +71,19 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 	<div class="menuDrop">
 		<ul>
 			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Notícias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Denúncias</span></a></li>
+    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Not�cias</span></a></li>
+            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="../../gato/listaGato.jsp" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="#" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
-    		</li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
-    		<li><a href="../../cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="cad_animal.jsp" onfocus="limpaMenu();"><span>Doar</span></a></li>
-            <li><a href="../../final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+    		</li>            
+    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
+            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>

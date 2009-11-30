@@ -67,6 +67,9 @@ public class Animais {
             }
 
         }
+        if(tipoDeValidacao == ALTERACAO){
+            msgErro ="";
+        }
 
         return msgErro;
      }

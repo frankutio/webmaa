@@ -30,6 +30,25 @@ function bt(id){
 		$("#"+id).attr("src","/WebMAA/images/botao/bt_cadastrar.png");
 }
 
+$(document).ready(function(){
+
+    preenche();
+});
+
+
+function preenche(){
+
+    var sexo = "${ColaboradorCad.sexo}";
+
+    if(sexo == "M"){
+
+        $("#masc").attr("checked",true);
+    }
+    else if(sexo == "F"){
+
+        $("#femi").attr("checked",true);
+    }
+}
 </script>
 
 </head>
@@ -55,7 +74,15 @@ function bt(id){
 <!-- div Status -->
 
 <div id="faixaStatus">
-	
+<table class="grid" style=" margin-top:-6px;">
+	<tr>
+    	<td align="right">
+            <c:if test="${Log.login != null}">
+                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+            </c:if>
+       </td>
+    </tr>
+</table>
 </div>
 
 
@@ -65,18 +92,19 @@ function bt(id){
 	<div class="menuDrop">
 		<ul>
 			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Not&iacute;cias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
+            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/gato/listaGato.jsp" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="/WebMAA/cao/listaCao.jsp" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
-    		</li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		</li>            
+    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
     		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/cad_animal.jsp" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
             <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+            <li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -117,17 +145,17 @@ function bt(id){
 				<table class="grid">
 					<tr>
                         <td width="13%" align="right"><span class="obrigatorio">*</span> <label for="nome">Nome:</label> &nbsp;</td>
-                      <td colspan="3"><label><input type="text" name="nome" size="50" value="${Colaborador.nome}" id="nome" /> </label></td>
+                      <td colspan="3"><label><input type="text" name="nome" size="50" value="${ColaboradorCad.nome}" id="nome" /> </label></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> RG: &nbsp;</td>
-				      <td width="17%"><input type="text" name="rg" size="10" maxlength="9" value="${Colaborador.rg}" /></td>
+				      <td width="17%"><input type="text" name="rg" size="10" maxlength="9" value="${ColaboradorCad.rg}" /></td>
 						<td width="9%" align="right"><span class="obrigatorio">*</span> CPF: &nbsp;</td>
-					  <td width="61%"><input type="text" name="cpf" class="cpf" size="15" value="${Colaborador.cpf}" /> &nbsp; ${msgErroCpf}</td>
+					  <td width="61%"><input type="text" name="cpf" class="cpf" size="15" value="${ColaboradorCad.cpf}" /> &nbsp; ${msgErroCpf}</td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Email (Login): &nbsp;</td>
-				      <td width="17%"><input type="text" name="email" size="20" onkeyup="insertLogin();" value="${Colaborador.email}"/></td>
+				      <td width="17%"><input type="text" name="email" size="20" onkeyup="insertLogin();" value="${ColaboradorCad.email}"/></td>
 						<td width="9%" align="right"><span class="obrigatorio">*</span> Sexo: &nbsp;</td>
 					  <td width="61%"><label>Masculino &nbsp; <input type="radio" name="sexo" value="M" id="masc" /></label> &nbsp;&nbsp; <label>Feminino &nbsp; <input type="radio" name="sexo" value="F" id="femi" /></label></td>
 					</tr>
@@ -138,15 +166,15 @@ function bt(id){
                     </c:if>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Data de&nbsp; Nascimento: &nbsp;</td>
-                      <td colspan="3"><input type="text" name="idade" size="10" class="data" value="${Colaborador.dataNascimentoString}" /> &nbsp;<span id="idadeErro"></span></td>
+                      <td colspan="3"><input type="text" name="idade" size="10" class="data" value="${ColaboradorCad.dataNascimentoString}" /> &nbsp;<span id="idadeErro"></span></td>
 					</tr>
                     <tr>
 						<td width="13%" align="right">Telefone: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="fone" size="15" class="foneDD" value="${Colaborador.telefone}" /></td>
+				      <td colspan="3"><input type="text" name="fone" size="15" class="foneDD" value="${ColaboradorCad.telefone}" /></td>
 					</tr>
                     <tr>
 						<td width="13%" align="right">Celular: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="cel" size="15" class="foneDD" value="${Colaborador.celular}" /></td>
+				      <td colspan="3"><input type="text" name="cel" size="15" class="foneDD" value="${ColaboradorCad.celular}" /></td>
 					</tr>
 				</table>
                 <br />
@@ -193,32 +221,35 @@ function bt(id){
             <table class="grid">
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> CEP: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="cep" size="10" class="cep" value="${Colaborador.cep}" /></td>
+				      <td colspan="3"><input type="text" name="cep" size="10" class="cep" value="${ColaboradorCad.cep}" /></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Endereço: &nbsp;</td>
-				      <td colspan="3"><input type="text" name="end" size="50" value="${Colaborador.endereco}" /></td>
+				      <td colspan="3"><input type="text" name="end" size="50" value="${ColaboradorCad.endereco}" /></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right">Complemento: &nbsp;</td>
-				        <td><input type="text" name="complemento" size="10" value="${Colaborador.complemento}" /></td>
+				        <td><input type="text" name="complemento" size="10" value="${ColaboradorCad.complemento}" /></td>
 						<td width="13%" align="right">Número: &nbsp;</td>
-				        <td><input type="text" name="numero" size="5" id="numero" value="${Colaborador.numero}" /> &nbsp;</td>
+				        <td><input type="text" name="numero" size="5" id="numero" value="${ColaboradorCad.numero}" /> &nbsp;</td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> Cidade: &nbsp;</td>
-				      <td width="17%"><input type="text" name="cidade" size="20" value="${Colaborador.cidade}" /></td>
+				      <td width="17%"><input type="text" name="cidade" size="20" value="${ColaboradorCad.cidade}" /></td>
 						<td width="9%" align="right"><span class="obrigatorio">*</span> Bairro: &nbsp;</td>
-					  <td width="61%"><input type="text" name="bairro" size="10" value="${Colaborador.bairro}" /></td>
+					  <td width="61%"><input type="text" name="bairro" size="10" value="${ColaboradorCad.bairro}" /></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right"><span class="obrigatorio">*</span> UF: &nbsp;</td>
 				      <td width="17%" colspan="3">
 					  	<select name="uf">
                                   <option value=""></option>
-                                      <c:forEach items="${lstUF}" var="lstUF">
-                                      <option value="${lstUF.codigo}"> ${lstUF.UF}</option>
-                                   </c:forEach>
+                                     <c:forEach items="${lstUF}" var="lstUF">
+                                                <option value="${lstUF.codigo}"
+                                              <c:if  test="${ColaboradorCad.uf == lstUF.codigo}">
+                                                  selected ="${lstUF.UF}"
+                                               </c:if>   > ${lstUF.UF}</option>
+                                              </c:forEach>
                           </select> &nbsp; <span id="ufErro"></span>
 					  </td>
 					</tr>

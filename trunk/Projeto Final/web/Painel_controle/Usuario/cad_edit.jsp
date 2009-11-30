@@ -101,7 +101,11 @@ function preenche(){
 <div id="faixaStatus">
 <table class="grid" style=" margin-top:-6px;">
 	<tr>
-    	<td align="right"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location=/WebMAA/index.jsp';" /></td>
+    	<td align="right">
+            <c:if test="${Log.login != null}">
+                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+            </c:if>
+       </td>
     </tr>
 </table>
 </div>
@@ -112,19 +116,20 @@ function preenche(){
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="/WebMAA/Painel_controle/Usuario/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>            
-    		<li><a href="#" onfocus="limpaMenu();"><span>Not√≠cias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Den√∫ncias</span></a></li>
+			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>NotÌcias</span></a></li>
+            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/Painel_controle/Usuario/gato/listaGato.jsp" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="#" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
-    		</li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		</li>            
+    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
     		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/Painel_controle/Usuario/cad_animal.jsp" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
             <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+            <li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -194,7 +199,7 @@ function preenche(){
                	</fieldset>
                 <br />
                 <fieldset>
-                	<legend>Endere√ßo</legend>
+                	<legend>EndereÁo</legend>
                     <br />
                     
                     <table class="grid">
@@ -224,7 +229,7 @@ function preenche(){
                                 	<select name="uf">
                                          <option></option>
                                              <c:forEach items="${lstUF}" var="lstUF">
-                                         <option value="${lstUF.codigo}"
+                                                <option value="${lstUF.codigo}"
                                               <c:if  test="${Colaborador.uf == lstUF.codigo}">
                                                   selected ="${lstUF.UF}"
                                                </c:if>   > ${lstUF.UF}</option>

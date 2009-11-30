@@ -24,7 +24,9 @@ import Entidade.Painel.Processo;
 
 
 import Entidade.Painel.UF;
+import Entidade.Portal.Notificacao;
 import Persistencia.Painel.UFDAO;
+import Persistencia.Portal.NotificacaoDAO;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -1205,6 +1207,26 @@ public class ControleAnimaisServlet extends HttpServlet {
 
             //METODO PARA APAGAR OS DADOS NO BANCO
             int ret = AnimaisDAO.getInstance().aprova(codigo);
+
+            // Gera uma notificação ao dono do animal. <-----
+            Animais animal = AnimaisDAO.getInstance().le(codigo);
+
+            if(animal != null){
+                Notificacao notificacao = new Notificacao();
+
+                notificacao.setCodigoColaborador(animal.getCodigoColaborador());
+                notificacao.setDataCadastro(new Date(System.currentTimeMillis()));
+                notificacao.setAssunto("Cadastro Aprovado");
+                notificacao.setRemetenteNotificacao("Sim");
+
+                notificacao.setMensagem("<h2>Animal Aprovado!</h2><br>" +
+                             "Parabéns, o cadastro do animal "+ animal.getNome() +
+                             ", foi aprovado e o mesmo ja está disponivel para adoção.<br />" +
+                             "Atravéz do seu \"Painel de Controle\" é possivel" +
+                             " Gerênciar os dados de seu animal.");
+
+                NotificacaoDAO.getInstance().gravaMsg(notificacao);
+            }
 
             proximaPagina = "ControleAnimaisServlet?operacao=AnimaisProcessaRelatorio&local=Nao&tipo=pendente";
 

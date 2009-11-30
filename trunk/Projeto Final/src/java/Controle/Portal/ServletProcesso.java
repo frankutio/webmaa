@@ -141,6 +141,7 @@ public class ServletProcesso extends HttpServlet {
 
                 ProcessoDAO.getInstance().alteraFase(processo);
 
+                
                 proximaPagina = "NotificarProcesso?operacao=alteraFase&fase="+fase+"&codigoColab="+codigoColaborador+"&dispara="+dispara+
                         "&codAnimal="+codigoAnimal+"&codigoUsr="+codigoUsr;
 

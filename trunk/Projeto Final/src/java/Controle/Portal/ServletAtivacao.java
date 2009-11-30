@@ -81,9 +81,9 @@ public class ServletAtivacao extends HttpServlet {
 
             }
             else {
-
+                request.setAttribute("Ativado", false);
                 request.setAttribute("MsgErro", "Problemas na Ativação da Sua Conta. - CPF ou Protocolo Inválido");
-                proximaPagina="index.jsp";
+                proximaPagina="cadastro/ativar_cadastro.jsp";
             }
         }
 

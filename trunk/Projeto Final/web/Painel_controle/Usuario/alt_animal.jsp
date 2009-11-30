@@ -117,6 +117,13 @@ function preencheVacina(){
         $("#vacina_nao").attr("selected",true);
     }
 }
+
+function submeter(){
+  url = "GerAnimal?operacao=edita_Animal_painel&fotoAnimal=${AnimalEdita.endFoto}&especie=${AnimalEdita.especie}";
+
+  $("#cadastroColabAnl").attr("action",url);
+  document.cadastro.submit();
+}
 </script>
 
 </head>
@@ -144,7 +151,11 @@ function preencheVacina(){
 <div id="faixaStatus">
 <table class="grid" style=" margin-top:-6px;">
 	<tr>
-    	<td align="right"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='../../index.html';" /></td>
+    	<td align="right">
+            <c:if test="${Log.login != null}">
+                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+            </c:if>
+       </td>
     </tr>
 </table>
 </div>
@@ -156,18 +167,19 @@ function preencheVacina(){
 	<div class="menuDrop">
 		<ul>
 			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Not&iacute;cias</span></a></li>
-            <li><a href="#" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
+            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
         			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
     				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
-    		</li>
-    		<li><a href="#" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		</li>            
+    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
     		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
             <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
             <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -197,17 +209,16 @@ function preencheVacina(){
             <div id="dadosUsuario">
              <br />
             <span class="obrigatorio">* Campos de Preenchimento Obrigat&oacute;rio</span>
-          <form name="cadastro" method="post" action="GerAnimal">
+          <form name="cadastro" method="post" action="" id="cadastroColabAnl" onsubmit="return submeter();" enctype="multipart/form-data">
               <input type="hidden" name="codUsr" value="${Colaborador.codigo}" />
               <input type="hidden" name="codigo" value="${AnimalEdita.codigo}" />
-              <input type="hidden" name="foto" value="${AnimalEdita.endFoto}" />
-              <input type="hidden" name="operacao" value="edita_Animal_painel" />
+              
 
           <table class="grid">
             	<tr>
                 	<td width="28%" align="right"><span class="obrigatorio">*</span> Esp&eacute;cie: &nbsp;</td>
                     <td colspan="3">
-                   	  <input type="radio" name="especie" value="Gato" id="esp_gato" /> Gato &nbsp; &nbsp; <input type="radio" name="especie" value="Cao" id="esp_cao" /> Cachorro
+                   	  <input type="radio" name="especie1" value="Gato" id="esp_gato" disabled  /> Gato &nbsp; &nbsp; <input type="radio" name="especie1" value="Cao" id="esp_cao" disabled /> Cachorro
                     </td>
                 </tr>
                 <tr>
@@ -295,7 +306,7 @@ function preencheVacina(){
                 
                 <tr>
                 	<td align="right">Foto: &nbsp;</td>
-                  <td colspan="3"><input type="file" name="foto1" /></td>
+                  <td colspan="3"><input type="file" name="foto" /></td>
                 </tr>
             </table>
             <br />

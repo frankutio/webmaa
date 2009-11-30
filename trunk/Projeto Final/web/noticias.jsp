@@ -82,11 +82,12 @@ function bt(id){
         			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
     				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
-    		</li>
+    		</li>            
     		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
     		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
             <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
             <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -141,7 +142,7 @@ function bt(id){
                     <form action="/WebMAA/NavUsr" name="logar" method="post" class="link">
 
                     	<input type="hidden" name="operacao" value="login" />
-                        <input type="hidden" name="dispara" value="index.jsp" />
+                        <input type="hidden" name="dispara" value="noticias.jsp" />
 
                     	<table class="grid" width="100%">
                         	<tr>

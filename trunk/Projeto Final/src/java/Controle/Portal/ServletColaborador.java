@@ -178,7 +178,7 @@ public class ServletColaborador extends HttpServlet {
                      request.setAttribute("lstUF", lstUF);
 
                     //CRIA UM ATRIBUTO PARA MANDAR PARA A JSP
-                    request.setAttribute("Colaborador", formColaborador);
+                    request.setAttribute("ColaboradorCad", formColaborador);
 
                     proximaPagina = "NavUsr?operacao=termoValido&termoAceito=Sim";
                 }
@@ -319,7 +319,8 @@ public class ServletColaborador extends HttpServlet {
                }
 
                request.getSession().removeAttribute("colaborador");
-               request.setAttribute("MsgErro", "Ativação de Conta Necessária!");
+               request.setAttribute("MsgErro", "Ativação de Conta Necessária! <br />" +
+                       "<a href='/WebMAA/Ativacao?operacao=verifica&protocolo='>Clique aqui para ativar a sua conta.</a>");
                proximaPagina = direciona;
 
               

@@ -25,11 +25,23 @@ function focoBt(id){
     if(id ==="logoff"){
 		$("#"+id).attr("src","/WebMAA/images/botao/bt_logoff_light.png");
 	}
+    else if(id ==="enviar"){
+		$("#"+id).attr("src","/WebMAA/images/botao/bt_enviar_verde_light.png");
+	}
+	else if(id ==="limpar"){
+		$("#"+id).attr("src","/WebMAA/images/botao/bt_limpar_light.png");
+	}
 }
 
 function bt(id){
 		if(id ==="logoff"){
 		$("#"+id).attr("src","/WebMAA/images/botao/bt_logoff.png");
+	}
+    else if(id ==="enviar"){
+		$("#"+id).attr("src","/WebMAA/images/botao/bt_enviar_verde.png");
+	}
+	else if(id ==="limpar"){
+		$("#"+id).attr("src","/WebMAA/images/botao/bt_limpar.png");
 	}
 }
 </script>
@@ -44,7 +56,7 @@ function bt(id){
 
 <div id="faixaTopo">
 		<div class="imgBannerLeft"><img src="/WebMAA/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
-        <div class="imgBannerRight"></div>   	
+        <div class="imgBannerRight"></div>
 </div>
 
 <!-- div com o banner -->
@@ -82,7 +94,7 @@ function bt(id){
         			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
     				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
-    		</li>            
+    		</li>
     		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
     		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
             <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
@@ -98,66 +110,80 @@ function bt(id){
 
 	<span class="imgTopo_geral"></span>
 	<div class="imgBase_geral">
-	
+
 	<!-- CONTEUDO AQUI -->
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaLeft"><span>Notícias</span></div>
+			<div class="bordaFaixaLeft"><span><img src="/WebMAA/images/botao/ico_email.png" style=" float:left; text-align:left; padding-right:5px;"  /> &nbsp;&nbsp;&nbsp; C.D.O - Contato Direto com a Ong</span></div>
                 <br />
-          
-          <!-- TELA 01 -->	    
-          <div id="dadosInicio"> 
-              
-              
-              	
-                <br />
-                
-                <br />
-                
-            <div>
-           	  <h2 style="color:#090; font-size:16px;" align="center">Vacinar é Prevenir</h2><br />
-                <img src="/WebMAA/images/noticias/vacinacao.png" alt="Foto: Animais sendo Vacinados" width="225" height="142" style="float:left; margin-right:5px;" title="Vacinalção" />
-                <p>
-	  <h4 style="font-size:13px; text-align:justify; margin-top:20px;">
-                    	Seu animal de estimação merece esse cuidado. Leve-o para tomar a vacina anti-rábica gratuitamente em qualquer um dos postos de vacinação.
-                    </h4>
+
+          <!-- TELA 01 -->
+          <div id="dadosInicio">
+
+              <form name="contato" method="post" onsubmit="return valida();">
+              	<p>
+                	Use o formulário abaixo para entrar em contato.<br />
+                     Não se esqueça de preencher os campos obrigatórios que estão indicados pelo ( <span class="obrigatorio">*</span> ).
                 </p>
                 <br />
+                <hr />
+
                 <br />
-                
-              <p>
-   	  <table class="grid" style="width:50%;">
-                    	<tr>
-                        	<td width="3%"><img src="/WebMAA/images/noticias/seta.png" /></td>
-                            <td width="97%"><span class="obrigatorio">Veja os endereços dos postos de Vacinação</span></td>
-                        </tr>
-                    </table>
-                </p>
-                
+
+                <table class="grid">
+                	<tr>
+                    	<td width="16%" align="right"><span class="obrigatorio">*</span> Nome: &nbsp;</td>
+                        <td width="84%"><input type="text" name="nome" value="" size="30" maxlength="50" /></td>
+                   </tr>
+                   <tr>
+                    	<td width="16%" align="right"><span class="obrigatorio">*</span> E-mail: &nbsp;</td>
+                        <td width="84%"><input type="text" name="email" value="" size="30" maxlength="45" /></td>
+                   </tr>
+                   <tr>
+                    	<td width="16%" align="right">Telefone: &nbsp;</td>
+                        <td width="84%"><input type="text" name="telefone" value="" size="10" class="foneDD" /> &nbsp; (Com DDD)</td>
+                   </tr>
+                   <tr>
+                    	<td width="16%" align="right"><span class="obrigatorio">*</span> Assunto: &nbsp;</td>
+                        <td width="84%">
+                        	<select name="assunto">
+                            	<option value="0"></option>
+                                <option value="1">Link Quebrado</option>
+                                <option value="2">Sugestão</option>
+                                <option value="3">Reclamação</option>
+                                <option value="4">Elogio</option>
+                                <option value="5">Denúncia de Colaborador</option>
+                                <option value="6">Outros</option>
+                            </select>
+                        </td>
+                   </tr>
+                </table>
                 <br />
-                <br />
-                 <br />
-                  <br />
-                
-                <p>
-               	  <span style=" font-size:14px; color:#000;">Vacinação</span>
-                </p>
-                <br />
-                
-                Para continuar mantendo a cidade livre da raiva, é muito importante vacinar anualmente cães e gatos.
-Os gatos, pelas suas características de caça e maior acesso às ruas sem supervisão, ficam mais expostos a contato com espécies silvestres, como os morcegos, que tem papel importante na transmissão da raiva. Por isso, merecem atenção especial na manutenção da vacina contra raiva atualizada.
-              </div>
-                
+                <table class="grid">
+                	<tr>
+                    	<td><span class="obrigatorio">*</span> Descreva a Mensagem</td>
+                    </tr>
+                    <tr>
+                    	<td><textarea name="mensagem" rows="5" cols="50"></textarea></td>
+                    </tr>
+                </table>
               	<br />
+
+                <div align="center" style="width:80%;">
+                	<img src="/WebMAA/images/botao/bt_limpar.png" alt="Limpar" title="Limpar" class="seta_link" id="limpar" onmouseover="focoBt('limpar');" onmouseout="bt('limpar');" onclick="document.contato.reset();" />&nbsp;&nbsp;
+                    <input type="image" src="/WebMAA/images/botao/bt_enviar_verde.png" alt="Enviar" title="Enviar" id="enviar" onmouseover="focoBt('enviar');" onmouseout="bt('enviar');" />
+                </div>
+              </form>
+
           </div>
-            <!-- FIM DA TELA 01 -->               
-         		 <br />                
-          		<br />          
+            <!-- FIM DA TELA 01 -->
+         		 <br />
+          		<br />
 	  	  </div>
-            
+
 			<div id="colunaRight">
-            
+
              <c:if test="${Log.login == null}">
                 <!-- LOGIN -->
             	<div class="login">
@@ -167,7 +193,7 @@ Os gatos, pelas suas características de caça e maior acesso às ruas sem supervis
                     <form action="/WebMAA/NavUsr" name="logar" method="post" class="link">
 
                     	<input type="hidden" name="operacao" value="login" />
-                        <input type="hidden" name="dispara" value="noticia/vacinacao/vacinacao.jsp" />
+                        <input type="hidden" name="dispara" value="fale_conosco.jsp" />
 
                     	<table class="grid" width="100%">
                         	<tr>
@@ -234,14 +260,14 @@ Os gatos, pelas suas características de caça e maior acesso às ruas sem supervis
              <!-- LOGIN -->
 
             </c:if>
-            
+
 			</div>
 		<!-- Fim das colunas -->
 		<div class="clear"></div>
-					
+
 		</div>
-	 <!-- FIM DO TEXTO -->	
-		
+	 <!-- FIM DO TEXTO -->
+
 	</div>
 	<span class="imgFim_geral"></span>
 </div>

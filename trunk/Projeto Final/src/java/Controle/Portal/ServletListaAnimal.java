@@ -51,18 +51,10 @@ public class ServletListaAnimal extends HttpServlet {
 
                         
              List<Animais> lstAnimal = AnimalDAO.getInstance().listaAni(esp,disp,bloqueio);
-
-
-            if(lstAnimal == null){
-
-                request.setAttribute("MsgErro", "Nenhum Gato Cadastrado para Adoção!");
-                proximaPagina = "Gato/listaGato.jsp";
-
-            }else {
+            
 
             request.setAttribute("lstAnimal", lstAnimal);
             proximaPagina = "Gato/listaGato.jsp";
-            }
         }
 
         else if(operacao.equals("lista_cao")){
@@ -72,17 +64,10 @@ public class ServletListaAnimal extends HttpServlet {
             String bloqueio ="Nao";
 
              List<Animais> lstAnimal = AnimalDAO.getInstance().listaAni(esp,disp,bloqueio);
-
-             if(lstAnimal == null){
-
-                request.setAttribute("MsgErro", "Nenhum Gato Cadastrado para Adoção!");
-                proximaPagina = "Cao/listaCao.jsp";
-
-            }else {
+             
 
             request.setAttribute("lstAnimal", lstAnimal);
             proximaPagina = "Cao/listaCao.jsp";
-            }
 
         }
 

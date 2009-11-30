@@ -1,11 +1,11 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>Ong Amigos Fieis</title>
     <script type="text/javascript" src="/WebMAA/Painel_controle/ong/js/jquery.min.js"></script>
 
@@ -92,7 +92,7 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>RelatÃ³rio de Animais</span></div>
+                                <div class="bordaFaixaLeft"><span>Relatório de Animais</span></div>
                                 <br />
                                 <!-- RRELATÃ“RIO COLABORADOR PENDENTES -->
                                  <c:if test="${lstProcesso == null}">
@@ -105,7 +105,7 @@
                                     <div id="rel_colab_pendente" class="esconde">
                                 </c:if>
                                 
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais em Colaborador - Pendentes de AprovaÃ§Ã£o</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais em Colaborador - Pendentes de Aprovação</div>
                                     <br />
 
                                     <table class="grid" style="width:100%;">
@@ -113,7 +113,7 @@
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="27%" align="center" class="grid_titulo">Nome</td>
                                             <td width="15%" align="center" class="grid_titulo">Tipo</td>
-                                            <td width="35%" align="center" class="grid_titulo">RaÃ§a</td>
+                                            <td width="35%" align="center" class="grid_titulo">Raça</td>
                                             <td width="32%" align="center" class="grid_titulo">Dt. Cadastro</td>
                                             <td width="12%" align="center" class="grid_titulo">Detalhar</td>
                                             <td width="12%" align="center" class="grid_titulo">Selecionar</td>
@@ -161,18 +161,18 @@
 
                                     <!-- FOTO DO ANIMAL -->
                                     <div id="foto">
-                                        <img src="../../gato/images/loky.jpg" />
+                                        <img src="/WebMAA/${detalheCanil.especie}/images/miniaturas/${detalheCanil.endFoto}" />
                                     </div>
                                     <!-- FOTO -->
             <!-- DADOS DO ANIMAL -->
                                     <div id="dadosUsuario">
                                         <table class="grid">
                                             <tr>
-                                                <td width="33%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                                <td width="33%" align="right">Nº de Identificação: &nbsp;</td>
                                                 <td width="67%"><span>${detalheCanil.codigo}</span></td>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">RaÃ§a: &nbsp;</td>
+                                                <td width="33%" align="right">Raça: &nbsp;</td>
                                                 <td width="67%"><span>${detalheCanil.especie}</span></td>
                                             </tr>
                                             <tr>
@@ -189,7 +189,7 @@
                                                </c:forEach>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">2Âª Cor: &nbsp;</td>
+                                                <td width="33%" align="right">2ª Cor: &nbsp;</td>
                                                 <c:forEach  items="${lstCor}" var="lstCor">
                                                     <c:if test="${lstCor.codigo ==detalheCanil.cor2}">
                                                        <td width="67%"><span>${lstCor.descricao}</span></td>
@@ -210,12 +210,7 @@
                                             <tr>
                                                 <td width="33%" align="right" valign="top">Sexo: &nbsp;</td>
                                                 <td width="67%" valign="top">
-                                                    <c:if test="${detalheCanil.sexo==M}">
-                                                        <span>Macho</span>
-                                                    </c:if>
-                                                    <c:if test="${detalheCanil.sexo!=M}">
-                                                        <span>Femea</span>
-                                                    </c:if>
+                                                        <span>${detalheCanil.sexo}</span>
                                                 </td>
                                             </tr>
                                         </table>
@@ -228,14 +223,14 @@
 
                                     <table class="grid">
                                         <tr>
-                                            <td><span class="obrigatorio">DescriÃ§Ã£o do Animal</span></td>
+                                            <td><span class="obrigatorio">Descrição do Animal</span></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheCanil.descricao}</td>
                                         </tr>
                                     </table>
                                     <br />
-                                    <div class="nota_destaque">InformaÃ§Ãµes Adicionais</div>
+                                    <div class="nota_destaque">Informações Adicionais</div>
                                     <br />
 
                                     <table class="grid">
@@ -246,7 +241,7 @@
                                             <td width="72%">${detalheCanil.castrado}</td>
                                         </tr>
                                         <tr class="td_escura">
-                                            <td><strong>Animal com certificado VeterianÃ¡rio?</strong></td>
+                                            <td><strong>Animal com certificado Veterianário?</strong></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheCanil.laudoVeterinario}</td>
