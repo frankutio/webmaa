@@ -143,7 +143,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir Relat√≥rio" class="seta_link" onclick="window.print();" />&nbsp;&nbsp;
+                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÛrio" class="seta_link" onclick="window.print();" />&nbsp;&nbsp;
                                        
                                     </div>
 
@@ -302,7 +302,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
         <!-- Modal -->

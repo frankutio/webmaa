@@ -57,7 +57,7 @@ public class ServletPainelControle extends HttpServlet {
             int codUsr = Integer.parseInt(request.getParameter("colaborador"));
                String bloq = "Nao";
 
-               List<Animais> listaAnimal = AnimalDAO.getInstance().carregaDadosAnimalTeste(codUsr,bloq);
+               List<Animais> listaAnimal = AnimalDAO.getInstance().carregaDadosAnimal(codUsr,bloq);
 
                 request.getSession().setAttribute("QtdAnimal", listaAnimal.size());
                 request.getSession().setAttribute("listaAnimal", listaAnimal);
@@ -131,7 +131,8 @@ public class ServletPainelControle extends HttpServlet {
                     
                         // Cria um objeto file com nome do arquivo
                         // A pasta deve oferecer acesso de escrita para Conteiner
-                        File uploadedFile = new File("/Documents and Settings/Frank/Meus documentos/Faculdade/TCC/Implementacao/WebMAA/build/web/Painel_controle/Usuario/foto/" + fi.getName());
+                        File uploadedFile = new File("/Documents and Settings/Frank/Meus documentos/Faculdade/TCC/Implementacao/"+
+                                "WebMAA/build/web/Painel_controle/Usuario/foto/" + fi.getName());
                         // Grava arquivo na pasta especificada
                         fi.write(uploadedFile);
 

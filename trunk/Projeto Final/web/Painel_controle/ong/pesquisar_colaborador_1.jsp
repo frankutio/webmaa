@@ -205,7 +205,7 @@
                                     </fieldset>
 
                                     <fieldset>
-                                        <legend>Endereço</legend>
+                                        <legend>Endere�o</legend>
 
                                         <table class="grid">
                                             <tr>
@@ -213,7 +213,7 @@
                                                 <td colspan="5"><span>70000000</span></td>
                                             </tr>
                                             <tr>
-                                                <td align="right">Endereço: &nbsp;</td>
+                                                <td align="right">Endere�o: &nbsp;</td>
                                                 <td colspan="5"><span>Vila São José</span></td>
                                             </tr>
                                             <tr>
@@ -263,7 +263,7 @@
 <!-- Rodapé -->
 
         <div id="rodape">
-            Versão do Sistema &nbsp;&nbsp; 1.0
+            Vers�o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

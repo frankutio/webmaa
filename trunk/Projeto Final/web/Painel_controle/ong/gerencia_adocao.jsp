@@ -109,12 +109,12 @@
                         <div class="conteudo_painel">
                             <div class="lista">
                                 <div class="bordaFaixaLeft">
-                                    <span>Gerenciamento de AdoÃ§Ãµes</span>
+                                    <span>Gerenciamento de Adoções</span>
                                 </div>
                                  
                                  <c:if test="${listaAnimais == null}">
                                      <br/>
-                                    <div class="nota_destaque" style="width:100%;">NÃ£o Existem AdoÃ§Ãµes Pendentes de AprovaÃ§Ã£o</div>
+                                    <div class="nota_destaque" style="width:100%;">Não Existem Adoções Pendentes de Aprovação</div>
                                     <br />
                                   </c:if>
                                 <br />
@@ -123,14 +123,14 @@
                                     <br />
                                      <c:if test="${listaAnimais == null}">
                                         <div id="resultado" class="esconde">
-                                        <div class="nota_destaque" style="width:100%;">NÃ£o Existem AdoÃ§Ãµes Pendentes de AprovaÃ§Ã£o</div>
+                                        <div class="nota_destaque" style="width:100%;">Não Existem Adoções Pendentes de Aprovação</div>
                                         <br />
                                       </c:if>
                                      <c:if test="${listaAnimais != null}">
                                         <div id="resultado" class="mostra">
                                       </c:if>
                                    
-                                        <div class="nota_destaque" style="width:100%;">AdoÃ§Ãµes Pendentes de AprovaÃ§Ã£o</div>
+                                        <div class="nota_destaque" style="width:100%;">Adoções Pendentes de Aprovação</div>
                                         <br />
 
                                         <table class="grid" style=" width:98%;">
@@ -139,7 +139,7 @@
                                                 <td width="6%" align="center" class="grid_titulo">Cod</td>
                                                 <td width="24%" align="center" class="grid_titulo">Nome</td>
                                                 <td width="10%" align="center" class="grid_titulo">Tipo</td>
-                                                <td width="17%" align="center" class="grid_titulo">RaÃ§a</td>
+                                                <td width="17%" align="center" class="grid_titulo">Raça</td>
                                                 <td width="15%" align="center" class="grid_titulo">Dt. Cadastro</td>
                                                 <td width="11%" align="center" class="grid_titulo">Detalhar</td>
                                             </tr>
@@ -311,7 +311,7 @@
 <!-- RodapÃ© -->
 
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
 

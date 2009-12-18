@@ -62,6 +62,44 @@ public class ServletEmail extends HttpServlet {
             proximaPagina="cadastro/confirmCad.jsp";
 
         }
+        else if(operacao.equals("contato")){
+
+           String para = "webmaatcc@gmail.com";
+           String nome = request.getParameter("nome");
+           String email = request.getParameter("email");
+           String telefone = request.getParameter("telefone");
+           String assunto = request.getParameter("assunto");
+           String mensagem = request.getParameter("mensagem");
+
+           //Prepara a msg para enviar a ONG
+           String msg ="<p><h2>Contato pelo Portal!</h2></p><br />" +
+                   "<hr />" +
+                   "Nome: <strong>"+nome+"</strong><br />" +
+                   "Telefone: <strong>"+telefone+"</strong><br />" +
+                   "E-mail: <strong>"+email+"</strong>" +
+                   "<hr />" +
+                   "<br /> Motivo do Contato: <strong>"+assunto+"</strong><br />" +
+                   "<br />" +
+                   "<strong>Mensagem</strong><br />" +
+                   mensagem;
+           // Prepara uma Resposta por E-mail
+           String reply="<p><h2>E-mail Recebido!</h2></p><br /><br />" +
+                   "Iremos analisar a sua mensagem e embreve entraremos em contato!";
+
+            Mail mail = new Mail();
+
+            try {
+                mail.sendMail("Amigos Fieis<webmaatcc@gmail.com>", para, assunto ,msg);
+                mail.sendMail("Amigos Fieis<webmaatcc@gmail.com>", email, "Confirmação de E-mail" ,reply);
+            } catch (Exception e) {
+
+                request.setAttribute("msgEmail", "<span style='color:red;'>Erro ao tentar enviar este e-mail, por favor tente novamente mais tarde.</span>");
+                proximaPagina="confirm_mail.jsp";
+            }
+
+            request.setAttribute("msgEmail", "<span style='color:#090;'><img src'WebMAA/images/botao/aprova.png' /> &nbsp;Mensagem Enviada com Sucesso!</span>");
+            proximaPagina="confirm_mail.jsp";
+        }
         
         //PARA DIRECIONAR AS PAGINAS PARA O LOCAL CERTO.
         RequestDispatcher rd = request.getRequestDispatcher(proximaPagina);

@@ -106,7 +106,7 @@
                                     &nbsp
                                     <td width="19%"><div align="center">
                                             <img src="images/botao/relatorio.png" /><br />
-                                            <a href="relatorio_animal.jsp">RelatÃ³rio</a>
+                                            <a href="relatorio_animal.jsp">Relatório</a>
                                         </div>
                                     </td>
                                     <td width="28%"><div align="center">
@@ -144,7 +144,7 @@
                                         <ul>
                                             <li><a href="cad_animal.jsp">Novo Animal</a></li>
                                             <li><a href="pesquisar_animal.jsp">Pesquisar Animais</a></li>
-                                            <li><a href="relatorio_animal.jsp">RelatÃ³rio</a></li>
+                                            <li><a href="relatorio_animal.jsp">Relatório</a></li>
                                         </ul>
                                     </li>
                                     <li onmouseover="setaClass('colaborador');" onmouseout="retiraClass('colaborador');"><a href="#" id="colaborador" class="">Colaboradores</a>
@@ -155,9 +155,9 @@
                                     </li>
                                     <li onmouseover="setaClass('gerenciar');" onmouseout="retiraClass('gerenciar');"><a href="#" id="gerenciar" class="">Gerenciar</a>
                                         <ul>
-                                            <li><a href="gerencia_adocao.jsp">AdoÃ§Ãµes</a></li>
-                                            <li><a href="gerencia_doacao.jsp">DoaÃ§Ãµes</a></li>
-                                            <li><a href="gerencia_raÃ§as.jsp">RaÃ§as</a></li>
+                                            <li><a href="gerencia_adocao.jsp">Adoções</a></li>
+                                            <li><a href="gerencia_doacao.jsp">Doações</a></li>
+                                            <li><a href="gerencia_Raças.jsp">Raças</a></li>
                                             <li><a href="gerencia_forma_envio.jsp">Forma de Envio</a></li>
                                             <li><a href="gerencia_pelagem.jsp">Pelagem</a></li>
                                             <li><a href="gerencia_portes.jsp">Portes</a></li>
@@ -173,15 +173,15 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>ManutenÃ§Ã£o de RaÃ§as</span></div>
+                                <div class="bordaFaixaLeft"><span>Manutenção de Raças</span></div>
                                 <br />
                                 <!-- FILTRO DE PESQUISA -->
                                 <div id="filtro">
                                     <table class="grid" style="width:100%;">
                                         <tr>
                                             <td width="6%" align="center" class="grid_titulo">Cod</td>
-                                            <td width="55%" align="center" class="grid_titulo">Nome da RaÃ§a</td>
-                                            <td width="21%" align="center" class="grid_titulo">Tipo de RaÃ§a</td>
+                                            <td width="55%" align="center" class="grid_titulo">Nome da Raça</td>
+                                            <td width="21%" align="center" class="grid_titulo">Tipo de Raça</td>
                                             <td width="9%" align="center" class="grid_titulo">Alterar</td>
                                             <td width="9%" align="center" class="grid_titulo">Excluir</td>
                                         </tr>
@@ -219,49 +219,49 @@
 
             <!-- RESULTADO DA PESQUISA-->
                                 <div id="resultado" class="esconde">
-                                    <div class="nota_destaque" style="width:100%;">Incluir Nova RaÃ§a</div>
+                                    <div class="nota_destaque" style="width:100%;">Incluir Nova Raça</div>
                                     <br />
 
                                     <table class="grid" style="width:100%;">
                                         <tr>
-                                            <td width="17%" align="right">Nome da RaÃ§a: &nbsp;</td>
+                                            <td width="17%" align="right">Nome da Raça: &nbsp;</td>
                                             <td width="83%"><input type="text" size="20" /></td>
                                         </tr>
                                         <tr>
-                                            <td align="right">Tipo da RaÃ§a: &nbsp;</td>
+                                            <td align="right">Tipo da Raça: &nbsp;</td>
                                             <td><input type="radio" name="raca" /> Felina &nbsp;&nbsp; <input type="radio" name="raca" /> Canina</td>
                                         </tr>
                                     </table>
                                     <br />
                                     <div align="center">
-                                        <img src="images/botao/bt_incluir.png" alt="Incluir" title="Incluir" class="seta_link" onclick="alert('RaÃ§a Incluida com Sucesso');" />
+                                        <img src="images/botao/bt_incluir.png" alt="Incluir" title="Incluir" class="seta_link" onclick="alert('Raça Incluida com Sucesso');" />
                                     </div>
 
                                 </div>
                                 <!-- RESULTADO DA PESQUISA-->
 
-            <!-- Alterar RaÃ§as -->
+            <!-- Alterar Raças -->
                                 <div id="alterar" class="esconde">
-                                    <div class="nota_destaque">Alterar RaÃ§as</div>
+                                    <div class="nota_destaque">Alterar Raças</div>
                                     <br />
 
                                     <table class="grid" style="width:100%;">
                                         <tr>
-                                            <td width="17%" align="right">Nome da RaÃ§a: &nbsp;</td>
+                                            <td width="17%" align="right">Nome da Raça: &nbsp;</td>
                                             <td width="83%"><input type="text" size="20" value="Sagrado da Birmania" /></td>
                                         </tr>
                                         <tr>
-                                            <td align="right">Tipo da RaÃ§a: &nbsp;</td>
+                                            <td align="right">Tipo da Raça: &nbsp;</td>
                                             <td><input type="radio" name="raca" checked="checked" /> Felina &nbsp;&nbsp; <input type="radio" name="raca" /> Canina</td>
                                         </tr>
                                     </table>
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/bt_alterar.png" alt="Alterar" title="Alterar" class="seta_link" onclick="alert('RaÃ§a Alterada com Sucesso');" />&nbsp;&nbsp;
+                                        <img src="images/botao/bt_alterar.png" alt="Alterar" title="Alterar" class="seta_link" onclick="alert('Raça Alterada com Sucesso');" />&nbsp;&nbsp;
                                     </div>
 
                                 </div>
-                                <!-- Alterar RaÃ§as -->
+                                <!-- Alterar Raças -->
 
                                 <br />
                                 <br />
@@ -290,7 +290,7 @@
 <!-- RodapÃ© -->
 
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

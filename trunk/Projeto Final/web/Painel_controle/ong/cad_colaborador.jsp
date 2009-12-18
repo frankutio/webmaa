@@ -85,10 +85,10 @@
                             <div class="lista">
                                 <div class="bordaFaixaLeft"><span>Cadastro de Colaborador</span></div>
                                 <br />
-                                <span class="obrigatorio">* Campos de Preenchimento Obrigat√≥rio</span>
+                                <span class="obrigatorio">* Campos de Preenchimento ObrigatÛrio</span>
                                 <br />
                                 <div class="nota_informa">
-                                    <span>Use esse formul√°rio somente em caso de extrema precis√£o.</span>
+                                    <span>Use esse formul·rio somente em caso de extrema precis„o.</span>
                                 </div>
                                 <form id="frmcolaborador" name="frmcolaborador" >
                                    <input type="hidden" name="operacao" value="ColaboradorNovoProcessa">
@@ -124,20 +124,20 @@
                                     </fieldset>
 
                                     <fieldset>
-                                        <legend>Endere√ßo</legend>
+                                        <legend>EndereÁo</legend>
                                         <table class="grid">
                                             <tr>
                                                 <td width="18%" align="right"><span class="obrigatorio">*</span> CEP: &nbsp;</td>
                                                 <td colspan="3"><input type="text" name="cep" id="cep" size="10" class="cep" /></td>
                                             </tr>
                                             <tr>
-                                                <td width="18%" align="right"><span class="obrigatorio">*</span> Endere√ßo: &nbsp;</td>
+                                                <td width="18%" align="right"><span class="obrigatorio">*</span> EndereÁo: &nbsp;</td>
                                                 <td colspan="3"><input type="text" name="endereco" size="50" /></td>
                                             </tr>
                                             <tr>
                                                 <td width="18%" align="right">Complemento: &nbsp;</td>
                                                 <td><input type="text" name="complemento" id="complemento" size="10" /></td>
-                                                <td width="15%" align="right">N√∫mero: &nbsp;</td>
+                                                <td width="15%" align="right">N˙mero: &nbsp;</td>
                                                 <td><input type="text" name="numero" id="numero" size="5" /></td>
                                             </tr>
                                             <tr>
@@ -211,7 +211,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

@@ -216,7 +216,7 @@
                                     </fieldset>
 
                                     <fieldset>
-                                        <legend>Endere√ßo</legend>
+                                        <legend>EndereÁo</legend>
 
                                         <table class="grid">
                                             <tr>
@@ -224,7 +224,7 @@
                                                 <td colspan="5"><span>${editarColaborador.cep}</span></td>
                                             </tr>
                                             <tr>
-                                                <td align="right">Endere√ßo: &nbsp;</td>
+                                                <td align="right">EndereÁo: &nbsp;</td>
                                                 <td colspan="5"><span>${editarColaborador.endereco}</span></td>
                                             </tr>
                                             <tr>
@@ -281,7 +281,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

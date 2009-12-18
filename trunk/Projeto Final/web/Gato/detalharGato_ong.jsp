@@ -123,11 +123,11 @@ function bt(id){
                   <img src="images/nanda.png" alt="Luky" title="Luky" />
                   <table class="grid descricaoFoto" >
               <tr>
-                    	<td width="41%" align="right">Nº de Identificação: &nbsp;</td>
+                    	<td width="41%" align="right">N� de Identifica��o: &nbsp;</td>
                         <td width="59%"><span style="color:#000;">002</span></td>
                     </tr> 
                     <tr>
-                    	<td width="41%" align="right">Raça: &nbsp;</td>
+                    	<td width="41%" align="right">Ra�a: &nbsp;</td>
                         <td width="59%"><span style="color:#000;">Comum</span></td>
                     </tr>
                     <tr>
@@ -139,7 +139,7 @@ function bt(id){
                         <td width="59%"><span style="color:#000;">Preto</span></td>
                     </tr> 
                     <tr>
-                    	<td width="41%" align="right">2ª Cor: &nbsp;</td>
+                    	<td width="41%" align="right">2� Cor: &nbsp;</td>
                         <td width="59%"><span style="color:#000;">Branco</span></td>
                     </tr> 
                     <tr>
@@ -154,7 +154,7 @@ function bt(id){
                     	<td align="right" colspan="2">&nbsp;</td>
                     </tr>
                      <tr>
-                    	<td width="41%" align="right" valign="top">Taxa de Adoção: &nbsp;</td>
+                    	<td width="41%" align="right" valign="top">Taxa de Ado��o: &nbsp;</td>
                         <td width="59%" valign="top"><span style="color:#000;">R$ 10,00</span></td>
                     </tr>  
                     <tr>
@@ -178,7 +178,7 @@ function bt(id){
                 
                 <div id="comentario">
                 <br />
-                <span class="obrigatorio">Descrição/Comentário do Gatinho(a):</span><br /><br />
+                <span class="obrigatorio">Descri��o/Coment�rio do Gatinho(a):</span><br /><br />
                 	Nanda é uma gatinha muito carente mais a sua dona faleceu e ela não pode mais viver em seu antigo lar.<br />
                     Se encontra em nosso Gatil, damos muita atenção e cuidados, só que o nosso Gatil esta muito lotado e isso torna impossivel a sua 
                     estadia.<br />
@@ -201,7 +201,7 @@ function bt(id){
                         	<td width="18%" align="center" class="grid_titulo">Foto</td>
                             <td width="15%" align="center" class="grid_titulo">Cod</td>
                             <td width="27%" align="center" class="grid_titulo">Nome</td>
-                            <td width="15%" align="center" class="grid_titulo">Raça</td>
+                            <td width="15%" align="center" class="grid_titulo">Ra�a</td>
                             <td width="14%" align="center" class="grid_titulo">Tipo</td>
                             <td width="11%" align="center" class="grid_titulo">Sexo</td>
                         </tr>
@@ -222,7 +222,7 @@ function bt(id){
                    <br />
                    <br />
                    
-                   Termo de Responsabilidade de Adoção<br />
+                   Termo de Responsabilidade de Ado��o<br />
                    <br />            
             <span style="overflow:auto; width:50%; height:100px; display:block; border-top:#CCC solid 1px; border-bottom:#CCC solid 1px; border-left:#CCC solid 1px;">
             	ds mlfkrlfml k jfklmklfmdklsf dfkmdsfklsm dfkdsfsk mdsçsdfm sdf sç<br />
@@ -244,7 +244,7 @@ function bt(id){
             
             <table class="grid">
 				<tr>
-				  <td width="29%" align="right"><label for="aceitar">Li e aceito o Termo de Adoção &nbsp;</label></td>
+				  <td width="29%" align="right"><label for="aceitar">Li e aceito o Termo de Ado��o &nbsp;</label></td>
 				  <td width="71%"><input type="checkbox" id="aceitar" /></td>
 				</tr>
 			</table>
@@ -265,7 +265,7 @@ function bt(id){
                   	<br />
                     
                     <div style="width:80%; color:#F60; border:#CCC solid 2px; line-height:20px; padding:10px 5px 5px 30px;"><br />
-                        Assim que o seu pedido for aprovado, você receberá uma notificação por email, somente após isso será
+                        Assim que o seu pedido for aprovado, você receberá uma notifica��o por email, somente após isso será
                          possivel dar continuaidade ao processo de adoção.<br /><br />
                          Você tambem pode acompanhar o processo atravez do seu "Painel de Controle".
                   </div>

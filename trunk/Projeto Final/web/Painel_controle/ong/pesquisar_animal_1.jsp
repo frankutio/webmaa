@@ -113,7 +113,7 @@
                                 <br />
                                 <!-- FILTRO DE PESQUISA -->
                                 <div id="filtro">
-                                    <span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+                                    <span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
                                     <br />
                                     <form name="frmPesquisa" action="/WebMAA/ControleAnimaisServlet?operacao=AnimaisProcessaPesquisa" method="post">
                                     <input type="hidden" name="operacao" value="AnimaisProcessaPesquisa">
@@ -173,10 +173,10 @@
                                         <tr>
                                             <td width="12%" align="center" class="grid_titulo">Foto</td>
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
-                                            <td width="9%" align="center" class="grid_titulo">RaÃ§a</td>
+                                            <td width="9%" align="center" class="grid_titulo">Raça</td>
                                             <td width="20%" align="center" class="grid_titulo">Nome</td>
                                             <td width="7%" align="center" class="grid_titulo">Sexo</td>
-                                            <td width="16%" align="center" class="grid_titulo">ProprietÃ¡rio</td>
+                                            <td width="16%" align="center" class="grid_titulo">Proprietário</td>
                                             <td width="11%" align="center" class="grid_titulo">Detalhar</td>
                                             <td width="9%" align="center" class="grid_titulo">Alterar</td>
                                             <td width="9%" align="center" class="grid_titulo">Excluir</td>
@@ -217,11 +217,11 @@
                                         <tr>
                                             <td width="13%" align="center" class="grid_titulo">Foto</td>
                                             <td width="6%" align="center" class="grid_titulo">Cod</td>
-                                            <td width="12%" align="center" class="grid_titulo">RaÃ§a</td>
+                                            <td width="12%" align="center" class="grid_titulo">Raça</td>
                                             <td width="19%" align="center" class="grid_titulo">Nome</td>
                                             <td width="7%" align="center" class="grid_titulo">Sexo</td>
                                             <td width="16%" align="center" class="grid_titulo">Dt. Cadastro</td>
-                                            <td width="16%" align="center" class="grid_titulo">ProprietÃ¡rio</td>
+                                            <td width="16%" align="center" class="grid_titulo">Proprietário</td>
                                             <td width="11%" align="center" class="grid_titulo">Detalhar</td>
                                         </tr>
                                         <tr class="td_escura">
@@ -263,11 +263,11 @@
                                     <div id="dadosUsuario">
                                         <table class="grid">
                                             <tr>
-                                                <td width="33%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                                <td width="33%" align="right">Nº de Identificação: &nbsp;</td>
                                                 <td width="67%"><span>01</span></td>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">RaÃ§a: &nbsp;</td>
+                                                <td width="33%" align="right">Raça: &nbsp;</td>
                                                 <td width="67%"><span>Comum</span></td>
                                             </tr>
                                             <tr>
@@ -279,7 +279,7 @@
                                                 <td width="67%"><span>champanhe</span></td>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">2Âª Cor: &nbsp;</td>
+                                                <td width="33%" align="right">2ª Cor: &nbsp;</td>
                                                 <td width="67%"><span>Preto</span></td>
                                             </tr>
                                             <tr>
@@ -300,14 +300,14 @@
 
                                     <table class="grid">
                                         <tr>
-                                            <td><span class="obrigatorio">DescriÃ§Ã£o do Animal</span></td>
+                                            <td><span class="obrigatorio">Descrição do Animal</span></td>
                                         </tr>
                                         <tr>
                                             <td>Oi sou o Lucky, estou a procura de um novo lar, sou muito carinhoso e gosto muito de brincar.</td>
                                         </tr>
                                     </table>
                                     <br />
-                                    <div class="nota_destaque">InformaÃ§Ãµes Adicionais</div>
+                                    <div class="nota_destaque">Informações Adicionais</div>
                                     <br />
 
                                     <table class="grid">
@@ -318,7 +318,7 @@
                                             <td width="72%">SIM</td>
                                         </tr>
                                         <tr class="td_escura">
-                                            <td><strong>Animal com certificado VeterianÃ¡rio?</strong></td>
+                                            <td><strong>Animal com certificado Veterianário?</strong></td>
                                         </tr>
                                         <tr>
                                             <td>SIM</td>
@@ -380,7 +380,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="right"><span class="obrigatorio">*</span> RaÃ§a: &nbsp;</td>
+                                                    <td align="right"><span class="obrigatorio">*</span> Raça: &nbsp;</td>
                                                     <td colspan="3">
                                                         <select name="raca">
                                                             <option value="0">:: Selecione ::</option>
@@ -404,7 +404,7 @@
                                                             <option value="1" selected="selected">Base de Dados</option>
                                                         </select>
                                                     </td>
-                                                    <td width="11%" align="right">2Âª Cor: &nbsp;</td>
+                                                    <td width="11%" align="right">2ª Cor: &nbsp;</td>
                                                     <td width="47%">
                                                         <select name="cor2">
                                                             <option value="0"></option>
@@ -458,17 +458,17 @@
                                                             <select name="posse">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim" selected="selected">SIM</option>
-                                                                <option value="nao">NÃƒO</option>
+                                                                <option value="nao">NÃO</option>
                                                             </select>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo VeterianÃ¡rio? &nbsp;</td>
+                                                        <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo Veterianário? &nbsp;</td>
                                                         <td colspan="3">
                                                             <select name="laudo">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim" selected="selected">SIM</option>
-                                                                <option value="nao">NÃƒO</option>
+                                                                <option value="nao">NÃO</option>
                                                             </select>
                                                         </td>
                                                     </tr>
@@ -478,7 +478,7 @@
                                                             <select name="vacina" onchange="validaVacina('doses');">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim" selected="selected">SIM</option>
-                                                                <option value="nao">NÃƒO</option>
+                                                                <option value="nao">NÃO</option>
                                                             </select>
                                                         </td>
                                                     </tr>
@@ -516,7 +516,7 @@
 
                  <!-- ABA OBSERVAÃ‡ÃƒO -->
                                         <div id="dadosObservacao" class="abaEsconde">
-                                            <h3>DescriÃ§Ã£o/ComentÃ¡rio</h3>
+                                            <h3>Descrição/Comentário</h3>
 
                                             <table class="grid">
                                                 <tr>
@@ -562,11 +562,11 @@
                                     <div id="dadosUsuario">
                                         <table class="grid">
                                             <tr>
-                                                <td width="33%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                                <td width="33%" align="right">Nº de Identificação: &nbsp;</td>
                                                 <td width="67%"><span>01</span></td>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">RaÃ§a: &nbsp;</td>
+                                                <td width="33%" align="right">Raça: &nbsp;</td>
                                                 <td width="67%"><span>Comum</span></td>
                                             </tr>
                                             <tr>
@@ -578,7 +578,7 @@
                                                 <td width="67%"><span>champanhe</span></td>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">2Âª Cor: &nbsp;</td>
+                                                <td width="33%" align="right">2ª Cor: &nbsp;</td>
                                                 <td width="67%"><span>Preto</span></td>
                                             </tr>
                                             <tr>
@@ -599,14 +599,14 @@
 
                                     <table class="grid">
                                         <tr>
-                                            <td><span class="obrigatorio">DescriÃ§Ã£o do Animal</span></td>
+                                            <td><span class="obrigatorio">Descrição do Animal</span></td>
                                         </tr>
                                         <tr>
                                             <td>Oi sou o Lucky, estou a procura de um novo lar, sou muito carinhoso e gosto muito de brincar.</td>
                                         </tr>
                                     </table>
                                     <br />
-                                    <div class="nota_destaque">InformaÃ§Ãµes Adicionais</div>
+                                    <div class="nota_destaque">Informações Adicionais</div>
                                     <br />
 
                                     <table class="grid">
@@ -617,7 +617,7 @@
                                             <td width="72%">SIM</td>
                                         </tr>
                                         <tr class="td_escura">
-                                            <td><strong>Animal com certificado VeterianÃ¡rio?</strong></td>
+                                            <td><strong>Animal com certificado Veterianário?</strong></td>
                                         </tr>
                                         <tr>
                                             <td>SIM</td>
@@ -667,7 +667,7 @@
                                                     <td colspan="3"> Gato <input type="radio" name="tipo" checked="checked" /> &nbsp;&nbsp; Cachorro <input type="radio" name="tipo" /></td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="right"><span class="obrigatorio">*</span> RaÃ§a: &nbsp;</td>
+                                                    <td align="right"><span class="obrigatorio">*</span> Raça: &nbsp;</td>
                                                     <td colspan="3">
                                                         <select name="raca">
                                                             <option value="0">:: Selecione ::</option>
@@ -691,7 +691,7 @@
                                                             <option value="1" selected="selected">Base de Dados</option>
                                                         </select>
                                                     </td>
-                                                    <td width="11%" align="right">2Âª Cor: &nbsp;</td>
+                                                    <td width="11%" align="right">2ª Cor: &nbsp;</td>
                                                     <td width="47%">
                                                         <select name="cor2">
                                                             <option value="0"></option>
@@ -746,17 +746,17 @@
                                                             <select name="posse">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim" selected="selected">SIM</option>
-                                                                <option value="nao">NÃƒO</option>
+                                                                <option value="nao">NÃO</option>
                                                             </select>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo VeterianÃ¡rio? &nbsp;</td>
+                                                        <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo Veterianário? &nbsp;</td>
                                                         <td colspan="3">
                                                             <select name="laudo">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim" selected="selected">SIM</option>
-                                                                <option value="nao">NÃƒO</option>
+                                                                <option value="nao">NÃO</option>
                                                             </select>
                                                         </td>
                                                     </tr>
@@ -766,7 +766,7 @@
                                                             <select name="vacina" onchange="validaVacina('doses');">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim" selected="selected">SIM</option>
-                                                                <option value="nao">NÃƒO</option>
+                                                                <option value="nao">NÃO</option>
                                                             </select>
                                                         </td>
                                                     </tr>
@@ -800,7 +800,7 @@
 
                  <!-- ABA OBSERVAÃ‡ÃƒO -->
                                         <div id="dadosObservacao_usr" class="abaEsconde">
-                                            <h3>DescriÃ§Ã£o/ComentÃ¡rio</h3>
+                                            <h3>Descrição/Comentário</h3>
 
                                             <table class="grid">
                                                 <tr>
@@ -852,7 +852,7 @@
 <!-- RodapÃ© -->
 
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

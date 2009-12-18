@@ -105,7 +105,7 @@
                                     &nbsp
                                     <td width="19%"><div align="center">
                                             <img src="images/botao/relatorio.png" /><br />
-                                            <a href="relatorio_animal.jsp">RelatÃ³rio</a>
+                                            <a href="relatorio_animal.jsp">Relatório</a>
                                         </div>
                                     </td>
                                     <td width="28%"><div align="center">
@@ -143,7 +143,7 @@
                                         <ul>
                                             <li><a href="cad_animal.jsp">Novo Animal</a></li>
                                             <li><a href="pesquisar_animal.jsp">Pesquisar Animais</a></li>
-                                            <li><a href="relatorio_animal.jsp">RelatÃ³rio</a></li>
+                                            <li><a href="relatorio_animal.jsp">Relatório</a></li>
                                         </ul>
                                     </li>
                                     <li onmouseover="setaClass('colaborador');" onmouseout="retiraClass('colaborador');"><a href="#" id="colaborador" class="">Colaboradores</a>
@@ -154,9 +154,9 @@
                                     </li>
                                     <li onmouseover="setaClass('gerenciar');" onmouseout="retiraClass('gerenciar');"><a href="#" id="gerenciar" class="">Gerenciar</a>
                                       <ul>
-                                            <li><a href="/WebMAA/ControleAdocoesServlet?operacao=AdocoesLista">AdoÃ§Ãµes</a></li>
-                                            <li><a href="/WebMAA/ControleDoacoesServlet?operacao=DoacoesLista">DoaÃ§Ãµes</a></li>
-                                            <li><a href="/WebMAA/ControleRacaServlet?operacao=RacaLista">RaÃ§as</a></li>
+                                            <li><a href="/WebMAA/ControleAdocoesServlet?operacao=AdocoesLista">Adoções</a></li>
+                                            <li><a href="/WebMAA/ControleDoacoesServlet?operacao=DoacoesLista">Doações</a></li>
+                                            <li><a href="/WebMAA/ControleRacaServlet?operacao=RacaLista">Raças</a></li>
                                             <li><a href="/WebMAA/ControleFormaEnvioServlet?operacao=FormaEnvioLista">Forma de Envio</a></li>
                                             <li><a href="/WebMAA/ControlePelagemServlet?operacao=PelagemLista">Pelagem</a></li>
                                             <li><a href="/WebMAA/ControlePorteServlet?operacao=PorteLista">Portes</a></li>
@@ -172,7 +172,7 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>ManutenÃ§Ã£o de Pelagem</span></div>
+                                <div class="bordaFaixaLeft"><span>Manutenção de Pelagem</span></div>
                                 <br />
                                 <!-- FILTRO DE PESQUISA -->
                                 <div id="filtro">
@@ -219,13 +219,13 @@
                                     </table>
                                     <br />
                                     <div align="center">
-                                        <img src="images/botao/bt_incluir.png" alt="Incluir" title="Incluir" class="seta_link" onclick="alert('RaÃ§a Incluida com Sucesso');" />
+                                        <img src="images/botao/bt_incluir.png" alt="Incluir" title="Incluir" class="seta_link" onclick="alert('Raça Incluida com Sucesso');" />
                                     </div>
 
                                 </div>
                                 <!-- RESULTADO DA PESQUISA-->
 
-            <!-- Alterar RaÃ§as -->
+            <!-- Alterar Raças -->
                                 <div id="alterar" class="esconde">
                                     <div class="nota_destaque">Alterar Tipo da Pelagem</div>
                                     <br />
@@ -238,11 +238,11 @@
                                     </table>
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/bt_alterar.png" alt="Alterar" title="Alterar" class="seta_link" onclick="alert('RaÃ§a Alterada com Sucesso');" />&nbsp;&nbsp;
+                                        <img src="images/botao/bt_alterar.png" alt="Alterar" title="Alterar" class="seta_link" onclick="alert('Raça Alterada com Sucesso');" />&nbsp;&nbsp;
                                     </div>
 
                                 </div>
-                                <!-- Alterar RaÃ§as -->
+                                <!-- Alterar Raças -->
 
                                 <br />
                                 <br />
@@ -271,7 +271,7 @@
 <!-- RodapÃ© -->
 
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

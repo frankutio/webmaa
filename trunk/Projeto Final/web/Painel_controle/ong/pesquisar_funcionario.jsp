@@ -121,7 +121,7 @@
                                             <td width="20%" align="center" class="grid_titulo">Nome</td>
                                             <td width="14%" align="center" class="grid_titulo">Telefone</td>
                                             <td width="13%" align="center" class="grid_titulo">Cargo</td>
-                                            <td width="16%" align="center" class="grid_titulo">Dt. Admiss√£o</td>
+                                            <td width="16%" align="center" class="grid_titulo">Dt. Admiss„o</td>
                                             <td width="11%" align="center" class="grid_titulo">Detalhar</td>
                                             <td width="9%" align="center" class="grid_titulo">Alterar</td>
                                             <td width="9%" align="center" class="grid_titulo">Excluir</td>
@@ -201,14 +201,14 @@
                                             <tr>
                                                 <td align="right">Cargo: &nbsp;</td>
                                                 <td><span>${mostrarFuncionario.cargo}</span></td>
-                                                <td align="right">Data de Admiss√£o: &nbsp;</td>
+                                                <td align="right">Data de Admiss„o: &nbsp;</td>
                                                 <td><span>${mostrarFuncionario.dataAdmissao}</span></td>
                                             </tr>
                                         </table>
                                     </fieldset>
 
                                     <fieldset>
-                                        <legend>Endere√ßo</legend>
+                                        <legend>EndereÁo</legend>
 
                                         <table class="grid">
                                             <tr>
@@ -216,7 +216,7 @@
                                                 <td colspan="5"><span>${mostrarFuncionario.cep}</span></td>
                                             </tr>
                                             <tr>
-                                                <td align="right">Endere√ßo: &nbsp;</td>
+                                                <td align="right">EndereÁo: &nbsp;</td>
                                                 <td colspan="5"><span>${mostrarFuncionario.endereco}</span></td>
                                             </tr>
                                             <tr>
@@ -309,21 +309,21 @@
                                                             </c:if>
                                                         </select>
                                                     </td>
-                                                    <td align="right">Data de Admiss√£o: &nbsp;</td>
+                                                    <td align="right">Data de Admiss„o: &nbsp;</td>
                                                     <td><input type="text" name="dataadmissao" size="8" class="data" value="${editarFuncionario.dataAdmissao}"  /></td>
                                                 </tr>
                                             </table>
                                         </fieldset>
 
                                         <fieldset>
-                                            <legend>Endere√ßo</legend>
+                                            <legend>EndereÁo</legend>
                                             <table class="grid">
                                                 <tr>
                                                     <td width="30%" align="right"><span class="obrigatorio">*</span> CEP: &nbsp;</td>
                                                     <td colspan="5"><input type="text" name="cep" size="10" class="cep" value="${editarFuncionario.cep}" /></td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="right"><span class="obrigatorio">*</span> Endere√ßo: &nbsp;</td>
+                                                    <td align="right"><span class="obrigatorio">*</span> EndereÁo: &nbsp;</td>
                                                     <td colspan="5"><input type="text" name="endereco" size="30" value="${editarFuncionario.endereco}" /></td>
                                                 </tr>
                                                 <tr>
@@ -387,7 +387,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

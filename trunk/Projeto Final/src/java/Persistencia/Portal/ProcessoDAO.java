@@ -500,7 +500,7 @@ public class ProcessoDAO {
                         "UPDATE processo SET " +
                         "FaseProcesso_codigo = ?, " +
                         "entrega_animal= ?, "+
-                        "codigostatus= ? "+
+                        "codigostatus= ? "+                        
                         "WHERE codigo = ?");
 
                     pstmt.setInt(1, processo.getFaseProcesso());

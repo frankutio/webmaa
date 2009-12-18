@@ -19,6 +19,8 @@
 <script type="text/javascript" src="/WebMAA/js/maskedinput.js"></script>
 <script type="text/javascript" src="/WebMAA/js/jquery-ui-datepicker.js"></script>
 <script type="text/javascript" src="/WebMAA/js/menuSuper.js"></script>
+<script type="text/javascript" src="/WebMAA/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/WebMAA/js/formularios.js"></script>
 
 <script>
 function focoBt(id){
@@ -121,7 +123,8 @@ function bt(id){
           <!-- TELA 01 -->
           <div id="dadosInicio">
 
-              <form name="contato" method="post" onsubmit="return valida();">
+              <form name="FormContato" method="post" id="FormContato" action="Email">
+                  <input type="hidden" name="operacao" value="contato" />
               	<p>
                 	Use o formulário abaixo para entrar em contato.<br />
                      Não se esqueça de preencher os campos obrigatórios que estão indicados pelo ( <span class="obrigatorio">*</span> ).
@@ -134,27 +137,26 @@ function bt(id){
                 <table class="grid">
                 	<tr>
                     	<td width="16%" align="right"><span class="obrigatorio">*</span> Nome: &nbsp;</td>
-                        <td width="84%"><input type="text" name="nome" value="" size="30" maxlength="50" /></td>
+                        <td width="84%"><label><input type="text" name="nome" value="" size="30" maxlength="50" /> &nbsp;</label></td>
                    </tr>
                    <tr>
                     	<td width="16%" align="right"><span class="obrigatorio">*</span> E-mail: &nbsp;</td>
-                        <td width="84%"><input type="text" name="email" value="" size="30" maxlength="45" /></td>
+                        <td width="84%"><label><input type="text" name="email" value="" size="30" maxlength="45" /> &nbsp;</label></td>
                    </tr>
                    <tr>
                     	<td width="16%" align="right">Telefone: &nbsp;</td>
                         <td width="84%"><input type="text" name="telefone" value="" size="10" class="foneDD" /> &nbsp; (Com DDD)</td>
                    </tr>
                    <tr>
-                    	<td width="16%" align="right"><span class="obrigatorio">*</span> Assunto: &nbsp;</td>
+                    	<td width="16%" align="right">Assunto: &nbsp;</td>
                         <td width="84%">
                         	<select name="assunto">
-                            	<option value="0"></option>
-                                <option value="1">Link Quebrado</option>
-                                <option value="2">Sugestão</option>
-                                <option value="3">Reclamação</option>
-                                <option value="4">Elogio</option>
-                                <option value="5">Denúncia de Colaborador</option>
-                                <option value="6">Outros</option>
+                                <option value="Link Quebrado">Link Quebrado</option>
+                                <option value="Sugestão">Sugestão</option>
+                                <option value="Reclamação">Reclamação</option>
+                                <option value="Elogio">Elogio</option>
+                                <option value="Denúncia de Colaborador">Denúncia de Colaborador</option>
+                                <option selected value="Outros">Outros</option>
                             </select>
                         </td>
                    </tr>
@@ -165,13 +167,13 @@ function bt(id){
                     	<td><span class="obrigatorio">*</span> Descreva a Mensagem</td>
                     </tr>
                     <tr>
-                    	<td><textarea name="mensagem" rows="5" cols="50"></textarea></td>
+                    	<td><label><textarea name="mensagem" rows="5" cols="50"></textarea> &nbsp;</label></td>
                     </tr>
                 </table>
               	<br />
 
                 <div align="center" style="width:80%;">
-                	<img src="/WebMAA/images/botao/bt_limpar.png" alt="Limpar" title="Limpar" class="seta_link" id="limpar" onmouseover="focoBt('limpar');" onmouseout="bt('limpar');" onclick="document.contato.reset();" />&nbsp;&nbsp;
+                	<img src="/WebMAA/images/botao/bt_limpar.png" alt="Limpar" title="Limpar" class="seta_link" id="limpar" onmouseover="focoBt('limpar');" onmouseout="bt('limpar');" onclick="document.FormContato.reset();" />&nbsp;&nbsp;
                     <input type="image" src="/WebMAA/images/botao/bt_enviar_verde.png" alt="Enviar" title="Enviar" id="enviar" onmouseover="focoBt('enviar');" onmouseout="bt('enviar');" />
                 </div>
               </form>

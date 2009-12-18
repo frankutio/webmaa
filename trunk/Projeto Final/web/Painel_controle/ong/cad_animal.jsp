@@ -103,7 +103,7 @@
                             <div class="bordaFaixaLeft"><span>Cadastro de Animais</span></div>
                             <br />
                         </div>
-                        <form id="frmanimais"name="frmanimais">
+                        <form id="frmanimais" name="frmanimais">
                             <input type="hidden" name="operacao" value="AnimaisNovoProcessa">
                             <input type="hidden" name="codigo_funcionario" value="<%out.print(session.getAttribute("codigoFuncionario"));%>">
                             <div id="canil" class="mostra">
@@ -127,7 +127,7 @@
                                                 <td colspan="3"><input type="radio" name="especie" id="especie"  value="Gato"/> Gato &nbsp; &nbsp; <input type="radio" name="especie" value="Cao" /> Cachorro</td>
                                             </tr>
                                             <tr>
-                                                <td align="right"><span class="obrigatorio">*</span> Ra√ßa: &nbsp;</td>
+                                                <td align="right"><span class="obrigatorio">*</span> RaÁa: &nbsp;</td>
                                                 <td colspan="3">
                                                     <select name="raca">
                                                         <option></option>
@@ -154,7 +154,7 @@
                                                         </c:forEach>
                                                     </select>
                                                 </td>
-                                                <td width="11%" align="right">2¬™ Cor: &nbsp;</td>
+                                                <td width="11%" align="right">2™ Cor: &nbsp;</td>
                                                 <td width="47%">
                                                     <select name="cor2">
                                                         <option></option>
@@ -186,13 +186,7 @@
                                             </tr>
                                             <tr>
                                                 <td align="right"><span class="obrigatorio">*</span> Sexo: &nbsp;</td>
-                                                <td colspan="3">
-                                                    <select name="sexo">
-                                                        <option value=""></option>
-                                                        <option value="M">Macho</option>
-                                                        <option value="F">Femea</option>
-                                                    </select>
-                                                </td>
+                                                <td align="center" colspan="2"><label>Macho <input type="radio" name="sexo" value="Macho" /></label> &nbsp; <label>Femea <input type="radio" name="sexo" value="Femea" /></label></td>
                                             </tr>
                                         </table>
 
@@ -218,17 +212,17 @@
                                                     <select name="castrado">
                                                         <option value="">&nbsp;</option>
                                                         <option value="Sim">SIM</option>
-                                                        <option value="Nao">N√ÉO</option>
+                                                        <option value="Nao">N√O</option>
                                                     </select>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo Veterian√°rio? &nbsp;</td>
+                                                <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo Veterian·rio? &nbsp;</td>
                                                 <td colspan="3">
                                                     <select name="laudo">
                                                         <option value="">&nbsp;</option>
                                                         <option value="Sim">SIM</option>
-                                                        <option value="Nao">N√ÉO</option>
+                                                        <option value="Nao">N√O</option>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -238,7 +232,7 @@
                                                     <select name="vacina">
                                                         <option value="">&nbsp;</option>
                                                         <option value="Sim">SIM</option>
-                                                        <option value="Nao">N√ÉO</option>
+                                                        <option value="Nao">N√O</option>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -274,7 +268,7 @@
 
                                     <!-- ABA OBSERVA√á√ÉO -->
                                     <div id="dadosObservacao" class="abaEsconde">
-                                        <h3>Descri√ß√£o/Coment√°rio</h3>
+                                        <h3>DescriÁ„o/Coment·rio</h3>
 
                                         <table class="grid">
                                             <tr>
@@ -334,7 +328,7 @@
 <!-- Rodap√© -->
 
     <div id="rodape">
-        Vers√£o do Sistema &nbsp;&nbsp; 1.0
+        Vers„o do Sistema &nbsp;&nbsp; 1.0
     </div>
 
 </body>

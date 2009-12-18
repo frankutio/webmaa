@@ -110,7 +110,7 @@ function bt(id){
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar AdoÃ§Ã£o - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Adoção - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br />          
             
                 <div class="nota_informa">
@@ -131,7 +131,7 @@ function bt(id){
                     	<tr>
                             <td width="15%" align="center" class="grid_titulo">Cod</td>
                             <td width="27%" align="center" class="grid_titulo">Nome</td>
-                            <td width="15%" align="center" class="grid_titulo">RaÃ§a</td>
+                            <td width="15%" align="center" class="grid_titulo">Raça</td>
                             <td width="14%" align="center" class="grid_titulo">Tipo</td>
                             <td width="11%" align="center" class="grid_titulo">Sexo</td>
                             <td width="11%" align="center" class="grid_titulo">Status</td>
@@ -212,8 +212,8 @@ function bt(id){
                
                <table class="grid">
                		<tr>
-                    	<td><img src="images/botao/ico_acmp.png" alt="Ver AdoÃ§Ã£o" title="Acompanhar AdoÃ§Ã£o" class="seta_link" /></td>
-                        <td><a href="acompanhar_adocao.html">Acompanhar AdoÃ§Ã£o</a></td>
+                    	<td><img src="images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link" /></td>
+                        <td><a href="acompanhar_adocao.html">Acompanhar Adoção</a></td>
                     </tr>
                </table> 
                <br />
@@ -223,7 +223,7 @@ function bt(id){
                <table class="grid">
                		<tr>
                     	<td valign="top"><img src="images/botao/alert.png" alt="alerta" title="alerta" /></td>
-                        <td>Nenhum Animal Cadastrado para AdoÃ§Ã£o</td>
+                        <td>Nenhum Animal Cadastrado para Adoção</td>
                  </tr>
                  <tr>
                  	<td colspan="2" align="center"><a href="cad_animal.html"><img src="images/botao/bt_doar.png" alt="Cadatrar Animal Para DoaÃ§Ã£o" title="Cadatrar Animal Para DoaÃ§Ã£o" class="seta_link" id="doar" onmouseover="focoBt('doar');" onmouseout="bt('doar');" /></a></td>

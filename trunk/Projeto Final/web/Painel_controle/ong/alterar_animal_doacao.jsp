@@ -113,7 +113,7 @@
                         <div class="conteudo_painel">
                           
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>Gerenciar Doa√ß√µes de Animais</span></div>
+                                <div class="bordaFaixaLeft"><span>Gerenciar DoaÁıes de Animais</span></div>
                                 <br />
                             </div>
                             <form id="frmeditaanimais" action="/WebMAA/ControleAnimaisServlet" method="post">
@@ -156,7 +156,7 @@
                                                     Cachorro</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="right"><span class="obrigatorio">*</span> Ra√ßa: &nbsp;</td>
+                                                    <td align="right"><span class="obrigatorio">*</span> RaÁa: &nbsp;</td>
                                                     <td colspan="3">
                                                         <select name="raca">
                                                             <option></option>
@@ -191,7 +191,7 @@
                                                             </c:forEach>
                                                         </select>
                                                     </td>
-                                                    <td width="11%" align="right">2¬™ Cor: &nbsp;</td>
+                                                    <td width="11%" align="right">2™ Cor: &nbsp;</td>
                                                     <td width="47%">
                                                         <select name="cor2">
                                                             <option></option>
@@ -274,27 +274,27 @@
                                                             <option value="">&nbsp;</option>
                                                             <c:if  test="${editaAnimais.castrado=='Sim'}">
                                                             <option value="Sim"  selected="SIM">SIM</option>
-                                                            <option value="Nao"  >N√ÉO</option>
+                                                            <option value="Nao"  >N√O</option>
                                                             </c:if>
                                                             <c:if test="${editaAnimais.castrado!='Sim'}">
                                                             <option value="Sim"  >SIM</option>
-                                                            <option value="Nao"  selected="N√ÉO">N√ÉO</option>
+                                                            <option value="Nao"  selected="N√O">N√O</option>
                                                             </c:if>
                                                         </select>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo Veterian√°rio? &nbsp;</td>
+                                                    <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo Veterian·rio? &nbsp;</td>
                                                     <td colspan="3">
                                                         <select name="laudo">
                                                             <option value="">&nbsp;</option>
                                                             <c:if test="${editaAnimais.laudoVeterinario=='Sim'}">
                                                             <option value="Sim"  selected="SIM">SIM</option>
-                                                            <option value="Nao"  >N√ÉO</option>
+                                                            <option value="Nao"  >N√O</option>
                                                             </c:if>
                                                             <c:if test="${editaAnimais.laudoVeterinario!='Sim'}">
                                                             <option value="Sim"  >SIM</option>
-                                                            <option value="Nao"  selected="N√ÉO">N√ÉO</option>
+                                                            <option value="Nao"  selected="N√O">N√O</option>
                                                             </c:if>
                                                         </select>
                                                     </td>
@@ -306,11 +306,11 @@
                                                             <option value="">&nbsp;</option>
                                                             <c:if test="${editaAnimais.vacinado=='Sim'}">
                                                                 <option value="Sim"  selected="SIM">SIM</option>
-                                                                <option value="Nao"  >N√ÉO</option>
+                                                                <option value="Nao"  >N√O</option>
                                                             </c:if>
                                                             <c:if test="${editaAnimais.vacinado!='Sim'}">
                                                                 <option value="Sim"  >SIM</option>
-                                                            <option value="Nao"  selected="N√ÉO">N√ÉO</option>
+                                                            <option value="Nao"  selected="N√O">N√O</option>
                                                             </c:if>
                                                             
                                                         </select>
@@ -352,7 +352,7 @@
 
                                         <!-- ABA OBSERVA√á√ÉO -->
                                         <div id="dadosObservacao" class="abaEsconde">
-                                            <h3>Descri√ß√£o/Coment√°rio</h3>
+                                            <h3>DescriÁ„o/Coment·rio</h3>
 
                                             <table class="grid">
                                                 <tr>
@@ -386,7 +386,7 @@
                                 </a>
                             </div>
 
-                        </div><!--fecha altera√ßao-->
+                        </div><!--fecha alteRaÁao-->
 
 
 
@@ -408,7 +408,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

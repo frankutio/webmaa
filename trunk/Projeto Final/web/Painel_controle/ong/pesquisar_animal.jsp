@@ -136,7 +136,7 @@
                                 <br />
                                 <!-- FILTRO DE PESQUISA -->
                                 <div id="filtro">
-                                    <span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+                                    <span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
                                     <br />
                                     <form name="frmPesquisa" id="frmPesquisa" >
                                     <input type="hidden" name="operacao" value="AnimaisProcessaPesquisa">
@@ -201,7 +201,7 @@
                                             <td width="20%" align="center" class="grid_titulo">Nome</td>
                                             <td width="7%" align="center" class="grid_titulo">Sexo</td>
                                             <td width="16%" align="center" class="grid_titulo">Dt. Cadastro</td>
-                                            <td width="16%" align="center" class="grid_titulo">ProprietÃ¡rio</td>
+                                            <td width="16%" align="center" class="grid_titulo">Proprietário</td>
                                             <td width="11%" align="center" class="grid_titulo">Detalhar</td>
                                             <td width="9%" align="center" class="grid_titulo">Alterar</td>
                                             <td width="9%" align="center" class="grid_titulo">Excluir</td>
@@ -263,11 +263,11 @@
                                     <div id="dadosUsuario">
                                         <table class="grid">
                                             <tr>
-                                                <td width="33%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                                <td width="33%" align="right">Nº de Identificação: &nbsp;</td>
                                                 <td width="67%"><span>${detalheCanil.codigo}</span></td>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">RaÃ§a: &nbsp;</td>
+                                                <td width="33%" align="right">Raça: &nbsp;</td>
                                                 <td width="67%"><span>${detalheCanil.especie}</span></td>
                                             </tr>
                                             <tr>
@@ -284,7 +284,7 @@
                                                </c:forEach>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">2Âª Cor: &nbsp;</td>
+                                                <td width="33%" align="right">2ª Cor: &nbsp;</td>
                                                 <c:forEach  items="${lstCor}" var="lstCor">
                                                     <c:if test="${lstCor.codigo ==detalheCanil.cor2}">
                                                        <td width="67%"><span>${lstCor.descricao}</span></td>
@@ -323,14 +323,14 @@
 
                                     <table class="grid">
                                         <tr>
-                                            <td><span class="obrigatorio">DescriÃ§Ã£o do Animal</span></td>
+                                            <td><span class="obrigatorio">Descrição do Animal</span></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheCanil.descricao}</td>
                                         </tr>
                                     </table>
                                     <br />
-                                    <div class="nota_destaque">InformaÃ§Ãµes Adicionais</div>
+                                    <div class="nota_destaque">Informações Adicionais</div>
                                     <br />
 
                                     <table class="grid">
@@ -341,7 +341,7 @@
                                             <td width="72%">${detalheCanil.castrado}</td>
                                         </tr>
                                         <tr class="td_escura">
-                                            <td><strong>Animal com certificado VeterianÃ¡rio?</strong></td>
+                                            <td><strong>Animal com certificado Veterianário?</strong></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheCanil.laudoVeterinario}</td>
@@ -382,7 +382,7 @@
                                 <!-- DETALHES DO DETALHES DO ANIMAL NO CANIL -->
 
                                 <!-- ALTERAR DADOS -->
-                                <!--fecha alteraÃ§ao-->
+                                <!--fecha alteRaçao-->
                                 
                                 <!-- ALTERAR DADOS -->
 
@@ -406,11 +406,11 @@
                                     <div id="dadosUsuario">
                                         <table class="grid">
                                             <tr>
-                                                <td width="33%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                                <td width="33%" align="right">Nº de Identificação: &nbsp;</td>
                                                 <td width="67%"><span>${detalheColab.codigo}</span></td>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">RaÃ§a: &nbsp;</td>
+                                                <td width="33%" align="right">Raça: &nbsp;</td>
                                                 <td width="67%"><span>${detalheColab.especie}</span></td>
                                             </tr>
                                             <tr>
@@ -427,7 +427,7 @@
                                                </c:forEach>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">2Âª Cor: &nbsp;</td>
+                                                <td width="33%" align="right">2ª Cor: &nbsp;</td>
                                                 <c:forEach  items="${lstCor}" var="lstCor">
                                                     <c:if test="${lstCor.codigo ==detalheColab.cor2}">
                                                        <td width="67%"><span>${lstCor.descricao}</span></td>
@@ -464,14 +464,14 @@
 
                                     <table class="grid">
                                         <tr>
-                                            <td><span class="obrigatorio">DescriÃ§Ã£o do Animal</span></td>
+                                            <td><span class="obrigatorio">Descrição do Animal</span></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheColab.descricao}</td>
                                         </tr>
                                     </table>
                                     <br />
-                                    <div class="nota_destaque">InformaÃ§Ãµes Adicionais</div>
+                                    <div class="nota_destaque">Informações Adicionais</div>
                                     <br />
 
                                     <table class="grid">
@@ -482,7 +482,7 @@
                                             <td width="72%">${detalheColab.castrado}</td>
                                         </tr>
                                         <tr class="td_escura">
-                                            <td><strong>Animal com certificado VeterianÃ¡rio?</strong></td>
+                                            <td><strong>Animal com certificado Veterianário?</strong></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheColab.laudoVeterinario}</td>
@@ -540,7 +540,7 @@
 <!-- RodapÃ© -->
 
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

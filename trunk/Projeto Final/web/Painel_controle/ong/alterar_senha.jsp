@@ -108,7 +108,7 @@
                                     <span>Alteração de Senha</span>
                                 </div>
                                 <br />
-                                <span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
+                                <span class="obrigatorio">* Campos de Preenchimento Obrigat�rio</span>
                                 <br />
 
 
@@ -154,7 +154,7 @@
 <!-- Rodapé -->
 
         <div id="rodape">
-            Versão do Sistema &nbsp;&nbsp; 1.0
+            Vers�o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

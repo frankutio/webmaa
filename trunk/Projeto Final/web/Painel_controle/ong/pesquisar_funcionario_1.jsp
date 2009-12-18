@@ -141,7 +141,7 @@
                                             <td width="20%" align="center" class="grid_titulo">Nome</td>
                                             <td width="14%" align="center" class="grid_titulo">Telefone</td>
                                             <td width="13%" align="center" class="grid_titulo">Cargo</td>
-                                            <td width="16%" align="center" class="grid_titulo">Dt. Admiss√£o</td>
+                                            <td width="16%" align="center" class="grid_titulo">Dt. Admiss„o</td>
                                             <td width="11%" align="center" class="grid_titulo">Detalhar</td>
                                             <td width="9%" align="center" class="grid_titulo">Alterar</td>
                                             <td width="9%" align="center" class="grid_titulo">Excluir</td>
@@ -222,14 +222,14 @@
                                             <tr>
                                                 <td align="right">Cargo: &nbsp;</td>
                                                 <td><span>Gerente Comercial</span></td>
-                                                <td align="right">Data de Admiss√£o: &nbsp;</td>
+                                                <td align="right">Data de Admiss„o: &nbsp;</td>
                                                 <td><span>10062009</span></td>
                                             </tr>
                                         </table>
                                     </fieldset>
 
                                     <fieldset>
-                                        <legend>Endere√ßo</legend>
+                                        <legend>EndereÁo</legend>
 
                                         <table class="grid">
                                             <tr>
@@ -237,7 +237,7 @@
                                                 <td colspan="5"><span>70000000</span></td>
                                             </tr>
                                             <tr>
-                                                <td align="right">Endere√ßo: &nbsp;</td>
+                                                <td align="right">EndereÁo: &nbsp;</td>
                                                 <td colspan="5"><span>Vila S√£o Jos√©</span></td>
                                             </tr>
                                             <tr>
@@ -270,7 +270,7 @@
                                 <div id="alterar" class="esconde">
                                     <div class="nota_destaque">Altera√ß√£o de Dados Cadastrais</div>
                                     <br />
-                                    <span class="obrigatorio">* Campos de Preenchimento Obrigat√≥rio</span>
+                                    <span class="obrigatorio">* Campos de Preenchimento ObrigatÛrio</span>
                                     <br />
 
                                     <fieldset>
@@ -314,21 +314,21 @@
                                                         <option>Base de Dados</option>
                                                     </select>
                                                 </td>
-                                                <td align="right">Data de Admiss√£o: &nbsp;</td>
+                                                <td align="right">Data de Admiss„o: &nbsp;</td>
                                                 <td><input type="text" name="dataAdm" size="8" class="data" value="10062009" disabled="disabled" /></td>
                                             </tr>
                                         </table>
                                     </fieldset>
 
                                     <fieldset>
-                                        <legend>Endere√ßo</legend>
+                                        <legend>EndereÁo</legend>
                                         <table class="grid">
                                             <tr>
                                                 <td width="30%" align="right"><span class="obrigatorio">*</span> CEP: &nbsp;</td>
                                                 <td colspan="5"><input type="text" name="cep" size="10" class="cep" value="70000000" /></td>
                                             </tr>
                                             <tr>
-                                                <td align="right"><span class="obrigatorio">*</span> Endere√ßo: &nbsp;</td>
+                                                <td align="right"><span class="obrigatorio">*</span> EndereÁo: &nbsp;</td>
                                                 <td colspan="5"><input type="text" name="end" size="30" value="Vila S√£o Jos√©" /></td>
                                             </tr>
                                             <tr>
@@ -383,7 +383,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

@@ -88,7 +88,7 @@
                         </div>
                         <div class="conteudo_painel">
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>RelatÃ³rio de Animais</span></div>
+                                <div class="bordaFaixaLeft"><span>Relatório de Animais</span></div>
                                 <br />
                                 <!-- RRELATÃ“RIO CANIL FILA -->
                                 <c:if test="${lstProcesso == null}">
@@ -100,14 +100,14 @@
                                 <c:if test="${lstProcesso != null && detalheAdotados.codigo!=0}">
                                     <div id="rel_canil_fila" class="esconde">
                                 </c:if>
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais em Canil/Gatil - Fila de AdoÃ§Ã£o</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais em Canil/Gatil - Fila de Adoção</div>
                                     <br />
                                     <table class="grid" style="width:100%;">
                                         <tr>
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="20%" align="center" class="grid_titulo">Nome</td>
                                             <td width="7%" align="center" class="grid_titulo">Tipo</td>
-                                            <td width="22%" align="center" class="grid_titulo">RaÃ§a</td>
+                                            <td width="22%" align="center" class="grid_titulo">Raça</td>
                                             <td width="17%" align="center" class="grid_titulo">Data Cadastro</td>
                                             <!--td width="15%" align="center" class="grid_titulo">Visitas Perfil</td-->
                                             <td width="12%" align="center" class="grid_titulo">Detalhar</td>
@@ -131,7 +131,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÃ³rio" class="seta_link" onclick="window.print();" />
+                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir Relatório" class="seta_link" onclick="window.print();" />
                                     </div>
 
                                 </div>
@@ -144,7 +144,7 @@
                                     <div id="canil_fila" class="mostra">
                                 </c:if>
                                     
-                                    <div class="nota_destaque" style="width:100%;">Animal na Fila de AdoÃ§Ã£o</div>
+                                    <div class="nota_destaque" style="width:100%;">Animal na Fila de Adoção</div>
                                     <br />
 
                                     <!-- FOTO DO ANIMAL -->
@@ -156,11 +156,11 @@
                                     <div id="dadosUsuario" style="width:400px;">
                                         <table class="grid" style="width:100%;">
                                             <tr>
-                                                <td width="35%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                                <td width="35%" align="right">Nº de Identificação: &nbsp;</td>
                                                 <td width="67%">${detalheAdotados.codigo}</td>
                                             </tr>
                                             <tr>
-                                                <td width="35%" align="right">RaÃ§a: &nbsp;</td>
+                                                <td width="35%" align="right">Raça: &nbsp;</td>
                                                 <td width="67%"><span>${detalheAdotados.especie}</span></td>
                                             </tr>
                                             <tr>
@@ -177,7 +177,7 @@
                                                </c:forEach>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">2Âª Cor: &nbsp;</td>
+                                                <td width="33%" align="right">2ª Cor: &nbsp;</td>
                                                 <c:forEach  items="${lstCor}" var="lstCor">
                                                     <c:if test="${lstCor.codigo ==detalheAdotados.cor2}">
                                                        <td width="67%"><span>${lstCor.descricao}</span></td>
@@ -250,7 +250,7 @@
 <!-- RodapÃ© -->
 
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
        

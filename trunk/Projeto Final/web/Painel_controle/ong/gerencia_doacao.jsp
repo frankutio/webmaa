@@ -123,14 +123,14 @@
                              <c:if test="${lstAnimais != null ||detalheCanil.codigo!=0}">
                                 <div id="filtro" class="esconde">
                               </c:if>
-                               <div class="bordaFaixaLeft"><span>Gerenciamento de DoaÃ§Ãµes</span></div>
+                               <div class="bordaFaixaLeft"><span>Gerenciamento de Doações</span></div>
                                 <br />
                           
                                 <br />
                                 <div class="nota_destaque" style="width:100%;">Filtro de Pesquisa</div>
                                 <br />
 
-                                <span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+                                <span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
                                 <br />
                                 <form name="frmPesquisa" id="frmPesquisa" action="/WebMAA/ControleAnimaisServlet?operacao=AnimaisProcessaPesquisaDoacao" method="post">
                                 <input type="hidden" name="operacao" value="AnimaisProcessaPesquisaDoacao">
@@ -192,7 +192,7 @@
                                         <td width="6%" align="center" class="grid_titulo">Cod</td>
                                         <td width="15%" align="center" class="grid_titulo">Nome</td>
                                         <td width="8%" align="center" class="grid_titulo">Tipo</td>
-                                        <td width="13%" align="center" class="grid_titulo">RaÃ§a</td>
+                                        <td width="13%" align="center" class="grid_titulo">Raça</td>
                                         <td width="16%" align="center" class="grid_titulo">Dt. Cadastro</td>
                                         <td width="11%" align="center" class="grid_titulo">Detalhar</td>
                                         <td width="9%" align="center" class="grid_titulo">Alterar</td>
@@ -239,11 +239,11 @@
                                     <div id="dadosUsuario">
                                         <table class="grid" style="width:100%;">
                                             <tr>
-                                                <td width="33%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                                <td width="33%" align="right">Nº de Identificação: &nbsp;</td>
                                                 <td width="67%"><span>${detalheCanil.codigo}</span></td>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">RaÃ§a: &nbsp;</td>
+                                                <td width="33%" align="right">Raça: &nbsp;</td>
                                                 <td width="67%"><span>${detalheCanil.especie}</span></td>
                                             </tr>
                                             <tr>
@@ -260,7 +260,7 @@
                                                </c:forEach>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">2Âª Cor: &nbsp;</td>
+                                                <td width="33%" align="right">2ª Cor: &nbsp;</td>
                                                 <c:forEach  items="${lstCor}" var="lstCor">
                                                     <c:if test="${lstCor.codigo ==detalheCanil.cor2}">
                                                        <td width="67%"><span>${lstCor.descricao}</span></td>
@@ -299,14 +299,14 @@
 
                                     <table class="grid" style="width:100%;">
                                         <tr>
-                                            <td><span class="obrigatorio">DescriÃ§Ã£o do Animal</span></td>
+                                            <td><span class="obrigatorio">Descrição do Animal</span></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheCanil.descricao}</td>
                                         </tr>
                                     </table>
                                     <br />
-                                    <div class="nota_destaque" style="width:100%;">InformaÃ§Ãµes Adicionais</div>
+                                    <div class="nota_destaque" style="width:100%;">Informações Adicionais</div>
                                     <br />
                                     <table class="grid" style="width:100%;">
                                         <tr class="td_escura">
@@ -316,7 +316,7 @@
                                             <td width="72%">${detalheCanil.castrado}</td>
                                         </tr>
                                         <tr class="td_escura">
-                                            <td><strong>Animal com certificado VeterianÃ¡rio?</strong></td>
+                                            <td><strong>Animal com certificado Veterianário?</strong></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheCanil.laudoVeterinario}</td>
@@ -346,9 +346,9 @@
                                     </table>
                                     <br />
                                     <br />
-                                 <div class="nota_destaque" style="width:100%;">ProprietÃ¡rio</div>
+                                 <div class="nota_destaque" style="width:100%;">Proprietário</div>
                                 <br />
-                                <span class="obrigatorio">Nota: para mandar uma notificaÃ§Ã£o ao colaborador, clique no envelope na coluna &lt;Notificar&gt;</span>
+                                <span class="obrigatorio">Nota: para mandar uma notificação ao colaborador, clique no envelope na coluna &lt;Notificar&gt;</span>
                                 <table class="grid" style="width:100%;">
                                     <tr>
                                         <td width="6%" align="center" class="grid_titulo">Cod</td>
@@ -399,11 +399,11 @@
                              <!-- DETALHES DA MENSAGEM -->
                             <div id="notificar" class="esconde">
                                 <div class="bordaFaixaLeft" style="width:100%; ">
-                                    <span>Gerenciar DoaÃ§Ãµes - NotificaÃ§Ã£os</span>
+                                    <span>Gerenciar Doações - Notificação</span>
                                 </div>
                                 <br />
 
-                                <span class="obrigatorio">* Campo de Preenchimento ObrigatÃ³rio</span>
+                                <span class="obrigatorio">* Campo de Preenchimento Obrigatório</span>
                                 <br />
                                 <br />
                                 <form name="frmNotificacao" id="frmNotificacao" action="/WebMAA/ControleNotificacaoServlet?operacao=AnimaisProcessaNotificacao" method="post">
@@ -476,7 +476,7 @@
 <!-- RodapÃ© -->
 
     <div id="rodape">
-        VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+        Versão do Sistema &nbsp;&nbsp; 1.0
     </div>
 
     <!-- Modal -->

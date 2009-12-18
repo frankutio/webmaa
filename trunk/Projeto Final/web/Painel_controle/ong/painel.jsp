@@ -1,5 +1,3 @@
-
-
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -128,13 +126,13 @@
                                 <div style="float:left; width:250px; min-height:80px; margin-left:10px;">
 
                                     <fieldset>
-                                        <legend>AdoÃ§Ãµes Ativas</legend>
+                                        <legend>Adoações Ativas</legend>
                                         <br />
 
                                         <table style="width:100%;">
                                             <tr>
                                                 <td valign="top"><img src="/WebMAA/Painel_controle/ong/images/botao/alert.png" /></td>
-                                                <td>Existem <font style="color:#F00;"><% out.print(session.getAttribute("totalEmFase")); %></font> Animais em fase de AdoÃ§Ã£o.</td>
+                                                <td>Existem <font style="color:#F00;"><% out.print(session.getAttribute("totalEmFase")); %></font> Animais em fase de Adoção.</td>
                                             </tr>
                                             <tr>
                                                 <td align="right" colspan="2"><a href="/WebMAA/ControleAnimaisServlet?operacao=AdocoesPesquisar"><img src="/WebMAA/Painel_controle/ong/images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir2" onmouseover="focoBt('exibir2');" onmouseout="bt('exibir2');" /></a></td>
@@ -149,13 +147,13 @@
                                 <br />
                                 <div style="float:left; width:250px; margin-top:10px;">
                                     <fieldset>
-                                        <legend>SolicitaÃ§Ã£o de AdoÃ§Ãµes</legend>
+                                        <legend>Solicitação de Adoções</legend>
                                         <br />
 
                                         <table style="width:100%;">
                                             <tr>
                                                 <td width="11%"><img src="/WebMAA/Painel_controle/ong/images/botao/atencao.png" /></td>
-                                                <td width="89%" valign="bottom"><span class="obrigatorio"><% out.print(session.getAttribute("totalProcessos")); %></span> SolicitaÃ§Ã£o(s) em Aberto</td>
+                                                <td width="89%" valign="bottom"><span class="obrigatorio"><% out.print(session.getAttribute("totalProcessos")); %></span> Solicitação(s) em Aberto</td>
                                             </tr>
                                             <tr>
                                                 <td align="right" colspan="2"><a href="/WebMAA/ControleAnimaisServlet?operacao=AdocoesPesquisar"><img src="/WebMAA/Painel_controle/ong/images/botao/bt_exibir.png" alt="Exibir" title="Exibir" class="seta_link" id="exibir3" onmouseover="focoBt('exibir3');" onmouseout="bt('exibir3');" /></a></td>
@@ -185,7 +183,7 @@
 <!-- RodapÃ© -->
 
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

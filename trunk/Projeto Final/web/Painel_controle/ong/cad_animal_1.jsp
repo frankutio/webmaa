@@ -112,7 +112,7 @@
                                         <span>Evite o cadastramento de animais fora de nosso Canil/Gatil.</span>
                                     </div>
 
-                                    <span class="obrigatorio">* Campos de Preenchimento Obrigat√≥rio</span>
+                                    <span class="obrigatorio">* Campos de Preenchimento ObrigatÛrio</span>
                                     <br />
                                     <br />
 
@@ -161,7 +161,7 @@
                                                     <td colspan="3"><input type="radio" name="esp" /> Gato &nbsp; &nbsp; <input type="radio" name="esp" /> Cachorro</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="right"><span class="obrigatorio">*</span> Ra√ßa: &nbsp;</td>
+                                                    <td align="right"><span class="obrigatorio">*</span> RaÁa: &nbsp;</td>
                                                     <td colspan="3">
                                                         <select name="raca">
                                                             <option value="0">:: Selecione ::</option>
@@ -185,7 +185,7 @@
                                                             <option value="1">Base de Dados</option>
                                                         </select>
                                                     </td>
-                                                    <td width="11%" align="right">2¬™ Cor: &nbsp;</td>
+                                                    <td width="11%" align="right">2™ Cor: &nbsp;</td>
                                                     <td width="47%">
                                                         <select name="cor2">
                                                             <option value="0"></option>
@@ -245,17 +245,17 @@
                                                             <select name="posse">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim">SIM</option>
-                                                                <option value="nao">N√ÉO</option>
+                                                                <option value="nao">N√O</option>
                                                             </select>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo Veterian√°rio? &nbsp;</td>
+                                                        <td align="right"><span class="obrigatorio">*</span> Animal com certificado/Laudo Veterian·rio? &nbsp;</td>
                                                         <td colspan="3">
                                                             <select name="laudo">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim">SIM</option>
-                                                                <option value="nao">N√ÉO</option>
+                                                                <option value="nao">N√O</option>
                                                             </select>
                                                         </td>
                                                     </tr>
@@ -265,7 +265,7 @@
                                                             <select name="vacina" onchange="validaVacina('doses');">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim">SIM</option>
-                                                                <option value="nao">N√ÉO</option>
+                                                                <option value="nao">N√O</option>
                                                             </select>
                                                         </td>
                                                     </tr>
@@ -303,7 +303,7 @@
 
                  <!-- ABA OBSERVA√á√ÉO -->
                                         <div id="dadosObservacao" class="abaEsconde">
-                                            <h3>Descri√ß√£o/Coment√°rio</h3>
+                                            <h3>DescriÁ„o/Coment·rio</h3>
 
                                             <table class="grid">
                                                 <tr>
@@ -351,7 +351,7 @@
                                                     <td colspan="3"><input type="radio" name="esp" /> Gato &nbsp; &nbsp; <input type="radio" name="esp" /> Cachorro</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="right"><span class="obrigatorio">*</span> Ra√ßa: &nbsp;</td>
+                                                    <td align="right"><span class="obrigatorio">*</span> RaÁa: &nbsp;</td>
                                                     <td colspan="3">
                                                         <select name="raca">
                                                             <option value="0">:: Selecione ::</option>
@@ -375,7 +375,7 @@
                                                             <option value="1">Base de Dados</option>
                                                         </select>
                                                     </td>
-                                                    <td width="11%" align="right">2¬™ Cor: &nbsp;</td>
+                                                    <td width="11%" align="right">2™ Cor: &nbsp;</td>
                                                     <td width="47%">
                                                         <select name="cor2">
                                                             <option value="0"></option>
@@ -437,17 +437,17 @@
                                                             <select name="posse">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim">SIM</option>
-                                                                <option value="nao">N√ÉO</option>
+                                                                <option value="nao">N√O</option>
                                                             </select>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td align="right">Animal com certificado/Laudo Veterian√°rio? &nbsp;</td>
+                                                        <td align="right">Animal com certificado/Laudo Veterian·rio? &nbsp;</td>
                                                         <td colspan="3">
                                                             <select name="laudo">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim">SIM</option>
-                                                                <option value="nao">N√ÉO</option>
+                                                                <option value="nao">N√O</option>
                                                             </select>
                                                         </td>
                                                     </tr>
@@ -457,7 +457,7 @@
                                                             <select name="vacinaUsr" onchange="validaVacina_usr('doses_usr');">
                                                                 <option value="0">&nbsp;</option>
                                                                 <option value="sim">SIM</option>
-                                                                <option value="nao">N√ÉO</option>
+                                                                <option value="nao">N√O</option>
                                                             </select>
                                                         </td>
                                                     </tr>
@@ -491,7 +491,7 @@
 
                  <!-- ABA OBSERVA√á√ÉO -->
                                         <div id="dadosObservacao_usr" class="abaEsconde">
-                                            <h3>Descri√ß√£o/Coment√°rio</h3>
+                                            <h3>DescriÁ„o/Coment·rio</h3>
 
                                             <table class="grid">
                                                 <tr>
@@ -543,7 +543,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

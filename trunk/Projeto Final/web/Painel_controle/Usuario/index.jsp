@@ -256,11 +256,11 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                
                <table class="grid">
                		<tr>
-                    	<td><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver AdoÃ§Ã£o" title="Acompanhar AdoÃ§Ã£o" class="seta_link"  /></td>
+                    	<td><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link"  /></td>
                         <td><a href="/WebMAA/gerProcesso?operacao=ver_adocao&cod_colaborador=${Colaborador.codigo}">Acompanhar Ado&ccedil;&atilde;o</a></td>
                     </tr>
                     <tr>
-                    	<td><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver AdoÃ§Ã£o" title="Acompanhar AdoÃ§Ã£o" class="seta_link"  /></td>
+                    	<td><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link"  /></td>
                         <td><a href="/WebMAA/gerProcesso?operacao=listar_animais&cod_colaborador=${Colaborador.codigo}">Acompanhar Doa&ccedil;&otilde;es</a></td>
                     </tr>
 				</table>				

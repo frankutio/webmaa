@@ -154,7 +154,7 @@ function preenche(){
             
             <!-- DADOS DO USUARIO -->            
             <div id="dadosUsuario">
-            <span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+            <span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
             <br />
             <form name="editaDados" action="/WebMAA/NavUsr" method="post">
             
@@ -208,7 +208,7 @@ function preenche(){
                               	<td colspan="3"><input type="text" name="cep" value="${Colaborador.cep}" size="15" /></td>
                    		  </tr>
                           <tr>
-                    			<td width="22%" align="right"><span class="obrigatorio">*</span> EndereÃ§o: &nbsp;</td>
+                    			<td width="22%" align="right"><span class="obrigatorio">*</span> Endereço: &nbsp;</td>
                               	<td colspan="3"><input type="text" name="end" value="${Colaborador.endereco}" size="50" /></td>
                           </tr>
                           <tr>

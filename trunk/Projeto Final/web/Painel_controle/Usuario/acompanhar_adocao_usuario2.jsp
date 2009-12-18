@@ -131,7 +131,7 @@ function bt(id){
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Ado√ß√£o - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar AdoÁ„o - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br />          
             
                 <div class="nota_informa">
@@ -159,7 +159,7 @@ function bt(id){
                     	<tr>
                             <td width="15%" align="center" class="grid_titulo">Cod</td>
                             <td width="27%" align="center" class="grid_titulo">Nome</td>
-                            <td width="15%" align="center" class="grid_titulo">Ra√ßa</td>
+                            <td width="15%" align="center" class="grid_titulo">RaÁa</td>
                             <td width="14%" align="center" class="grid_titulo">Tipo</td>
                             <td width="11%" align="center" class="grid_titulo">Sexo</td>
                             <td width="11%" align="center" class="grid_titulo">Status</td>
@@ -199,7 +199,7 @@ function bt(id){
 					<br />
 					<br />
 					
-						Ado√ß√£o n√£o √© brincadeira, √© coisa a ser levado a serio. <br />
+						AdoÁ„o n√£o √© brincadeira, √© coisa a ser levado a serio. <br />
 						<br />
 						
 						
@@ -217,7 +217,7 @@ function bt(id){
 			  
 			O que Pretendes Fazer?
 					<div align="right" style="width:95%;">
-                    	<img src="images/botao/bt_continuar.png" alt="Continuar" title="Continuar" class="seta_link" id="continua" onmouseover="focoBt('continua');" onmouseout="bt('continua');" onclick="valida();" />&nbsp;&nbsp;<img src="images/botao/bt_desistir_desabilitado.png" alt="cancelar ado√ß√£o" title="Cancelar Ado√ß√£o" id="desistir" onmouseover="focoBt('desistir');" onmouseout="bt('desistir');" class="seta_link" />
+                    	<img src="images/botao/bt_continuar.png" alt="Continuar" title="Continuar" class="seta_link" id="continua" onmouseover="focoBt('continua');" onmouseout="bt('continua');" onclick="valida();" />&nbsp;&nbsp;<img src="images/botao/bt_desistir_desabilitado.png" alt="cancelar ado√ß√£o" title="Cancelar AdoÁ„o" id="desistir" onmouseover="focoBt('desistir');" onmouseout="bt('desistir');" class="seta_link" />
                     </div>
 				<br />
 				
@@ -227,7 +227,7 @@ function bt(id){
 						<tr>
 							<td class="grid_titulo" align="center">Cod</td>
 							<td class="grid_titulo" align="center">Nome</td>
-							<td class="grid_titulo" align="center">Endere√ßo</td>
+							<td class="grid_titulo" align="center">EndereÁo</td>
 							<td class="grid_titulo" align="center">CEP</td>
 							<td class="grid_titulo" align="center">UF</td>
 							<td class="grid_titulo" align="center">Email</td>
@@ -236,7 +236,7 @@ function bt(id){
 						<tr class="td_escura">
 							<td align="center">002</td>
 							<td align="center">Maria Fulana</td>
-							<td align="center">Rua dos Remedios N¬∫ 15</td>
+							<td align="center">Rua dos Remedios N∫ 15</td>
 							<td align="center">7200000</td>
 							<td align="center">GO</td>
 							<td align="center">fulana@email.com</td>
@@ -252,10 +252,10 @@ function bt(id){
 							<td width="72%">SIM</td>
 						</tr>
 						<tr class="td_escura">
-							<td><strong>Animal com certificado Veterian√°rio?</strong></td>
+							<td><strong>Animal com certificado Veterian·rio?</strong></td>
 						</tr>
 						<tr>
-							<td>N√ÉO</td>
+							<td>N√O</td>
 						</tr>
 						<tr class="td_escura">
 							<td><strong>Animal Vacinado? </strong></td>
@@ -301,7 +301,7 @@ function bt(id){
                                         	<select name="entrega" disabled="disabled" id="entrega" onchange="valida_avaliacao();">
                                             	<option value="0" selected="selected">:: Selecione ::</option>
                                                 <option value="1">Sim</option>
-                                                <option value="2">N√£o</option>
+                                                <option value="2">N„o</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -309,7 +309,7 @@ function bt(id){
                                     	<td colspan="2">
                                         <table class="grid" style="width:100%;">
                                         	<tr>
-                                            	<td>Informe o motivo do N√£o Recebimento:</td>
+                                            	<td>Informe o motivo do N„o Recebimento:</td>
                                             </tr>
                                             <tr>
                                             	<td><textarea rows="5" cols="60" id="motivo_insatisfacao"></textarea></td>
@@ -429,8 +429,8 @@ function bt(id){
                
                <table class="grid">
                		<tr>
-                    	<td><img src="images/botao/ico_acmp.png" alt="Ver Ado√ß√£o" title="Acompanhar Ado√ß√£o" class="seta_link" /></td>
-                        <td><a href="#" onclick="mostrar('perfil');">Acompanhar Ado√ß√£o</a></td>
+                    	<td><img src="images/botao/ico_acmp.png" alt="Ver AdoÁ„o" title="Acompanhar AdoÁ„o" class="seta_link" /></td>
+                        <td><a href="#" onclick="mostrar('perfil');">Acompanhar AdoÁ„o</a></td>
                     </tr>
                </table>
 			   <table class="grid esconde" id="perfil">
@@ -448,7 +448,7 @@ function bt(id){
                <table class="grid">
                		<tr>
                     	<td valign="top"><img src="images/botao/alert.png" alt="alerta" title="alerta" /></td>
-                        <td>Nenhum Animal Cadastrado para Ado√ß√£o</td>
+                        <td>Nenhum Animal Cadastrado para AdoÁ„o</td>
                  </tr>
                  <tr>
                  	<td colspan="2" align="center"><a href="cad_animal.html"><img src="images/botao/bt_doar.png" alt="Cadatrar Animal Para Doa√ß√£o" title="Cadatrar Animal Para Doa√ß√£o" class="seta_link" id="doar" onmouseover="focoBt('doar');" onmouseout="bt('doar');" /></a></td>

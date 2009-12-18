@@ -99,7 +99,7 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>RelatÃ³rio de Animais</span></div>
+                                <div class="bordaFaixaLeft"><span>Relatório de Animais</span></div>
                                 <br />
                                 <!-- RRELATÃ“RIO GERAL -->
                                  <c:if test="${lstTodosAnimais !=null && detalheCanil.codigo==0}">
@@ -111,7 +111,7 @@
                                  <c:if test="${lstTodosAnimais ==null}">
                                 <div id="rel_geral" class="esconde">
                                  </c:if>
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais - Geral</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais - Geral</div>
                                     <br />
 
                                     <table class="grid">
@@ -131,7 +131,7 @@
                                         <tr>
                                             <td width="29%" align="right"><strong>Animais Pendentes: &nbsp;</strong></td>
                                             <td width="13%"><input type="text" value="${totalpendentescolab}" readonly="readonly" size="8" class="obrigatorio" /></td>
-                                            <td>(AprovaÃ§Ã£o de Cadastro)</td>
+                                            <td>(Aprovação de Cadastro)</td>
                                         </tr>
                                     </table>
                                     <br />
@@ -140,7 +140,7 @@
                                         <tr>
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="27%" align="center" class="grid_titulo">Nome</td>
-                                            <td width="35%" align="center" class="grid_titulo">RaÃ§a</td>
+                                            <td width="35%" align="center" class="grid_titulo">Raça</td>
                                             <td width="35%" align="center" class="grid_titulo">Status</td>
                                             <td width="12%" align="center" class="grid_titulo">Propriedade</td>
                                             <td width="12%" align="center" class="grid_titulo">Atividade</td>
@@ -188,7 +188,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÃ³rio" class="seta_link" onclick="window.print();" />
+                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir Relatório" class="seta_link" onclick="window.print();" />
                                     </div>
 
                                 </div>
@@ -212,11 +212,11 @@
                                     <div id="dadosUsuario">
                                         <table class="grid">
                                             <tr>
-                                                <td width="33%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                                <td width="33%" align="right">Nº de Identificação: &nbsp;</td>
                                                 <td width="67%"><span>${detalheCanil.codigo}</span></td>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">RaÃ§a: &nbsp;</td>
+                                                <td width="33%" align="right">Raça: &nbsp;</td>
                                                 <td width="67%"><span>${detalheCanil.especie}</span></td>
                                             </tr>
                                             <tr>
@@ -233,7 +233,7 @@
                                                </c:forEach>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">2Âª Cor: &nbsp;</td>
+                                                <td width="33%" align="right">2ª Cor: &nbsp;</td>
                                                 <c:forEach  items="${lstCor}" var="lstCor">
                                                     <c:if test="${lstCor.codigo ==detalheCanil.cor2}">
                                                        <td width="67%"><span>${lstCor.descricao}</span></td>
@@ -272,14 +272,14 @@
 
                                     <table class="grid">
                                         <tr>
-                                            <td><span class="obrigatorio">DescriÃ§Ã£o do Animal</span></td>
+                                            <td><span class="obrigatorio">Descrição do Animal</span></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheCanil.descricao}</td>
                                         </tr>
                                     </table>
                                     <br />
-                                    <div class="nota_destaque">InformaÃ§Ãµes Adicionais</div>
+                                    <div class="nota_destaque">Informações Adicionais</div>
                                     <br />
 
                                     <table class="grid">
@@ -290,7 +290,7 @@
                                             <td width="72%">${detalheCanil.castrado}</td>
                                         </tr>
                                         <tr class="td_escura">
-                                            <td><strong>Animal com certificado VeterianÃ¡rio?</strong></td>
+                                            <td><strong>Animal com certificado Veterianário?</strong></td>
                                         </tr>
                                         <tr>
                                             <td>${detalheCanil.laudoVeterinario}</td>
@@ -352,7 +352,7 @@
 <!-- RodapÃ© -->
 
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
        

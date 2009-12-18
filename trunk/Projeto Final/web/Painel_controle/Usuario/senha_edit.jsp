@@ -129,7 +129,7 @@ function valida(){
             
             <!-- DADOS DO USUARIO -->            
             <div id="dadosUsuario">
-            <span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+            <span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
             <br />
             <form name="editaDados" onsubmit="return valida(this);" action="index.html">
             	<fieldset>
@@ -213,8 +213,8 @@ function valida(){
                
                <table class="grid">
                		<tr>
-                    	<td><img src="images/botao/ico_acmp.png" alt="Ver AdoÃ§Ã£o" title="Acompanhar AdoÃ§Ã£o" class="seta_link"  /></td>
-                        <td><a href="#" onclick="mostrar('perfil');">Acompanhar AdoÃ§Ã£o</a></td>
+                    	<td><img src="images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link"  /></td>
+                        <td><a href="#" onclick="mostrar('perfil');">Acompanhar Adoção</a></td>
                     </tr>
 				</table>
 				<table class="grid esconde" id="perfil">
@@ -232,7 +232,7 @@ function valida(){
                <table class="grid">
                		<tr>
                     	<td valign="top"><img src="images/botao/alert.png" alt="alerta" title="alerta" /></td>
-                        <td>Nenhum Animal Cadastrado para AdoÃ§Ã£o</td>
+                        <td>Nenhum Animal Cadastrado para Adoção</td>
                  </tr>
                  <tr>
                  	<td colspan="2" align="center">

@@ -272,70 +272,7 @@ public class AnimalDAO {
         }
         return lstAnimal;
     }
-
-    public List<Animais> carregaDadosAnimalTeste(int codUsr, String bloq) {
-
-        Statement stmt = null;
-        List<Animais> lstAnimal = new ArrayList<Animais>();
-        Connection conn = Conexao.getInstance().criaConexao();
-
-        if (conn != null) {
-            try {
-                stmt = conn.createStatement(
-                        ResultSet.TYPE_SCROLL_SENSITIVE,
-                        ResultSet.CONCUR_READ_ONLY);
-                ResultSet rs = stmt.executeQuery(
-                        "SELECT distinct A.* FROM processo p, ANIMAIS A "+
-                         "WHERE P.ANIMAIS_CODIGO=A.CODIGO "+
-                         "AND A.COLABORADOR_CODIGO="+codUsr+
-                         " AND P.FASEPROCESSO_CODIGO<>3 "+
-                         "AND A.BLOQUEIO='Nao'");
-
-                while (rs.next()) {
-                    Animais animal = new Animais();
-
-                    animal.setCodigo(rs.getInt("codigo"));
-                    animal.setCor2(rs.getInt("Cor_SegCor"));
-                    animal.setCor1(rs.getInt("Cor_codigo"));
-                    animal.setCodigoPelagem(rs.getInt("TipoPelo_codigo"));
-                    animal.setPorte(rs.getInt("PorteAnimal_codigo"));
-                    animal.setCodigoRaca(rs.getInt("TipoRaca_codigo"));
-                    animal.setSexo(rs.getString("sexo"));
-                    animal.setdescricao(rs.getString("descricao"));
-                    animal.setEndFoto(rs.getString("foto"));
-                    animal.setDataCadastro(rs.getDate("datacadastro"));
-                    animal.setIdade(rs.getInt("idade"));
-                    animal.setNome(rs.getString("nome"));
-                    animal.setVacinado(rs.getString("vacinado"));
-                    animal.setdescricaoVacina(rs.getString("descricaovacinas"));
-                    animal.setLaudoVeterinario(rs.getString("laudoveterinario"));
-                    animal.setLocalAnimal(rs.getString("localanimal"));
-                    animal.setEspecie(rs.getString("tipoespecie"));
-                    animal.setCodigoFormaEnvio(rs.getInt("TipoFormaEnvio_codigo"));
-                    animal.setCodigoUsuario(rs.getInt("Colaborador_codigo"));
-
-
-                    lstAnimal.add(animal);
-                }
-
-                conn.close();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            } finally {
-                try {
-                    if (stmt != null) {
-                        stmt.close();
-                    }
-                    if (conn != null) {
-                        conn.close();
-                    }
-                } catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
-        return lstAnimal;
-    }
+   
 
     /* public Animais carregaDadosAnimal(int codUsr, String disp) {
 
@@ -555,6 +492,48 @@ public class AnimalDAO {
                 try {
                     if (stmt != null) {
                         stmt.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        return n;
+
+    }
+
+    // Finaliza o processo de adoção retirando o poder do proprietario
+
+    public int completa_final_processo(int codAnimal) {
+
+        int n = 0;
+        Connection conn = Conexao.getInstance().criaConexao();
+
+        if (conn != null) {
+            PreparedStatement pstmt = null;
+            try {
+                pstmt = conn.prepareStatement(
+                        "UPDATE animais SET " +
+                        "disponibilidade = ?, " +
+                        "bloqueio= ? " +
+                        "WHERE codigo = ?");
+
+                 pstmt.setString(1,"Sim");
+                 pstmt.setString(2,"Sim");
+                 pstmt.setInt(3, codAnimal);
+
+
+                n = pstmt.executeUpdate();
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if (pstmt != null) {
+                        pstmt.close();
                     }
                     if (conn != null) {
                         conn.close();

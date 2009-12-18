@@ -101,7 +101,7 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>Manuten√ß√£o de Porte de Animais</span></div>
+                                <div class="bordaFaixaLeft"><span>ManutenÁ„o de Porte de Animais</span></div>
                                 <br />
                                 <!-- FILTRO DE PESQUISA -->
                                 <div id="filtro">
@@ -160,7 +160,7 @@
                                 </div>
                                 <!-- RESULTADO DA PESQUISA-->
 
-            <!-- Alterar Ra√ßas -->
+            <!-- Alterar RaÁas -->
                              <c:if test="${editarPorte.codigo == 0}">
                                 <div id="alterar" class="esconde">
                             </c:if>
@@ -183,12 +183,12 @@
                                         <div align="center" style="width:90%;">
                                             <!--input type="submit"  src="/WebMAA/Painel_controle/ong/images/botao/bt_alterar.png" alt="Alterar"  name="Alterar"  title="Alterar" class="seta_link"-->
                                             <a href="javascript:document.getElementById('frmeditarPorte').submit();">
-                                            <img src="/WebMAA/Painel_controle/ong/images/botao/bt_alterar.png" alt="Alterar" title="Alterar" class="seta_link" onclick="alert('Ra√ßa Alterada com Sucesso');" />&nbsp;&nbsp;
+                                            <img src="/WebMAA/Painel_controle/ong/images/botao/bt_alterar.png" alt="Alterar" title="Alterar" class="seta_link" onclick="alert('RaÁa Alterada com Sucesso');" />&nbsp;&nbsp;
                                             </a>
                                         </div>
                                     </form>
                                 </div>
-                                <!-- Alterar Ra√ßas -->
+                                <!-- Alterar RaÁas -->
 
                                 <br />
                                 <br />
@@ -217,7 +217,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

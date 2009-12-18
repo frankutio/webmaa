@@ -91,7 +91,7 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>RelatÃ³rio de Animais</span></div>
+                                <div class="bordaFaixaLeft"><span>Relatório de Animais</span></div>
                                 <br />
                                 <!-- RRELATÃ“RIO CANIL ADOTADOS -->
                                  <c:if test="${lstProcesso == null}">
@@ -103,14 +103,14 @@
                                 <c:if test="${lstProcesso != null && detalheAdotados.codigo!=0}">
                                     <div id="rel_canil_adotado" class="esconde">
                                 </c:if>
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais em Canil/Gatil - Adotados</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais em Canil/Gatil - Adotados</div>
                                     <br />
                                     
                                     <table class="grid"  style="width:100%;">
                                         <tr>
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="22%" align="center" class="grid_titulo">Nome</td>
-                                            <td width="29%" align="center" class="grid_titulo">Data AdoÃ§Ã£o</td>
+                                            <td width="29%" align="center" class="grid_titulo">Data Adoção</td>
                                             <td width="55%" align="center" class="grid_titulo">Adotante</td>
                                             <td width="12%" align="center" class="grid_titulo">Detalhar</td>
                                         </tr>
@@ -141,7 +141,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="/WebMAA/Painel_controle/ong/images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÃ³rio" class="seta_link" onclick="window.print();" />
+                                        <img src="/WebMAA/Painel_controle/ong/images/botao/printer.png" alt="Imprimir" title="Imprimir Relatório" class="seta_link" onclick="window.print();" />
                                     </div>
 
                                 </div>
@@ -165,11 +165,11 @@
                                     <div id="dadosUsuario" style="width:400px;">
                                         <table class="grid">
                                             <tr>
-                                                <td width="35%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                                <td width="35%" align="right">Nº de Identificação: &nbsp;</td>
                                                 <td width="67%">${detalheAdotados.codigo}</td>
                                             </tr>
                                             <tr>
-                                                <td width="35%" align="right">RaÃ§a: &nbsp;</td>
+                                                <td width="35%" align="right">Raça: &nbsp;</td>
                                                 <td width="67%"><span>${detalheAdotados.especie}</span></td>
                                             </tr>
                                             <tr>
@@ -186,7 +186,7 @@
                                                </c:forEach>
                                             </tr>
                                             <tr>
-                                                <td width="33%" align="right">2Âª Cor: &nbsp;</td>
+                                                <td width="33%" align="right">2ª Cor: &nbsp;</td>
                                                 <c:forEach  items="${lstCor}" var="lstCor">
                                                     <c:if test="${lstCor.codigo ==detalheAdotados.cor2}">
                                                        <td width="67%"><span>${lstCor.descricao}</span></td>
@@ -225,7 +225,7 @@
                                         <div class="clear"></div>
                                         <br />
                                         <br />
-                                        <div class="nota_destaque" style="width:100%;">Dados da AdoÃ§Ã£o</div>
+                                        <div class="nota_destaque" style="width:100%;">Dados da Adoção</div>
                                         <br />
                                         
 
@@ -277,7 +277,7 @@
         </div>
      
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
         <!-- Modal -->

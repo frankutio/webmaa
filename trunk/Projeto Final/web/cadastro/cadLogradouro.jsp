@@ -98,7 +98,7 @@ function bt(id){
 		<div id="cont_aba">
 			<div id="inicio">
 			<br />
-			<span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+			<span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
 			<br />
 			<br />
 			
@@ -109,13 +109,13 @@ function bt(id){
 				      <td colspan="3"><input type="text" name="cep" size="10" class="cep" /></td>
 					</tr>
 					<tr>
-						<td width="13%" align="right"><span class="obrigatorio">*</span> EndereÃ§o: &nbsp;</td>
+						<td width="13%" align="right"><span class="obrigatorio">*</span> Endereço: &nbsp;</td>
 				      <td colspan="3"><input type="text" name="end" size="50" /></td>
 					</tr>
 					<tr>
 						<td width="13%" align="right">Complemento: &nbsp;</td>
 				        <td><input type="text" name="complemento" size="10" /></td>
-						<td width="13%" align="right">NÃºmero: &nbsp;</td>
+						<td width="13%" align="right">Número: &nbsp;</td>
 				        <td><input type="text" name="numero" size="5" /></td>
 					</tr>
 					<tr>

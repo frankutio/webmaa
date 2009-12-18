@@ -254,7 +254,7 @@ function validaEnvio(formaEnvio){
             </div>
             
             <br />
-            <span class="obrigatorio">* Campos de Preenchimento Obrigat√≥rio</span>
+            <span class="obrigatorio">* Campos de Preenchimento ObrigatÛrio</span>
           <form name="cadastroAnimal" id="cadastroColabAnl" method="post" action="" onsubmit="return validaCampoAnimal(this);" enctype="multipart/form-data">
           
           <input type="hidden" name="codUsr" value="${Colaborador.codigo}" />
@@ -361,7 +361,7 @@ function validaEnvio(formaEnvio){
             <br />
 <table class="grid">                	
                     <tr>
-                    	<td align="right">Animal com certificado/Laudo Veterian√°rio? &nbsp;</td>
+                    	<td align="right">Animal com certificado/Laudo Veterian·rio? &nbsp;</td>
                         <td colspan="3">
                        	  <select name="laudo">
                             	<option value="0">&nbsp;</optgroup>

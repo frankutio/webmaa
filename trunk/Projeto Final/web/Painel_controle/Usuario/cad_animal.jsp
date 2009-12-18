@@ -120,7 +120,7 @@ function bt(id){
              <br />
                 <p>
    	    			<div class="nota_informa">
-                    	<span>N√£o recebemos animais para o nosso Gatil/Canil.</span>
+                    	<span>N„o recebemos animais para o nosso Gatil/Canil.</span>
                     </div>
                 </p>
                 <P>
@@ -145,7 +145,7 @@ function bt(id){
                 </div>
                 
                 <div class="bloco_centro">
-                	Nota que para criterios de doa√ß√£o a Ong N√ÉO se responsabiliza pela saude do animal, sendo que o mesmo deve ter o Laudo Veterinario.
+                	Nota que para criterios de doa√ß√£o a Ong N√O se responsabiliza pela saude do animal, sendo que o mesmo deve ter o Laudo Veterinario.
                     <br />
                     <br />
                     
@@ -192,8 +192,8 @@ function bt(id){
                
                <table class="grid">
                		<tr>
-                    	<td><img src="images/botao/ico_acmp.png" alt="Ver Ado√ß√£o" title="Acompanhar Ado√ß√£o" class="seta_link"  /></td>
-                        <td><a href="#" onclick="mostrar('perfil');">Acompanhar Ado√ß√£o</a></td>
+                    	<td><img src="images/botao/ico_acmp.png" alt="Ver AdoÁ„o" title="Acompanhar AdoÁ„o" class="seta_link"  /></td>
+                        <td><a href="#" onclick="mostrar('perfil');">Acompanhar AdoÁ„o</a></td>
                     </tr>
 				</table>
 				<table class="grid esconde" id="perfil">
@@ -211,7 +211,7 @@ function bt(id){
                <table class="grid">
                		<tr>
                     	<td valign="top"><img src="images/botao/alert.png" alt="alerta" title="alerta" /></td>
-                        <td>Nenhum Animal Cadastrado para Ado√ß√£o</td>
+                        <td>Nenhum Animal Cadastrado para AdoÁ„o</td>
                  </tr>
                </table> 
                        

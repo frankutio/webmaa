@@ -101,7 +101,7 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>Manuten√ß√£o da Fase Processo</span></div>
+                                <div class="bordaFaixaLeft"><span>ManutenÁ„o da Fase Processo</span></div>
                                 <br />
                                 <!-- FILTRO DE PESQUISA -->
                                 <div id="filtro">
@@ -160,7 +160,7 @@
                                 </div>
                                 <!-- RESULTADO DA PESQUISA-->
 
-            <!-- Alterar Ra√ßas -->
+            <!-- Alterar RaÁas -->
                              <c:if test="${editarFaseProcesso.codigo == 0}">
                                 <div id="alterar" class="esconde">
                             </c:if>
@@ -188,7 +188,7 @@
                                         </div>
                                     </form>
                                 </div>
-                                <!-- Alterar Ra√ßas -->
+                                <!-- Alterar RaÁas -->
 
                                 <br />
                                 <br />
@@ -217,7 +217,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

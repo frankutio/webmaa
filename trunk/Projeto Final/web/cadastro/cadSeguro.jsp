@@ -98,7 +98,7 @@ function bt(id){
 		<div id="cont_aba">
 			<div id="inicio">
 			<br />
-			<span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+			<span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
 			<br />
 			
 			<div class="nota_destaque_Alert">

@@ -279,8 +279,8 @@ function validaEnvio(formaEnvio){
                       </tr>
                 <tr>
                 	<td align="right"><span class="obrigatorio">*</span> Sexo: &nbsp;</td>
-                <td align="center"><label>Macho <input type="radio" name="sexo" value="Macho" /></label></td>
-                  <td colspan="2"><label>Femea <input type="radio" name="sexo" value="Femea" /></label></td>
+                    <td align="center"><label>Macho <input type="radio" name="sexo" value="Macho" /></label></td>
+                    <td colspan="2"><label>Femea <input type="radio" name="sexo" value="Femea" /></label></td>
                 </tr>
                 <tr>
                 	<td colspan="4">Caso queira, adicione uma foto do seu animal</td>

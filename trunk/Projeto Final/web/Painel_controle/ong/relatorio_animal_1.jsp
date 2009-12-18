@@ -99,7 +99,7 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>RelatÃ³rio de Animais</span></div>
+                                <div class="bordaFaixaLeft"><span>Relatório de Animais</span></div>
                                 <br />
                                 <!-- FILTRO DE PESQUISA -->
                                 <div id="filtro">
@@ -107,13 +107,13 @@
                                     <div class="nota_destaque">Filtro de Pesquisa</div>
                                     <br />
 
-                                    <span class="obrigatorio">* Campos de Preenchimento ObrigatÃ³rio</span>
+                                    <span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
                                     <br />
 
                                     <form name="filtroRelatorio">
                                         <table class="grid">
                                             <tr>
-                                                <td width="28%" align="right"><span class="obrigatorio">*</span> Exibir RalatÃ³rio de: &nbsp;</td>
+                                                <td width="28%" align="right"><span class="obrigatorio">*</span> Exibir Relatório de: &nbsp;</td>
                                                 <td width="72%">
                                                     <select name="exibir" onchange="valida_relatorio();">
                                                         <option value="0"></option>
@@ -124,12 +124,12 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td width="28%" align="right"><span class="obrigatorio">*</span> Tipo de RelatÃ³rio: &nbsp;</td>
+                                                <td width="28%" align="right"><span class="obrigatorio">*</span> Tipo de Relatório: &nbsp;</td>
                                                 <td><label><input type="radio" name="tipo" value="adotados" id="animal_ad" /> Animais Adotados</label></td>
                                             </tr>
                                             <tr>
                                                 <td width="28%" align="right">&nbsp;</td>
-                                                <td><label><input type="radio" name="tipo" value="fila" id="animal_fl" /> Animais na Fila de AdoÃ§Ã£o</label></td>
+                                                <td><label><input type="radio" name="tipo" value="fila" id="animal_fl" /> Animais na Fila de Adoção</label></td>
                                             </tr>
                                             <tr>
                                                 <td width="28%" align="right">&nbsp;</td>
@@ -152,14 +152,14 @@
 
                                 <!-- RRELATÃ“RIO CANIL ADOTADOS -->
                                 <div id="rel_canil_adotado" class="esconde">
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais em Canil/Gatil - Adotados</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais em Canil/Gatil - Adotados</div>
                                     <br />
 
                                     <table class="grid">
                                         <tr>
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="27%" align="center" class="grid_titulo">Nome</td>
-                                            <td width="19%" align="center" class="grid_titulo">Data AdoÃ§Ã£o</td>
+                                            <td width="19%" align="center" class="grid_titulo">Data Adoção</td>
                                             <td width="35%" align="center" class="grid_titulo">Adotante</td>
                                             <td width="12%" align="center" class="grid_titulo">Detalhar</td>
                                         </tr>
@@ -182,7 +182,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÃ³rio" class="seta_link" onclick="window.print();" />
+                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir Relatório" class="seta_link" onclick="window.print();" />
                                     </div>
 
                                 </div>
@@ -190,7 +190,7 @@
 
                                 <!-- RRELATÃ“RIO CANIL FILA -->
                                 <div id="rel_canil_fila" class="esconde">
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais em Canil/Gatil - Fila de AdoÃ§Ã£o</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais em Canil/Gatil - Fila de Adoção</div>
                                     <br />
 
                                     <table class="grid">
@@ -198,7 +198,7 @@
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="20%" align="center" class="grid_titulo">Nome</td>
                                             <td width="7%" align="center" class="grid_titulo">Tipo</td>
-                                            <td width="22%" align="center" class="grid_titulo">RaÃ§a</td>
+                                            <td width="22%" align="center" class="grid_titulo">Raça</td>
                                             <td width="17%" align="center" class="grid_titulo">Data Cadastro</td>
                                             <td width="15%" align="center" class="grid_titulo">Visitas Perfil</td>
                                             <td width="12%" align="center" class="grid_titulo">Detalhar</td>
@@ -226,7 +226,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÃ³rio" class="seta_link" onclick="window.print();" />
+                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir Relatório" class="seta_link" onclick="window.print();" />
                                     </div>
 
                                 </div>
@@ -234,7 +234,7 @@
 
                                 <!-- RELATÃ“RIO COLABORADOR ADOTADOS -->
                                 <div id="rel_colab_adotado" class="esconde" >
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais em Colaorador - Adotados</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais em Colaorador - Adotados</div>
                                     <br />
 
                                     <table class="grid">
@@ -246,8 +246,8 @@
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="17%" align="center" class="grid_titulo">Nome</td>
                                             <td width="7%" align="center" class="grid_titulo">Tipo</td>
-                                            <td width="15%" align="center" class="grid_titulo">RaÃ§a</td>
-                                            <td width="16%" align="center" class="grid_titulo">Dt. AdoÃ§Ã£o</td>
+                                            <td width="15%" align="center" class="grid_titulo">Raça</td>
+                                            <td width="16%" align="center" class="grid_titulo">Dt. Adoção</td>
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="19%" align="center" class="grid_titulo">Nome</td>
                                             <td width="12%" align="center" class="grid_titulo">Detalhar</td>
@@ -277,7 +277,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÃ³rio" class="seta_link" onclick="window.print();" />
+                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir Relatório" class="seta_link" onclick="window.print();" />
                                     </div>
 
                                 </div>
@@ -285,7 +285,7 @@
 
                                 <!-- RELATÃ“RIO COLABORADOR FILA -->
                                 <div id="rel_colab_fila" class="esconde" >
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais em Colaorador - Fila de AdoÃ§Ã£o</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais em Colaorador - Fila de Adoção</div>
                                     <br />
 
                                     <table class="grid" style=" width:98%;">
@@ -297,7 +297,7 @@
                                             <td width="6%" align="center" class="grid_titulo">Cod</td>
                                             <td width="13%" align="center" class="grid_titulo">Nome</td>
                                             <td width="7%" align="center" class="grid_titulo">Tipo</td>
-                                            <td width="12%" align="center" class="grid_titulo">RaÃ§a</td>
+                                            <td width="12%" align="center" class="grid_titulo">Raça</td>
                                             <td width="15%" align="center" class="grid_titulo">Dt. Cadastro</td>
                                             <td width="15%" align="center" class="grid_titulo">Visitas Perfil</td>
                                             <td width="6%" align="center" class="grid_titulo">Cod</td>
@@ -331,7 +331,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÃ³rio" class="seta_link" onclick="window.print();" />
+                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir Relatório" class="seta_link" onclick="window.print();" />
                                     </div>
 
                                 </div>
@@ -339,7 +339,7 @@
 
                                 <!-- RRELATÃ“RIO COLABORADOR PENDENTES -->
                                 <div id="rel_colab_pendente" class="esconde">
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais em Colaborador - Pendentes de AprovaÃ§Ã£o</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais em Colaborador - Pendentes de Aprovação</div>
                                     <br />
 
                                     <table class="grid">
@@ -347,7 +347,7 @@
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="27%" align="center" class="grid_titulo">Nome</td>
                                             <td width="19%" align="center" class="grid_titulo">Tipo</td>
-                                            <td width="35%" align="center" class="grid_titulo">RaÃ§a</td>
+                                            <td width="35%" align="center" class="grid_titulo">Raça</td>
                                             <td width="12%" align="center" class="grid_titulo">Dt. Cadastro</td>
                                             <td width="12%" align="center" class="grid_titulo">Detalhar</td>
                                             <td width="12%" align="center" class="grid_titulo">Selecionar</td>
@@ -375,7 +375,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÃ³rio" class="seta_link" onclick="window.print();" />&nbsp;&nbsp;
+                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir Relatório" class="seta_link" onclick="window.print();" />&nbsp;&nbsp;
                                         <img src="images/botao/bt_aprovar.png" alt="Aprovar" title="Aprovar" class="seta_link" />
                                     </div>
 
@@ -384,7 +384,7 @@
 
                                 <!-- RRELATÃ“RIO GERAL -->
                                 <div id="rel_geral" class="esconde">
-                                    <div class="nota_destaque" style="width:100%;">RelatÃ³rio de Animais - Geral</div>
+                                    <div class="nota_destaque" style="width:100%;">Relatório de Animais - Geral</div>
                                     <br />
 
                                     <table class="grid">
@@ -404,7 +404,7 @@
                                         <tr>
                                             <td width="29%" align="right"><strong>Animais Pendentes: &nbsp;</strong></td>
                                             <td width="13%"><input type="text" value="10" readonly="readonly" size="8" class="obrigatorio" /></td>
-                                            <td>(AprovaÃ§Ã£o de Cadastro)</td>
+                                            <td>(Aprovação de Cadastro)</td>
                                         </tr>
                                     </table>
                                     <br />
@@ -413,7 +413,7 @@
                                         <tr>
                                             <td width="7%" align="center" class="grid_titulo">Cod</td>
                                             <td width="27%" align="center" class="grid_titulo">Nome</td>
-                                            <td width="35%" align="center" class="grid_titulo">RaÃ§a</td>
+                                            <td width="35%" align="center" class="grid_titulo">Raça</td>
                                             <td width="35%" align="center" class="grid_titulo">Status</td>
                                             <td width="12%" align="center" class="grid_titulo">Propriedade</td>
                                             <td width="12%" align="center" class="grid_titulo">Atividade</td>
@@ -432,7 +432,7 @@
                                             <td align="center">02</td>
                                             <td align="center">Xana</td>
                                             <td align="center">Comum</td>
-                                            <td align="center">Fila de AdoÃ§Ã£o</td>
+                                            <td align="center">Fila de Adoção</td>
                                             <td align="center">Colaborador</td>
                                             <td align="center"><span class="obrigatorio">Pendente</span></td>
                                             <td align="center"><a href="coloborador/detehlar_animal.jsp"><img src="images/botao/zoom.png" class="seta_link" alt="Detalhar Processo" title="Detalhar Processo " /></a></td>
@@ -441,7 +441,7 @@
                                             <td align="center">03</td>
                                             <td align="center">Lucky</td>
                                             <td align="center">Comum</td>
-                                            <td align="center">Fila de AdoÃ§Ã£o</td>
+                                            <td align="center">Fila de Adoção</td>
                                             <td align="center">Colaborador</td>
                                             <td align="center" class="adotado">Aprovado</td>
                                             <td align="center">&nbsp;</td>
@@ -451,7 +451,7 @@
                                     <br />
 
                                     <div align="center" style="width:90%;">
-                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir RelatÃ³rio" class="seta_link" onclick="window.print();" />
+                                        <img src="images/botao/printer.png" alt="Imprimir" title="Imprimir Relatório" class="seta_link" onclick="window.print();" />
                                     </div>
 
                                 </div>
@@ -478,7 +478,7 @@
 <!-- RodapÃ© -->
 
         <div id="rodape">
-            VersÃ£o do Sistema &nbsp;&nbsp; 1.0
+            Versão do Sistema &nbsp;&nbsp; 1.0
         </div>
 
         <!-- Modal -->
@@ -503,11 +503,11 @@
                         <div id="dadosUsuario" style="width:400px;">
                             <table class="grid">
                                 <tr>
-                                    <td width="37%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                    <td width="37%" align="right">Nº de Identificação: &nbsp;</td>
                                     <td width="63%"><span>01</span></td>
                                 </tr>
                                 <tr>
-                                    <td width="37%" align="right">RaÃ§a: &nbsp;</td>
+                                    <td width="37%" align="right">Raça: &nbsp;</td>
                                     <td width="63%"><span>Comum</span></td>
                                 </tr>
                                 <tr>
@@ -519,7 +519,7 @@
                                     <td width="63%"><span>champanhe</span></td>
                                 </tr>
                                 <tr>
-                                    <td width="37%" align="right">2Âª Cor: &nbsp;</td>
+                                    <td width="37%" align="right">2ª Cor: &nbsp;</td>
                                     <td width="63%"><span>Preto</span></td>
                                 </tr>
                                 <tr>
@@ -539,7 +539,7 @@
                         <div class="clear"></div>
                         <br />
                         <br />
-                        <div class="nota_destaque">Dados da AdoÃ§Ã£o</div>
+                        <div class="nota_destaque">Dados da Adoção</div>
                         <br />
 
                         Adotado em <span class="obrigatorio">30/01/2009</span>
@@ -581,7 +581,7 @@
 
                     <!-- DETALHES DA MENSAGEM -->
                     <div id="conteudoDetalhe">
-                        <div class="bordaFaixaLeft"><span>Animal na Fila de AdoÃ§Ã£o</span></div>
+                        <div class="bordaFaixaLeft"><span>Animal na Fila de Adoção</span></div>
                         <br />
 
                         <!-- FOTO DO ANIMAL -->
@@ -593,7 +593,7 @@
                         <div id="dadosUsuario" style="width:400px;">
                             <table class="grid">
                                 <tr>
-                                    <td width="37%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                    <td width="37%" align="right">Nº de Identificação: &nbsp;</td>
                                     <td width="63%"><span>01</span></td>
                                 </tr>
                                 <tr>
@@ -601,7 +601,7 @@
                                     <td width="63%"><span>30/02/2008</span></td>
                                 </tr>
                                 <tr>
-                                    <td width="37%" align="right">RaÃ§a: &nbsp;</td>
+                                    <td width="37%" align="right">Raça: &nbsp;</td>
                                     <td width="63%"><span>Comum</span></td>
                                 </tr>
                                 <tr>
@@ -613,7 +613,7 @@
                                     <td width="63%"><span>champanhe</span></td>
                                 </tr>
                                 <tr>
-                                    <td width="37%" align="right">2Âª Cor: &nbsp;</td>
+                                    <td width="37%" align="right">2ª Cor: &nbsp;</td>
                                     <td width="63%"><span>Preto</span></td>
                                 </tr>
                                 <tr>
@@ -672,11 +672,11 @@
                         <div id="dadosUsuario" style="width:400px;">
                             <table class="grid">
                                 <tr>
-                                    <td width="37%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                    <td width="37%" align="right">Nº de Identificação: &nbsp;</td>
                                     <td width="63%"><span>01</span></td>
                                 </tr>
                                 <tr>
-                                    <td width="37%" align="right">RaÃ§a: &nbsp;</td>
+                                    <td width="37%" align="right">Raça: &nbsp;</td>
                                     <td width="63%"><span>Comum</span></td>
                                 </tr>
                                 <tr>
@@ -688,7 +688,7 @@
                                     <td width="63%"><span>champanhe</span></td>
                                 </tr>
                                 <tr>
-                                    <td width="37%" align="right">2Âª Cor: &nbsp;</td>
+                                    <td width="37%" align="right">2ª Cor: &nbsp;</td>
                                     <td width="63%"><span>Preto</span></td>
                                 </tr>
                                 <tr>
@@ -719,7 +719,7 @@
                         <div class="clear"></div>
                         <br />
                         <br />
-                        <div class="nota_destaque">Dados da AdoÃ§Ã£o</div>
+                        <div class="nota_destaque">Dados da Adoção</div>
                         <br />
 
                         Adotado em <span class="obrigatorio">30/01/2009</span>
@@ -761,7 +761,7 @@
 
                     <!-- DETALHES DA MENSAGEM -->
                     <div id="conteudoDetalhe">
-                        <div class="bordaFaixaLeft"><span>Animal na Fila de AdoÃ§Ã£o</span></div>
+                        <div class="bordaFaixaLeft"><span>Animal na Fila de Adoção</span></div>
                         <br />
 
                         <!-- FOTO DO ANIMAL -->
@@ -773,11 +773,11 @@
                         <div id="dadosUsuario" style="width:400px;">
                             <table class="grid">
                                 <tr>
-                                    <td width="37%" align="right">NÂº de IdentificaÃ§Ã£o: &nbsp;</td>
+                                    <td width="37%" align="right">Nº de Identificação: &nbsp;</td>
                                     <td width="63%"><span>01</span></td>
                                 </tr>
                                 <tr>
-                                    <td width="37%" align="right">RaÃ§a: &nbsp;</td>
+                                    <td width="37%" align="right">Raça: &nbsp;</td>
                                     <td width="63%"><span>Comum</span></td>
                                 </tr>
                                 <tr>
@@ -789,7 +789,7 @@
                                     <td width="63%"><span>champanhe</span></td>
                                 </tr>
                                 <tr>
-                                    <td width="37%" align="right">2Âª Cor: &nbsp;</td>
+                                    <td width="37%" align="right">2ª Cor: &nbsp;</td>
                                     <td width="63%"><span>Preto</span></td>
                                 </tr>
                                 <tr>
@@ -801,7 +801,7 @@
                                     <td width="63%" valign="top"><span>Macho</span></td>
                                 </tr>
                                 <tr>
-                                    <td width="37%" align="center" valign="top" colspan="2">ProprietÃ¡rio: &nbsp;</td>
+                                    <td width="37%" align="center" valign="top" colspan="2">Proprietário: &nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td width="37%" align="right" valign="top">Cod: &nbsp;</td>
@@ -820,7 +820,7 @@
                         <div class="clear"></div>
                         <br />
                         <br />
-                        <div class="nota_destaque">Dados da AdoÃ§Ã£o</div>
+                        <div class="nota_destaque">Dados da Adoção</div>
                         <br />
 
                         Total de Visitas no Perfil: <span class="obrigatorio">2</span>

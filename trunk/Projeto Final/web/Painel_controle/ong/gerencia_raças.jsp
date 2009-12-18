@@ -100,15 +100,15 @@
                         <div class="conteudo_painel">
 
                             <div class="lista">
-                                <div class="bordaFaixaLeft"><span>Manuten√ß√£o de Ra√ßas</span></div>
+                                <div class="bordaFaixaLeft"><span>ManutenÁ„o de RaÁas</span></div>
                                 <br />
                                 <!-- FILTRO DE PESQUISA -->
                                 <div id="filtro">
                                     <table class="grid" style="width:100%;">
                                         <tr>
                                             <td width="6%" align="center" class="grid_titulo">Cod</td>
-                                            <td width="55%" align="center" class="grid_titulo">Nome da Ra√ßa</td>
-                                            <td width="21%" align="center" class="grid_titulo">Tipo de Ra√ßa</td>
+                                            <td width="55%" align="center" class="grid_titulo">Nome da RaÁa</td>
+                                            <td width="21%" align="center" class="grid_titulo">Tipo de RaÁa</td>
                                             <td width="9%" align="center" class="grid_titulo">Alterar</td>
                                             <td width="9%" align="center" class="grid_titulo">Excluir</td>
                                         </tr>
@@ -141,17 +141,17 @@
 
             <!-- RESULTADO DA PESQUISA-->
                                 <div id="resultado" class="esconde">
-                                   <div class="nota_destaque" style="width:100%;">Incluir Nova Ra√ßa</div>
+                                   <div class="nota_destaque" style="width:100%;">Incluir Nova RaÁa</div>
                                 <br />
                                 <form id="frmincluirraca" action="/WebMAA/ControleRacaServlet" method="post" >
                                     <input type="hidden" name="operacao" value="RacaNovoProcessa">
                                     <table class="grid" style="width:100%;">
                                         <tr>
-                                            <td width="17%" align="right">Nome da Ra√ßa: &nbsp;</td>
+                                            <td width="17%" align="right">Nome da RaÁa: &nbsp;</td>
                                             <td width="81%"><input type="text" size="30" name="descricao" /></td>
                                         </tr>
                                         <tr>
-                                            <td align="right">Tipo da Ra√ßa: &nbsp;</td>
+                                            <td align="right">Tipo da RaÁa: &nbsp;</td>
                                             <td><input type="radio" name="gato" value="Gato" checked="checked" /> Felina &nbsp;&nbsp; <input type="radio" value="Cao" name="cao" /> Canina</td>
                                         </tr>
                                     </table>
@@ -159,14 +159,14 @@
                                     <div align="center">
                                        <!--input type="submit"  src="/WebMAA/Painel_controle/ong/images/botao/bt_incluir.png" alt="Incluir"  name="Incluir"  title="Incluir" class="seta_link"-->
                                            <a href="javascript:document.getElementById('frmincluirraca').submit();">
-                                           <img src="/WebMAA/Painel_controle/ong/images/botao/bt_incluir.png" alt="Incluir" title="Incluir" class="seta_link" onclick="alert('Ra√ßa cadastrada com sucesso!');" />
+                                           <img src="/WebMAA/Painel_controle/ong/images/botao/bt_incluir.png" alt="Incluir" title="Incluir" class="seta_link" onclick="alert('RaÁa cadastrada com sucesso!');" />
                                            </a>
                                     </div>
                                 </form>
                                 </div>
                                 <!-- RESULTADO DA PESQUISA-->
 
-            <!-- Alterar Ra√ßas -->
+            <!-- Alterar RaÁas -->
                              <c:if test="${editarRacas.codigo == 0}">
                                 <div id="alterar" class="esconde">
                             </c:if>
@@ -174,18 +174,18 @@
                                 <div id="alterar" class="mostra">
                             </c:if>
 
-                                  <div class="nota_destaque">Alterar Ra√ßas</div>
+                                  <div class="nota_destaque">Alterar RaÁas</div>
                                     <br />
                                     <form id="frmeditarformaenvio" action="/WebMAA/ControleRacaServlet" method="post" >
                                         <input type="hidden" name="operacao" value="RacaEditaProcessa">
                                         <input type="hidden" name="codigo" id="codigo" value="${editarRacas.codigo}">
                                         <table class="grid" style="width:100%;">
                                             <tr>
-                                                <td width="17%" align="right">Nome da Ra√ßa: &nbsp;</td>
+                                                <td width="17%" align="right">Nome da RaÁa: &nbsp;</td>
                                                 <td width="81%"><input type="text" size="30" name="descricao" id="descricao" value="${editarRacas.descricao}" /></td>
                                             </tr>
                                             <tr>
-                                            <td align="right">Tipo da Ra√ßa: &nbsp;</td>
+                                            <td align="right">Tipo da RaÁa: &nbsp;</td>
                                             <td><input type="radio" name="gato" value="Gato" checked="checked" /> Felina &nbsp;&nbsp; <input type="radio" value="Cao" name="cao" /> Canina</td>
                                         </tr>
                                         </table>
@@ -193,12 +193,12 @@
                                         <div align="center" style="width:90%;">
                                             <!--input type="submit"  src="/WebMAA/Painel_controle/ong/images/botao/bt_alterar.png" alt="Alterar"  name="Alterar"  title="Alterar" class="seta_link"-->
                                             <a href="javascript:document.getElementById('frmeditarformaenvio').submit();">
-                                            <img src="/WebMAA/Painel_controle/ong/images/botao/bt_alterar.png" alt="Alterar" title="Alterar" class="seta_link" onclick="alert('Ra√ßa Alterada com Sucesso');" />&nbsp;&nbsp;
+                                            <img src="/WebMAA/Painel_controle/ong/images/botao/bt_alterar.png" alt="Alterar" title="Alterar" class="seta_link" onclick="alert('RaÁa Alterada com Sucesso');" />&nbsp;&nbsp;
                                             </a>
                                         </div>
                                     </form>
                                 </div>
-                                <!-- Alterar Ra√ßas -->
+                                <!-- Alterar RaÁas -->
 
                                 <br />
                                 <br />
@@ -227,7 +227,7 @@
 <!-- Rodap√© -->
 
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
 
     </body>

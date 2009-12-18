@@ -95,7 +95,7 @@
                                     <input type="hidden" name="tipoRelatorio" id="tipoRelatorio" value="<%out.print(session.getAttribute("tipoRelatorio"));%>">
                                         <table class="grid">
                                             <tr>
-                                                <td width="28%" align="right"><span class="obrigatorio">*</span> Exibir Ralat√≥rio de: &nbsp;</td>
+                                                <td width="28%" align="right"><span class="obrigatorio">*</span> Exibir RelatÛrio de: &nbsp;</td>
                                                 <td width="72%">
                                                     <select name="local" id="local" onchange="valida_relatorio();">
                                                         <option value=""></option>
@@ -148,7 +148,7 @@
         <!-- Fim do corpo -->
         <!-- Rodap√© -->
         <div id="rodape">
-            Vers√£o do Sistema &nbsp;&nbsp; 1.0
+            Vers„o do Sistema &nbsp;&nbsp; 1.0
         </div>
     </body>
 </html>

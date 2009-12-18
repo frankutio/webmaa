@@ -350,7 +350,13 @@ public class ServletProcesso extends HttpServlet {
                 
                 processo.setStatus("Nao");
 
+                // Recupera o codigo do animal para que se possa desabilita-lo
+
+                Processo animal = ProcessoDAO.getInstance().leProcesso(codigoProcesso);
+                // Finaliza um processo
                 ProcessoDAO.getInstance().finalizarProcesso(processo);
+                // Retira o poder do proprietario
+                AnimalDAO.getInstance().completa_final_processo(animal.getCodigoAnimal());
 
                 // Prepara para mandar uma mensagem para a pessoa que adotou o animal.
 
