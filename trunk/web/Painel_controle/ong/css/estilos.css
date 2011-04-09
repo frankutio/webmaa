@@ -1,0 +1,278 @@
+/* CSS Document */
+
+/***************************************************
+*				FONTES ESTILOS E CORES				*
+****************************************************/
+
+body {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	background:url("../images/bg.jpg") fixed;
+	color:#646464;
+	font-weight:bold;
+}
+
+#faixaTopo {
+	background:url("../images/topo_center.png");
+	border-top:solid 1px #CCCCCC;
+	border-left:solid 1px #CCCCCC;
+	border-right:solid 1px #CCCCCC;
+}
+
+.imgBannerRight {
+	background:url("../images/topo4.png") no-repeat right;
+}
+
+#faixaBanner {
+	border-bottom:solid 1px #CCCCCC;
+	border-left:solid 1px #CCCCCC;
+	border-right:solid 1px #CCCCCC;
+}
+
+.imgBannerInfRight {
+	background:url("../images/topo3.png") no-repeat right;
+}
+
+#faixaStatus {
+	background:url("../images/Status.png") no-repeat top left;
+}
+
+#menu {
+	background:url("../images/bg_menu.png") no-repeat top left;
+}
+
+.imgTopo {
+	background: url("../images/imgTopo.png") no-repeat center top;
+}
+
+.imgTopo_sem_coluna {
+	background: url("../images/imgTopoGeral.png") no-repeat center top;
+}
+
+.imgTopo_geral {
+	background:url("../images/imgTopo_geral.png") no-repeat center top;
+}
+
+.imgBase {
+	background:url("../images/imgBase.png") repeat-y center;
+}
+
+.imgBase_sem_coluna {
+	background:url("../images/imgBaseGeral.png") repeat-y center;
+}
+
+.imgBase_geral {
+	background:url("../images/imgBase_geral.png") repeat-y center;
+}
+
+.imgFim {
+	background:url("../images/imgFim.png") no-repeat center bottom;
+}
+
+.imgFim_sem_coluna {
+	background:url("../images/imgFimGeral.png") no-repeat center bottom;
+}
+
+.imgFim_geral {
+	background:url("../images/imgFim_geral.png") no-repeat center bottom;
+}
+
+
+#cont {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#000099;
+	font-weight:bold;
+}
+
+#cont a:visited, a:link {
+     color: rgb(7,81,215);
+}
+
+#rodape {
+	background:url("../images/rodape.png") no-repeat center top;
+	font-weight:bold;
+	color:#FFF;
+	font-size:14px;
+}
+
+.bordaFaixaLeft {
+	background:url("../images/borda_left_faixa_titulo.png") no-repeat left top;
+}
+
+.bordaFaixaLeft span {
+	background:url("../images/centro_faixa_titulo.png") no-repeat right top;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	color:#FFF;
+}
+
+
+.bordaFaixaPainel_left {
+	background:url("../images/borda_left_faixa_titulo.png") no-repeat left top;
+}
+
+.bordaFaixaPainel_left span {
+	background:url("../images/centro_faixa_titulo.png") no-repeat right top;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	color: #FFF;
+}
+
+.login {
+	background:url("../images/bg_login.png") repeat-x bottom;
+}
+
+.seta_link{
+	cursor:pointer;
+	border:none;
+}
+
+.nota_destaque_Alert { 
+	font-weight:bold; 
+	color:#646464; 
+	border: #900 solid 1px;
+}
+
+.grid{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#646464;
+	font-weight:bold;
+}
+
+.grid span{
+	color:#000000;
+}
+
+.grid a:link{
+	color:#333333;
+	text-decoration: underline;	
+}
+.grid a:visited{
+	color:#333333;
+	text-decoration: underline;	
+}
+
+.grid input{
+color:#2D6AA2;
+font-weight:bold;
+font-size:12px;
+}
+
+.grid select{
+font-size:12px;
+color:#2D6AA2;
+font-weight:bold;
+}
+
+.grid textarea{
+color:#2D6AA2;
+font-size:12px;
+font-weight:bold;
+}
+
+.grid_titulo {
+border:#999999 solid 1px;
+background:url("../images/grid_titulo_azul.png");
+padding: 5px 5px 5px 5px;
+font-family:Tahoma, Arial, Helvetica, sans-serif,;
+font-size:12px;
+color:#FFFFFF;
+font-weight:bold;
+}
+
+.descricaoFoto {
+	font-size:14px;
+	width:60%;
+}
+
+.td_escura{
+background-color:#EAEAEA;
+}
+
+#cont_aba {
+	border:#E8E8E8 solid 1px;
+	padding-left:20px;
+	padding-top:50px;
+}
+
+.cont_aba {
+	border:#E8E8E8 solid 1px;
+	padding-left:20px;
+	padding-top:50px;
+}
+
+.obrigatorio {
+	font-weight:bold !important;
+	color:#FF0000 !important;
+}
+
+.nota_informa{
+	background:url("../images/botao/inform.png") no-repeat left top;
+	color:#FF6600;
+	font-size:12px;
+}
+
+.nota_positiva {
+	background:url("../images/botao/aprova.png") no-repeat left top;
+	color: #000000;
+	font-size:11px;
+}
+
+.sistema {
+	color: #4F1000;
+	font-size:12px;
+}
+
+.nota_informa span{
+	font-size:12px;
+}
+
+.listaAnimal {
+	border-bottom:#CCC solid 1px;
+}
+
+.listaAnimal span:hover {
+	background:url("../gato/images/miniaturas/bg_foto_lightpng.png") no-repeat top left;
+}
+
+.textoTitulo {
+	color: #006;
+	font-size:14px;
+}
+
+/***************************************************
+*						PAINEL						*
+****************************************************/
+
+#foto {
+	background:url("../images/quadro_foto.png") no-repeat left top;
+}
+
+
+#dadosUsuario strong {
+	color:#000;
+}
+
+.sistema {
+	border:#F60 1px dashed;
+}
+
+.alojado{
+	color: #F00;
+}
+
+.adotado{
+	color:#090;
+}
+
+.pendente{
+	color:#F00;
+}
+
+.ativo{
+	color:#090;
+}
