@@ -1,0 +1,56 @@
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+
+/* =-=-=-=-=-=-=-[Menu Three]-=-=-=-=-=-=-=- */
+	
+#menu3 {
+	width: 200px;
+	border: 1px solid #ccc;
+	}
+
+#menu3 ul li{
+	position:relative;
+}
+
+#menu3 li a {
+  	height: 32px;
+  	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	height: 24px;
+	text-decoration: none;
+	}	
+	
+#menu3 li a:link, #menu3 li a:visited {
+	color: #888;
+	display: block;
+	background: url("images/botao/menu3.gif");
+	padding: 8px 0 0 30px;
+	}
+	
+#menu3 li a:hover, #menu3 li a:active {
+	color: #283A50;
+	background: url("images/botao/menu3.gif") 0 -32px;
+	padding: 8px 0 0 30px;
+	font-weight:bold;
+	}
+#menu3 .ativo{
+	color: #000 !important;
+	background: url("images/botao/menu3.gif") 0 -32px !important;
+	padding: 8px 0 0 30px;	
+	font-weight:bold;
+}
+
+#menu3 ul li ul {
+	position:absolute;
+	left:199px;
+	top:0px;
+	width: 200px;
+	visibility:hidden;
+}
+
+#menu3 ul li:hover ul{
+	visibility:visible;
+}
