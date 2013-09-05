@@ -164,8 +164,8 @@ public class ServletAnimais extends HttpServlet {
                             else{
                             // Cria um objeto file com nome do arquivo
                             // A pasta deve oferecer acesso de escrita para Conteiner
-                            File uploadedFile = new File("/Documents and Settings/Frank/Meus documentos/Faculdade/TCC/Implementacao/"
-                                    +"WebMAA/build/web/Gato/images/miniaturas/" + fi.getName());
+                            File uploadedFile = new File("/Users/Frank/Documents/Webs/Projetos/"
+                                    +"webmaa/build/web/Gato/images/miniaturas/" + fi.getName());
                             // Grava arquivo na pasta especificada
                             fi.write(uploadedFile);
                             // Grava o nome do arquivo no perfil do usuario
@@ -252,8 +252,8 @@ public class ServletAnimais extends HttpServlet {
                             else{
                             // Cria um objeto file com nome do arquivo
                         // A pasta deve oferecer acesso de escrita para Conteiner
-                        File uploadedFile = new File("/Documents and Settings/Frank/Meus documentos/Faculdade/TCC/Implementacao/"
-                                +"WebMAA/build/web/Cao/images/miniaturas/" + fi.getName());
+                        File uploadedFile = new File("/Users/Frank/Documents/Webs/Projetos/"
+                                +"webmaa/build/web/Cao/images/miniaturas/" + fi.getName());
                         // Grava arquivo na pasta especificada
                         fi.write(uploadedFile);
                         // Grava o nome do arquivo no perfil do usuario
