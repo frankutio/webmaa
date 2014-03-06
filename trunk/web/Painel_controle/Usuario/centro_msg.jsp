@@ -7,22 +7,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/geral.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/estilos.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/geral.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/menu_drop.css" />
 
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/jquery.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/utilidades.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/maskedinput.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/menuSuper.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/jquery.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/utilidades.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/maskedinput.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/menuSuper.js"></script>
 
 <script>
 function focoBt(id){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
 }
 
 function bt(id){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_logoff.png");
 }
 
 function MM_openBrWindow(theURL,winName,features) { //v2.0
@@ -39,14 +39,14 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 <!-- div com o topo do site -->
 
 <div id="faixaTopo">
-		<div class="imgBannerLeft"><img src="/WebMAA/Painel_controle/Usuario/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
+		<div class="imgBannerLeft"><img src="/Painel_controle/Usuario/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
         <div class="imgBannerRight"></div>   	
 </div>
 
 <!-- div com o banner -->
 
 <div id="faixaBanner">
-	<div class="imgBannerInfLeft"><img src="/WebMAA/Painel_controle/Usuario/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+	<div class="imgBannerInfLeft"><img src="/Painel_controle/Usuario/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
     <div class="imgBannerInfRight"></div>
 </div>
 
@@ -57,7 +57,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 	<tr>
     	<td align="right">
             <c:if test="${Log.login != null}">
-                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+                <img src="/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
             </c:if>
        </td>
     </tr>
@@ -70,20 +70,20 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
-            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+			<li><a href="/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
+            <li><a href="/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
     		</li>            
-    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
-    		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
-            <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
-<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
+    		<li><a href="/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		<li><a href="/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
+            <li><a href="/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+<li><a href="/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -99,7 +99,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_email.png" alt="Msg" title="" style=" float:left; text-align:left; padding-right:5px;" /> Central de Mensagens</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="/Painel_controle/Usuario/images/botao/ico_email.png" alt="Msg" title="" style=" float:left; text-align:left; padding-right:5px;" /> Central de Mensagens</span></div>
                 <br /> 
                 
           <span class="textoTitulo">  Bem vindo ao nosso Centro de Mensagens.<br />
@@ -129,16 +129,16 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                                               <tr class="td_escura">
                                             	<td align="center">
                                                     <c:if test="${Not.remetenteNotificacao == 'Sim'}">
-                                                        <img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_painel2.png" />
+                                                        <img src="/Painel_controle/Usuario/images/botao/ico_painel2.png" />
                                                     </c:if>
                                                      <c:if test="${Not.remetenteNotificacao == 'Nao'}">
-                                                        <img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_ong.png" />
+                                                        <img src="/Painel_controle/Usuario/images/botao/ico_ong.png" />
                                                     </c:if>
                                                 </td>
                                                 <td align="center"><a href="#" name="popUp" onclick="MM_openBrWindow('Mensagem?operacao=lerMsg&codigoMsg=${Not.codigo}','','status=yes,scrollbars=yes,width=600,height=400')">${Not.assunto}</a></td>
                                                 <td align="center">${Not.dataCadastroString}</td>
-                                                <td align="center"><img src="/WebMAA/Painel_controle/Usuario/images/botao/ler_email.png" alt="Ler Email" title="Ler Email" class="seta_link" onclick="MM_openBrWindow('Mensagem?operacao=lerMsg&codigoMsg=${Not.codigo}','','status=yes,scrollbars=yes,width=600,height=400')" /></td>
-                                                <td align="center"><a href="Mensagem?operacao=apagaMsg&codigoMsg=${Not.codigo}&colaborador=${Not.codigoColaborador}&dispara=centro"><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_delete.png" alt="Excluir" title="Excluir" class="seta_link" /></a></td>
+                                                <td align="center"><img src="/Painel_controle/Usuario/images/botao/ler_email.png" alt="Ler Email" title="Ler Email" class="seta_link" onclick="MM_openBrWindow('Mensagem?operacao=lerMsg&codigoMsg=${Not.codigo}','','status=yes,scrollbars=yes,width=600,height=400')" /></td>
+                                                <td align="center"><a href="Mensagem?operacao=apagaMsg&codigoMsg=${Not.codigo}&colaborador=${Not.codigoColaborador}&dispara=centro"><img src="/Painel_controle/Usuario/images/botao/ico_delete.png" alt="Excluir" title="Excluir" class="seta_link" /></a></td>
                                              </tr>
                                           </c:forEach>                                          
                                         </table>
@@ -148,13 +148,13 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                                      
                                <table style=" width:98%;">
                                      	<tr>
-                                        	<td width="5%" align="center"><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_painel2.png" /></td>
+                                        	<td width="5%" align="center"><img src="/Painel_controle/Usuario/images/botao/ico_painel2.png" /></td>
                                             <td width="34%">Msg Enviada pelo Sistema</td>
-                                            <td width="5%" align="center"><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_ong.png" /></td>
+                                            <td width="5%" align="center"><img src="/Painel_controle/Usuario/images/botao/ico_ong.png" /></td>
                                             <td width="56%">Msg Enviada pela Ong</td>
                                         </tr>
                                         <tr>
-                                        	<td width="5%" align="center"><img src="/WebMAA/Painel_controle/Usuario/images/botao/ler_email.png" /></td>
+                                        	<td width="5%" align="center"><img src="/Painel_controle/Usuario/images/botao/ler_email.png" /></td>
                                             <td width="34%">Mensagem</td>
                                             <td width="5%" align="center">&nbsp;</td>
                                             <td width="56%">&nbsp;</td>
@@ -165,7 +165,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                                     <br />
                                     <br />
                                     <div align="center">
-                                    	<img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_voltar.png" alt="Voltar" title="Voltar" class="seta_link" onclick="history.back();" />
+                                    	<img src="/Painel_controle/Usuario/images/botao/bt_voltar.png" alt="Voltar" title="Voltar" class="seta_link" onclick="history.back();" />
                                     </div>
                                        
 		  </div>
@@ -178,7 +178,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 					<div class="bordaFaixaLeft"><span>Login</span></div>
                 	<br />
 
-                    <form action="/WebMAA/NavUsr" name="logar" method="post" class="link">
+                    <form action="/NavUsr" name="logar" method="post" class="link">
 
                     	<input type="hidden" name="operacao" value="login" />
                         <input type="hidden" name="dispara" value="listaAnimal?operacao=detalhar_gato&codigo=${DetalharAnimal.codigo}" />
@@ -195,7 +195,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                         </table>
                         <br />
                         <div align="center">
-                        <input type="image" src="/WebMAA/images/botao/check.png" onmouseover="troca('buscaBotao');" onmouseout="volta('buscaBotao');" id="buscaBotao" title="Buscar"  />
+                        <input type="image" src="/images/botao/check.png" onmouseover="troca('buscaBotao');" onmouseout="volta('buscaBotao');" id="buscaBotao" title="Buscar"  />
                         </div>
                         <br />
                         <span class="obrigatorio">
@@ -227,19 +227,19 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                         </tr>
                          <c:if test="${empty Msg}">
                             <tr>
-                                <td width="29%" align="right"><img src="/WebMAA/images/botao/ico_email.png" alt="Mensagem" title="Mensagem" /> &nbsp;</td>
+                                <td width="29%" align="right"><img src="/images/botao/ico_email.png" alt="Mensagem" title="Mensagem" /> &nbsp;</td>
                                 <td width="71%"> Nenhuma Mesagem</td>
                             </tr>
                         </c:if>
                         <c:if test="${!empty Msg}">
                             <tr>
-                                <td width="29%" align="right"><img src="/WebMAA/images/botao/ico_email.png" alt="Mensagem" title="Mensagem" class="seta_link" /> &nbsp;</td>
+                                <td width="29%" align="right"><img src="/images/botao/ico_email.png" alt="Mensagem" title="Mensagem" class="seta_link" /> &nbsp;</td>
                                 <td width="71%"><a href="Mensagem?operacao=abrirCentro&colaborador=${Colaborador.codigo}"><span class="obrigatorio">${qtd}</span> Mensagen(s) Nova(s)</a></td>
                             </tr>
                         </c:if>
                         <tr>
 
-                        	<td align="right"><img src="/WebMAA/images/botao/ico_painel.png" alt="Painel" title="Ir para o Painel de Controle" class="seta_link" /> &nbsp;</td>
+                        	<td align="right"><img src="/images/botao/ico_painel.png" alt="Painel" title="Ir para o Painel de Controle" class="seta_link" /> &nbsp;</td>
                             <td><a href="PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Meu Painel de Controle</a></td>
                         </tr>
                     </table>

@@ -211,7 +211,7 @@ body {
 	height:125px;
 	float:left;
 	margin-right:10px;
-	background:url("../gato/images/miniaturas/bg_foto.png") no-repeat top left;
+	background:url("/gato/images/miniaturas/bg_foto.png") no-repeat top left;
 }
 
 .listaAnimal span img {

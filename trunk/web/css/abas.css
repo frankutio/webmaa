@@ -5,7 +5,7 @@
     .tabsB {
       float:left;
       width:100%;
-      background: url("../images/bg_menu_super.png");
+      background: url("/images/bg_menu_super.png");
       font-size:93%;
       line-height:normal;
       }
@@ -21,7 +21,7 @@
       }
     .tabsB a {
       float:left;
-      background:url("../images/tableftB.gif") no-repeat left top;
+      background:url("/images/tableftB.gif") no-repeat left top;
 	  margin-left:5px;
       padding:0 0 0 4px;
       text-decoration:none;
@@ -31,7 +31,7 @@
     .tabsB a span {
       float:left;
       display:block;
-      background:url("../images/tabrightB_largo.png") no-repeat right top;
+      background:url("/images/tabrightB_largo.png") no-repeat right top;
       padding:5px 15px 4px 6px;
       color:#646464;
 	  font-weight:bold;
@@ -43,21 +43,21 @@
       color:#646464;
       }
     .tabsB a:hover {
-      background:url("../images/tableftB.png") no-repeat left top !important;
+      background:url("/images/tableftB.png") no-repeat left top !important;
       }
     .tabsB a:hover span {
-		background:url("../images/tabrightB.png")  no-repeat right top !important;
+		background:url("/images/tabrightB.png")  no-repeat right top !important;
       }
 	
 	.tabsB #ativo a {
-		background:url("../images/tableftB_current.png") no-repeat left top !important;
+		background:url("/images/tableftB_current.png") no-repeat left top !important;
 	}
 	.tabsB #ativo a span {
-		background:url("../images/tabrightB_current.png") no-repeat right top !important;
+		background:url("/images/tabrightB_current.png") no-repeat right top !important;
 	}
 	.tabsB .ativo a {
-		background:url("../images/tableftB_current.png") no-repeat left top !important;
+		background:url("/images/tableftB_current.png") no-repeat left top !important;
 	}
 	.tabsB .ativo a span {
-		background:url("../images/tabrightB_current.png") no-repeat right top !important;
+		background:url("/images/tabrightB_current.png") no-repeat right top !important;
 	}

@@ -4,40 +4,40 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
-<link type="text/css" rel="stylesheet" href="css/geral.css" />
-<link type="text/css" rel="stylesheet" href="css/estilos.css" />
-<link type="text/css" rel="stylesheet" href="css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/css/geral.css" />
+<link type="text/css" rel="stylesheet" href="/css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="/css/menu_drop.css" />
 
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/utilidades.js"></script>
-<script type="text/javascript" src="js/maskedinput.js"></script>
-<script type="text/javascript" src="js/menuSuper.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/utilidades.js"></script>
+<script type="text/javascript" src="/js/maskedinput.js"></script>
+<script type="text/javascript" src="/js/menuSuper.js"></script>
 
 <script>
 function focoBt(id){
 	if(id ==="doar"){
-		$("#"+id).attr("src","images/botao/bt_doar_light.png");
+		$("#"+id).attr("src","/images/botao/bt_doar_light.png");
 	}
 	
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","images/botao/bt_logoff_light.png");
+		$("#"+id).attr("src","/images/botao/bt_logoff_light.png");
 	}
 	
 	else if(id ==="cancelar"){
-		$("#"+id).attr("src","images/botao/bt_desistir_light.png");
+		$("#"+id).attr("src","/images/botao/bt_desistir_light.png");
 	}
 }
 
 function bt(id){
 	if(id ==="doar"){
-		$("#"+id).attr("src","images/botao/bt_doar.png");
+		$("#"+id).attr("src","/images/botao/bt_doar.png");
 	}
 	
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","images/botao/bt_logoff.png");
+		$("#"+id).attr("src","/images/botao/bt_logoff.png");
 	}
 	else if(id ==="cancelar"){
-		$("#"+id).attr("src","images/botao/bt_desistir.png");
+		$("#"+id).attr("src","/images/botao/bt_desistir.png");
 	}
 }
 </script>
@@ -51,14 +51,14 @@ function bt(id){
 <!-- div com o topo do site -->
 
 <div id="faixaTopo">
-		<div class="imgBannerLeft"><img src="images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
+		<div class="imgBannerLeft"><img src="/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
         <div class="imgBannerRight"></div>   	
 </div>
 
 <!-- div com o banner -->
 
 <div id="faixaBanner">
-	<div class="imgBannerInfLeft"><img src="images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+	<div class="imgBannerInfLeft"><img src="/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
     <div class="imgBannerInfRight"></div>
 </div>
 
@@ -69,7 +69,7 @@ function bt(id){
 	<tr>
     	<td align="right">
             <c:if test="${Log.login != null}">
-                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+                <img src="/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='/logoff?operacao=sair';" />
             </c:if>
        </td>
     </tr>
@@ -82,19 +82,19 @@ function bt(id){
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notcias</span></a></li>
-            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+			<li><a href="/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="/noticias.jsp" onfocus="limpaMenu();"><span>Notcias</span></a></li>
+            <li><a href="/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
     		</li>
-    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
-    		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
-            <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+    		<li><a href="/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		<li><a href="/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
+            <li><a href="/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -110,7 +110,7 @@ function bt(id){
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Adoção - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Adoção - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br />          
             
                 <div class="nota_informa">
@@ -118,7 +118,7 @@ function bt(id){
           </div>
             <!-- FOTO DO USUARIO -->            
             <div id="foto">
-           	  <img src="../../gato/images/miniaturas/loky.png" />            
+           	  <img src="/gato/images/miniaturas/loky.png" />            
             </div>
             <!-- FOTO -->
             
@@ -146,7 +146,7 @@ function bt(id){
                         </tr>
                     </table>
                     <div align="right" style="width:95%;">
-                    	<img src="images/botao/bt_desistir.png" id="cancelar" onmouseover="focoBt('cancelar');" onmouseout="bt('cancelar');" class="seta_link" />
+                    	<img src="/images/botao/bt_desistir.png" id="cancelar" onmouseover="focoBt('cancelar');" onmouseout="bt('cancelar');" class="seta_link" />
                     </div>
                     <br />
                     
@@ -191,15 +191,15 @@ function bt(id){
                 	<br />
               <table class="grid">
                         <tr>
-                        	<td width="29%" align="right"><a href="cad_edit.html"><img src="images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
+                        	<td width="29%" align="right"><a href="cad_edit.html"><img src="/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
                             <td width="71%"><a href="cad_edit.html">Alterar Cadastro</a></td>
                         </tr>
                         <tr>
-                        	<td align="right"><a href="senha_edit.html"><img src="images/botao/senha.png" alt="Alterar Aenha" title="Alterar Senha" class="seta_link" /></a> &nbsp;</td>
+                        	<td align="right"><a href="senha_edit.html"><img src="/images/botao/senha.png" alt="Alterar Aenha" title="Alterar Senha" class="seta_link" /></a> &nbsp;</td>
                             <td><a href="senha_edit.html">Alterar Senha</a></td>
                         </tr>
                         <tr>
-                        	<td align="right"><a href="index.html"><img src="images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
+                        	<td align="right"><a href="index.html"><img src="/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
                             <td><a href="index.html">Painel de Controle</a></td>
                         </tr>
                     </table>
@@ -212,7 +212,7 @@ function bt(id){
                
                <table class="grid">
                		<tr>
-                    	<td><img src="images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link" /></td>
+                    	<td><img src="/images/botao/ico_acmp.png" alt="Ver Adoção" title="Acompanhar Adoção" class="seta_link" /></td>
                         <td><a href="acompanhar_adocao.html">Acompanhar Adoção</a></td>
                     </tr>
                </table> 
@@ -222,11 +222,11 @@ function bt(id){
                
                <table class="grid">
                		<tr>
-                    	<td valign="top"><img src="images/botao/alert.png" alt="alerta" title="alerta" /></td>
+                    	<td valign="top"><img src="/images/botao/alert.png" alt="alerta" title="alerta" /></td>
                         <td>Nenhum Animal Cadastrado para Adoção</td>
                  </tr>
                  <tr>
-                 	<td colspan="2" align="center"><a href="cad_animal.html"><img src="images/botao/bt_doar.png" alt="Cadatrar Animal Para DoaÃ§Ã£o" title="Cadatrar Animal Para DoaÃ§Ã£o" class="seta_link" id="doar" onmouseover="focoBt('doar');" onmouseout="bt('doar');" /></a></td>
+                 	<td colspan="2" align="center"><a href="cad_animal.html"><img src="/images/botao/bt_doar.png" alt="Cadatrar Animal Para DoaÃ§Ã£o" title="Cadatrar Animal Para DoaÃ§Ã£o" class="seta_link" id="doar" onmouseover="focoBt('doar');" onmouseout="bt('doar');" /></a></td>
                  </tr>
                </table> 
                        

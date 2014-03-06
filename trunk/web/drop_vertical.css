@@ -26,19 +26,19 @@ ul {
 #menu3 li a:link, #menu3 li a:visited {
 	color: #888;
 	display: block;
-	background: url("images/botao/menu3.gif");
+	background: url("/images/botao/menu3.gif");
 	padding: 8px 0 0 30px;
 	}
 	
 #menu3 li a:hover, #menu3 li a:active {
 	color: #283A50;
-	background: url("images/botao/menu3.gif") 0 -32px;
+	background: url("/images/botao/menu3.gif") 0 -32px;
 	padding: 8px 0 0 30px;
 	font-weight:bold;
 	}
 #menu3 .ativo{
 	color: #000 !important;
-	background: url("images/botao/menu3.gif") 0 -32px !important;
+	background: url("/images/botao/menu3.gif") 0 -32px !important;
 	padding: 8px 0 0 30px;	
 	font-weight:bold;
 }

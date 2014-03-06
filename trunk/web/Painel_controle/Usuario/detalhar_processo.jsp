@@ -6,62 +6,62 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/geral.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/estilos.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/geral.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/menu_drop.css" />
 
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/jquery.min.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/jquery.min.js"></script>
 
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/jquery.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/utilidades.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/maskedinput.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/menuSuper.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/jquery.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/utilidades.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/maskedinput.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/menuSuper.js"></script>
 
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/modal.js"></script>
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/estilo_modal.css" />
+<script type="text/javascript" src="/Painel_controle/Usuario/js/modal.js"></script>
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/estilo_modal.css" />
 
 
 <script>
 
 $(function() {
 	$(".logoff").mouseover(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
 	});
 
 	$(".logoff").mouseout(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_logoff.png");
 	});
 	
 	$(".aprovar").mouseover(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_aprovar_light.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_aprovar_light.png");
 	});
 
 	$(".aprovar").mouseout(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_aprovar.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_aprovar.png");
 	});
 	
 	$(".ok").mouseover(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_ok_light.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_ok_light.png");
 	});
 
 	$(".ok").mouseout(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_ok.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_ok.png");
 	});
 	
 	$(".cancelar").mouseover(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_cancelar_light.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_cancelar_light.png");
 	});
 
 	$(".cancelar").mouseout(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho");
 	});
 	
 	$(".reprovar").mouseover(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_reprovar_light.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_reprovar_light.png");
 	});
 
 	$(".reprovar").mouseout(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_reprovar.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_reprovar.png");
 	});
 
 });
@@ -98,7 +98,7 @@ function exibeModal1(e) {
 
 $(function() {
     $(".linkDetalhar").click(function(e) {
-        $.get('/WebMAA/gerProcesso', {
+        $.get('/gerProcesso', {
             operacao: "recupera_modal",
             codigoProcesso: $(this).attr("id")}, function(resposta) {
                 $("#dinamico").html(resposta);
@@ -122,14 +122,14 @@ $(function() {
 <!-- div com o topo do site -->
 
 <div id="faixaTopo">
-		<div class="imgBannerLeft"><img src="/WebMAA/Painel_controle/Usuario/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
+		<div class="imgBannerLeft"><img src="/Painel_controle/Usuario/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
         <div class="imgBannerRight"></div>   	
 </div>
 
 <!-- div com o banner -->
 
 <div id="faixaBanner">
-	<div class="imgBannerInfLeft"><img src="/WebMAA/Painel_controle/Usuario/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+	<div class="imgBannerInfLeft"><img src="/Painel_controle/Usuario/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
     <div class="imgBannerInfRight"></div>
 </div>
 
@@ -140,7 +140,7 @@ $(function() {
 	<tr>
     	<td align="right">
             <c:if test="${Log.login != null}">
-                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link logoff" onclick="window.location='logoff?operacao=sair';" />
+                <img src="/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link logoff" onclick="window.location='logoff?operacao=sair';" />
             </c:if>
        </td>
     </tr>
@@ -153,20 +153,20 @@ $(function() {
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
-            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+			<li><a href="/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
+            <li><a href="/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
     		</li>            
-    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
-    		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
-            <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
-<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
+    		<li><a href="/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		<li><a href="/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
+            <li><a href="/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+<li><a href="/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -182,7 +182,7 @@ $(function() {
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Ado&ccedil;&atilde;o - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Ado&ccedil;&atilde;o - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br />          
             
                 <div class="nota_informa">
@@ -190,7 +190,7 @@ $(function() {
           </div>
             <!-- FOTO DO USUARIO -->            
             <div id="foto">
-           	  <img src="/WebMAA/${Animal.especie}/images/miniaturas/${Animal.endFoto}" />
+           	  <img src="/${Animal.especie}/images/miniaturas/${Animal.endFoto}" />
             </div>
             <!-- FOTO -->
             
@@ -206,7 +206,7 @@ $(function() {
 				  <td width="28%"><h2 class="fase">Fase 1/3</h2></td>
 					<td width="72%">
                         <c:if test="${Processos.faseProcesso != 1}">
-                            <span id="fase1_completa"><img src="/WebMAA/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span>
+                            <span id="fase1_completa"><img src="/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span>
                         </c:if>
                    </td>
 
@@ -262,14 +262,14 @@ $(function() {
                                         <span class="obrigatorio">1</span>
                                     </c:if>
                                 </td>
-                                <td align="center"><a href="#divModal" class="linkDetalhar" id="${Processos.codigo}" ><img src="/WebMAA/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
+                                <td align="center"><a href="#divModal" class="linkDetalhar" id="${Processos.codigo}" ><img src="/Painel_controle/Usuario/images/botao/zoom.png" alt="Detalhar" title="Detalhar" class="seta_link" /></a></td>
                             </tr>
                     </table>
 
                     <c:if test="${Processos.faseProcesso == 1}">
                     <div align="center" style="width:95%;">
-                    	<a href="/WebMAA/gerProcesso?operacao=confirma_processo&codigo=${Processos.codigo}&fase=2&codAnimal=${Animal.codigo}&codigoColab=${ColabProcesso.codigo}"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_aprovar.png" class="seta_link aprovar" alt="Aprovar" title="Aprovar" /></a> &nbsp;&nbsp;
-                        <a href="#confirm_Reprovacao" name="modal"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_reprovar.png" alt="Reprovar" title="Reprovar" class="seta_link reprovar" /></a>
+                    	<a href="/gerProcesso?operacao=confirma_processo&codigo=${Processos.codigo}&fase=2&codAnimal=${Animal.codigo}&codigoColab=${ColabProcesso.codigo}"><img src="/Painel_controle/Usuario/images/botao/bt_aprovar.png" class="seta_link aprovar" alt="Aprovar" title="Aprovar" /></a> &nbsp;&nbsp;
+                        <a href="#confirm_Reprovacao" name="modal"><img src="/Painel_controle/Usuario/images/botao/bt_reprovar.png" alt="Reprovar" title="Reprovar" class="seta_link reprovar" /></a>
                     </div>
                     </c:if>
 
@@ -287,7 +287,7 @@ $(function() {
 				  				<td width="28%"><h2 class="fase">Fase 2/3</h2></td>
 								<td width="72%">
                                     <c:if test="${Processos.faseProcesso == 4}">
-                                        <span id="fase2_completa" class="escondeFase"><img src="/WebMAA/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span>
+                                        <span id="fase2_completa" class="escondeFase"><img src="/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp;Concluida!</span>
                                     </c:if>
                                </td>
 							</tr>
@@ -340,7 +340,7 @@ $(function() {
                     
                     <c:if test="${Processos.faseProcesso == 2}">
                         <div align="right" style="width:95%;">
-                            <a href="#confirm_Reprovacao" name="modal"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho.png" class="seta_link cancelar" alt="Cancelar" title="Cancelar esta Adoção" /></a>
+                            <a href="#confirm_Reprovacao" name="modal"><img src="/Painel_controle/Usuario/images/botao/bt_cancelar_vermelho.png" class="seta_link cancelar" alt="Cancelar" title="Cancelar esta Adoção" /></a>
                         </div>
                     </c:if>
                     <br />
@@ -348,7 +348,7 @@ $(function() {
                     <c:if test="${Processos.faseProcesso == 3}">
                     <div id="aprovado">
                     
-                    	<span style="color:#060; font-size:14px;"><img src="/WebMAA/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp; Parabéns ${Colaborador.nome}, O processo de adoção foi aceito pelo usuario.</span>
+                    	<span style="color:#060; font-size:14px;"><img src="/Painel_controle/Usuario/images/botao/aprova.png" /> &nbsp; Parabéns ${Colaborador.nome}, O processo de adoção foi aceito pelo usuario.</span>
                         <br />
                         <br />
                         
@@ -363,7 +363,7 @@ $(function() {
                         <br />
                         <br />
 
-                        <form method="post" action="/WebMAA/gerProcesso">
+                        <form method="post" action="/gerProcesso">
                             <input type="hidden" name="operacao" value="declarar_entrega" />
                             <input type="hidden" name="codigoProcesso" value="${Processos.codigo}" />
                             <input type="hidden" name="codigoAnimal" value="${Processos.codigoAnimal}" />
@@ -371,12 +371,12 @@ $(function() {
 
                         <table class="grid">
                         	<tr>
-                            	<td width="72%"><img src="/WebMAA/Painel_controle/Usuario/images/botao/alert.png" /> &nbsp; Afirmo que ja entreguei o animal ao Enteressado:</td>
+                            	<td width="72%"><img src="/Painel_controle/Usuario/images/botao/alert.png" /> &nbsp; Afirmo que ja entreguei o animal ao Enteressado:</td>
                                 <td width="28%" valign="bottom"><input type="radio" name="confirma" value="Sim" /></td>
                           </tr>
                         </table>
                          <div align="center" style="width:95%;">
-                    		<input type="image" src="/WebMAA/Painel_controle/Usuario/images/botao/bt_finalizar.png" alt="Finalizar" title="Finalizar Adoção" name="final" value="ok" class="btFinalizar" /><br /><br />
+                    		<input type="image" src="/Painel_controle/Usuario/images/botao/bt_finalizar.png" alt="Finalizar" title="Finalizar Adoção" name="final" value="ok" class="btFinalizar" /><br /><br />
                              <%
                                 if(request.getAttribute("MsgErro") != null){
                                     out.print("<span class='obrigatorio'>"+request.getAttribute("MsgErro") +
@@ -411,12 +411,12 @@ $(function() {
                 	<br />
               <table class="grid">
                         <tr>
-                        	<td width="29%" align="right"><a href="/WebMAA/Painel_controle/Usuario/cad_edit.html"><img src="/WebMAA/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
-                            <td width="71%"><a href="/WebMAA/NavUsr?operacao=alterar_cad">Alterar Cadastro</a></td>
+                        	<td width="29%" align="right"><a href="/Painel_controle/Usuario/cad_edit.html"><img src="/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
+                            <td width="71%"><a href="/NavUsr?operacao=alterar_cad">Alterar Cadastro</a></td>
                         </tr>
                         <tr>
-                        	<td align="right"><a href="index.html"><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
-                            <td><a href="/WebMAA/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Painel de Controle</a></td>
+                        	<td align="right"><a href="index.html"><img src="/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
+                            <td><a href="/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Painel de Controle</a></td>
                         </tr>
                     </table>
                     
@@ -466,7 +466,7 @@ $(function() {
 
                                <div align="right">
 
-                                    	<img src="/WebMAA/Painel_controle/Usuario/images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
+                                    	<img src="/Painel_controle/Usuario/images/botao/fechar.png" alt="Fechar" title="Fechar a Janela" class="seta_link close" />
                                 </div>
                         </div>
 					</div>
@@ -499,7 +499,7 @@ $(function() {
                                    Gostaria de explicar a sua decisao? então a descreva abaixo:
                                     <br />
                                     <br />
-                                    <form method="post" action="/WebMAA/gerProcesso">
+                                    <form method="post" action="/gerProcesso">
                                         <input type="hidden" name="operacao" value="cancela_processo_dono">
                                         <input type="hidden" name="codigo" value="${Processos.codigo}">
                                         <input type="hidden" name="codAnimal" value="${Animal.codigo}">
@@ -523,7 +523,7 @@ $(function() {
                                     <div align="center">
 
                                     	<input type="image" src="images/botao/bt_ok.png" alt="Ok" title="OK" class="seta_link ok"  /> &nbsp;&nbsp;
-                                        <img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_cancelar.png" alt="Cancelar" title="Cancelar" class="seta_link close" />
+                                        <img src="/Painel_controle/Usuario/images/botao/bt_cancelar.png" alt="Cancelar" title="Cancelar" class="seta_link close" />
                                     </div>
                                     </form>
                                     <br />

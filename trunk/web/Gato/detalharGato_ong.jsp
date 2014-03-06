@@ -4,39 +4,39 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
-<link type="text/css" rel="stylesheet" href="../css/geral.css" />
-<link type="text/css" rel="stylesheet" href="../css/estilos.css" />
-<link type="text/css" rel="stylesheet" href="../css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/css/geral.css" />
+<link type="text/css" rel="stylesheet" href="/css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="/css/menu_drop.css" />
 
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/utilidades.js"></script>
-<script type="text/javascript" src="../js/maskedinput.js"></script>
-<script type="text/javascript" src="../js/menuSuper.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/utilidades.js"></script>
+<script type="text/javascript" src="/js/maskedinput.js"></script>
+<script type="text/javascript" src="/js/menuSuper.js"></script>
 
 <script type="text/javascript">
 <!--
 function focoBt(id){
 	
 	if(id ==="adota"){
-		$("#"+id).attr("src","../images/botao/bt_adotar_light.png");
+		$("#"+id).attr("src","/images/botao/bt_adotar_light.png");
 	}
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","../images/botao/bt_logoff_light.png");
+		$("#"+id).attr("src","/images/botao/bt_logoff_light.png");
 	}
 	else if(id ==="continuar"){
-		$("#"+id).attr("src","../images/botao/bt_continuar_light.png");
+		$("#"+id).attr("src","/images/botao/bt_continuar_light.png");
 	}
 }
 
 function bt(id){
 	if(id ==="adota"){
-		$("#"+id).attr("src","../images/botao/bt_adotar.png");
+		$("#"+id).attr("src","/images/botao/bt_adotar.png");
 	}
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","../images/botao/bt_logoff.png");
+		$("#"+id).attr("src","/images/botao/bt_logoff.png");
 	}
 	else if(id ==="continuar"){
-		$("#"+id).attr("src","../images/botao/bt_continuar.png");
+		$("#"+id).attr("src","/images/botao/bt_continuar.png");
 	}
 }
 -->
@@ -51,15 +51,15 @@ function bt(id){
 <!-- div com o topo do site -->
 
 <div id="faixaTopo">
-		<div class="imgBannerLeft"><img src="../images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
-        <div class="imgBannerRight" style="background:url(../images/topo_gato4.png) no-repeat right bottom;"></div>   	
+		<div class="imgBannerLeft"><img src="/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
+        <div class="imgBannerRight" style="background:url(/images/topo_gato4.png) no-repeat right bottom;"></div>   	
 </div>
 
 <!-- div com o banner -->
 
 <div id="faixaBanner">
-	<div class="imgBannerInfLeft"><img src="../images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
-    <div class="imgBannerInfRight" style="background:url(../images/topo_gato3.png) no-repeat right;"></div>
+	<div class="imgBannerInfLeft"><img src="/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+    <div class="imgBannerInfRight" style="background:url(/images/topo_gato3.png) no-repeat right;"></div>
 </div>
 
 <!-- div Status -->
@@ -67,7 +67,7 @@ function bt(id){
 <div id="faixaStatus">
 <table class="grid" style=" margin-top:-6px;">
 	<tr>
-    	<td align="right"><img src="../images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='../index.html';" /></td>
+    	<td align="right"><img src="/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='/index.html';" /></td>
     </tr>
 </table>
 </div>
@@ -167,7 +167,7 @@ function bt(id){
                 
       </div>
       <div align="center">
-                	<img src="../images/botao/bt_adotar.png" alt="Adotar" title="Adotar este Animal" class="seta_link" id="adota" onmouseover="focoBt('adota');" onmouseout="bt('adota');" onclick="mostra('dadosInicio','confirAdocao')" />
+                	<img src="/images/botao/bt_adotar.png" alt="Adotar" title="Adotar este Animal" class="seta_link" id="adota" onmouseover="focoBt('adota');" onmouseout="bt('adota');" onclick="mostra('dadosInicio','confirAdocao')" />
                 </div>
                
                <!-- FIM DOS DETALHES -->
@@ -250,8 +250,8 @@ function bt(id){
 			</table>
             <br />
             <div style="width:50%; text-align:right;">
-            	<img src="../images/botao/seta_left.png" alt="Voltar" title="Voltar" class="seta_link" onclick="mostra('confirAdocao','dadosInicio');" />&nbsp;&nbsp;
-                <img src="../images/botao/bt_continuar.png" alt="ok" title="Continuar" class="seta_link" id="continuar" onmouseover="focoBt('continuar');" onmouseout="bt('continuar');" onclick="mostra('confirAdocao','confirmacao')" />
+            	<img src="/images/botao/seta_left.png" alt="Voltar" title="Voltar" class="seta_link" onclick="mostra('confirAdocao','dadosInicio');" />&nbsp;&nbsp;
+                <img src="/images/botao/bt_continuar.png" alt="ok" title="Continuar" class="seta_link" id="continuar" onmouseover="focoBt('continuar');" onmouseout="bt('continuar');" onclick="mostra('confirAdocao','confirmacao')" />
             </div> 
                               
                 </div>
@@ -289,12 +289,12 @@ function bt(id){
                             <td align="center" colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                        	<td width="29%" align="right"><img src="../images/botao/ico_email.png" alt="Mensagem" title="Mensagem" class="seta_link" /> &nbsp;</td>
-                            <td width="71%"><a href="../Painel_controle/Usuario/centro_msg.html"><span class="obrigatorio">0</span> Mensagem(s) Nova(s)</a></td>
+                        	<td width="29%" align="right"><img src="/images/botao/ico_email.png" alt="Mensagem" title="Mensagem" class="seta_link" /> &nbsp;</td>
+                            <td width="71%"><a href="/Painel_controle/Usuario/centro_msg.html"><span class="obrigatorio">0</span> Mensagem(s) Nova(s)</a></td>
                         </tr>
                         <tr>
-                        	<td align="right"><img src="../images/botao/ico_painel.png" alt="Painel" title="Ir para o Painel de Controle" class="seta_link" /> &nbsp;</td>
-                            <td><a href="../Painel_controle/Usuario/index.html">Meu Painel de Controle</a></td>
+                        	<td align="right"><img src="/images/botao/ico_painel.png" alt="Painel" title="Ir para o Painel de Controle" class="seta_link" /> &nbsp;</td>
+                            <td><a href="/Painel_controle/Usuario/index.html">Meu Painel de Controle</a></td>
                         </tr>
                     </table>
                     
