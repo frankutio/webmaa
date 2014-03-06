@@ -9,49 +9,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/geral.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/estilos.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/geral.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/menu_drop.css" />
 
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/jquery.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/utilidades.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/maskedinput.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/menuSuper.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/jquery.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/utilidades.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/maskedinput.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/menuSuper.js"></script>
 
 <script>
 function focoBt(id){
 		if(id ==="doar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_doar_light.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_doar_light.png");
 	}
 	
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
 	}
 	
 	else if(id ==="alterar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_alterar_light.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_alterar_light.png");
 	}
 	
 	else if(id ==="cancelar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_cancelar_light.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_cancelar_light.png");
 	}
 }
 
 function bt(id){
 		if(id ==="doar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_doar.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_doar.png");
 	}
 	
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_logoff.png");
 	}
 	
 	else if(id ==="alterar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_alterar.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_alterar.png");
 	}
 	
 	else if(id ==="cancelar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_cancelar.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_cancelar.png");
 	}
 }
 
@@ -85,14 +85,14 @@ function preenche(){
 <!-- div com o topo do site -->
 
 <div id="faixaTopo">
-		<div class="imgBannerLeft"><img src="/WebMAA/Painel_controle/Usuario/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
+		<div class="imgBannerLeft"><img src="/Painel_controle/Usuario/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
         <div class="imgBannerRight"></div>   	
 </div>
 
 <!-- div com o banner -->
 
 <div id="faixaBanner">
-	<div class="imgBannerInfLeft"><img src="/WebMAA/Painel_controle/Usuario/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+	<div class="imgBannerInfLeft"><img src="/Painel_controle/Usuario/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
     <div class="imgBannerInfRight"></div>
 </div>
 
@@ -103,7 +103,7 @@ function preenche(){
 	<tr>
     	<td align="right">
             <c:if test="${Log.login != null}">
-                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+                <img src="/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='/logoff?operacao=sair';" />
             </c:if>
        </td>
     </tr>
@@ -116,20 +116,20 @@ function preenche(){
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
-            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+			<li><a href="/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
+            <li><a href="/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
     		</li>            
-    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
-    		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
-            <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
-            <li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
+    		<li><a href="/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		<li><a href="/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
+            <li><a href="/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+            <li><a href="/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -145,10 +145,10 @@ function preenche(){
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Bem Vindo fulano@gmail.com - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Bem Vindo fulano@gmail.com - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br /><!-- FOTO DO USUARIO -->            
             <div id="foto">
-                <img src="/WebMAA/Painel_controle/Usuario/foto/${Colaborador.endFoto}" />
+                <img src="/Painel_controle/Usuario/foto/${Colaborador.endFoto}" />
             </div>
             <!-- FOTO -->
             
@@ -156,7 +156,7 @@ function preenche(){
             <div id="dadosUsuario">
             <span class="obrigatorio">* Campos de Preenchimento Obrigatório</span>
             <br />
-            <form name="editaDados" action="/WebMAA/NavUsr" method="post">
+            <form name="editaDados" action="/NavUsr" method="post">
             
             	<input type="hidden" name="cod" value="${Colaborador.codigo}" />
                 <input type="hidden" name="operacao" value="ColaboradorEditaProcessa" />
@@ -251,8 +251,8 @@ function preenche(){
                      <br />
                      
        <div align="center">
-                     	<input type="image" src="/WebMAA/Painel_controle/Usuario/images/botao/bt_alterar.png" alt="Alterar" title="Alterar" id="alterar" onmouseover="focoBt('alterar');" onmouseout="bt('alterar');" />&nbsp; &nbsp;
-                        <a href="/WebMAA/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_cancelar.png" alt="Cancelar" title="Cancelar" class="seta_link" id="cancelar" onmouseover="focoBt('cancelar');" onmouseout="bt('cancelar');" /></a></div>
+                     	<input type="image" src="/Painel_controle/Usuario/images/botao/bt_alterar.png" alt="Alterar" title="Alterar" id="alterar" onmouseover="focoBt('alterar');" onmouseout="bt('alterar');" />&nbsp; &nbsp;
+                        <a href="/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}"><img src="/Painel_controle/Usuario/images/botao/bt_cancelar.png" alt="Cancelar" title="Cancelar" class="seta_link" id="cancelar" onmouseover="focoBt('cancelar');" onmouseout="bt('cancelar');" /></a></div>
                 </form>
           </div>            
             <!-- DADOS DO USUARIO -->
@@ -289,12 +289,12 @@ function preenche(){
                 	<br />
               <table class="grid">
                         <tr>
-                        	<td width="29%" align="right"><a href="/WebMAA/Painel_controle/Usuario/cad_edit.html"><img src="/WebMAA/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
-                            <td width="71%"><a href="/WebMAA/NavUsr?operacao=alterar_cad">Alterar Cadastro</a></td>
+                        	<td width="29%" align="right"><a href="/Painel_controle/Usuario/cad_edit.html"><img src="/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
+                            <td width="71%"><a href="/NavUsr?operacao=alterar_cad">Alterar Cadastro</a></td>
                         </tr>
                         <tr>
-                        	<td align="right"><a href="index.html"><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
-                            <td><a href="/WebMAA/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Painel de Controle</a></td>
+                        	<td align="right"><a href="index.html"><img src="/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
+                            <td><a href="/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Painel de Controle</a></td>
                         </tr>
                     </table>
                     

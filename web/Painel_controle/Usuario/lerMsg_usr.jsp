@@ -8,7 +8,7 @@
 <style>
 
 body {
-	background:url("/WebMAA/Painel_controle/Usuario/images/bg_msg.png");
+	background:url("/Painel_controle/Usuario/images/bg_msg.png");
 }
 
 #cont {
@@ -21,13 +21,13 @@ body {
 	font:Tahoma, Geneva, sans-serif;
 	font-size:18px;
 	color:#000;
-	background: url(/WebMAA/Painel_controle/Usuario/images/bg_titulo_msg.png) no-repeat top left;
+	background: url(/Painel_controle/Usuario/images/bg_titulo_msg.png) no-repeat top left;
 	height:33px;
 	width:95%;
 }
 
 #titulo span {
-	background:url("/WebMAA/Painel_controle/Usuario/images/bg_msg_left.png") no-repeat right top ;
+	background:url("/Painel_controle/Usuario/images/bg_msg_left.png") no-repeat right top ;
 	display:block;
 	height:33px;
 	margin-left:17px;
@@ -103,7 +103,7 @@ border:solid 1px #009900;
 
 .grid_titulo {
 border:#999999 solid 1px;
-background:url("/WebMAA/Painel_controle/Usuario/images/grid_titulo_azul.png");
+background:url("/Painel_controle/Usuario/images/grid_titulo_azul.png");
 padding: 5px 5px 5px 5px;
 font-family:Tahoma, Arial, Helvetica, sans-serif;
 font-size:12px;
@@ -123,10 +123,10 @@ font-weight:bold;
 <div id="titulo">
 	<span>
         <c:if test="${Notificacao.remetenteNotificacao == 'Sim'}">
-            <img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_painel2.png" />
+            <img src="/Painel_controle/Usuario/images/botao/ico_painel2.png" />
         </c:if>
         <c:if test="${Notificacao.remetenteNotificacao == 'Nao'}">
-            <img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_ong.png" />
+            <img src="/Painel_controle/Usuario/images/botao/ico_ong.png" />
         </c:if>
         &nbsp; ${Notificacao.assunto}
 </span>
@@ -143,7 +143,7 @@ font-weight:bold;
 
 <br />
 <div align="right">
-	<img src="/WebMAA/Painel_controle/Usuario/images/botao/fechar.png" alt="Fechar" title="Fechar" class="seta_link" onclick="window.close();" />
+	<img src="/Painel_controle/Usuario/images/botao/fechar.png" alt="Fechar" title="Fechar" class="seta_link" onclick="window.close();" />
 </div>
 
 </div>

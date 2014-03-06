@@ -6,39 +6,39 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/geral.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/estilos.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/Painel_controle/Usuario/css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/geral.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="/Painel_controle/Usuario/css/menu_drop.css" />
 
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/jquery.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/utilidades.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/maskedinput.js"></script>
-<script type="text/javascript" src="/WebMAA/Painel_controle/Usuario/js/menuSuper.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/jquery.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/utilidades.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/maskedinput.js"></script>
+<script type="text/javascript" src="/Painel_controle/Usuario/js/menuSuper.js"></script>
 
 <script>
 
 $(function() {
 	$(".botaoExibir").mouseover(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_exibir_light.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_exibir_light.png");
 	});
 
 	$(".botaoExibir").mouseout(function() {
-		$(this).attr("src", "/WebMAA/Painel_controle/Usuario/images/botao/bt_exibir.png");
+		$(this).attr("src", "/Painel_controle/Usuario/images/botao/bt_exibir.png");
 	});
 
 });
 
 function focoBt(id){
 	if(id ==="doar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_doar_light.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_doar_light.png");
 	}
 	
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_logoff_light.png");
 	}
 	
 	else if(id ==="cancelar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_desistir_light.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_desistir_light.png");
 	}
 	
 	
@@ -46,14 +46,14 @@ function focoBt(id){
 
 function bt(id){
 	if(id ==="doar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_doar.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_doar.png");
 	}
 	
 	else if(id ==="logoff"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_logoff.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_logoff.png");
 	}
 	else if(id ==="cancelar"){
-		$("#"+id).attr("src","/WebMAA/Painel_controle/Usuario/images/botao/bt_desistir.png");
+		$("#"+id).attr("src","/Painel_controle/Usuario/images/botao/bt_desistir.png");
 	}
 	
 	
@@ -69,14 +69,14 @@ function bt(id){
 <!-- div com o topo do site -->
 
 <div id="faixaTopo">
-		<div class="imgBannerLeft"><img src="/WebMAA/Painel_controle/Usuario/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
+		<div class="imgBannerLeft"><img src="/Painel_controle/Usuario/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
         <div class="imgBannerRight"></div>   	
 </div>
 
 <!-- div com o banner -->
 
 <div id="faixaBanner">
-	<div class="imgBannerInfLeft"><img src="/WebMAA/Painel_controle/Usuario/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+	<div class="imgBannerInfLeft"><img src="/Painel_controle/Usuario/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
     <div class="imgBannerInfRight"></div>
 </div>
 
@@ -87,7 +87,7 @@ function bt(id){
 	<tr>
     	<td align="right">
             <c:if test="${Log.login != null}">
-                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link logoff" onclick="window.location='logoff?operacao=sair';" />
+                <img src="/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link logoff" onclick="window.location='/logoff?operacao=sair';" />
             </c:if>
        </td>
     </tr>
@@ -100,20 +100,20 @@ function bt(id){
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
-            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+			<li><a href="/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
+            <li><a href="/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
     		</li>            
-    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
-    		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
-            <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
-<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
+    		<li><a href="/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		<li><a href="/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
+            <li><a href="/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+<li><a href="/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -129,7 +129,7 @@ function bt(id){
 		<div id="contIndex">
         	<!-- Colunas -->
 <div id="colunaLeft_geral">
-			<div class="bordaFaixaPainel_left"><span><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Doa&ccedil;&otilde;es &nbsp;&nbsp; - &nbsp;&nbsp; Painel de Controle</span></div>
+			<div class="bordaFaixaPainel_left"><span><img src="/Painel_controle/Usuario/images/botao/ico_painel.png" alt="Painel" title="" style=" float:left; text-align:left; padding-right:5px;" /> Acompanhar Doa&ccedil;&otilde;es &nbsp;&nbsp; - &nbsp;&nbsp; Painel de Controle</span></div>
                 <br />          
             
             <c:if test="${Animais == null}">
@@ -158,7 +158,7 @@ function bt(id){
                     </tr>
                     <c:forEach items="${Animais}" var="Animal">
                         <tr class="td_escura">
-                            <td align="center"><img src="/WebMAA/${Animal.especie}/images/miniaturas/${Animal.endFoto}" alt="${Animal.nome}" title="${Animal.nome}" width="69" height="59" /></td>
+                            <td align="center"><img src="/${Animal.especie}/images/miniaturas/${Animal.endFoto}" alt="${Animal.nome}" title="${Animal.nome}" width="69" height="59" /></td>
                             <td align="center">${Animal.nome}</td>
                             <td align="center">${Animal.especie}</td>
                             <c:forEach items="${lstRaca}" var="lstRaca">
@@ -167,7 +167,7 @@ function bt(id){
                                 </c:if>
                             </c:forEach>
                             <td align="center">${Animal.sexo}</td>
-                            <td align="center"><a href="/WebMAA/gerProcesso?operacao=listar_processos&cod_animal=${Animal.codigo}"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_exibir.png" align="Exibir" title="Exibir" class="seta_link botaoExibir" /></a></td>
+                            <td align="center"><a href="/gerProcesso?operacao=listar_processos&cod_animal=${Animal.codigo}"><img src="/Painel_controle/Usuario/images/botao/bt_exibir.png" align="Exibir" title="Exibir" class="seta_link botaoExibir" /></a></td>
                         </tr>
                    </c:forEach>
                 </table>
@@ -183,7 +183,7 @@ function bt(id){
              <br />
 			 
 			 <div align="right">
-			 	<a href="/WebMAA/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}"><img src="/WebMAA/Painel_controle/Usuario/images/botao/bt_voltar.png" alt="Voltar" title="Voltar" class="seta_link" /></a>
+			 	<a href="/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}"><img src="/Painel_controle/Usuario/images/botao/bt_voltar.png" alt="Voltar" title="Voltar" class="seta_link" /></a>
 			 </div>
           </div>
             <!-- CONTEUDO DO PAINEL -->
@@ -200,13 +200,13 @@ function bt(id){
                 	<br />
               <table class="grid">
                         <tr>
-                        	<td width="29%" align="right"><a href="cad_edit.html"><img src="/WebMAA/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
-                            <td width="71%"><a href="/WebMAA/NavUsr?operacao=alterar_cad">Alterar Cadastro</a></td>
+                        	<td width="29%" align="right"><a href="cad_edit.html"><img src="/Painel_controle/Usuario/images/botao/editar.png" alt="Alterar Cadastro" title="Alterar Cadastro" class="seta_link" /></a> &nbsp;</td>
+                            <td width="71%"><a href="/NavUsr?operacao=alterar_cad">Alterar Cadastro</a></td>
                         </tr>
                         
                         <tr>
-                        	<td align="right"><a href="index.html"><img src="/WebMAA/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
-                            <td><a href="/WebMAA/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Painel de Controle</a></td>
+                        	<td align="right"><a href="index.html"><img src="/Painel_controle/Usuario/images/botao/ico_painel.png" alt="painel de Controle" title="Painel de Controle" class="seta_link" /></a> &nbsp;</td>
+                            <td><a href="/PainelControle?operacao=exibirPainel&colaborador=${Colaborador.codigo}">Painel de Controle</a></td>
                         </tr>
 
                     </table>

@@ -7,20 +7,20 @@
 body {
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:11px;
-	background:url("../images/bg.png") fixed;
+	background:url("/images/bg.png") fixed;
 	color:#646464;
 	font-weight:bold;
 }
 
 #faixaTopo {
-	background:url("../images/topo_center.png");
+	background:url("/images/topo_center.png");
 	border-top:solid 1px #CCCCCC;
 	border-left:solid 1px #CCCCCC;
 	border-right:solid 1px #CCCCCC;
 }
 
 .imgBannerRight {
-	background:url("../images/topo4.png") no-repeat right;
+	background:url("/images/topo4.png") no-repeat right;
 }
 
 #faixaBanner {
@@ -30,51 +30,51 @@ body {
 }
 
 .imgBannerInfRight {
-	background:url("../images/topo3.png") no-repeat right;
+	background:url("/images/topo3.png") no-repeat right;
 }
 
 #faixaStatus {
-	background:url("../images/Status.png") no-repeat top left;
+	background:url("/images/Status.png") no-repeat top left;
 }
 
 #menu {
-	background:url("../images/bg_menu.png") no-repeat top left;
+	background:url("/images/bg_menu.png") no-repeat top left;
 }
 
 .imgTopo {
-	background: url("../images/imgTopo.png") no-repeat center top;
+	background: url("/images/imgTopo.png") no-repeat center top;
 }
 
 .imgTopo_sem_coluna {
-	background: url("../images/imgTopoGeral.png") no-repeat center top;
+	background: url("/images/imgTopoGeral.png") no-repeat center top;
 }
 
 .imgTopo_geral {
-	background:url("../images/imgTopo_geral.png") no-repeat center top;
+	background:url("/images/imgTopo_geral.png") no-repeat center top;
 }
 
 .imgBase {
-	background:url("../images/imgBase.png") repeat-y center;
+	background:url("/images/imgBase.png") repeat-y center;
 }
 
 .imgBase_sem_coluna {
-	background:url("../images/imgBaseGeral.png") repeat-y center;
+	background:url("/images/imgBaseGeral.png") repeat-y center;
 }
 
 .imgBase_geral {
-	background:url("../images/imgBase_geral.png") repeat-y center;
+	background:url("/images/imgBase_geral.png") repeat-y center;
 }
 
 .imgFim {
-	background:url("../images/imgFim.png") no-repeat center bottom;
+	background:url("/images/imgFim.png") no-repeat center bottom;
 }
 
 .imgFim_sem_coluna {
-	background:url("../images/imgFimGeral.png") no-repeat center bottom;
+	background:url("/images/imgFimGeral.png") no-repeat center bottom;
 }
 
 .imgFim_geral {
-	background:url("../images/imgFim_geral.png") no-repeat center bottom;
+	background:url("/images/imgFim_geral.png") no-repeat center bottom;
 }
 
 
@@ -86,17 +86,17 @@ body {
 }
 
 #rodape {
-	background:url("../images/rodape.png") no-repeat center top;
+	background:url("/images/rodape.png") no-repeat center top;
 	font-weight:bold;
 	color:#FFF;
 }
 
 .bordaFaixaLeft {
-	background:url("../images/borda_left_faixa_titulo.png") no-repeat left top;
+	background:url("/images/borda_left_faixa_titulo.png") no-repeat left top;
 }
 
 .bordaFaixaLeft span {
-	background:url("../images/centro_faixa_titulo.png") no-repeat right top;
+	background:url("/images/centro_faixa_titulo.png") no-repeat right top;
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:20px;
 	font-weight:bold;
@@ -104,7 +104,7 @@ body {
 }
 
 .login {
-	background:url("../images/bg_login.png") repeat-x bottom;
+	background:url("/images/bg_login.png") repeat-x bottom;
 }
 
 .seta_link{
@@ -156,7 +156,7 @@ border:solid 1px #009900;
 
 .grid_titulo {
 border:#999999 solid 1px;
-background:url("../images/grid_titulo_azul.png");
+background:url("/images/grid_titulo_azul.png");
 padding: 5px 5px 5px 5px;
 font-family:Tahoma, Arial, Helvetica, sans-serif;
 font-size:12px;
@@ -189,7 +189,7 @@ background-color:#EAEAEA;
 }
 
 .nota_informa{
-	background:url("../images/botao/inform.png") no-repeat left top;
+	background:url("/images/botao/inform.png") no-repeat left top;
 	color:#FF6600;
 	font-size:12px;
 }
@@ -203,7 +203,7 @@ background-color:#EAEAEA;
 }
 
 .listaAnimal span:hover {
-	background:url("/WebMAA/Gato/images/miniaturas/bg_foto_lightpng.png") no-repeat top left;
+	background:url("/Gato/images/miniaturas/bg_foto_lightpng.png") no-repeat top left;
 }
 
 .textoTitulo {
