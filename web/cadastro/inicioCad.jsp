@@ -6,28 +6,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/geral.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/jquery-ui-datepicker.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/estilos.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/menu_drop.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/abas.css" />
+<link type="text/css" rel="stylesheet" href="/css/geral.css" />
+<link type="text/css" rel="stylesheet" href="/css/jquery-ui-datepicker.css" />
+<link type="text/css" rel="stylesheet" href="/css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="/css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/css/abas.css" />
 
 
-<script type="text/javascript" src="/WebMAA/js/jquery.js"></script>
-<script type="text/javascript" src="/WebMAA/js/utilidades.js"></script>
-<script type="text/javascript" src="/WebMAA/js/maskedinput.js"></script>
-<script type="text/javascript" src="/WebMAA/js/jquery-ui-datepicker.js"></script>
-<script type="text/javascript" src="/WebMAA/js/menuSuper.js"></script>
-<script type="text/javascript" src="/WebMAA/js/valida_campos.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/utilidades.js"></script>
+<script type="text/javascript" src="/js/maskedinput.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-datepicker.js"></script>
+<script type="text/javascript" src="/js/menuSuper.js"></script>
+<script type="text/javascript" src="/js/valida_campos.js"></script>
 
 <script>
 
 function focoBt(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/bt_cadastrar_light.png");
+		$("#"+id).attr("src","/images/botao/bt_cadastrar_light.png");
 }
 
 function bt(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/bt_cadastrar.png");
+		$("#"+id).attr("src","/images/botao/bt_cadastrar.png");
 }
 
 $(document).ready(function(){
@@ -60,14 +60,14 @@ function preenche(){
 <!-- div com o topo do site -->
 
 <div id="faixaTopo">
-		<div class="imgBannerLeft"><img src="/WebMAA/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
+		<div class="imgBannerLeft"><img src="/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
         <div class="imgBannerRight"></div>   	
 </div>
 
 <!-- div com o banner -->
 
 <div id="faixaBanner">
-	<div class="imgBannerInfLeft"><img src="/WebMAA/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+	<div class="imgBannerInfLeft"><img src="/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
     <div class="imgBannerInfRight"></div>
 </div>
 
@@ -78,7 +78,7 @@ function preenche(){
 	<tr>
     	<td align="right">
             <c:if test="${Log.login != null}">
-                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+                <img src="/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
             </c:if>
        </td>
     </tr>
@@ -91,20 +91,20 @@ function preenche(){
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
-            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+			<li><a href="/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="/noticias.jsp" onfocus="limpaMenu();"><span>Notícias</span></a></li>
+            <li><a href="/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
     		</li>            
-    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
-    		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
-            <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
-            <li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
+    		<li><a href="/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		<li><a href="/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
+            <li><a href="/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+            <li><a href="/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -118,7 +118,7 @@ function preenche(){
 	
 	<!-- CONTEUDO AQUI -->
 		<div id="cont">
-				<div style="text-align:center;"><img src="/WebMAA/images/imgTexto/cadastro.png" alt="Cadastro" title="Cadastro"  /></div>
+				<div style="text-align:center;"><img src="/images/imgTexto/cadastro.png" alt="Cadastro" title="Cadastro"  /></div>
 		<div class="tabsB">
 					<ul>
 						<li class="ativo" id="cadInicio"><a href="#" name="neutro" onclick="contAba('inicio','cadInicio');"><span>Dados Pessoais</span></a></li>
@@ -180,7 +180,7 @@ function preenche(){
                 <br />
                 
                 <div align="center">
-                	<img src="/WebMAA/images/botao/bt_proximo.png" alt="Proximo" title="Proximo" class="seta_link" onclick="contAba('cadLogradouro','cadL');" />
+                	<img src="/images/botao/bt_proximo.png" alt="Proximo" title="Proximo" class="seta_link" onclick="contAba('cadLogradouro','cadL');" />
                 </div>
 			<br>
                 <span style="color:red;">
@@ -208,8 +208,8 @@ function preenche(){
                 <br />
                 
                 <div align="center">
-                	<img src="/WebMAA/images/botao/bt_ant.png" alt="Voltar" title="Anterior" class="seta_link" onclick="contAba('inicio','cadInicio');" />&nbsp;&nbsp;
-                	<img src="/WebMAA/images/botao/bt_proximo.png" alt="Proximo" title="Proximo" class="seta_link" onclick="contAba('cadLogradouro','cadL');" />
+                	<img src="/images/botao/bt_ant.png" alt="Voltar" title="Anterior" class="seta_link" onclick="contAba('inicio','cadInicio');" />&nbsp;&nbsp;
+                	<img src="/images/botao/bt_proximo.png" alt="Proximo" title="Proximo" class="seta_link" onclick="contAba('cadLogradouro','cadL');" />
                 </div>
                 
               </div>              
@@ -258,8 +258,8 @@ function preenche(){
 				<br />
 				
 				<div style="width:90%; text-align:center;">
-                	<img src="/WebMAA/images/botao/bt_ant.png" alt="Voltar" title="Anterior" class="seta_link" onclick="contAba('inicio','cadInicio');" />&nbsp;&nbsp;
-					<input type="image" src="/WebMAA/images/botao/bt_cadastrar.png" alt="ok" title="Finalizar Cadastro" id="cadastro" onmouseover="focoBt('cadastro');" onmouseout="bt('cadastro');" />
+                	<img src="/images/botao/bt_ant.png" alt="Voltar" title="Anterior" class="seta_link" onclick="contAba('inicio','cadInicio');" />&nbsp;&nbsp;
+					<input type="image" src="/images/botao/bt_cadastrar.png" alt="ok" title="Finalizar Cadastro" id="cadastro" onmouseover="focoBt('cadastro');" onmouseout="bt('cadastro');" />
 				</div>
                 
               </div>              

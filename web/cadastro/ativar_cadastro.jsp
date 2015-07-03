@@ -6,34 +6,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ong Amigos Fieis</title>
 
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/geral.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/jquery-ui-datepicker.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/estilos.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/menu_drop.css" />
-<link type="text/css" rel="stylesheet" href="/WebMAA/css/abas.css" />
+<link type="text/css" rel="stylesheet" href="/css/geral.css" />
+<link type="text/css" rel="stylesheet" href="/css/jquery-ui-datepicker.css" />
+<link type="text/css" rel="stylesheet" href="/css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="/css/menu_drop.css" />
+<link type="text/css" rel="stylesheet" href="/css/abas.css" />
 
 
-<script type="text/javascript" src="/WebMAA/js/jquery.js"></script>
-<script type="text/javascript" src="/WebMAA/js/utilidades.js"></script>
-<script type="text/javascript" src="/WebMAA/js/maskedinput.js"></script>
-<script type="text/javascript" src="/WebMAA/js/jquery-ui-datepicker.js"></script>
-<script type="text/javascript" src="/WebMAA/js/menuSuper.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/utilidades.js"></script>
+<script type="text/javascript" src="/js/maskedinput.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-datepicker.js"></script>
+<script type="text/javascript" src="/js/menuSuper.js"></script>
 
 <script>
 function focoBt(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/check_active.png");
+		$("#"+id).attr("src","/images/botao/check_active.png");
 }
 
 function bt(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/check.png");
+		$("#"+id).attr("src","/images/botao/check.png");
 }
 
 function foco(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/bt_ok_light.png");
+		$("#"+id).attr("src","/images/botao/bt_ok_light.png");
 }
 
 function normal(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/bt_ok.png");
+		$("#"+id).attr("src","/images/botao/bt_ok.png");
 }
 </script>
 
@@ -46,14 +46,14 @@ function normal(id){
 <!-- div com o topo do site -->
 
 <div id="faixaTopo">
-		<div class="imgBannerLeft"><img src="/WebMAA/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
+		<div class="imgBannerLeft"><img src="/images/topo1.png" alt="logo" title="Logo" class="seta_link" /></div>
         <div class="imgBannerRight"></div>   	
 </div>
 
 <!-- div com o banner -->
 
 <div id="faixaBanner">
-	<div class="imgBannerInfLeft"><img src="/WebMAA/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
+	<div class="imgBannerInfLeft"><img src="/images/topo2.png" alt="Logo" title="Logo" class="seta_link" /></div>
     <div class="imgBannerInfRight"></div>
 </div>
 
@@ -64,7 +64,7 @@ function normal(id){
 	<tr>
     	<td align="right">
             <c:if test="${Log.login != null}">
-                <img src="/WebMAA/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
+                <img src="/images/botao/bt_logoff.png" alt="Sair" title="Sair" class="seta_link" id="logoff" onmouseover="focoBt('logoff');" onmouseout="bt('logoff');" onclick="window.location='logoff?operacao=sair';" />
             </c:if>
        </td>
     </tr>
@@ -77,20 +77,20 @@ function normal(id){
 <div id="menu">
 	<div class="menuDrop">
 		<ul>
-			<li><a href="/WebMAA/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
-    		<li><a href="/WebMAA/noticias.jsp" onfocus="limpaMenu();"><span>Not&iacute;cias</span></a></li>
-            <li><a href="/WebMAA/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
+			<li><a href="/index.jsp" onfocus="limpaMenu();"><span>Inicio</span></a></li>
+    		<li><a href="/noticias.jsp" onfocus="limpaMenu();"><span>Not&iacute;cias</span></a></li>
+            <li><a href="/denuncia.jsp" onfocus="limpaMenu();"><span>Den&uacute;ncias</span></a></li>
             <li id="adotar" class="" onmouseover="setaClass('adotar');" onmouseout="retiraClass('adotar');"><a href="#" onfocus="ativa('adotar','drop');"><span>Adotar</span></a>
     			<ul class="drop">
-        			<li id="gato" class=""><a href="/WebMAA/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
-    				<li id="cao" class=""><a href="/WebMAA/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
+        			<li id="gato" class=""><a href="/listaAnimal?operacao=lista_gato" onfocus="ativaLight('gato');">Gato</a></li>
+    				<li id="cao" class=""><a href="/listaAnimal?operacao=lista_cao" onfocus="ativaLight('cao');">Cachorro</a></li>
         		</ul>
     		</li>            
-    		<li><a href="/WebMAA/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
-    		<li><a href="/WebMAA/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
-            <li><a href="/WebMAA/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
-            <li><a href="/WebMAA/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
-<li><a href="/WebMAA/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
+    		<li><a href="/direito_animal.jsp" onfocus="limpaMenu();"><span>Direito Animal</span></a></li>
+    		<li><a href="/cadastro.jsp" onfocus="limpaMenu();"><span>Cadastre-se</span></a></li>
+            <li><a href="/GerAnimal?operacao=iniciar_cad" onfocus="limpaMenu();"><span>Doar</span></a></li>
+            <li><a href="/final_feliz/index.jsp" onfocus="limpaMenu();"><span>Final Feliz</span></a></li>
+<li><a href="/fale_conosco.jsp" onfocus="limpaMenu();"><span>Fale Conosco</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -115,7 +115,7 @@ function normal(id){
 			<div style="width:40%; margin-left:250px;">
 
             <c:if test="${Ativado == false}">
-			<form action="/WebMAA/Ativacao" method="post">
+			<form action="/Ativacao" method="post">
                <input type="hidden" name="operacao" value="ativar_cad" />
 
                 
@@ -133,7 +133,7 @@ function normal(id){
                 </tr>
                 <tr>
                 	<td align="center" colspan="2">
-                    <input type="image" src="/WebMAA/images/botao/check.png" alt="OK" title="Confirmar" id="pt" onmouseover="focoBt('pt');" onmouseout="bt('pt');" />
+                    <input type="image" src="/images/botao/check.png" alt="OK" title="Confirmar" id="pt" onmouseover="focoBt('pt');" onmouseout="bt('pt');" />
                     </td>
                 </tr>
                 <tr>
@@ -152,7 +152,7 @@ function normal(id){
 		</c:if>
         <c:if test="${Ativado == true}">
             <span style="color:#090; font-size:15px;"> 
-                <img src="/WebMAA/images/botao/conta_ok.png" style="float:left; margin-right:5px;" />
+                <img src="/images/botao/conta_ok.png" style="float:left; margin-right:5px;" />
                 Parab&eacute;ns, Sua Conta foi Ativada com Sucesso!
             </span>
                 <br>
@@ -160,7 +160,7 @@ function normal(id){
                 <br>
                 <br>
                <div align="center">
-                <img src="/WebMAA/images/botao/bt_ok.png" onclick="window.location='/WebMAA/index.jsp';" class="seta_link" id="ok" onmouseover="foco('ok')" onmouseout="normal('ok')" alt="OK" title="ok"/>
+                <img src="/images/botao/bt_ok.png" onclick="window.location='/index.jsp';" class="seta_link" id="ok" onmouseover="foco('ok')" onmouseout="normal('ok')" alt="OK" title="ok"/>
                </div>
                        
         </c:if>

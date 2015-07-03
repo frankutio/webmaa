@@ -131,8 +131,8 @@ public class ServletPainelControle extends HttpServlet {
                     
                         // Cria um objeto file com nome do arquivo
                         // A pasta deve oferecer acesso de escrita para Conteiner
-                        File uploadedFile = new File("/Documents and Settings/Frank/Meus documentos/Faculdade/TCC/Implementacao/"+
-                                "WebMAA/build/web/Painel_controle/Usuario/foto/" + fi.getName());
+                        File uploadedFile = new File("/Users/Frank/Documents/Webs/Projetos/"+
+                                "GitHub/webmaa/webmaa/build/web/Painel_controle/Usuario/foto/" + fi.getName());
                         // Grava arquivo na pasta especificada
                         fi.write(uploadedFile);
 

@@ -89,6 +89,6 @@ function finaliarCheck(){
 
 function confirmaExclusao(codigo){
    if(confirm("Deseja Realmente excluir esse animal?")){
-       window.location="/WebMAA/GerAnimal?operacao=apagarAnimal&codigo="+codigo;
+       window.location="/GerAnimal?operacao=apagarAnimal&codigo="+codigo;
    }
 }

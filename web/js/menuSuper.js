@@ -41,9 +41,9 @@ function limpaMenu(){
 }
 
 function troca(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/check_active.png");
+		$("#"+id).attr("src","/images/botao/check_active.png");
 }
 
 function volta(id){
-		$("#"+id).attr("src","/WebMAA/images/botao/check.png");
+		$("#"+id).attr("src","/images/botao/check.png");
 }
