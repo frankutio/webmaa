@@ -49,7 +49,7 @@
 }
 
 .current a{
-	background:url("/images/botao/menu_left_hover.png") no-repeat left top; !important
+	background:url("/images/botao/menu_left_hover.png") no-repeat left top !important;
 	color:#2776C5 !important;
 }
 
