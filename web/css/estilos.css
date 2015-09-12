@@ -212,3 +212,7 @@ background-color:#EAEAEA;
 }
 
 label.error { float: none; color: red; margin: 0 .5em 0 0; font-size: 10px }
+
+.login input[type="text"]{
+    width: 100%!important;
+}
